@@ -1,4 +1,4 @@
-# Data Science Foundations (Free Track)
+# Data Science Foundations
 
 A structured Quarto book teaching the end-to-end Python workflow from raw data to interpretation.
 
