@@ -8,16 +8,12 @@ A structured Quarto book teaching the end-to-end Python workflow from raw data t
 
 This repository contains the free edition of the Complex Data Insights (CDI) Data Science Foundations guide.
 
-The goal is simple:
+It teaches two things at the same time:
 
-Move from raw data to interpretable insight using a calm, structured workflow.
+- How to think through a complete data science workflow  
+- How to structure and publish analysis using Quarto  
 
-This is not a collection of disconnected notebooks.  
-It is a complete analytical progression:
-
-Data → Cleaning → Exploration → Visualization → Interpretation
-
-The focus is not only on writing code, but on understanding how analysis moves forward responsibly and coherently.
+The result is not just code execution, but a reproducible analytical document.
 
 ---
 
@@ -29,10 +25,25 @@ The focus is not only on writing code, but on understanding how analysis moves f
 - Basic data wrangling  
 - Clear and honest visualization  
 - Summary statistics and interpretation  
-- A complete free-track walkthrough
+- Building and rendering a Quarto book  
 
 Each chapter builds on the previous one.  
 The structure is intentional.
+
+---
+
+## Why Quarto?
+
+Modern analysis is not only about computation.  
+It is also about communication and reproducibility.
+
+Using Quarto, learners see how:
+
+- Code and narrative live together  
+- Analysis can be rendered as a structured book  
+- Projects can be version-controlled and published  
+
+This makes the workflow complete.
 
 ---
 
@@ -52,11 +63,39 @@ The structure is intentional.
 
 ---
 
-## How to Run Locally
+## Run Locally
 
-### 1. Install Quarto
+Install Quarto:  
 https://quarto.org/
 
-Confirm installation:
+Then render the book:
+
 ```bash
-quarto --version
+quarto render
+```
+
+## Who This Is For
+-	Learners new to structured data science workflows
+-	Students moving beyond isolated notebooks
+-	Analysts who want clearer reasoning from data to conclusions
+-	Anyone who wants to build reproducible analytical books
+
+---
+
+## What Comes Next
+
+The premium edition expands into:
+
+-	Advanced modeling
+-	Evaluation and validation
+-	Feature engineering
+-	Project-level structure
+-	Capstone analysis
+
+---
+
+## Philosophy
+
+Insight does not emerge from code alone.
+
+It emerges from structured reasoning, reproducibility, and clarity.
