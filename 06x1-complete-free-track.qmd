@@ -1,11 +1,103 @@
-# Complete Free Track
+# Complete Free Track {#complete-free-track}
 
 :::cdi-message
 - **ID:** DS-L06X1
-- **Type:** Lesson
+- **Type:** Wrap-up
 - **Audience:** Public
-- **Theme:** Checklist, recap, and readiness for next steps
+- **Theme:** Consolidation, reproducibility, and next steps
 :::
 
-Content coming soon.
+You have completed the Foundations Track of **CDI Data Science Foundations in Python**.
 
+This guide is **Quarto-first**. Every chapter is written as a `.qmd` file and executed during rendering, so the figures and outputs you see are reproducible.
+
+---
+
+## What You Built
+
+Across Lessons 01–06, you built a complete, end-to-end workflow:
+
+- Set up a reproducible Python environment (`.venv`) and rendered a Quarto book  
+- Loaded a dataset and saved it into a consistent project structure (`data/`)  
+- Cleaned and validated the dataset (`data/iris_clean.csv`)  
+- Performed core data wrangling operations (filter, group, reshape)  
+- Created foundational visualizations and saved figures reproducibly  
+- Produced summary statistics and wrote careful interpretations  
+
+---
+
+## Your Project Structure
+
+Your repo is already organized like a real, reproducible data project:
+
+- `index.qmd` and chapter `.qmd` files define the book content  
+- `data/` contains datasets used by the lessons  
+- `figures/` stores saved plots created during rendering  
+- `cdi_viz/` contains reusable plotting and saving utilities  
+- `scripts/bash/` contains build and setup helpers  
+- `docs/` contains the rendered website (GitHub Pages output)  
+
+---
+
+## How to Rebuild Anytime
+
+From the project root:
+
+```{bash}
+#| label: 06x1-build-book
+bash scripts/bash/build.sh
+```
+
+After rendering, open the site:
+
+```{bash}
+#| label: 06x1-open-site-mac
+open docs/index.html
+```
+
+:::cdi-message
+If you are editing chapters and want live reload, you can use `quarto preview`.
+For a quick verification after a build, opening `docs/index.html` is usually sufficient.
+:::
+
+---
+
+## What This Track Did Not Cover
+
+This Foundations Track focused on the core workflow. It did not yet cover:
+
+- Feature engineering and transformation design  
+- Train/test splitting and evaluation discipline  
+- Supervised learning (classification and regression)  
+- Model tuning, validation strategies, and leakage avoidance  
+- End-to-end project packaging and deployment workflows  
+
+Those topics belong to the extended track.
+
+---
+
+## Next Steps
+
+### 1) Solidify your practice
+Choose a new dataset (for example: housing, health, finance) and repeat Lessons 02–06.
+
+### 2) Improve readability and reproducibility
+Adopt a consistent style:
+- clear variable names
+- small, named code chunks
+- explicit validation checks before saving outputs
+
+### 3) Continue into the extended track
+If you want to move from foundations to applied projects, the extended track continues with:
+
+- deeper exploratory analysis  
+- feature engineering  
+- machine learning workflows  
+- model evaluation and interpretation  
+- end-to-end project structure and deployment  
+
+---
+
+## Summary
+
+You now have a complete foundation workflow and a reproducible Quarto project that you can reuse for future datasets and future guides.

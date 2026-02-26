@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -168,15 +203,41 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#project-structure-overview" id="toc-project-structure-overview" class="nav-link active" data-scroll-target="#project-structure-overview">Project Structure Overview</a>
+  <ul class="collapse">
+  <li><a href="#key-directories" id="toc-key-directories" class="nav-link" data-scroll-target="#key-directories">Key Directories</a></li>
+  </ul></li>
+  <li><a href="#environment-setup-reference" id="toc-environment-setup-reference" class="nav-link" data-scroll-target="#environment-setup-reference">Environment Setup Reference</a>
+  <ul class="collapse">
+  <li><a href="#create-environment-manually" id="toc-create-environment-manually" class="nav-link" data-scroll-target="#create-environment-manually">Create environment manually</a></li>
+  <li><a href="#render-the-book" id="toc-render-the-book" class="nav-link" data-scroll-target="#render-the-book">Render the book</a></li>
+  </ul></li>
+  <li><a href="#quarto-workflow-summary" id="toc-quarto-workflow-summary" class="nav-link" data-scroll-target="#quarto-workflow-summary">Quarto Workflow Summary</a></li>
+  <li><a href="#reusable-pandas-patterns" id="toc-reusable-pandas-patterns" class="nav-link" data-scroll-target="#reusable-pandas-patterns">Reusable Pandas Patterns</a>
+  <ul class="collapse">
+  <li><a href="#select-columns" id="toc-select-columns" class="nav-link" data-scroll-target="#select-columns">Select columns</a></li>
+  <li><a href="#filter-rows" id="toc-filter-rows" class="nav-link" data-scroll-target="#filter-rows">Filter rows</a></li>
+  <li><a href="#group-and-aggregate" id="toc-group-and-aggregate" class="nav-link" data-scroll-target="#group-and-aggregate">Group and aggregate</a></li>
+  <li><a href="#handle-missing-values" id="toc-handle-missing-values" class="nav-link" data-scroll-target="#handle-missing-values">Handle missing values</a></li>
+  <li><a href="#convert-dtype" id="toc-convert-dtype" class="nav-link" data-scroll-target="#convert-dtype">Convert dtype</a></li>
+  </ul></li>
+  <li><a href="#plot-saving-pattern" id="toc-plot-saving-pattern" class="nav-link" data-scroll-target="#plot-saving-pattern">Plot Saving Pattern</a></li>
+  <li><a href="#reproducibility-checklist" id="toc-reproducibility-checklist" class="nav-link" data-scroll-target="#reproducibility-checklist">Reproducibility Checklist</a></li>
+  <li><a href="#closing-note" id="toc-closing-note" class="nav-link" data-scroll-target="#closing-note">Closing Note</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Appendix</span></h1>
+<h1 class="title"><span id="appendix" class="quarto-section-identifier"><span class="chapter-title">Appendix</span></span></h1>
 </div>
 
 
@@ -196,14 +257,139 @@ ul.task-list li input[type="checkbox"] {
 <div class="cdi-message">
 <ul>
 <li><strong>ID:</strong> DS-APP</li>
-<li><strong>Type:</strong> Lesson</li>
+<li><strong>Type:</strong> Reference</li>
 <li><strong>Audience:</strong> Public</li>
-<li><strong>Theme:</strong> Extra notes, environment tips, glossary</li>
+<li><strong>Theme:</strong> Environment, structure, and reproducibility reference</li>
 </ul>
 </div>
-<p>Content coming soon.</p>
+<p>This appendix collects technical reference material that supports the Foundations Track.</p>
+<p>It documents the project structure, environment setup, rendering workflow, and reusable patterns used throughout the guide.</p>
+<hr>
+<section id="project-structure-overview" class="level2">
+<h2 class="anchored" data-anchor-id="project-structure-overview">Project Structure Overview</h2>
+<p>A standard CDI Quarto-first project looks like this:</p>
+<pre><code>data-science/
+├── index.qmd
+├── 00-preface.qmd
+├── 01-setting-up-environment.qmd
+├── ...
+├── data/
+├── figures/
+├── cdi_viz/
+├── scripts/
+│   └── bash/
+├── docs/
+├── _quarto.yml
+└── requirements.txt</code></pre>
+<section id="key-directories" class="level3">
+<h3 class="anchored" data-anchor-id="key-directories">Key Directories</h3>
+<ul>
+<li><p><code>data/</code><br>
+Stores raw and cleaned datasets.</p></li>
+<li><p><code>figures/</code><br>
+Stores saved plots generated during rendering.</p></li>
+<li><p><code>cdi_viz/</code><br>
+Contains reusable visualization utilities (e.g., <code>theme.py</code>).</p></li>
+<li><p><code>scripts/bash/</code><br>
+Contains helper scripts such as <code>setup-env.sh</code> and <code>build.sh</code>.</p></li>
+<li><p><code>docs/</code><br>
+Contains the rendered Quarto website (GitHub Pages output).</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="environment-setup-reference" class="level2">
+<h2 class="anchored" data-anchor-id="environment-setup-reference">Environment Setup Reference</h2>
+<p>This project uses a local virtual environment (<code>.venv</code>) for reproducibility.</p>
+<section id="create-environment-manually" class="level3">
+<h3 class="anchored" data-anchor-id="create-environment-manually">Create environment manually</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> venv .venv</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="render-the-book" class="level3">
+<h3 class="anchored" data-anchor-id="render-the-book">Render the book</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or use the helper script:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> scripts/bash/build.sh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="quarto-workflow-summary" class="level2">
+<h2 class="anchored" data-anchor-id="quarto-workflow-summary">Quarto Workflow Summary</h2>
+<p>The workflow for this guide is:</p>
+<pre><code>Python code
+    ↓
+Quarto chapter (.qmd)
+    ↓
+quarto render
+    ↓
+docs/ (static site)</code></pre>
+<p>All figures and outputs are generated during rendering.</p>
+<hr>
+</section>
+<section id="reusable-pandas-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="reusable-pandas-patterns">Reusable Pandas Patterns</h2>
+<section id="select-columns" class="level3">
+<h3 class="anchored" data-anchor-id="select-columns">Select columns</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"col1"</span>, <span class="st">"col2"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="filter-rows" class="level3">
+<h3 class="anchored" data-anchor-id="filter-rows">Filter rows</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df[df[<span class="st">"col"</span>] <span class="op">&gt;</span> value]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="group-and-aggregate" class="level3">
+<h3 class="anchored" data-anchor-id="group-and-aggregate">Group and aggregate</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">"group_col"</span>).agg(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    metric<span class="op">=</span>(<span class="st">"value_col"</span>, <span class="st">"mean"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="handle-missing-values" class="level3">
+<h3 class="anchored" data-anchor-id="handle-missing-values">Handle missing values</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"col"</span>] <span class="op">=</span> df[<span class="st">"col"</span>].fillna(df[<span class="st">"col"</span>].median())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="convert-dtype" class="level3">
+<h3 class="anchored" data-anchor-id="convert-dtype">Convert dtype</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"category_col"</span>] <span class="op">=</span> df[<span class="st">"category_col"</span>].astype(<span class="st">"category"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="plot-saving-pattern" class="level2">
+<h2 class="anchored" data-anchor-id="plot-saving-pattern">Plot Saving Pattern</h2>
+<p>All plots are saved using the CDI visualization utility:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> cdi_viz.theme <span class="im">import</span> show_and_save_mpl</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>show_and_save_mpl(fig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This ensures figures are saved consistently into the <code>figures/</code> directory.</p>
+<hr>
+</section>
+<section id="reproducibility-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibility-checklist">Reproducibility Checklist</h2>
+<p>Before finalizing any chapter:</p>
+<ul>
+<li>Confirm no missing values remain (unless justified)</li>
+<li>Confirm no unintended duplicates</li>
+<li>Confirm correct data types</li>
+<li>Confirm figures render correctly</li>
+<li>Rebuild the book (<code>quarto render</code>)</li>
+<li>Open <code>docs/index.html</code> to verify output</li>
+</ul>
+<hr>
+</section>
+<section id="closing-note" class="level2">
+<h2 class="anchored" data-anchor-id="closing-note">Closing Note</h2>
+<p>The goal of this Foundations Track is not just to teach syntax.</p>
+<p>It is to teach structure, discipline, and reproducibility.</p>
+<p>The same workflow you used here can be applied to:</p>
+<ul>
+<li>New datasets</li>
+<li>New domains</li>
+<li>Larger analytical projects</li>
+<li>Future CDI guides</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

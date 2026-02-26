@@ -1,11 +1,282 @@
-# Summary Statistics and Insights
+# Summary Statistics and Insights {#lesson06}
 
 :::cdi-message
 - **ID:** DS-L06
 - **Type:** Lesson
 - **Audience:** Public
-- **Theme:** Summaries that support interpretation
+- **Theme:** Using summary statistics to move from numbers to interpretation
 :::
 
-Content coming soon.
+In this final lesson of the Foundations Track, you will compute descriptive statistics, explore grouped summaries, and extract defensible insights from your cleaned dataset.
 
+As in previous chapters, all code runs inside this Quarto (`.qmd`) file. When you render the book, Quarto executes the Python chunks and embeds results directly into the page.
+
+---
+
+## Lesson Overview
+
+By the end of this lesson, you will be able to:
+
+- Compute descriptive statistics for numeric and categorical variables  
+- Summarize data grouped by category (species)  
+- Detect feature differences and patterns  
+- Create simple visuals that support your summaries  
+- Write short, careful interpretations grounded in evidence  
+
+---
+
+## Chapter Initialization
+
+```{python}
+#| label: 06-chapter-init
+
+from cdi_viz.theme import cdi_notebook_init, show_and_save_mpl
+
+cdi_notebook_init(chapter="06", title_x=0)
+```
+
+---
+
+## Load the Dataset
+
+We use the cleaned dataset created in Lesson 03.
+
+```{python}
+#| label: 06-load-data
+
+import pandas as pd
+
+df = pd.read_csv("data/iris_clean.csv")
+df.head()
+```
+
+---
+
+## Descriptive Statistics
+
+### Numeric summary
+
+`describe()` gives a compact overview of central tendency and spread.
+
+```{python}
+#| label: 06-describe-numeric
+
+df.describe()
+```
+
+### Visual: Distributions of numeric features
+
+```{python}
+#| label: 06-histograms
+#| fig-cap: "Iris — Distributions of Numeric Features"
+
+import matplotlib.pyplot as plt
+
+num_cols = ["sepal_length", "sepal_width", "petal_length", "petal_width"]
+
+df[num_cols].hist(figsize=(10, 7), bins=12)
+plt.suptitle("Iris — Distributions of Numeric Features", y=1.02)
+plt.tight_layout()
+
+show_and_save_mpl()
+```
+
+---
+
+## Categorical Summary
+
+For categorical variables, counts are often the simplest and most useful summary.
+
+```{python}
+#| label: 06-species-counts
+
+species_counts = df["species"].value_counts()
+species_counts
+```
+
+### Visual: Species distribution
+
+```{python}
+#| label: 06-species-bar
+#| fig-cap: "Iris — Count of Samples by Species"
+
+fig, ax = plt.subplots(figsize=(7, 4))
+species_counts.plot(kind="bar", ax=ax)
+ax.set_title("Iris — Count of Samples by Species")
+ax.set_xlabel("species")
+ax.set_ylabel("count")
+ax.grid(True, axis="y", alpha=0.2)
+
+show_and_save_mpl(fig)
+```
+
+---
+
+## Grouped Summary Statistics
+
+A common workflow is to summarize numeric variables by a grouping column.
+
+```{python}
+#| label: 06-grouped-summary
+
+group_summary = (
+    df.groupby("species")
+      .agg(
+          sepal_length_mean=("sepal_length", "mean"),
+          sepal_length_sd=("sepal_length", "std"),
+          petal_length_mean=("petal_length", "mean"),
+          petal_length_sd=("petal_length", "std"),
+          petal_width_mean=("petal_width", "mean"),
+          petal_width_sd=("petal_width", "std"),
+      )
+      .reset_index()
+)
+
+group_summary
+```
+
+### Visual: Mean petal length by species
+
+```{python}
+#| label: 06-mean-petal-length-plot
+#| fig-cap: "Iris — Mean Petal Length by Species (SD error bars)"
+
+import seaborn as sns
+
+fig, ax = plt.subplots(figsize=(8, 5))
+sns.barplot(data=df, x="species", y="petal_length", errorbar="sd", ax=ax)
+ax.set_title("Iris — Mean Petal Length by Species")
+ax.set_xlabel("species")
+ax.set_ylabel("petal_length")
+ax.grid(True, axis="y", alpha=0.2)
+
+show_and_save_mpl(fig)
+```
+
+:::cdi-message
+A table like this becomes more meaningful when you connect it to patterns you saw in Lesson 05.
+Numbers should support interpretation, not replace it.
+:::
+
+---
+
+## Key Feature Differences
+
+A simple way to detect the strongest separation is to compare group means across features.
+
+```{python}
+#| label: 06-feature-separation
+
+sep = {
+    col: group_summary[f"{col}_mean"].max() - group_summary[f"{col}_mean"].min()
+    for col in ["sepal_length", "petal_length", "petal_width"]
+    if f"{col}_mean" in group_summary.columns
+}
+
+sep
+```
+
+---
+
+## Correlation Heatmap (Numeric Features)
+
+Correlations summarize linear relationships between variables.
+
+```{python}
+#| label: 06-correlation-matrix
+
+corr = df[num_cols].corr()
+corr
+```
+
+```{python}
+#| label: 06-correlation-heatmap
+#| fig-cap: "Iris — Correlation Heatmap (Numeric Features)"
+
+fig, ax = plt.subplots(figsize=(7, 5))
+sns.heatmap(corr, annot=True, fmt=".2f", ax=ax)
+ax.set_title("Iris — Correlation Heatmap")
+
+show_and_save_mpl(fig)
+```
+
+---
+
+## Generate a Simple Insights Report
+
+An insights report links:
+
+- evidence (tables and plots)  
+- interpretation (what the evidence suggests)  
+- caution (what you cannot claim)  
+
+```{python}
+#| label: 06-insights-report
+
+top_sep = group_summary.sort_values("petal_length_mean", ascending=False)[["species", "petal_length_mean"]]
+
+report = f"""Insights Report (Iris)
+
+1) Dataset size
+- Rows: {df.shape[0]}
+- Columns: {df.shape[1]}
+
+2) Group separation
+- Petal length shows strong separation by species.
+- Mean petal length by species:
+{top_sep.to_string(index=False)}
+
+3) Consistency with visuals
+- The group means align with the clustering seen in Lesson 05 plots.
+
+4) Caution
+- These are descriptive patterns. This dataset does not justify causal claims.
+"""
+
+print(report)
+```
+
+---
+
+## Exercise
+
+- Compute the mean and standard deviation of `sepal_width` by species  
+- Create a table with the median of each numeric feature by species  
+- Write one paragraph interpreting your results without causal language  
+
+```{python}
+#| label: 06-exercise-sepal-width
+
+sepal_width_stats = (
+    df.groupby("species")
+      .agg(
+          sepal_width_mean=("sepal_width", "mean"),
+          sepal_width_sd=("sepal_width", "std"),
+      )
+      .reset_index()
+)
+
+sepal_width_stats
+```
+
+```{python}
+#| label: 06-exercise-medians
+
+median_table = (
+    df.groupby("species")[num_cols]
+      .median()
+      .reset_index()
+)
+
+median_table
+```
+
+---
+
+## Summary
+
+- You computed descriptive statistics for numeric and categorical variables  
+- You compared groups using aggregation and simple plots  
+- You examined correlations between numeric features  
+- You produced a short insights report grounded in evidence  
+- You practiced writing careful interpretations  

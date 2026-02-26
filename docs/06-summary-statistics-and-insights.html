@@ -20,10 +20,45 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -69,6 +104,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="assets/css/cdi.css">
@@ -168,15 +206,41 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#lesson-overview" id="toc-lesson-overview" class="nav-link active" data-scroll-target="#lesson-overview">Lesson Overview</a></li>
+  <li><a href="#chapter-initialization" id="toc-chapter-initialization" class="nav-link" data-scroll-target="#chapter-initialization">Chapter Initialization</a></li>
+  <li><a href="#load-the-dataset" id="toc-load-the-dataset" class="nav-link" data-scroll-target="#load-the-dataset">Load the Dataset</a></li>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">Descriptive Statistics</a>
+  <ul class="collapse">
+  <li><a href="#numeric-summary" id="toc-numeric-summary" class="nav-link" data-scroll-target="#numeric-summary">Numeric summary</a></li>
+  <li><a href="#visual-distributions-of-numeric-features" id="toc-visual-distributions-of-numeric-features" class="nav-link" data-scroll-target="#visual-distributions-of-numeric-features">Visual: Distributions of numeric features</a></li>
+  </ul></li>
+  <li><a href="#categorical-summary" id="toc-categorical-summary" class="nav-link" data-scroll-target="#categorical-summary">Categorical Summary</a>
+  <ul class="collapse">
+  <li><a href="#visual-species-distribution" id="toc-visual-species-distribution" class="nav-link" data-scroll-target="#visual-species-distribution">Visual: Species distribution</a></li>
+  </ul></li>
+  <li><a href="#grouped-summary-statistics" id="toc-grouped-summary-statistics" class="nav-link" data-scroll-target="#grouped-summary-statistics">Grouped Summary Statistics</a>
+  <ul class="collapse">
+  <li><a href="#visual-mean-petal-length-by-species" id="toc-visual-mean-petal-length-by-species" class="nav-link" data-scroll-target="#visual-mean-petal-length-by-species">Visual: Mean petal length by species</a></li>
+  </ul></li>
+  <li><a href="#key-feature-differences" id="toc-key-feature-differences" class="nav-link" data-scroll-target="#key-feature-differences">Key Feature Differences</a></li>
+  <li><a href="#correlation-heatmap-numeric-features" id="toc-correlation-heatmap-numeric-features" class="nav-link" data-scroll-target="#correlation-heatmap-numeric-features">Correlation Heatmap (Numeric Features)</a></li>
+  <li><a href="#generate-a-simple-insights-report" id="toc-generate-a-simple-insights-report" class="nav-link" data-scroll-target="#generate-a-simple-insights-report">Generate a Simple Insights Report</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Summary Statistics and Insights</span></h1>
+<h1 class="title"><span id="lesson06" class="quarto-section-identifier"><span class="chapter-title">Summary Statistics and Insights</span></span></h1>
 </div>
 
 
@@ -198,12 +262,645 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>ID:</strong> DS-L06</li>
 <li><strong>Type:</strong> Lesson</li>
 <li><strong>Audience:</strong> Public</li>
-<li><strong>Theme:</strong> Summaries that support interpretation</li>
+<li><strong>Theme:</strong> Using summary statistics to move from numbers to interpretation</li>
 </ul>
 </div>
-<p>Content coming soon.</p>
+<p>In this final lesson of the Foundations Track, you will compute descriptive statistics, explore grouped summaries, and extract defensible insights from your cleaned dataset.</p>
+<p>As in previous chapters, all code runs inside this Quarto (<code>.qmd</code>) file. When you render the book, Quarto executes the Python chunks and embeds results directly into the page.</p>
+<hr>
+<section id="lesson-overview" class="level2">
+<h2 class="anchored" data-anchor-id="lesson-overview">Lesson Overview</h2>
+<p>By the end of this lesson, you will be able to:</p>
+<ul>
+<li>Compute descriptive statistics for numeric and categorical variables<br>
+</li>
+<li>Summarize data grouped by category (species)<br>
+</li>
+<li>Detect feature differences and patterns<br>
+</li>
+<li>Create simple visuals that support your summaries<br>
+</li>
+<li>Write short, careful interpretations grounded in evidence</li>
+</ul>
+<hr>
+</section>
+<section id="chapter-initialization" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-initialization">Chapter Initialization</h2>
+<div id="chapter-init" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> cdi_viz.theme <span class="im">import</span> cdi_notebook_init, show_and_save_mpl</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>cdi_notebook_init(chapter<span class="op">=</span><span class="st">"06"</span>, title_x<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+</section>
+<section id="load-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="load-the-dataset">Load the Dataset</h2>
+<p>We use the cleaned dataset created in Lesson 03.</p>
+<div id="cell-06-load-data" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/iris_clean.csv"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="load-data" class="cell-output cell-output-display" data-execution_count="2">
+<div>
 
 
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">sepal_length</th>
+<th data-quarto-table-cell-role="th">sepal_width</th>
+<th data-quarto-table-cell-role="th">petal_length</th>
+<th data-quarto-table-cell-role="th">petal_width</th>
+<th data-quarto-table-cell-role="th">species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>5.1</td>
+<td>3.5</td>
+<td>1.4</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>4.9</td>
+<td>3.0</td>
+<td>1.4</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>4.7</td>
+<td>3.2</td>
+<td>1.3</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4.6</td>
+<td>3.1</td>
+<td>1.5</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5.0</td>
+<td>3.6</td>
+<td>1.4</td>
+<td>0.2</td>
+<td>setosa</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="descriptive-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="descriptive-statistics">Descriptive Statistics</h2>
+<section id="numeric-summary" class="level3">
+<h3 class="anchored" data-anchor-id="numeric-summary">Numeric summary</h3>
+<p><code>describe()</code> gives a compact overview of central tendency and spread.</p>
+<div id="cell-06-describe-numeric" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="describe-numeric" class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">sepal_length</th>
+<th data-quarto-table-cell-role="th">sepal_width</th>
+<th data-quarto-table-cell-role="th">petal_length</th>
+<th data-quarto-table-cell-role="th">petal_width</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>149.000000</td>
+<td>149.000000</td>
+<td>149.000000</td>
+<td>149.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>5.843624</td>
+<td>3.059732</td>
+<td>3.748993</td>
+<td>1.194631</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>0.830851</td>
+<td>0.436342</td>
+<td>1.767791</td>
+<td>0.762622</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">min</td>
+<td>4.300000</td>
+<td>2.000000</td>
+<td>1.000000</td>
+<td>0.100000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>5.100000</td>
+<td>2.800000</td>
+<td>1.600000</td>
+<td>0.300000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>5.800000</td>
+<td>3.000000</td>
+<td>4.300000</td>
+<td>1.300000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>6.400000</td>
+<td>3.300000</td>
+<td>5.100000</td>
+<td>1.800000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">max</td>
+<td>7.900000</td>
+<td>4.400000</td>
+<td>6.900000</td>
+<td>2.500000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="visual-distributions-of-numeric-features" class="level3">
+<h3 class="anchored" data-anchor-id="visual-distributions-of-numeric-features">Visual: Distributions of numeric features</h3>
+<div id="histograms" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>num_cols <span class="op">=</span> [<span class="st">"sepal_length"</span>, <span class="st">"sepal_width"</span>, <span class="st">"petal_length"</span>, <span class="st">"petal_width"</span>]</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>df[num_cols].hist(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">7</span>), bins<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">"Iris — Distributions of Numeric Features"</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>show_and_save_mpl()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="histograms-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="06-summary-statistics-and-insights_files/figure-html/histograms-output-1.png" class="img-fluid figure-img"></p>
+<figcaption>Iris — Distributions of Numeric Features</figcaption>
+</figure>
+</div>
+</div>
+<div id="histograms-2" class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>'figures/06_001.png'</code></pre>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="categorical-summary" class="level2">
+<h2 class="anchored" data-anchor-id="categorical-summary">Categorical Summary</h2>
+<p>For categorical variables, counts are often the simplest and most useful summary.</p>
+<div id="cell-06-species-counts" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>species_counts <span class="op">=</span> df[<span class="st">"species"</span>].value_counts()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>species_counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="species-counts" class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>species
+setosa        50
+versicolor    50
+virginica     49
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<section id="visual-species-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="visual-species-distribution">Visual: Species distribution</h3>
+<div id="species-bar" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">4</span>))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>species_counts.plot(kind<span class="op">=</span><span class="st">"bar"</span>, ax<span class="op">=</span>ax)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Iris — Count of Samples by Species"</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"species"</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"count"</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, axis<span class="op">=</span><span class="st">"y"</span>, alpha<span class="op">=</span><span class="fl">0.2</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>show_and_save_mpl(fig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="species-bar-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="06-summary-statistics-and-insights_files/figure-html/species-bar-output-1.png" class="img-fluid figure-img"></p>
+<figcaption>Iris — Count of Samples by Species</figcaption>
+</figure>
+</div>
+</div>
+<div id="species-bar-2" class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>'figures/06_002.png'</code></pre>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="grouped-summary-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="grouped-summary-statistics">Grouped Summary Statistics</h2>
+<p>A common workflow is to summarize numeric variables by a grouping column.</p>
+<div id="cell-06-grouped-summary" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>group_summary <span class="op">=</span> (</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    df.groupby(<span class="st">"species"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>      .agg(</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>          sepal_length_mean<span class="op">=</span>(<span class="st">"sepal_length"</span>, <span class="st">"mean"</span>),</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>          sepal_length_sd<span class="op">=</span>(<span class="st">"sepal_length"</span>, <span class="st">"std"</span>),</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>          petal_length_mean<span class="op">=</span>(<span class="st">"petal_length"</span>, <span class="st">"mean"</span>),</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>          petal_length_sd<span class="op">=</span>(<span class="st">"petal_length"</span>, <span class="st">"std"</span>),</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>          petal_width_mean<span class="op">=</span>(<span class="st">"petal_width"</span>, <span class="st">"mean"</span>),</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>          petal_width_sd<span class="op">=</span>(<span class="st">"petal_width"</span>, <span class="st">"std"</span>),</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>      .reset_index()</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>group_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="grouped-summary" class="cell-output cell-output-display" data-execution_count="7">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">species</th>
+<th data-quarto-table-cell-role="th">sepal_length_mean</th>
+<th data-quarto-table-cell-role="th">sepal_length_sd</th>
+<th data-quarto-table-cell-role="th">petal_length_mean</th>
+<th data-quarto-table-cell-role="th">petal_length_sd</th>
+<th data-quarto-table-cell-role="th">petal_width_mean</th>
+<th data-quarto-table-cell-role="th">petal_width_sd</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>setosa</td>
+<td>5.006000</td>
+<td>0.352490</td>
+<td>1.462000</td>
+<td>0.173664</td>
+<td>0.246000</td>
+<td>0.105386</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>versicolor</td>
+<td>5.936000</td>
+<td>0.516171</td>
+<td>4.260000</td>
+<td>0.469911</td>
+<td>1.326000</td>
+<td>0.197753</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>virginica</td>
+<td>6.604082</td>
+<td>0.632113</td>
+<td>5.561224</td>
+<td>0.553706</td>
+<td>2.028571</td>
+<td>0.276887</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<section id="visual-mean-petal-length-by-species" class="level3">
+<h3 class="anchored" data-anchor-id="visual-mean-petal-length-by-species">Visual: Mean petal length by species</h3>
+<div id="mean-petal-length-plot" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"species"</span>, y<span class="op">=</span><span class="st">"petal_length"</span>, errorbar<span class="op">=</span><span class="st">"sd"</span>, ax<span class="op">=</span>ax)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Iris — Mean Petal Length by Species"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"species"</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"petal_length"</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, axis<span class="op">=</span><span class="st">"y"</span>, alpha<span class="op">=</span><span class="fl">0.2</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>show_and_save_mpl(fig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="mean-petal-length-plot-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="06-summary-statistics-and-insights_files/figure-html/mean-petal-length-plot-output-1.png" class="img-fluid figure-img"></p>
+<figcaption>Iris — Mean Petal Length by Species (SD error bars)</figcaption>
+</figure>
+</div>
+</div>
+<div id="mean-petal-length-plot-2" class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>'figures/06_003.png'</code></pre>
+</div>
+</div>
+<div class="cdi-message">
+<p>A table like this becomes more meaningful when you connect it to patterns you saw in Lesson 05. Numbers should support interpretation, not replace it.</p>
+</div>
+<hr>
+</section>
+</section>
+<section id="key-feature-differences" class="level2">
+<h2 class="anchored" data-anchor-id="key-feature-differences">Key Feature Differences</h2>
+<p>A simple way to detect the strongest separation is to compare group means across features.</p>
+<div id="cell-06-feature-separation" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sep <span class="op">=</span> {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    col: group_summary[<span class="ss">f"</span><span class="sc">{</span>col<span class="sc">}</span><span class="ss">_mean"</span>].<span class="bu">max</span>() <span class="op">-</span> group_summary[<span class="ss">f"</span><span class="sc">{</span>col<span class="sc">}</span><span class="ss">_mean"</span>].<span class="bu">min</span>()</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> col <span class="kw">in</span> [<span class="st">"sepal_length"</span>, <span class="st">"petal_length"</span>, <span class="st">"petal_width"</span>]</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="ss">f"</span><span class="sc">{</span>col<span class="sc">}</span><span class="ss">_mean"</span> <span class="kw">in</span> group_summary.columns</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>sep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="feature-separation" class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>{'sepal_length': np.float64(1.5980816326530611),
+ 'petal_length': np.float64(4.099224489795919),
+ 'petal_width': np.float64(1.7825714285714285)}</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="correlation-heatmap-numeric-features" class="level2">
+<h2 class="anchored" data-anchor-id="correlation-heatmap-numeric-features">Correlation Heatmap (Numeric Features)</h2>
+<p>Correlations summarize linear relationships between variables.</p>
+<div id="cell-06-correlation-matrix" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> df[num_cols].corr()</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>corr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="correlation-matrix" class="cell-output cell-output-display" data-execution_count="10">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">sepal_length</th>
+<th data-quarto-table-cell-role="th">sepal_width</th>
+<th data-quarto-table-cell-role="th">petal_length</th>
+<th data-quarto-table-cell-role="th">petal_width</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">sepal_length</td>
+<td>1.000000</td>
+<td>-0.118129</td>
+<td>0.873738</td>
+<td>0.820620</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">sepal_width</td>
+<td>-0.118129</td>
+<td>1.000000</td>
+<td>-0.426028</td>
+<td>-0.362894</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">petal_length</td>
+<td>0.873738</td>
+<td>-0.426028</td>
+<td>1.000000</td>
+<td>0.962772</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">petal_width</td>
+<td>0.820620</td>
+<td>-0.362894</td>
+<td>0.962772</td>
+<td>1.000000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="correlation-heatmap" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">5</span>))</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr, annot<span class="op">=</span><span class="va">True</span>, fmt<span class="op">=</span><span class="st">".2f"</span>, ax<span class="op">=</span>ax)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Iris — Correlation Heatmap"</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>show_and_save_mpl(fig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="correlation-heatmap-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="06-summary-statistics-and-insights_files/figure-html/correlation-heatmap-output-1.png" class="img-fluid figure-img"></p>
+<figcaption>Iris — Correlation Heatmap (Numeric Features)</figcaption>
+</figure>
+</div>
+</div>
+<div id="correlation-heatmap-2" class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>'figures/06_004.png'</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="generate-a-simple-insights-report" class="level2">
+<h2 class="anchored" data-anchor-id="generate-a-simple-insights-report">Generate a Simple Insights Report</h2>
+<p>An insights report links:</p>
+<ul>
+<li>evidence (tables and plots)<br>
+</li>
+<li>interpretation (what the evidence suggests)<br>
+</li>
+<li>caution (what you cannot claim)</li>
+</ul>
+<div id="insights-report" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>top_sep <span class="op">=</span> group_summary.sort_values(<span class="st">"petal_length_mean"</span>, ascending<span class="op">=</span><span class="va">False</span>)[[<span class="st">"species"</span>, <span class="st">"petal_length_mean"</span>]]</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>report <span class="op">=</span> <span class="ss">f"""Insights Report (Iris)</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="ss">1) Dataset size</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- Rows: </span><span class="sc">{</span>df<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- Columns: </span><span class="sc">{</span>df<span class="sc">.</span>shape[<span class="dv">1</span>]<span class="sc">}</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="ss">2) Group separation</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- Petal length shows strong separation by species.</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- Mean petal length by species:</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="sc">{</span>top_sep<span class="sc">.</span>to_string(index<span class="op">=</span><span class="va">False</span>)<span class="sc">}</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="ss">3) Consistency with visuals</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- The group means align with the clustering seen in Lesson 05 plots.</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="ss">4) Caution</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- These are descriptive patterns. This dataset does not justify causal claims.</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(report)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Insights Report (Iris)
+
+1) Dataset size
+- Rows: 149
+- Columns: 5
+
+2) Group separation
+- Petal length shows strong separation by species.
+- Mean petal length by species:
+   species  petal_length_mean
+ virginica           5.561224
+versicolor           4.260000
+    setosa           1.462000
+
+3) Consistency with visuals
+- The group means align with the clustering seen in Lesson 05 plots.
+
+4) Caution
+- These are descriptive patterns. This dataset does not justify causal claims.
+</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="exercise" class="level2">
+<h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
+<ul>
+<li>Compute the mean and standard deviation of <code>sepal_width</code> by species<br>
+</li>
+<li>Create a table with the median of each numeric feature by species<br>
+</li>
+<li>Write one paragraph interpreting your results without causal language</li>
+</ul>
+<div id="cell-06-exercise-sepal-width" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>sepal_width_stats <span class="op">=</span> (</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    df.groupby(<span class="st">"species"</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>      .agg(</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>          sepal_width_mean<span class="op">=</span>(<span class="st">"sepal_width"</span>, <span class="st">"mean"</span>),</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>          sepal_width_sd<span class="op">=</span>(<span class="st">"sepal_width"</span>, <span class="st">"std"</span>),</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>      .reset_index()</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>sepal_width_stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="exercise-sepal-width" class="cell-output cell-output-display" data-execution_count="13">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">species</th>
+<th data-quarto-table-cell-role="th">sepal_width_mean</th>
+<th data-quarto-table-cell-role="th">sepal_width_sd</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>setosa</td>
+<td>3.428000</td>
+<td>0.379064</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>versicolor</td>
+<td>2.770000</td>
+<td>0.313798</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>virginica</td>
+<td>2.979592</td>
+<td>0.323380</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="cell-06-exercise-medians" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>median_table <span class="op">=</span> (</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    df.groupby(<span class="st">"species"</span>)[num_cols]</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>      .median()</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>      .reset_index()</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>median_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="exercise-medians" class="cell-output cell-output-display" data-execution_count="14">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">species</th>
+<th data-quarto-table-cell-role="th">sepal_length</th>
+<th data-quarto-table-cell-role="th">sepal_width</th>
+<th data-quarto-table-cell-role="th">petal_length</th>
+<th data-quarto-table-cell-role="th">petal_width</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>setosa</td>
+<td>5.0</td>
+<td>3.4</td>
+<td>1.50</td>
+<td>0.2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>versicolor</td>
+<td>5.9</td>
+<td>2.8</td>
+<td>4.35</td>
+<td>1.3</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>virginica</td>
+<td>6.5</td>
+<td>3.0</td>
+<td>5.60</td>
+<td>2.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<ul>
+<li>You computed descriptive statistics for numeric and categorical variables<br>
+</li>
+<li>You compared groups using aggregation and simple plots<br>
+</li>
+<li>You examined correlations between numeric features<br>
+</li>
+<li>You produced a short insights report grounded in evidence<br>
+</li>
+<li>You practiced writing careful interpretations</li>
+</ul>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

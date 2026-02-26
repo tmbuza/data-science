@@ -1,6 +1,28 @@
 # Data Science Foundations
 
 A structured Quarto book teaching the end-to-end Python workflow from raw data to interpretation.
+# Data Science Foundations
+
+A structured Quarto book teaching the end-to-end Python workflow from raw data to interpretation.
+
+## Quick start
+
+1) Install Quarto: https://quarto.org/
+
+2) Create a Python environment:
+
+```bash
+bash scripts/setup-env.sh
+source .venv/bin/activate
+```
+
+3) Render the book:
+
+```bash
+bash scripts/build-all.sh
+```
+
+Output is written to `docs/` for GitHub Pages.
 
 ---
 
@@ -99,3 +121,4 @@ The premium edition expands into:
 Insight does not emerge from code alone.
 
 It emerges from structured reasoning, reproducibility, and clarity.
+

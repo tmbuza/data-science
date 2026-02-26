@@ -534,7 +534,97 @@
     "href": "05-visualization-basics.html",
     "title": "Visualization Basics",
     "section": "",
-    "text": "ID: DS-L05\nType: Lesson\nAudience: Public\nTheme: Clear plots, honest comparisons, readable charts\n\n\nContent coming soon.",
+    "text": "Lesson Overview\nVisualization is one of the most powerful tools in data science.\nIt allows you to:\nAs in previous chapters, all code runs inside this Quarto (.qmd) file and executes when you render the book.\nBy the end of this lesson, you will be able to:",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Visualization Basics</span>"
+    ]
+  },
+  {
+    "objectID": "05-visualization-basics.html#lesson-overview",
+    "href": "05-visualization-basics.html#lesson-overview",
+    "title": "Visualization Basics",
+    "section": "",
+    "text": "Create histograms and boxplots\n\nBuild scatter plots\n\nVisualize grouped comparisons\n\nCustomize plot titles and labels\n\nSave figures reproducibly",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Visualization Basics</span>"
+    ]
+  },
+  {
+    "objectID": "05-visualization-basics.html#chapter-initialization",
+    "href": "05-visualization-basics.html#chapter-initialization",
+    "title": "Visualization Basics",
+    "section": "Chapter Initialization",
+    "text": "Chapter Initialization\n\nfrom cdi_viz.theme import cdi_notebook_init, show_and_save_mpl\n\ncdi_notebook_init(chapter=\"05\", title_x=0)",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Visualization Basics</span>"
+    ]
+  },
+  {
+    "objectID": "05-visualization-basics.html#load-the-clean-dataset",
+    "href": "05-visualization-basics.html#load-the-clean-dataset",
+    "title": "Visualization Basics",
+    "section": "Load the Clean Dataset",
+    "text": "Load the Clean Dataset\n\nimport pandas as pd\n\ndf = pd.read_csv(\"data/iris_clean.csv\")\ndf.head()\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Visualization Basics</span>"
+    ]
+  },
+  {
+    "objectID": "05-visualization-basics.html#histogram",
+    "href": "05-visualization-basics.html#histogram",
+    "title": "Visualization Basics",
+    "section": "Histogram",
+    "text": "Histogram\nHistograms help us understand the distribution of a variable.\n\nimport matplotlib.pyplot as plt\n\nfig, ax = plt.subplots(figsize=(8, 5))\nax.hist(df[\"sepal_length\"], bins=12)\nax.set_title(\"Distribution of Sepal Length\")\nax.set_xlabel(\"sepal_length\")\nax.set_ylabel(\"Frequency\")\nax.grid(True, alpha=0.2)\n\nshow_and_save_mpl(fig)\n\n\n\n\nIris — Distribution of Sepal Length\n\n\n\n\n'figures/05_001.png'",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Visualization Basics</span>"
+    ]
+  },
+  {
+    "objectID": "05-visualization-basics.html#boxplot",
+    "href": "05-visualization-basics.html#boxplot",
+    "title": "Visualization Basics",
+    "section": "Boxplot",
+    "text": "Boxplot\nBoxplots highlight spread and potential outliers.\n\nimport seaborn as sns\n\nfig, ax = plt.subplots(figsize=(8, 5))\nsns.boxplot(data=df, x=\"species\", y=\"sepal_length\", ax=ax)\nax.set_title(\"Sepal Length by Species\")\nax.grid(True, axis=\"y\", alpha=0.2)\n\nshow_and_save_mpl(fig)\n\n\n\n\nIris — Sepal Length by Species\n\n\n\n\n'figures/05_002.png'",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Visualization Basics</span>"
+    ]
+  },
+  {
+    "objectID": "05-visualization-basics.html#scatter-plot",
+    "href": "05-visualization-basics.html#scatter-plot",
+    "title": "Visualization Basics",
+    "section": "Scatter Plot",
+    "text": "Scatter Plot\nScatter plots reveal relationships between two variables.\n\nfig, ax = plt.subplots(figsize=(8, 5))\nsns.scatterplot(\n    data=df,\n    x=\"sepal_length\",\n    y=\"petal_length\",\n    hue=\"species\",\n    ax=ax\n)\nax.set_title(\"Sepal Length vs Petal Length\")\nax.grid(True, alpha=0.2)\n\nshow_and_save_mpl(fig)\n\n\n\n\nIris — Sepal Length vs Petal Length\n\n\n\n\n'figures/05_003.png'",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Visualization Basics</span>"
+    ]
+  },
+  {
+    "objectID": "05-visualization-basics.html#pairplot-overview",
+    "href": "05-visualization-basics.html#pairplot-overview",
+    "title": "Visualization Basics",
+    "section": "Pairplot Overview",
+    "text": "Pairplot Overview\nPairplots provide a quick overview of relationships between multiple variables.\n\ng = sns.pairplot(df, hue=\"species\", corner=True, plot_kws={\"alpha\": 0.7})\ng.fig.suptitle(\"Iris — Pairplot Overview\", y=1.02)\n\nshow_and_save_mpl(g.fig)\n\n\n\n\nIris — Pairplot Overview\n\n\n\n\n'figures/05_004.png'",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Visualization Basics</span>"
+    ]
+  },
+  {
+    "objectID": "05-visualization-basics.html#visualization-best-practices",
+    "href": "05-visualization-basics.html#visualization-best-practices",
+    "title": "Visualization Basics",
+    "section": "Visualization Best Practices",
+    "text": "Visualization Best Practices\n\nLabel axes clearly\n\nUse meaningful titles\n\nAvoid unnecessary decoration\n\nKeep plots readable\n\nMaintain consistent styling\n\n\nGood visualization supports interpretation.\nCluttered visualization hides insight.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Visualization Basics</span>"
+    ]
+  },
+  {
+    "objectID": "05-visualization-basics.html#summary",
+    "href": "05-visualization-basics.html#summary",
+    "title": "Visualization Basics",
+    "section": "Summary",
+    "text": "Summary\n\nYou created histograms, boxplots, and scatter plots\n\nYou visualized grouped comparisons\n\nYou applied consistent styling\n\nYou saved figures reproducibly using the CDI visualization utilities\n\nYou are now prepared to generate structured insights from visual evidence.",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Visualization Basics</span>"
     ]
@@ -544,7 +634,117 @@
     "href": "06-summary-statistics-and-insights.html",
     "title": "Summary Statistics and Insights",
     "section": "",
-    "text": "ID: DS-L06\nType: Lesson\nAudience: Public\nTheme: Summaries that support interpretation\n\n\nContent coming soon.",
+    "text": "Lesson Overview\nIn this final lesson of the Foundations Track, you will compute descriptive statistics, explore grouped summaries, and extract defensible insights from your cleaned dataset.\nAs in previous chapters, all code runs inside this Quarto (.qmd) file. When you render the book, Quarto executes the Python chunks and embeds results directly into the page.\nBy the end of this lesson, you will be able to:",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
+    ]
+  },
+  {
+    "objectID": "06-summary-statistics-and-insights.html#lesson-overview",
+    "href": "06-summary-statistics-and-insights.html#lesson-overview",
+    "title": "Summary Statistics and Insights",
+    "section": "",
+    "text": "Compute descriptive statistics for numeric and categorical variables\n\nSummarize data grouped by category (species)\n\nDetect feature differences and patterns\n\nCreate simple visuals that support your summaries\n\nWrite short, careful interpretations grounded in evidence",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
+    ]
+  },
+  {
+    "objectID": "06-summary-statistics-and-insights.html#chapter-initialization",
+    "href": "06-summary-statistics-and-insights.html#chapter-initialization",
+    "title": "Summary Statistics and Insights",
+    "section": "Chapter Initialization",
+    "text": "Chapter Initialization\n\nfrom cdi_viz.theme import cdi_notebook_init, show_and_save_mpl\n\ncdi_notebook_init(chapter=\"06\", title_x=0)",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
+    ]
+  },
+  {
+    "objectID": "06-summary-statistics-and-insights.html#load-the-dataset",
+    "href": "06-summary-statistics-and-insights.html#load-the-dataset",
+    "title": "Summary Statistics and Insights",
+    "section": "Load the Dataset",
+    "text": "Load the Dataset\nWe use the cleaned dataset created in Lesson 03.\n\nimport pandas as pd\n\ndf = pd.read_csv(\"data/iris_clean.csv\")\ndf.head()\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
+    ]
+  },
+  {
+    "objectID": "06-summary-statistics-and-insights.html#descriptive-statistics",
+    "href": "06-summary-statistics-and-insights.html#descriptive-statistics",
+    "title": "Summary Statistics and Insights",
+    "section": "Descriptive Statistics",
+    "text": "Descriptive Statistics\n\nNumeric summary\ndescribe() gives a compact overview of central tendency and spread.\n\ndf.describe()\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\n\n\n\n\ncount\n149.000000\n149.000000\n149.000000\n149.000000\n\n\nmean\n5.843624\n3.059732\n3.748993\n1.194631\n\n\nstd\n0.830851\n0.436342\n1.767791\n0.762622\n\n\nmin\n4.300000\n2.000000\n1.000000\n0.100000\n\n\n25%\n5.100000\n2.800000\n1.600000\n0.300000\n\n\n50%\n5.800000\n3.000000\n4.300000\n1.300000\n\n\n75%\n6.400000\n3.300000\n5.100000\n1.800000\n\n\nmax\n7.900000\n4.400000\n6.900000\n2.500000\n\n\n\n\n\n\n\n\n\nVisual: Distributions of numeric features\n\nimport matplotlib.pyplot as plt\n\nnum_cols = [\"sepal_length\", \"sepal_width\", \"petal_length\", \"petal_width\"]\n\ndf[num_cols].hist(figsize=(10, 7), bins=12)\nplt.suptitle(\"Iris — Distributions of Numeric Features\", y=1.02)\nplt.tight_layout()\n\nshow_and_save_mpl()\n\n\n\n\nIris — Distributions of Numeric Features\n\n\n\n\n'figures/06_001.png'",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
+    ]
+  },
+  {
+    "objectID": "06-summary-statistics-and-insights.html#categorical-summary",
+    "href": "06-summary-statistics-and-insights.html#categorical-summary",
+    "title": "Summary Statistics and Insights",
+    "section": "Categorical Summary",
+    "text": "Categorical Summary\nFor categorical variables, counts are often the simplest and most useful summary.\n\nspecies_counts = df[\"species\"].value_counts()\nspecies_counts\n\nspecies\nsetosa        50\nversicolor    50\nvirginica     49\nName: count, dtype: int64\n\n\n\nVisual: Species distribution\n\nfig, ax = plt.subplots(figsize=(7, 4))\nspecies_counts.plot(kind=\"bar\", ax=ax)\nax.set_title(\"Iris — Count of Samples by Species\")\nax.set_xlabel(\"species\")\nax.set_ylabel(\"count\")\nax.grid(True, axis=\"y\", alpha=0.2)\n\nshow_and_save_mpl(fig)\n\n\n\n\nIris — Count of Samples by Species\n\n\n\n\n'figures/06_002.png'",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
+    ]
+  },
+  {
+    "objectID": "06-summary-statistics-and-insights.html#grouped-summary-statistics",
+    "href": "06-summary-statistics-and-insights.html#grouped-summary-statistics",
+    "title": "Summary Statistics and Insights",
+    "section": "Grouped Summary Statistics",
+    "text": "Grouped Summary Statistics\nA common workflow is to summarize numeric variables by a grouping column.\n\ngroup_summary = (\n    df.groupby(\"species\")\n      .agg(\n          sepal_length_mean=(\"sepal_length\", \"mean\"),\n          sepal_length_sd=(\"sepal_length\", \"std\"),\n          petal_length_mean=(\"petal_length\", \"mean\"),\n          petal_length_sd=(\"petal_length\", \"std\"),\n          petal_width_mean=(\"petal_width\", \"mean\"),\n          petal_width_sd=(\"petal_width\", \"std\"),\n      )\n      .reset_index()\n)\n\ngroup_summary\n\n\n\n\n\n\n\n\nspecies\nsepal_length_mean\nsepal_length_sd\npetal_length_mean\npetal_length_sd\npetal_width_mean\npetal_width_sd\n\n\n\n\n0\nsetosa\n5.006000\n0.352490\n1.462000\n0.173664\n0.246000\n0.105386\n\n\n1\nversicolor\n5.936000\n0.516171\n4.260000\n0.469911\n1.326000\n0.197753\n\n\n2\nvirginica\n6.604082\n0.632113\n5.561224\n0.553706\n2.028571\n0.276887\n\n\n\n\n\n\n\n\nVisual: Mean petal length by species\n\nimport seaborn as sns\n\nfig, ax = plt.subplots(figsize=(8, 5))\nsns.barplot(data=df, x=\"species\", y=\"petal_length\", errorbar=\"sd\", ax=ax)\nax.set_title(\"Iris — Mean Petal Length by Species\")\nax.set_xlabel(\"species\")\nax.set_ylabel(\"petal_length\")\nax.grid(True, axis=\"y\", alpha=0.2)\n\nshow_and_save_mpl(fig)\n\n\n\n\nIris — Mean Petal Length by Species (SD error bars)\n\n\n\n\n'figures/06_003.png'\n\n\n\nA table like this becomes more meaningful when you connect it to patterns you saw in Lesson 05. Numbers should support interpretation, not replace it.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
+    ]
+  },
+  {
+    "objectID": "06-summary-statistics-and-insights.html#key-feature-differences",
+    "href": "06-summary-statistics-and-insights.html#key-feature-differences",
+    "title": "Summary Statistics and Insights",
+    "section": "Key Feature Differences",
+    "text": "Key Feature Differences\nA simple way to detect the strongest separation is to compare group means across features.\n\nsep = {\n    col: group_summary[f\"{col}_mean\"].max() - group_summary[f\"{col}_mean\"].min()\n    for col in [\"sepal_length\", \"petal_length\", \"petal_width\"]\n    if f\"{col}_mean\" in group_summary.columns\n}\n\nsep\n\n{'sepal_length': np.float64(1.5980816326530611),\n 'petal_length': np.float64(4.099224489795919),\n 'petal_width': np.float64(1.7825714285714285)}",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
+    ]
+  },
+  {
+    "objectID": "06-summary-statistics-and-insights.html#correlation-heatmap-numeric-features",
+    "href": "06-summary-statistics-and-insights.html#correlation-heatmap-numeric-features",
+    "title": "Summary Statistics and Insights",
+    "section": "Correlation Heatmap (Numeric Features)",
+    "text": "Correlation Heatmap (Numeric Features)\nCorrelations summarize linear relationships between variables.\n\ncorr = df[num_cols].corr()\ncorr\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\n\n\n\n\nsepal_length\n1.000000\n-0.118129\n0.873738\n0.820620\n\n\nsepal_width\n-0.118129\n1.000000\n-0.426028\n-0.362894\n\n\npetal_length\n0.873738\n-0.426028\n1.000000\n0.962772\n\n\npetal_width\n0.820620\n-0.362894\n0.962772\n1.000000\n\n\n\n\n\n\n\n\nfig, ax = plt.subplots(figsize=(7, 5))\nsns.heatmap(corr, annot=True, fmt=\".2f\", ax=ax)\nax.set_title(\"Iris — Correlation Heatmap\")\n\nshow_and_save_mpl(fig)\n\n\n\n\nIris — Correlation Heatmap (Numeric Features)\n\n\n\n\n'figures/06_004.png'",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
+    ]
+  },
+  {
+    "objectID": "06-summary-statistics-and-insights.html#generate-a-simple-insights-report",
+    "href": "06-summary-statistics-and-insights.html#generate-a-simple-insights-report",
+    "title": "Summary Statistics and Insights",
+    "section": "Generate a Simple Insights Report",
+    "text": "Generate a Simple Insights Report\nAn insights report links:\n\nevidence (tables and plots)\n\ninterpretation (what the evidence suggests)\n\ncaution (what you cannot claim)\n\n\ntop_sep = group_summary.sort_values(\"petal_length_mean\", ascending=False)[[\"species\", \"petal_length_mean\"]]\n\nreport = f\"\"\"Insights Report (Iris)\n\n1) Dataset size\n- Rows: {df.shape[0]}\n- Columns: {df.shape[1]}\n\n2) Group separation\n- Petal length shows strong separation by species.\n- Mean petal length by species:\n{top_sep.to_string(index=False)}\n\n3) Consistency with visuals\n- The group means align with the clustering seen in Lesson 05 plots.\n\n4) Caution\n- These are descriptive patterns. This dataset does not justify causal claims.\n\"\"\"\n\nprint(report)\n\nInsights Report (Iris)\n\n1) Dataset size\n- Rows: 149\n- Columns: 5\n\n2) Group separation\n- Petal length shows strong separation by species.\n- Mean petal length by species:\n   species  petal_length_mean\n virginica           5.561224\nversicolor           4.260000\n    setosa           1.462000\n\n3) Consistency with visuals\n- The group means align with the clustering seen in Lesson 05 plots.\n\n4) Caution\n- These are descriptive patterns. This dataset does not justify causal claims.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
+    ]
+  },
+  {
+    "objectID": "06-summary-statistics-and-insights.html#exercise",
+    "href": "06-summary-statistics-and-insights.html#exercise",
+    "title": "Summary Statistics and Insights",
+    "section": "Exercise",
+    "text": "Exercise\n\nCompute the mean and standard deviation of sepal_width by species\n\nCreate a table with the median of each numeric feature by species\n\nWrite one paragraph interpreting your results without causal language\n\n\nsepal_width_stats = (\n    df.groupby(\"species\")\n      .agg(\n          sepal_width_mean=(\"sepal_width\", \"mean\"),\n          sepal_width_sd=(\"sepal_width\", \"std\"),\n      )\n      .reset_index()\n)\n\nsepal_width_stats\n\n\n\n\n\n\n\n\nspecies\nsepal_width_mean\nsepal_width_sd\n\n\n\n\n0\nsetosa\n3.428000\n0.379064\n\n\n1\nversicolor\n2.770000\n0.313798\n\n\n2\nvirginica\n2.979592\n0.323380\n\n\n\n\n\n\n\n\nmedian_table = (\n    df.groupby(\"species\")[num_cols]\n      .median()\n      .reset_index()\n)\n\nmedian_table\n\n\n\n\n\n\n\n\nspecies\nsepal_length\nsepal_width\npetal_length\npetal_width\n\n\n\n\n0\nsetosa\n5.0\n3.4\n1.50\n0.2\n\n\n1\nversicolor\n5.9\n2.8\n4.35\n1.3\n\n\n2\nvirginica\n6.5\n3.0\n5.60\n2.0",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
+    ]
+  },
+  {
+    "objectID": "06-summary-statistics-and-insights.html#summary",
+    "href": "06-summary-statistics-and-insights.html#summary",
+    "title": "Summary Statistics and Insights",
+    "section": "Summary",
+    "text": "Summary\n\nYou computed descriptive statistics for numeric and categorical variables\n\nYou compared groups using aggregation and simple plots\n\nYou examined correlations between numeric features\n\nYou produced a short insights report grounded in evidence\n\nYou practiced writing careful interpretations",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
     ]
@@ -554,7 +754,67 @@
     "href": "06x1-complete-free-track.html",
     "title": "Complete Free Track",
     "section": "",
-    "text": "ID: DS-L06X1\nType: Lesson\nAudience: Public\nTheme: Checklist, recap, and readiness for next steps\n\n\nContent coming soon.",
+    "text": "What You Built\nYou have completed the Foundations Track of CDI Data Science Foundations in Python.\nThis guide is Quarto-first. Every chapter is written as a .qmd file and executed during rendering, so the figures and outputs you see are reproducible.\nAcross Lessons 01–06, you built a complete, end-to-end workflow:",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Complete Free Track</span>"
+    ]
+  },
+  {
+    "objectID": "06x1-complete-free-track.html#what-you-built",
+    "href": "06x1-complete-free-track.html#what-you-built",
+    "title": "Complete Free Track",
+    "section": "",
+    "text": "Set up a reproducible Python environment (.venv) and rendered a Quarto book\n\nLoaded a dataset and saved it into a consistent project structure (data/)\n\nCleaned and validated the dataset (data/iris_clean.csv)\n\nPerformed core data wrangling operations (filter, group, reshape)\n\nCreated foundational visualizations and saved figures reproducibly\n\nProduced summary statistics and wrote careful interpretations",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Complete Free Track</span>"
+    ]
+  },
+  {
+    "objectID": "06x1-complete-free-track.html#your-project-structure",
+    "href": "06x1-complete-free-track.html#your-project-structure",
+    "title": "Complete Free Track",
+    "section": "Your Project Structure",
+    "text": "Your Project Structure\nYour repo is already organized like a real, reproducible data project:\n\nindex.qmd and chapter .qmd files define the book content\n\ndata/ contains datasets used by the lessons\n\nfigures/ stores saved plots created during rendering\n\ncdi_viz/ contains reusable plotting and saving utilities\n\nscripts/bash/ contains build and setup helpers\n\ndocs/ contains the rendered website (GitHub Pages output)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Complete Free Track</span>"
+    ]
+  },
+  {
+    "objectID": "06x1-complete-free-track.html#how-to-rebuild-anytime",
+    "href": "06x1-complete-free-track.html#how-to-rebuild-anytime",
+    "title": "Complete Free Track",
+    "section": "How to Rebuild Anytime",
+    "text": "How to Rebuild Anytime\nFrom the project root:\n#| label: 06x1-build-book\nbash scripts/bash/build.sh\nAfter rendering, open the site:\n#| label: 06x1-open-site-mac\nopen docs/index.html\n\nIf you are editing chapters and want live reload, you can use quarto preview. For a quick verification after a build, opening docs/index.html is usually sufficient.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Complete Free Track</span>"
+    ]
+  },
+  {
+    "objectID": "06x1-complete-free-track.html#what-this-track-did-not-cover",
+    "href": "06x1-complete-free-track.html#what-this-track-did-not-cover",
+    "title": "Complete Free Track",
+    "section": "What This Track Did Not Cover",
+    "text": "What This Track Did Not Cover\nThis Foundations Track focused on the core workflow. It did not yet cover:\n\nFeature engineering and transformation design\n\nTrain/test splitting and evaluation discipline\n\nSupervised learning (classification and regression)\n\nModel tuning, validation strategies, and leakage avoidance\n\nEnd-to-end project packaging and deployment workflows\n\nThose topics belong to the extended track.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Complete Free Track</span>"
+    ]
+  },
+  {
+    "objectID": "06x1-complete-free-track.html#next-steps",
+    "href": "06x1-complete-free-track.html#next-steps",
+    "title": "Complete Free Track",
+    "section": "Next Steps",
+    "text": "Next Steps\n\n1) Solidify your practice\nChoose a new dataset (for example: housing, health, finance) and repeat Lessons 02–06.\n\n\n2) Improve readability and reproducibility\nAdopt a consistent style: - clear variable names - small, named code chunks - explicit validation checks before saving outputs\n\n\n3) Continue into the extended track\nIf you want to move from foundations to applied projects, the extended track continues with:\n\ndeeper exploratory analysis\n\nfeature engineering\n\nmachine learning workflows\n\nmodel evaluation and interpretation\n\nend-to-end project structure and deployment",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Complete Free Track</span>"
+    ]
+  },
+  {
+    "objectID": "06x1-complete-free-track.html#summary",
+    "href": "06x1-complete-free-track.html#summary",
+    "title": "Complete Free Track",
+    "section": "Summary",
+    "text": "Summary\nYou now have a complete foundation workflow and a reproducible Quarto project that you can reuse for future datasets and future guides.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Complete Free Track</span>"
     ]
@@ -564,7 +824,77 @@
     "href": "99-appendix.html",
     "title": "Appendix",
     "section": "",
-    "text": "ID: DS-APP\nType: Lesson\nAudience: Public\nTheme: Extra notes, environment tips, glossary\n\n\nContent coming soon.",
+    "text": "Project Structure Overview\nThis appendix collects technical reference material that supports the Foundations Track.\nIt documents the project structure, environment setup, rendering workflow, and reusable patterns used throughout the guide.\nA standard CDI Quarto-first project looks like this:",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Appendix</span>"
+    ]
+  },
+  {
+    "objectID": "99-appendix.html#project-structure-overview",
+    "href": "99-appendix.html#project-structure-overview",
+    "title": "Appendix",
+    "section": "",
+    "text": "data-science/\n├── index.qmd\n├── 00-preface.qmd\n├── 01-setting-up-environment.qmd\n├── ...\n├── data/\n├── figures/\n├── cdi_viz/\n├── scripts/\n│   └── bash/\n├── docs/\n├── _quarto.yml\n└── requirements.txt\n\nKey Directories\n\ndata/\nStores raw and cleaned datasets.\nfigures/\nStores saved plots generated during rendering.\ncdi_viz/\nContains reusable visualization utilities (e.g., theme.py).\nscripts/bash/\nContains helper scripts such as setup-env.sh and build.sh.\ndocs/\nContains the rendered Quarto website (GitHub Pages output).",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Appendix</span>"
+    ]
+  },
+  {
+    "objectID": "99-appendix.html#environment-setup-reference",
+    "href": "99-appendix.html#environment-setup-reference",
+    "title": "Appendix",
+    "section": "Environment Setup Reference",
+    "text": "Environment Setup Reference\nThis project uses a local virtual environment (.venv) for reproducibility.\n\nCreate environment manually\npython3 -m venv .venv\nsource .venv/bin/activate\npip install -r requirements.txt\n\n\nRender the book\nquarto render\nOr use the helper script:\nbash scripts/bash/build.sh",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Appendix</span>"
+    ]
+  },
+  {
+    "objectID": "99-appendix.html#quarto-workflow-summary",
+    "href": "99-appendix.html#quarto-workflow-summary",
+    "title": "Appendix",
+    "section": "Quarto Workflow Summary",
+    "text": "Quarto Workflow Summary\nThe workflow for this guide is:\nPython code\n    ↓\nQuarto chapter (.qmd)\n    ↓\nquarto render\n    ↓\ndocs/ (static site)\nAll figures and outputs are generated during rendering.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Appendix</span>"
+    ]
+  },
+  {
+    "objectID": "99-appendix.html#reusable-pandas-patterns",
+    "href": "99-appendix.html#reusable-pandas-patterns",
+    "title": "Appendix",
+    "section": "Reusable Pandas Patterns",
+    "text": "Reusable Pandas Patterns\n\nSelect columns\ndf[[\"col1\", \"col2\"]]\n\n\nFilter rows\ndf[df[\"col\"] &gt; value]\n\n\nGroup and aggregate\ndf.groupby(\"group_col\").agg(\n    metric=(\"value_col\", \"mean\")\n)\n\n\nHandle missing values\ndf[\"col\"] = df[\"col\"].fillna(df[\"col\"].median())\n\n\nConvert dtype\ndf[\"category_col\"] = df[\"category_col\"].astype(\"category\")",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Appendix</span>"
+    ]
+  },
+  {
+    "objectID": "99-appendix.html#plot-saving-pattern",
+    "href": "99-appendix.html#plot-saving-pattern",
+    "title": "Appendix",
+    "section": "Plot Saving Pattern",
+    "text": "Plot Saving Pattern\nAll plots are saved using the CDI visualization utility:\nfrom cdi_viz.theme import show_and_save_mpl\n\nshow_and_save_mpl(fig)\nThis ensures figures are saved consistently into the figures/ directory.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Appendix</span>"
+    ]
+  },
+  {
+    "objectID": "99-appendix.html#reproducibility-checklist",
+    "href": "99-appendix.html#reproducibility-checklist",
+    "title": "Appendix",
+    "section": "Reproducibility Checklist",
+    "text": "Reproducibility Checklist\nBefore finalizing any chapter:\n\nConfirm no missing values remain (unless justified)\nConfirm no unintended duplicates\nConfirm correct data types\nConfirm figures render correctly\nRebuild the book (quarto render)\nOpen docs/index.html to verify output",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Appendix</span>"
+    ]
+  },
+  {
+    "objectID": "99-appendix.html#closing-note",
+    "href": "99-appendix.html#closing-note",
+    "title": "Appendix",
+    "section": "Closing Note",
+    "text": "Closing Note\nThe goal of this Foundations Track is not just to teach syntax.\nIt is to teach structure, discipline, and reproducibility.\nThe same workflow you used here can be applied to:\n\nNew datasets\nNew domains\nLarger analytical projects\nFuture CDI guides",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Appendix</span>"
     ]

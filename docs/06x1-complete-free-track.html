@@ -168,15 +168,31 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#what-you-built" id="toc-what-you-built" class="nav-link active" data-scroll-target="#what-you-built">What You Built</a></li>
+  <li><a href="#your-project-structure" id="toc-your-project-structure" class="nav-link" data-scroll-target="#your-project-structure">Your Project Structure</a></li>
+  <li><a href="#how-to-rebuild-anytime" id="toc-how-to-rebuild-anytime" class="nav-link" data-scroll-target="#how-to-rebuild-anytime">How to Rebuild Anytime</a></li>
+  <li><a href="#what-this-track-did-not-cover" id="toc-what-this-track-did-not-cover" class="nav-link" data-scroll-target="#what-this-track-did-not-cover">What This Track Did Not Cover</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a>
+  <ul class="collapse">
+  <li><a href="#solidify-your-practice" id="toc-solidify-your-practice" class="nav-link" data-scroll-target="#solidify-your-practice">1) Solidify your practice</a></li>
+  <li><a href="#improve-readability-and-reproducibility" id="toc-improve-readability-and-reproducibility" class="nav-link" data-scroll-target="#improve-readability-and-reproducibility">2) Improve readability and reproducibility</a></li>
+  <li><a href="#continue-into-the-extended-track" id="toc-continue-into-the-extended-track" class="nav-link" data-scroll-target="#continue-into-the-extended-track">3) Continue into the extended track</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Complete Free Track</span></h1>
+<h1 class="title"><span id="complete-free-track" class="quarto-section-identifier"><span class="chapter-title">Complete Free Track</span></span></h1>
 </div>
 
 
@@ -196,14 +212,113 @@ ul.task-list li input[type="checkbox"] {
 <div class="cdi-message">
 <ul>
 <li><strong>ID:</strong> DS-L06X1</li>
-<li><strong>Type:</strong> Lesson</li>
+<li><strong>Type:</strong> Wrap-up</li>
 <li><strong>Audience:</strong> Public</li>
-<li><strong>Theme:</strong> Checklist, recap, and readiness for next steps</li>
+<li><strong>Theme:</strong> Consolidation, reproducibility, and next steps</li>
 </ul>
 </div>
-<p>Content coming soon.</p>
+<p>You have completed the Foundations Track of <strong>CDI Data Science Foundations in Python</strong>.</p>
+<p>This guide is <strong>Quarto-first</strong>. Every chapter is written as a <code>.qmd</code> file and executed during rendering, so the figures and outputs you see are reproducible.</p>
+<hr>
+<section id="what-you-built" class="level2">
+<h2 class="anchored" data-anchor-id="what-you-built">What You Built</h2>
+<p>Across Lessons 01–06, you built a complete, end-to-end workflow:</p>
+<ul>
+<li>Set up a reproducible Python environment (<code>.venv</code>) and rendered a Quarto book<br>
+</li>
+<li>Loaded a dataset and saved it into a consistent project structure (<code>data/</code>)<br>
+</li>
+<li>Cleaned and validated the dataset (<code>data/iris_clean.csv</code>)<br>
+</li>
+<li>Performed core data wrangling operations (filter, group, reshape)<br>
+</li>
+<li>Created foundational visualizations and saved figures reproducibly<br>
+</li>
+<li>Produced summary statistics and wrote careful interpretations</li>
+</ul>
+<hr>
+</section>
+<section id="your-project-structure" class="level2">
+<h2 class="anchored" data-anchor-id="your-project-structure">Your Project Structure</h2>
+<p>Your repo is already organized like a real, reproducible data project:</p>
+<ul>
+<li><code>index.qmd</code> and chapter <code>.qmd</code> files define the book content<br>
+</li>
+<li><code>data/</code> contains datasets used by the lessons<br>
+</li>
+<li><code>figures/</code> stores saved plots created during rendering<br>
+</li>
+<li><code>cdi_viz/</code> contains reusable plotting and saving utilities<br>
+</li>
+<li><code>scripts/bash/</code> contains build and setup helpers<br>
+</li>
+<li><code>docs/</code> contains the rendered website (GitHub Pages output)</li>
+</ul>
+<hr>
+</section>
+<section id="how-to-rebuild-anytime" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-rebuild-anytime">How to Rebuild Anytime</h2>
+<p>From the project root:</p>
+<pre class="{bash}"><code>#| label: 06x1-build-book
+bash scripts/bash/build.sh</code></pre>
+<p>After rendering, open the site:</p>
+<pre class="{bash}"><code>#| label: 06x1-open-site-mac
+open docs/index.html</code></pre>
+<div class="cdi-message">
+<p>If you are editing chapters and want live reload, you can use <code>quarto preview</code>. For a quick verification after a build, opening <code>docs/index.html</code> is usually sufficient.</p>
+</div>
+<hr>
+</section>
+<section id="what-this-track-did-not-cover" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-track-did-not-cover">What This Track Did Not Cover</h2>
+<p>This Foundations Track focused on the core workflow. It did not yet cover:</p>
+<ul>
+<li>Feature engineering and transformation design<br>
+</li>
+<li>Train/test splitting and evaluation discipline<br>
+</li>
+<li>Supervised learning (classification and regression)<br>
+</li>
+<li>Model tuning, validation strategies, and leakage avoidance<br>
+</li>
+<li>End-to-end project packaging and deployment workflows</li>
+</ul>
+<p>Those topics belong to the extended track.</p>
+<hr>
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<section id="solidify-your-practice" class="level3">
+<h3 class="anchored" data-anchor-id="solidify-your-practice">1) Solidify your practice</h3>
+<p>Choose a new dataset (for example: housing, health, finance) and repeat Lessons 02–06.</p>
+</section>
+<section id="improve-readability-and-reproducibility" class="level3">
+<h3 class="anchored" data-anchor-id="improve-readability-and-reproducibility">2) Improve readability and reproducibility</h3>
+<p>Adopt a consistent style: - clear variable names - small, named code chunks - explicit validation checks before saving outputs</p>
+</section>
+<section id="continue-into-the-extended-track" class="level3">
+<h3 class="anchored" data-anchor-id="continue-into-the-extended-track">3) Continue into the extended track</h3>
+<p>If you want to move from foundations to applied projects, the extended track continues with:</p>
+<ul>
+<li>deeper exploratory analysis<br>
+</li>
+<li>feature engineering<br>
+</li>
+<li>machine learning workflows<br>
+</li>
+<li>model evaluation and interpretation<br>
+</li>
+<li>end-to-end project structure and deployment</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>You now have a complete foundation workflow and a reproducible Quarto project that you can reuse for future datasets and future guides.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

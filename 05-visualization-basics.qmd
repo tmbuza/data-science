@@ -1,11 +1,164 @@
-# Visualization Basics
+# Visualization Basics {#lesson05}
 
 :::cdi-message
 - **ID:** DS-L05
 - **Type:** Lesson
 - **Audience:** Public
-- **Theme:** Clear plots, honest comparisons, readable charts
+- **Theme:** Foundational data visualization using reproducible Quarto workflows
 :::
 
-Content coming soon.
+Visualization is one of the most powerful tools in data science.
 
+It allows you to:
+
+- Understand distributions  
+- Detect patterns and relationships  
+- Identify anomalies  
+- Communicate findings clearly  
+
+As in previous chapters, all code runs inside this Quarto (`.qmd`) file and executes when you render the book.
+
+---
+
+## Lesson Overview
+
+By the end of this lesson, you will be able to:
+
+- Create histograms and boxplots  
+- Build scatter plots  
+- Visualize grouped comparisons  
+- Customize plot titles and labels  
+- Save figures reproducibly  
+
+---
+
+## Chapter Initialization
+
+```{python}
+#| label: 05-chapter-init
+
+from cdi_viz.theme import cdi_notebook_init, show_and_save_mpl
+
+cdi_notebook_init(chapter="05", title_x=0)
+```
+
+---
+
+## Load the Clean Dataset
+
+```{python}
+#| label: 05-load-data
+
+import pandas as pd
+
+df = pd.read_csv("data/iris_clean.csv")
+df.head()
+```
+
+---
+
+## Histogram
+
+Histograms help us understand the distribution of a variable.
+
+```{python}
+#| label: 05-histogram
+#| fig-cap: "Iris — Distribution of Sepal Length"
+
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(figsize=(8, 5))
+ax.hist(df["sepal_length"], bins=12)
+ax.set_title("Distribution of Sepal Length")
+ax.set_xlabel("sepal_length")
+ax.set_ylabel("Frequency")
+ax.grid(True, alpha=0.2)
+
+show_and_save_mpl(fig)
+```
+
+---
+
+## Boxplot
+
+Boxplots highlight spread and potential outliers.
+
+```{python}
+#| label: 05-boxplot
+#| fig-cap: "Iris — Sepal Length by Species"
+
+import seaborn as sns
+
+fig, ax = plt.subplots(figsize=(8, 5))
+sns.boxplot(data=df, x="species", y="sepal_length", ax=ax)
+ax.set_title("Sepal Length by Species")
+ax.grid(True, axis="y", alpha=0.2)
+
+show_and_save_mpl(fig)
+```
+
+---
+
+## Scatter Plot
+
+Scatter plots reveal relationships between two variables.
+
+```{python}
+#| label: 05-scatter
+#| fig-cap: "Iris — Sepal Length vs Petal Length"
+
+fig, ax = plt.subplots(figsize=(8, 5))
+sns.scatterplot(
+    data=df,
+    x="sepal_length",
+    y="petal_length",
+    hue="species",
+    ax=ax
+)
+ax.set_title("Sepal Length vs Petal Length")
+ax.grid(True, alpha=0.2)
+
+show_and_save_mpl(fig)
+```
+
+---
+
+## Pairplot Overview
+
+Pairplots provide a quick overview of relationships between multiple variables.
+
+```{python}
+#| label: 05-pairplot
+#| fig-cap: "Iris — Pairplot Overview"
+
+g = sns.pairplot(df, hue="species", corner=True, plot_kws={"alpha": 0.7})
+g.fig.suptitle("Iris — Pairplot Overview", y=1.02)
+
+show_and_save_mpl(g.fig)
+```
+
+---
+
+## Visualization Best Practices
+
+- Label axes clearly  
+- Use meaningful titles  
+- Avoid unnecessary decoration  
+- Keep plots readable  
+- Maintain consistent styling  
+
+:::cdi-message
+Good visualization supports interpretation.  
+Cluttered visualization hides insight.
+:::
+
+---
+
+## Summary
+
+- You created histograms, boxplots, and scatter plots  
+- You visualized grouped comparisons  
+- You applied consistent styling  
+- You saved figures reproducibly using the CDI visualization utilities  
+
+You are now prepared to generate structured insights from visual evidence.
