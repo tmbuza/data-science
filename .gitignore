@@ -1,19 +1,24 @@
-# ========================================
-# Quarto
-# ========================================
+# =====================================================
+# Quarto Source-Level Build Artifacts (ignore)
+# =====================================================
 
+_site/
 .quarto/
 _cache/
-*_files/
 _freeze/
 
-# Quarto temporary / render artifacts
+# Ignore HTML everywhere EXCEPT docs/
 *.html
+!docs/**/*.html
+
+# Ignore figure folders everywhere EXCEPT docs/
+*_files/
+!docs/*_files/
+!docs/*_files/**
+
+# Ignore PDFs/DOCX everywhere
 *.pdf
 *.docx
-
-# Keep docs/ for GitHub Pages
-# (DO NOT ignore docs/)
 
 # ========================================
 # Python
