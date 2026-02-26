@@ -1,0 +1,188 @@
+# Load and Explore a Dataset {#lesson02}
+
+::: cdi-message
+-   **ID:** DS-L02
+-   **Type:** Lesson
+-   **Audience:** Public
+-   **Theme:** Data loading, structure inspection, and initial
+    exploration
+:::
+
+Every data science project begins with understanding your data. Before
+you clean it, visualize it, or build any model, you must first know what
+the dataset contains, how it is structured, and what patterns already
+exist.
+
+In this lesson, you will load a dataset into Python, inspect its
+features, explore basic statistics, and create initial visualizations.
+
+------------------------------------------------------------------------
+
+## Lesson Overview
+
+By the end of this lesson, you will be able to:
+
+-   Load a dataset into a pandas DataFrame\
+-   Inspect its structure, shape, and datatypes\
+-   Generate summary statistics\
+-   Visualize initial feature patterns\
+-   Save the dataset for later lessons
+
+------------------------------------------------------------------------
+
+## Notebook Initialization
+
+``` {python}
+#| label: notebook-init
+
+from cdi_viz.theme import cdi_notebook_init, show_and_save_mpl
+
+# Lesson ID drives figure naming (e.g., figures/02_001.png)
+cdi_notebook_init(chapter="02", title_x=0)
+```
+
+------------------------------------------------------------------------
+
+## Load the Dataset
+
+``` {python}
+#| label: load-iris-dataset
+
+import pandas as pd
+from sklearn.datasets import load_iris
+
+iris = load_iris()
+
+df = pd.DataFrame(iris.data, columns=iris.feature_names)
+df["species"] = pd.Categorical.from_codes(iris.target, iris.target_names)
+
+df.columns = [
+    "sepal_length",
+    "sepal_width",
+    "petal_length",
+    "petal_width",
+    "species"
+]
+
+df.head()
+```
+
+------------------------------------------------------------------------
+
+## Save the Dataset
+
+``` {python}
+#| label: save-iris-dataset
+
+from pathlib import Path
+
+Path("data").mkdir(exist_ok=True)
+df.to_csv("data/iris.csv", index=False)
+
+print("Saved dataset to: data/iris.csv")
+```
+
+------------------------------------------------------------------------
+
+## Inspect Dataset Structure
+
+``` {python}
+#| label: inspect-structure
+
+print("Columns:", df.columns.tolist())
+print("Shape:", df.shape)
+print("Data types:")
+print(df.dtypes)
+```
+
+------------------------------------------------------------------------
+
+## Summary Statistics
+
+``` {python}
+#| label: summary-statistics
+
+df.describe()
+```
+
+------------------------------------------------------------------------
+
+## Histograms of Numeric Features
+
+``` {python}
+#| label: histograms
+#| fig-cap: "Iris — Histograms of Numeric Features"
+
+import matplotlib.pyplot as plt
+
+df[["sepal_length", "sepal_width", "petal_length", "petal_width"]].hist(
+    figsize=(10, 7),
+    bins=12
+)
+plt.suptitle("Iris — Histograms of Numeric Features", y=1.02)
+plt.tight_layout()
+
+show_and_save_mpl()
+```
+
+------------------------------------------------------------------------
+
+## Scatter Plot
+
+``` {python}
+#| label: scatter-sepal-vs-petal
+#| fig-cap: "Iris — Sepal Length vs Petal Length"
+
+fig, ax = plt.subplots(figsize=(8, 5))
+ax.scatter(df["sepal_length"], df["petal_length"], alpha=0.7)
+ax.set_xlabel("sepal_length")
+ax.set_ylabel("petal_length")
+ax.grid(True, alpha=0.2)
+
+show_and_save_mpl(fig)
+```
+
+------------------------------------------------------------------------
+
+## Pairplot by Species
+
+``` {python}
+#| label: pairplot-by-species
+#| fig-cap: "Iris — Pairplot by Species"
+
+import seaborn as sns
+
+g = sns.pairplot(df, hue="species", corner=True, plot_kws={"alpha": 0.7})
+g.fig.suptitle("Iris — Pairplot by Species", y=1.02)
+
+show_and_save_mpl(g.fig)
+```
+
+------------------------------------------------------------------------
+
+## Exercise
+
+``` {python}
+#| label: exercise-exploration
+
+print("Last 5 rows:")
+print(df.tail())
+
+print("\nRows per species:")
+print(df["species"].value_counts())
+
+df["petal_area"] = df["petal_length"] * df["petal_width"]
+
+print("\nWith petal_area:")
+print(df.head())
+```
+
+------------------------------------------------------------------------
+
+## Summary
+
+-   You loaded Iris using scikit-learn and converted it to a pandas
+    DataFrame\
+-   You standardized column names to snake_case\
+-   You saved the dataset to `data/iris.csv`\
+-   You inspected structure, statistics, and created starter visuals

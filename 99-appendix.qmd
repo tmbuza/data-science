@@ -1,0 +1,11 @@
+# Appendix
+
+:::cdi-message
+- **ID:** DS-APP
+- **Type:** Lesson
+- **Audience:** Public
+- **Theme:** Extra notes, environment tips, glossary
+:::
+
+Content coming soon.
+

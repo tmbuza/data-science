@@ -1,0 +1,11 @@
+# Summary Statistics and Insights
+
+:::cdi-message
+- **ID:** DS-L06
+- **Type:** Lesson
+- **Audience:** Public
+- **Theme:** Summaries that support interpretation
+:::
+
+Content coming soon.
+

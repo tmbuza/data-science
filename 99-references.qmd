@@ -1,0 +1,11 @@
+# References
+
+:::cdi-message
+- **ID:** DS-REF
+- **Type:** Lesson
+- **Audience:** Public
+- **Theme:** Sources and recommended reading
+:::
+
+Content coming soon.
+

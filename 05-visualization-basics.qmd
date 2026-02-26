@@ -1,0 +1,11 @@
+# Visualization Basics
+
+:::cdi-message
+- **ID:** DS-L05
+- **Type:** Lesson
+- **Audience:** Public
+- **Theme:** Clear plots, honest comparisons, readable charts
+:::
+
+Content coming soon.
+

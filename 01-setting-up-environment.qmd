@@ -1,0 +1,121 @@
+# Setting Up Your Data Analysis Environment {#lesson01}
+
+::: cdi-message
+-   **ID:** DS-L01
+-   **Type:** Lesson
+-   **Audience:** Public
+-   **Theme:** Environment setup, reproducibility, and workflow
+    preparation
+:::
+
+This project is **purely Python-based**, unless explicitly stated
+otherwise.
+
+Before we begin exploring data, you need a simple and reliable workspace
+so you can run code smoothly and follow every lesson without issues.
+
+------------------------------------------------------------------------
+
+## Recommended Setup
+
+Use **Jupyter Notebook** via the **Anaconda** distribution.
+
+**Why this option?**
+
+Anaconda installs Python, Jupyter Notebook, and essential data-science
+libraries in one streamlined setup.
+
+**Steps:**
+
+1.  Download Anaconda: https://www.anaconda.com/download\
+2.  Install it (default settings are fine)\
+3.  Open **Anaconda Navigator**\
+4.  Launch **Jupyter Notebook**
+
+------------------------------------------------------------------------
+
+## Tools Used in This Guide
+
+::: cdi-message
+This guide uses widely adopted open-source tools from the Python
+data-science ecosystem, including Python, Pandas, NumPy, Matplotlib,
+Seaborn, Scikit-learn, and Jupyter. These tools form the foundation of
+modern data analysis and machine learning workflows.
+:::
+
+------------------------------------------------------------------------
+
+## Installing Required Libraries
+
+Run the following command in a Jupyter Notebook cell:
+
+``` bash
+!pip install pandas numpy matplotlib seaborn
+```
+
+> **Note:**\
+> If you are using Anaconda, these libraries are usually preinstalled.\
+> The command above ensures your environment is up to date.
+
+------------------------------------------------------------------------
+
+## Practice Dataset
+
+We will use the **Iris dataset** in the early lessons of this guide.
+
+You do **not** need to download it manually at this stage.
+
+-   A later lesson will generate `data/iris.csv` automatically\
+-   This lesson focuses only on ensuring your environment is ready
+
+------------------------------------------------------------------------
+
+## Test Your Setup
+
+You may run the test below after the dataset exists:
+
+``` python
+import pandas as pd
+
+df = pd.read_csv('data/iris.csv')
+print(df.head())
+```
+
+Expected output (first rows):
+
+       sepal_length  sepal_width  petal_length  petal_width species
+    0           5.1          3.5           1.4          0.2  setosa
+    1           4.9          3.0           1.4          0.2  setosa
+    2           4.7          3.2           1.3          0.2  setosa
+    3           4.6          3.1           1.5          0.2  setosa
+    4           5.0          3.6           1.4          0.2  setosa
+
+------------------------------------------------------------------------
+
+## Troubleshooting
+
+If something does not work as expected:
+
+-   Restart your notebook and try again\
+-   Confirm the file path is `data/iris.csv`\
+-   Ensure the `data/` folder exists\
+-   Re-run the installation command if needed
+
+Setup issues are common. Take your time.
+
+------------------------------------------------------------------------
+
+## Exercise
+
+-   Confirm that Jupyter Notebook opens successfully\
+-   Run the library installation command without errors\
+-   Verify that you can run a simple Python cell
+
+------------------------------------------------------------------------
+
+## Summary
+
+-   You set up a Python-based data analysis environment\
+-   You installed essential data science libraries\
+-   You verified that your notebook can execute Python code\
+-   You prepared your system for working with real datasets
