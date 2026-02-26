@@ -78,16 +78,16 @@ Those topics belong to the extended track.
 
 ## Next Steps
 
-### 1) Solidify your practice
+### Solidify your practice
 Choose a new dataset (for example: housing, health, finance) and repeat Lessons 02–06.
 
-### 2) Improve readability and reproducibility
+### Improve readability and reproducibility
 Adopt a consistent style:
 - clear variable names
 - small, named code chunks
 - explicit validation checks before saving outputs
 
-### 3) Continue into the extended track
+### Continue into the extended track
 If you want to move from foundations to applied projects, the extended track continues with:
 
 - deeper exploratory analysis  
