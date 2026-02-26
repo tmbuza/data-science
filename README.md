@@ -1,124 +1,142 @@
 # Data Science Foundations
 
 A structured Quarto book teaching the end-to-end Python workflow from raw data to interpretation.
-# Data Science Foundations
 
-A structured Quarto book teaching the end-to-end Python workflow from raw data to interpretation.
-
-## Quick start
-
-1) Install Quarto: https://quarto.org/
-
-2) Create a Python environment:
-
-```bash
-bash scripts/setup-env.sh
-source .venv/bin/activate
-```
-
-3) Render the book:
-
-```bash
-bash scripts/build-all.sh
-```
-
-Output is written to `docs/` for GitHub Pages.
+This guide is part of the **Complex Data Insights (CDI)** ecosystem and represents the **Foundations Track (v1.0.0)**.
 
 ---
 
 ## Overview
 
-This repository contains the free edition of the Complex Data Insights (CDI) Data Science Foundations guide.
+This repository contains a fully reproducible, Quarto-first data science guide.
 
-It teaches two things at the same time:
+It teaches learners how to:
 
-- How to think through a complete data science workflow  
-- How to structure and publish analysis using Quarto  
+- Set up a reproducible Python environment  
+- Structure a real data project  
+- Load and clean datasets  
+- Perform data wrangling  
+- Create visualizations  
+- Compute summary statistics  
+- Write careful, defensible interpretations  
 
-The result is not just code execution, but a reproducible analytical document.
-
----
-
-## What This Guide Covers
-
-- Setting up a reproducible Python environment  
-- Loading and understanding structured datasets  
-- Data cleaning and preparation  
-- Basic data wrangling  
-- Clear and honest visualization  
-- Summary statistics and interpretation  
-- Building and rendering a Quarto book  
-
-Each chapter builds on the previous one.  
-The structure is intentional.
+All lessons are written as `.qmd` files and executed during rendering.
 
 ---
 
-## Why Quarto?
+## Architecture
 
-Modern analysis is not only about computation.  
-It is also about communication and reproducibility.
+This project follows a **Python → Quarto → Render → Static Site** workflow:
 
-Using Quarto, learners see how:
-
-- Code and narrative live together  
-- Analysis can be rendered as a structured book  
-- Projects can be version-controlled and published  
-
-This makes the workflow complete.
-
----
-
-## Book Structure
-
-- `index.qmd` – Cover page  
-- `00-preface.qmd` – How to use this guide  
-- `01-setting-up-environment.qmd`  
-- `02-load-and-explore-dataset.qmd`  
-- `03-data-cleaning-and-preparation.qmd`  
-- `04-data-wrangling-basics.qmd`  
-- `05-visualization-basics.qmd`  
-- `06-summary-statistics-and-insights.qmd`  
-- `06x1-complete-free-track.qmd`  
-- `99-appendix.qmd`  
-- `99-references.qmd`
-
----
-
-## Run Locally
-
-Install Quarto:  
-https://quarto.org/
-
-Then render the book:
-
-```bash
+```
+Python code
+    ↓
+Quarto chapters (.qmd)
+    ↓
 quarto render
+    ↓
+docs/ (GitHub Pages site)
 ```
 
-## Who This Is For
--	Learners new to structured data science workflows
--	Students moving beyond isolated notebooks
--	Analysts who want clearer reasoning from data to conclusions
--	Anyone who wants to build reproducible analytical books
+There are **no notebooks** in this workflow.  
+All execution happens inside Quarto chapters.
 
 ---
 
-## What Comes Next
+## Project Structure
 
-The premium edition expands into:
-
--	Advanced modeling
--	Evaluation and validation
--	Feature engineering
--	Project-level structure
--	Capstone analysis
+```
+data-science/
+├── index.qmd
+├── 00-preface.qmd
+├── 01-setting-up-environment.qmd
+├── 02-load-and-explore-dataset.qmd
+├── 03-data-cleaning-and-preparation.qmd
+├── 04-data-wrangling-basics.qmd
+├── 05-visualization-basics.qmd
+├── 06-summary-statistics-and-insights.qmd
+├── 06x1-complete-free-track.qmd
+├── 99-appendix.qmd
+├── data/
+├── figures/
+├── cdi_viz/
+├── scripts/
+│   └── bash/
+├── docs/
+├── _quarto.yml
+└── requirements.txt
+```
 
 ---
 
-## Philosophy
+## Setup
 
-Insight does not emerge from code alone.
+### 1. Create environment
 
-It emerges from structured reasoning, reproducibility, and clarity.
+```bash
+bash scripts/bash/setup-env.sh
+source .venv/bin/activate
+```
 
+### 2. Render the book
+
+```bash
+bash scripts/bash/build.sh
+```
+
+### 3. Open the site
+
+macOS:
+```bash
+open docs/index.html
+```
+
+Linux:
+```bash
+xdg-open docs/index.html
+```
+
+Windows:
+```powershell
+start docs/index.html
+```
+
+---
+
+## Reproducibility Principles
+
+This guide emphasizes:
+
+- Explicit environment management (`.venv`)
+- Saved figures in `figures/`
+- Cleaned datasets in `data/`
+- Deterministic builds via `quarto render`
+- Clear separation between source (`.qmd`) and output (`docs/`)
+
+---
+
+## Version
+
+Current stable release:
+
+**v1.0.0-free**
+
+This marks the fully aligned Quarto-first Foundations Track.
+
+---
+
+## Next Steps
+
+The extended track (premium) builds on this foundation and includes:
+
+- Feature engineering  
+- Machine learning workflows  
+- Model evaluation  
+- End-to-end project structure  
+- Deployment patterns  
+
+---
+
+## License
+
+See LICENSE file for details.
