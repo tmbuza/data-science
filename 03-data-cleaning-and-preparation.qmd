@@ -1,11 +1,217 @@
-# Data Cleaning and Preparation
+# Data Cleaning and Preparation {#lesson03}
 
 :::cdi-message
 - **ID:** DS-L03
 - **Type:** Lesson
 - **Audience:** Public
-- **Theme:** Cleaning logic, encoding, validation
+- **Theme:** Cleaning discipline, validation checks, and reproducible preparation
 :::
 
-Content coming soon.
+In this lesson, you will practice essential data cleaning steps used in real data science workflows.
 
+As in previous chapters, all code runs inside this Quarto (`.qmd`) file. When you render the book, Quarto executes the Python chunks and embeds results directly into the page.
+
+---
+
+## Lesson Overview
+
+By the end of this lesson, you will be able to:
+
+- Inspect a dataset for common quality issues  
+- Detect and handle duplicate rows  
+- Standardize column names  
+- Handle missing values using clear rules  
+- Fix inconsistent data types  
+- Validate and save a cleaned dataset  
+
+---
+
+## Cleaning Philosophy
+
+Data cleaning should be:
+
+- Measured before modification  
+- Minimal and justified  
+- Reproducible  
+- Verified with explicit checks  
+
+Never modify data without first understanding what you are changing.
+
+---
+
+## Chapter Initialization
+
+```{python}
+#| label: 03-chapter-init
+
+from cdi_viz.theme import cdi_notebook_init, show_and_save_mpl
+
+cdi_notebook_init(chapter="03", title_x=0)
+```
+
+---
+
+## Load the Dataset
+
+```{python}
+#| label: 03-load-dataset
+
+import pandas as pd
+
+df = pd.read_csv("data/iris.csv")
+df.head()
+```
+
+---
+
+## Initial Inspection
+
+```{python}
+#| label: 03-basic-inspection
+
+print("Shape:", df.shape)
+print("\nColumn names:", df.columns.tolist())
+print("\nData types:")
+print(df.dtypes)
+```
+
+```{python}
+#| label: 03-summary-missingness
+
+print("Summary statistics:")
+print(df.describe(include="all"))
+
+print("\nMissing values per column:")
+print(df.isna().sum())
+```
+
+---
+
+## Detect Column Types
+
+```{python}
+#| label: 03-detect-column-types
+
+num_cols = df.select_dtypes(include="number").columns.tolist()
+cat_cols = df.select_dtypes(exclude="number").columns.tolist()
+
+print("Numeric columns:", num_cols)
+print("Categorical columns:", cat_cols)
+```
+
+---
+
+## Detect and Remove Duplicates
+
+```{python}
+#| label: 03-duplicates-check
+
+dup_count = int(df.duplicated().sum())
+print("Duplicate rows found:", dup_count)
+
+if dup_count > 0:
+    print("\nInspect duplicates carefully before removal.")
+    print(df[df.duplicated()].head())
+```
+
+```{python}
+#| label: 03-drop-duplicates
+
+if dup_count > 0:
+    df = df.drop_duplicates().reset_index(drop=True)
+
+print("Shape after duplicate handling:", df.shape)
+```
+
+---
+
+## Column Name Hygiene
+
+```{python}
+#| label: 03-column-name-hygiene
+
+df.columns = [
+    str(c).strip().lower().replace(" ", "_").replace("(", "").replace(")", "")
+    for c in df.columns
+]
+
+print("Updated columns:", df.columns.tolist())
+```
+
+---
+
+## Handle Missing Values
+
+```{python}
+#| label: 03-missingness-check
+
+print(df.isna().sum())
+```
+
+```{python}
+#| label: 03-imputation-pattern
+
+num_cols = df.select_dtypes(include="number").columns.tolist()
+cat_cols = df.select_dtypes(exclude="number").columns.tolist()
+
+df[num_cols] = df[num_cols].fillna(df[num_cols].median())
+
+for c in cat_cols:
+    if df[c].isna().any():
+        df[c] = df[c].fillna(df[c].mode().iloc[0])
+```
+
+---
+
+## Fix Data Types
+
+```{python}
+#| label: 03-fix-dtypes
+
+for c in num_cols:
+    df[c] = pd.to_numeric(df[c], errors="coerce")
+
+if "species" in df.columns:
+    df["species"] = df["species"].astype("category")
+
+print(df.dtypes)
+```
+
+---
+
+## Validation Checks
+
+```{python}
+#| label: 03-validation-checks
+
+print("Final shape:", df.shape)
+print("Total missing values:", int(df.isna().sum().sum()))
+print("Duplicate rows:", int(df.duplicated().sum()))
+
+assert int(df.isna().sum().sum()) == 0, "Missing values remain."
+assert int(df.duplicated().sum()) == 0, "Duplicates remain."
+```
+
+---
+
+## Save Clean Dataset
+
+```{python}
+#| label: 03-save-clean-dataset
+
+from pathlib import Path
+
+Path("data").mkdir(exist_ok=True)
+df.to_csv("data/iris_clean.csv", index=False)
+
+print("Saved cleaned dataset to: data/iris_clean.csv")
+```
+
+---
+
+## Summary
+
+- You inspected dataset quality  
+- You applied disciplined cleaning steps  
+- You validated the dataset explicitly  
+- You saved a reproducible cleaned version for later lessons  

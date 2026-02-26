@@ -12,171 +12,171 @@
   {
     "objectID": "00-preface.html",
     "href": "00-preface.html",
-    "title": "Welcome to Data Science Foundations in Python",
+    "title": "Welcome to CDI Data Science Foundations in Python",
     "section": "",
-    "text": "What You Will Learn\nWelcome to Complex Data Insights (CDI) — a structured learning pathway designed to teach real data skills through clear explanations, intentional progression, and reproducible workflows.\nThis guide focuses entirely on Python, one of the most widely used languages in data science, analytics, machine learning, and scientific computing.\nWhether you are new to data work or returning to strengthen your foundations, this guide is built to help you move from raw data to interpretable insight in a clear and disciplined way.\nAcross this guide, you will learn how to:\nEach chapter builds on the previous one.\nThe progression is intentional.",
+    "text": "What You Will Learn\nWelcome to Complex Data Insights (CDI), a practical learning pathway designed to teach real data skills through clear explanations, structured lessons, and hands-on practice.\nThis guide is Python-first and Quarto-first.\nEach chapter is written as a .qmd file. When you render the book, Quarto executes the Python chunks and embeds the results (tables, figures, and printed output) directly into the published pages. This keeps the guide reproducible and consistent.\nAcross this guide, you will learn how to:\nEach lesson builds on the previous one, forming a clear progression.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome to Data Science Foundations in Python</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome to CDI Data Science Foundations in Python</span>"
     ]
   },
   {
     "objectID": "00-preface.html#what-you-will-learn",
     "href": "00-preface.html#what-you-will-learn",
-    "title": "Welcome to Data Science Foundations in Python",
+    "title": "Welcome to CDI Data Science Foundations in Python",
     "section": "",
-    "text": "Think analytically about data problems\n\nLoad, inspect, and structure datasets\n\nClean and prepare messy data responsibly\n\nExplore patterns through clear visualization\n\nApply summary statistics correctly\n\nInterpret results with caution and clarity\n\nBuild reproducible analytical documents using Quarto",
+    "text": "Think analytically about data problems\n\nLoad, clean, and structure datasets\n\nExplore data through visualization\n\nApply essential statistical reasoning\n\nPrepare data for machine learning\n\nWork with realistic datasets\n\nBuild reproducible, end-to-end workflows",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome to Data Science Foundations in Python</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome to CDI Data Science Foundations in Python</span>"
     ]
   },
   {
-    "objectID": "00-preface.html#how-this-guide-is-structured",
-    "href": "00-preface.html#how-this-guide-is-structured",
-    "title": "Welcome to Data Science Foundations in Python",
-    "section": "How This Guide Is Structured",
-    "text": "How This Guide Is Structured\nThis guide is organized as a complete workflow:\nData → Preparation → Exploration → Visualization → Interpretation\nRather than isolated notebooks, you are working within a structured Quarto book.\nThis means:\n\nCode and narrative live together\n\nResults are rendered programmatically\n\nThe project is reproducible from start to finish\n\nThe entire workflow can be version-controlled\n\nYou are not only learning data science.\nYou are learning how to structure analysis professionally.",
+    "objectID": "00-preface.html#course-structure",
+    "href": "00-preface.html#course-structure",
+    "title": "Welcome to CDI Data Science Foundations in Python",
+    "section": "Course Structure",
+    "text": "Course Structure\nThe CDI Data Science Foundations path is divided into two parts.\n\nFoundations Track (Lessons 01–06)\nThis track introduces the core foundations of data science with Python, including:\n\nEnvironment setup and workflow\n\nLoading and inspecting datasets\n\nData cleaning fundamentals\n\nIntroductory data wrangling\n\nVisualization basics\n\nSummary statistics and insight generation\n\nThese lessons are designed to build confidence with essential tools and concepts.\n\n\nExtended Track (Premium)\nThe extended track builds on the foundations and moves into applied, real-world data science, including:\n\nIntermediate and advanced data wrangling\n\nWorking with realistic, messy datasets\n\nAdvanced exploratory data analysis\n\nFeature engineering\n\nMachine learning (classification and regression)\n\nModel evaluation and tuning\n\nEnd-to-end projects and deployment workflows",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome to Data Science Foundations in Python</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome to CDI Data Science Foundations in Python</span>"
     ]
   },
   {
     "objectID": "00-preface.html#about-figures-and-reproducibility",
     "href": "00-preface.html#about-figures-and-reproducibility",
-    "title": "Welcome to Data Science Foundations in Python",
+    "title": "Welcome to CDI Data Science Foundations in Python",
     "section": "About Figures and Reproducibility",
-    "text": "About Figures and Reproducibility\nAll figures in this guide are generated programmatically during execution.\nThis ensures that:\n\nResults are reproducible\n\nVisualizations remain consistent\n\nThe published book reflects the underlying code\n\nChanges in data automatically update outputs\n\nReproducibility is not an afterthought.\nIt is part of the workflow.",
+    "text": "About Figures and Reproducibility\nAll figures in this guide are generated programmatically during rendering. This ensures that plots are reproducible, consistent across lessons, and rendered reliably in the published materials.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome to Data Science Foundations in Python</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome to CDI Data Science Foundations in Python</span>"
+    ]
+  },
+  {
+    "objectID": "00-preface.html#references-and-citations",
+    "href": "00-preface.html#references-and-citations",
+    "title": "Welcome to CDI Data Science Foundations in Python",
+    "section": "References and Citations",
+    "text": "References and Citations\nWhen a lesson draws on external sources, in-line citations appear within the text, with the corresponding references listed at the end of that lesson page. A complete list of references used throughout the guide is also collected in the References section at the end of the guide.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome to CDI Data Science Foundations in Python</span>"
     ]
   },
   {
     "objectID": "00-preface.html#how-to-use-this-guide",
     "href": "00-preface.html#how-to-use-this-guide",
-    "title": "Welcome to Data Science Foundations in Python",
+    "title": "Welcome to CDI Data Science Foundations in Python",
     "section": "How to Use This Guide",
-    "text": "How to Use This Guide\nThis guide is designed to be:\n\nSelf-paced — move forward when concepts are clear\n\nHands-on — run and modify the code yourself\n\nStructured — follow the workflow in order\n\nRevisitable — return to earlier chapters as needed\n\nIf something feels unclear, slow down and revisit the reasoning before moving forward.\nUnderstanding is cumulative.",
+    "text": "How to Use This Guide\nThis guide is designed to be:\n\nSelf-paced\n\nHands-on\n\nModular\n\nAccessible",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome to Data Science Foundations in Python</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome to CDI Data Science Foundations in Python</span>"
     ]
   },
   {
     "objectID": "00-preface.html#lesson-workflow",
     "href": "00-preface.html#lesson-workflow",
-    "title": "Welcome to Data Science Foundations in Python",
+    "title": "Welcome to CDI Data Science Foundations in Python",
     "section": "Lesson Workflow",
-    "text": "Lesson Workflow\nEach chapter follows a consistent pattern:\n\nConcept explanation\n\nGuided code examples\n\nOutput interpretation\n\nShort exercises\n\nKey takeaways\n\nThis structure reduces cognitive overload and keeps learning focused.",
+    "text": "Lesson Workflow\nEach lesson follows a consistent structure:\n\nConcept explanation\n\nGuided code examples\n\nOutput interpretation\n\nShort exercises\n\nKey takeaways\n\nNext steps",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome to Data Science Foundations in Python</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome to CDI Data Science Foundations in Python</span>"
     ]
   },
   {
     "objectID": "00-preface.html#data-and-project-structure",
     "href": "00-preface.html#data-and-project-structure",
-    "title": "Welcome to Data Science Foundations in Python",
+    "title": "Welcome to CDI Data Science Foundations in Python",
     "section": "Data and Project Structure",
-    "text": "Data and Project Structure\nThroughout the guide:\n\nDatasets are stored in a consistent data/ directory\n\nCode execution is integrated into the Quarto book\n\nOutputs are rendered automatically into the final document\n\nThis project structure mirrors professional analytical work.",
+    "text": "Data and Project Structure\nThroughout the guide:\n\nDatasets are stored in a consistent data/ directory\n\nEarly lessons generate data/iris.csv automatically\n\nAdditional datasets are introduced as needed in later lessons",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome to Data Science Foundations in Python</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome to CDI Data Science Foundations in Python</span>"
     ]
   },
   {
     "objectID": "00-preface.html#about-this-guide",
     "href": "00-preface.html#about-this-guide",
-    "title": "Welcome to Data Science Foundations in Python",
+    "title": "Welcome to CDI Data Science Foundations in Python",
     "section": "About This Guide",
-    "text": "About This Guide\nThis guide follows a human-first, carefully curated approach.\nAI tools were used as assistants during drafting and refinement.\nAll final content has been reviewed and structured intentionally.",
+    "text": "About This Guide\nThis guide follows a human-first, carefully curated approach. AI tools were used as assistants during drafting and refinement, with all final content reviewed and approved by a human.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome to Data Science Foundations in Python</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Welcome to CDI Data Science Foundations in Python</span>"
     ]
   },
   {
     "objectID": "01-setting-up-environment.html",
     "href": "01-setting-up-environment.html",
-    "title": "Setting Up Your Data Analysis Environment",
+    "title": "Setting Up Your Environment",
     "section": "",
-    "text": "Recommended Setup\nThis project is purely Python-based, unless explicitly stated otherwise.\nBefore we begin exploring data, you need a simple and reliable workspace so you can run code smoothly and follow every lesson without issues.\nUse Jupyter Notebook via the Anaconda distribution.\nWhy this option?\nAnaconda installs Python, Jupyter Notebook, and essential data-science libraries in one streamlined setup.\nSteps:",
+    "text": "What you are setting up\nThis guide is Python-first and Quarto-first.\nYou will write and run code inside Quarto chapter files (.qmd). When you render the book, Quarto executes the Python chunks and places the results (tables, figures, printed output) directly into the published pages.\nBy the end of this lesson you will have:",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Data Analysis Environment</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Environment</span>"
     ]
   },
   {
-    "objectID": "01-setting-up-environment.html#recommended-setup",
-    "href": "01-setting-up-environment.html#recommended-setup",
-    "title": "Setting Up Your Data Analysis Environment",
+    "objectID": "01-setting-up-environment.html#what-you-are-setting-up",
+    "href": "01-setting-up-environment.html#what-you-are-setting-up",
+    "title": "Setting Up Your Environment",
     "section": "",
-    "text": "Download Anaconda: https://www.anaconda.com/download\n\nInstall it (default settings are fine)\n\nOpen Anaconda Navigator\n\nLaunch Jupyter Notebook",
+    "text": "Python installed and available from the terminal\n\nA project virtual environment (.venv) with required packages\n\nQuarto installed for rendering the book\n\nA working build command that generates the site into docs/",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Data Analysis Environment</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Environment</span>"
     ]
   },
   {
-    "objectID": "01-setting-up-environment.html#tools-used-in-this-guide",
-    "href": "01-setting-up-environment.html#tools-used-in-this-guide",
-    "title": "Setting Up Your Data Analysis Environment",
-    "section": "Tools Used in This Guide",
-    "text": "Tools Used in This Guide\n\nThis guide uses widely adopted open-source tools from the Python data-science ecosystem, including Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, and Jupyter. These tools form the foundation of modern data analysis and machine learning workflows.",
+    "objectID": "01-setting-up-environment.html#required-software",
+    "href": "01-setting-up-environment.html#required-software",
+    "title": "Setting Up Your Environment",
+    "section": "Required software",
+    "text": "Required software\n\n1) Python (3.10 or newer)\nCheck if Python is available:\n#| label: 01-check-python\npython3 --version\nIf that command fails, install Python using one of these options:\n\nmacOS: Homebrew brew install python\n\nWindows: Install from python.org (ensure “Add Python to PATH” is selected)\n\nLinux: Use your package manager (for example apt, dnf, pacman)\n\n\n\n2) Quarto\nQuarto renders the book and runs the Python code inside chapters.\nCheck if Quarto is installed:\n#| label: 01-check-quarto\nquarto --version\nIf Quarto is not installed, install it from the Quarto website and confirm the version prints successfully.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Data Analysis Environment</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Environment</span>"
     ]
   },
   {
-    "objectID": "01-setting-up-environment.html#installing-required-libraries",
-    "href": "01-setting-up-environment.html#installing-required-libraries",
-    "title": "Setting Up Your Data Analysis Environment",
-    "section": "Installing Required Libraries",
-    "text": "Installing Required Libraries\nRun the following command in a Jupyter Notebook cell:\n!pip install pandas numpy matplotlib seaborn\n\nNote:\nIf you are using Anaconda, these libraries are usually preinstalled.\nThe command above ensures your environment is up to date.",
+    "objectID": "01-setting-up-environment.html#recommended-editor",
+    "href": "01-setting-up-environment.html#recommended-editor",
+    "title": "Setting Up Your Environment",
+    "section": "Recommended editor",
+    "text": "Recommended editor\nUse any editor you like. A good default is VS Code because it works well with:\n\n.qmd editing\n\nPython formatting and linting\n\nGit workflow",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Data Analysis Environment</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Environment</span>"
     ]
   },
   {
-    "objectID": "01-setting-up-environment.html#practice-dataset",
-    "href": "01-setting-up-environment.html#practice-dataset",
-    "title": "Setting Up Your Data Analysis Environment",
-    "section": "Practice Dataset",
-    "text": "Practice Dataset\nWe will use the Iris dataset in the early lessons of this guide.\nYou do not need to download it manually at this stage.\n\nA later lesson will generate data/iris.csv automatically\n\nThis lesson focuses only on ensuring your environment is ready",
+    "objectID": "01-setting-up-environment.html#project-environment",
+    "href": "01-setting-up-environment.html#project-environment",
+    "title": "Setting Up Your Environment",
+    "section": "Project environment",
+    "text": "Project environment\nThis repo uses a local virtual environment so your package versions are isolated and reproducible.\n\nUse the provided setup script\nFrom the project root:\n#| label: 01-setup-env-script\nbash scripts/bash/setup-env.sh\nThen activate the environment:\n#| label: 01-activate-venv\nsource .venv/bin/activate\nConfirm the interpreter path points to .venv:\n#| label: 01-which-python\nwhich python\npython --version\n\nIf you are on Windows, activation uses a different command.\n\nPowerShell: .venv\\Scripts\\Activate.ps1\n\ncmd: .venv\\Scripts\\activate.bat\n\n\n\n\n\nWhat the script does\n\nCreates .venv/\n\nInstalls packages from requirements.txt\n\nOptionally registers a Jupyter kernel named data-science\n\nThe Jupyter kernel is optional. The core workflow in this guide is Quarto rendering.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Data Analysis Environment</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Environment</span>"
     ]
   },
   {
-    "objectID": "01-setting-up-environment.html#test-your-setup",
-    "href": "01-setting-up-environment.html#test-your-setup",
-    "title": "Setting Up Your Data Analysis Environment",
-    "section": "Test Your Setup",
-    "text": "Test Your Setup\nYou may run the test below after the dataset exists:\nimport pandas as pd\n\ndf = pd.read_csv('data/iris.csv')\nprint(df.head())\nExpected output (first rows):\n   sepal_length  sepal_width  petal_length  petal_width species\n0           5.1          3.5           1.4          0.2  setosa\n1           4.9          3.0           1.4          0.2  setosa\n2           4.7          3.2           1.3          0.2  setosa\n3           4.6          3.1           1.5          0.2  setosa\n4           5.0          3.6           1.4          0.2  setosa",
+    "objectID": "01-setting-up-environment.html#render-the-book",
+    "href": "01-setting-up-environment.html#render-the-book",
+    "title": "Setting Up Your Environment",
+    "section": "Render the book",
+    "text": "Render the book\nOnce the environment is active, render the book with the build script:\n#| label: 01-build-book-script\nbash scripts/bash/build.sh\nThis runs quarto render and writes the output to docs/.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Data Analysis Environment</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Environment</span>"
     ]
   },
   {
-    "objectID": "01-setting-up-environment.html#troubleshooting",
-    "href": "01-setting-up-environment.html#troubleshooting",
-    "title": "Setting Up Your Data Analysis Environment",
-    "section": "Troubleshooting",
-    "text": "Troubleshooting\nIf something does not work as expected:\n\nRestart your notebook and try again\n\nConfirm the file path is data/iris.csv\n\nEnsure the data/ folder exists\n\nRe-run the installation command if needed\n\nSetup issues are common. Take your time.",
+    "objectID": "01-setting-up-environment.html#sanity-check",
+    "href": "01-setting-up-environment.html#sanity-check",
+    "title": "Setting Up Your Environment",
+    "section": "Sanity check",
+    "text": "Sanity check\nAfter building the book, open the generated site.\n\nQuick open (recommended)\nmacOS:\n#| label: 01-open-mac\nopen docs/index.html\nLinux:\n#| label: 01-open-linux\nxdg-open docs/index.html\nWindows (PowerShell):\n#| label: 01-open-windows\nstart docs/index.html\nIf the homepage loads and chapter navigation works, your environment is correctly configured.\n\n\nDevelopment mode (optional)\nYou can also run:\n#| label: 01-preview-book\nquarto preview\nThis starts a local development server and watches files for changes. It is useful when actively editing chapters because the browser reloads automatically.\n\nThe preview server runs continuously and may use a local port. For simple verification, opening docs/index.html is usually sufficient.",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Data Analysis Environment</span>"
-    ]
-  },
-  {
-    "objectID": "01-setting-up-environment.html#exercise",
-    "href": "01-setting-up-environment.html#exercise",
-    "title": "Setting Up Your Data Analysis Environment",
-    "section": "Exercise",
-    "text": "Exercise\n\nConfirm that Jupyter Notebook opens successfully\n\nRun the library installation command without errors\n\nVerify that you can run a simple Python cell",
-    "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Data Analysis Environment</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Environment</span>"
     ]
   },
   {
     "objectID": "01-setting-up-environment.html#summary",
     "href": "01-setting-up-environment.html#summary",
-    "title": "Setting Up Your Data Analysis Environment",
+    "title": "Setting Up Your Environment",
     "section": "Summary",
-    "text": "Summary\n\nYou set up a Python-based data analysis environment\n\nYou installed essential data science libraries\n\nYou verified that your notebook can execute Python code\n\nYou prepared your system for working with real datasets",
+    "text": "Summary\n\nYou confirmed Python and Quarto are installed\n\nYou created a reproducible virtual environment using .venv\n\nYou rendered the Quarto book successfully\n\nYou are ready to begin loading and exploring data",
     "crumbs": [
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Data Analysis Environment</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Setting Up Your Environment</span>"
     ]
   },
   {
@@ -184,27 +184,7 @@
     "href": "02-load-and-explore-dataset.html",
     "title": "Load and Explore a Dataset",
     "section": "",
-    "text": "Lesson Overview\nEvery data science project begins with understanding your data. Before you clean it, visualize it, or build any model, you must first know what the dataset contains, how it is structured, and what patterns already exist.\nIn this lesson, you will load a dataset into Python, inspect its features, explore basic statistics, and create initial visualizations.\nBy the end of this lesson, you will be able to:",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
-    ]
-  },
-  {
-    "objectID": "02-load-and-explore-dataset.html#lesson-overview",
-    "href": "02-load-and-explore-dataset.html#lesson-overview",
-    "title": "Load and Explore a Dataset",
-    "section": "",
-    "text": "Load a dataset into a pandas DataFrame\n\nInspect its structure, shape, and datatypes\n\nGenerate summary statistics\n\nVisualize initial feature patterns\n\nSave the dataset for later lessons",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
-    ]
-  },
-  {
-    "objectID": "02-load-and-explore-dataset.html#notebook-initialization",
-    "href": "02-load-and-explore-dataset.html#notebook-initialization",
-    "title": "Load and Explore a Dataset",
-    "section": "Notebook Initialization",
-    "text": "Notebook Initialization\n\nfrom cdi_viz.theme import cdi_notebook_init, show_and_save_mpl\n\n# Lesson ID drives figure naming (e.g., figures/02_001.png)\ncdi_notebook_init(chapter=\"02\", title_x=0)",
+    "text": "Chapter Initialization\nEvery data science project begins with understanding the dataset.\nIn this guide, code is executed inside Quarto chapter files (.qmd). When you render the book, Quarto runs the Python chunks and embeds the results directly into the page.\nIn this lesson, you will:\nfrom cdi_viz.theme import cdi_notebook_init, show_and_save_mpl\n\ncdi_notebook_init(chapter=\"02\", title_x=0)",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
     ]
@@ -214,27 +194,27 @@
     "href": "02-load-and-explore-dataset.html#load-the-dataset",
     "title": "Load and Explore a Dataset",
     "section": "Load the Dataset",
-    "text": "Load the Dataset\n\nimport pandas as pd\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\n\ndf = pd.DataFrame(iris.data, columns=iris.feature_names)\ndf[\"species\"] = pd.Categorical.from_codes(iris.target, iris.target_names)\n\ndf.columns = [\n    \"sepal_length\",\n    \"sepal_width\",\n    \"petal_length\",\n    \"petal_width\",\n    \"species\"\n]\n\ndf.head()\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa",
+    "text": "Load the Dataset\nWe load Iris using scikit-learn, convert it into a DataFrame, rename columns to snake_case, then save it to disk.\n\nimport pandas as pd\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\n\ndf = pd.DataFrame(iris.data, columns=iris.feature_names)\ndf[\"species\"] = pd.Categorical.from_codes(iris.target, iris.target_names)\n\ndf.columns = [\"sepal_length\", \"sepal_width\", \"petal_length\", \"petal_width\", \"species\"]\n\ndf.head()\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
     ]
   },
   {
-    "objectID": "02-load-and-explore-dataset.html#save-the-dataset",
-    "href": "02-load-and-explore-dataset.html#save-the-dataset",
+    "objectID": "02-load-and-explore-dataset.html#save-the-dataset-for-future-lessons",
+    "href": "02-load-and-explore-dataset.html#save-the-dataset-for-future-lessons",
     "title": "Load and Explore a Dataset",
-    "section": "Save the Dataset",
-    "text": "Save the Dataset\n\nfrom pathlib import Path\n\nPath(\"data\").mkdir(exist_ok=True)\ndf.to_csv(\"data/iris.csv\", index=False)\n\nprint(\"Saved dataset to: data/iris.csv\")\n\nSaved dataset to: data/iris.csv",
+    "section": "Save the Dataset for Future Lessons",
+    "text": "Save the Dataset for Future Lessons\nWe store datasets in data/ throughout this course.\n\nfrom pathlib import Path\n\nPath(\"data\").mkdir(exist_ok=True)\ndf.to_csv(\"data/iris.csv\", index=False)\n\nprint(\"Saved dataset to: data/iris.csv\")\n\nSaved dataset to: data/iris.csv",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
     ]
   },
   {
-    "objectID": "02-load-and-explore-dataset.html#inspect-dataset-structure",
-    "href": "02-load-and-explore-dataset.html#inspect-dataset-structure",
+    "objectID": "02-load-and-explore-dataset.html#inspect-the-dataset-structure",
+    "href": "02-load-and-explore-dataset.html#inspect-the-dataset-structure",
     "title": "Load and Explore a Dataset",
-    "section": "Inspect Dataset Structure",
-    "text": "Inspect Dataset Structure\n\nprint(\"Columns:\", df.columns.tolist())\nprint(\"Shape:\", df.shape)\nprint(\"Data types:\")\nprint(df.dtypes)\n\nColumns: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']\nShape: (150, 5)\nData types:\nsepal_length     float64\nsepal_width      float64\npetal_length     float64\npetal_width      float64\nspecies         category\ndtype: object",
+    "section": "Inspect the Dataset Structure",
+    "text": "Inspect the Dataset Structure\n\nprint(\"Columns:\")\nprint(df.columns.tolist())\n\nprint(\"\\nShape (rows, cols):\")\nprint(df.shape)\n\nprint(\"\\nData types:\")\nprint(df.dtypes)\n\nColumns:\n['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']\n\nShape (rows, cols):\n(150, 5)\n\nData types:\nsepal_length     float64\nsepal_width      float64\npetal_length     float64\npetal_width      float64\nspecies         category\ndtype: object",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
     ]
@@ -250,31 +230,11 @@
     ]
   },
   {
-    "objectID": "02-load-and-explore-dataset.html#histograms-of-numeric-features",
-    "href": "02-load-and-explore-dataset.html#histograms-of-numeric-features",
+    "objectID": "02-load-and-explore-dataset.html#basic-exploratory-visualizations",
+    "href": "02-load-and-explore-dataset.html#basic-exploratory-visualizations",
     "title": "Load and Explore a Dataset",
-    "section": "Histograms of Numeric Features",
-    "text": "Histograms of Numeric Features\n\nimport matplotlib.pyplot as plt\n\ndf[[\"sepal_length\", \"sepal_width\", \"petal_length\", \"petal_width\"]].hist(\n    figsize=(10, 7),\n    bins=12\n)\nplt.suptitle(\"Iris — Histograms of Numeric Features\", y=1.02)\nplt.tight_layout()\n\nshow_and_save_mpl()\n\n\n\n\nIris — Histograms of Numeric Features\n\n\n\n\n'figures/02_001.png'",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
-    ]
-  },
-  {
-    "objectID": "02-load-and-explore-dataset.html#scatter-plot",
-    "href": "02-load-and-explore-dataset.html#scatter-plot",
-    "title": "Load and Explore a Dataset",
-    "section": "Scatter Plot",
-    "text": "Scatter Plot\n\nfig, ax = plt.subplots(figsize=(8, 5))\nax.scatter(df[\"sepal_length\"], df[\"petal_length\"], alpha=0.7)\nax.set_xlabel(\"sepal_length\")\nax.set_ylabel(\"petal_length\")\nax.grid(True, alpha=0.2)\n\nshow_and_save_mpl(fig)\n\n\n\n\nIris — Sepal Length vs Petal Length\n\n\n\n\n'figures/02_002.png'",
-    "crumbs": [
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
-    ]
-  },
-  {
-    "objectID": "02-load-and-explore-dataset.html#pairplot-by-species",
-    "href": "02-load-and-explore-dataset.html#pairplot-by-species",
-    "title": "Load and Explore a Dataset",
-    "section": "Pairplot by Species",
-    "text": "Pairplot by Species\n\nimport seaborn as sns\n\ng = sns.pairplot(df, hue=\"species\", corner=True, plot_kws={\"alpha\": 0.7})\ng.fig.suptitle(\"Iris — Pairplot by Species\", y=1.02)\n\nshow_and_save_mpl(g.fig)\n\n\n\n\nIris — Pairplot by Species\n\n\n\n\n'figures/02_003.png'",
+    "section": "Basic Exploratory Visualizations",
+    "text": "Basic Exploratory Visualizations\nAt this stage, visuals are used to inspect and spot-check the dataset.\n\nHistograms of Numeric Features\n\nimport matplotlib.pyplot as plt\n\ndf[[\"sepal_length\", \"sepal_width\", \"petal_length\", \"petal_width\"]].hist(\n    figsize=(10, 7),\n    bins=12\n)\nplt.suptitle(\"Iris — Histograms of Numeric Features\", y=1.02)\nplt.tight_layout()\n\nshow_and_save_mpl()\n\n\n\n\nIris — Histograms of Numeric Features\n\n\n\n\n'figures/02_001.png'\n\n\n\n\nScatter: sepal_length vs petal_length\n\nfig, ax = plt.subplots(figsize=(8, 5))\nax.scatter(df[\"sepal_length\"], df[\"petal_length\"], alpha=0.7)\nax.set_xlabel(\"sepal_length\")\nax.set_ylabel(\"petal_length\")\nax.grid(True, alpha=0.2)\n\nshow_and_save_mpl(fig)\n\n\n\n\nIris — Sepal Length vs Petal Length\n\n\n\n\n'figures/02_002.png'\n\n\n\n\nPairplot by Species\n\nimport seaborn as sns\n\ng = sns.pairplot(df, hue=\"species\", corner=True, plot_kws={\"alpha\": 0.7})\ng.fig.suptitle(\"Iris — Pairplot by Species\", y=1.02)\n\nshow_and_save_mpl(g.fig)\n\n\n\n\nIris — Pairplot by Species\n\n\n\n\n'figures/02_003.png'",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
     ]
@@ -284,7 +244,7 @@
     "href": "02-load-and-explore-dataset.html#exercise",
     "title": "Load and Explore a Dataset",
     "section": "Exercise",
-    "text": "Exercise\n\nprint(\"Last 5 rows:\")\nprint(df.tail())\n\nprint(\"\\nRows per species:\")\nprint(df[\"species\"].value_counts())\n\ndf[\"petal_area\"] = df[\"petal_length\"] * df[\"petal_width\"]\n\nprint(\"\\nWith petal_area:\")\nprint(df.head())\n\nLast 5 rows:\n     sepal_length  sepal_width  petal_length  petal_width    species\n145           6.7          3.0           5.2          2.3  virginica\n146           6.3          2.5           5.0          1.9  virginica\n147           6.5          3.0           5.2          2.0  virginica\n148           6.2          3.4           5.4          2.3  virginica\n149           5.9          3.0           5.1          1.8  virginica\n\nRows per species:\nspecies\nsetosa        50\nversicolor    50\nvirginica     50\nName: count, dtype: int64\n\nWith petal_area:\n   sepal_length  sepal_width  petal_length  petal_width species  petal_area\n0           5.1          3.5           1.4          0.2  setosa        0.28\n1           4.9          3.0           1.4          0.2  setosa        0.28\n2           4.7          3.2           1.3          0.2  setosa        0.26\n3           4.6          3.1           1.5          0.2  setosa        0.30\n4           5.0          3.6           1.4          0.2  setosa        0.28",
+    "text": "Exercise\n\nPrint the last five rows of the dataset\n\nCount how many rows exist for each species\n\nCreate a new feature called petal_area (petal_length × petal_width) and print the first five rows\n\n\nprint(\"Last 5 rows:\")\nprint(df.tail())\n\nprint(\"\\nRows per species:\")\nprint(df[\"species\"].value_counts())\n\ndf[\"petal_area\"] = df[\"petal_length\"] * df[\"petal_width\"]\n\nprint(\"\\nWith petal_area:\")\nprint(df.head())\n\nLast 5 rows:\n     sepal_length  sepal_width  petal_length  petal_width    species\n145           6.7          3.0           5.2          2.3  virginica\n146           6.3          2.5           5.0          1.9  virginica\n147           6.5          3.0           5.2          2.0  virginica\n148           6.2          3.4           5.4          2.3  virginica\n149           5.9          3.0           5.1          1.8  virginica\n\nRows per species:\nspecies\nsetosa        50\nversicolor    50\nvirginica     50\nName: count, dtype: int64\n\nWith petal_area:\n   sepal_length  sepal_width  petal_length  petal_width species  petal_area\n0           5.1          3.5           1.4          0.2  setosa        0.28\n1           4.9          3.0           1.4          0.2  setosa        0.28\n2           4.7          3.2           1.3          0.2  setosa        0.26\n3           4.6          3.1           1.5          0.2  setosa        0.30\n4           5.0          3.6           1.4          0.2  setosa        0.28",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
     ]
@@ -294,7 +254,7 @@
     "href": "02-load-and-explore-dataset.html#summary",
     "title": "Load and Explore a Dataset",
     "section": "Summary",
-    "text": "Summary\n\nYou loaded Iris using scikit-learn and converted it to a pandas DataFrame\n\nYou standardized column names to snake_case\n\nYou saved the dataset to data/iris.csv\n\nYou inspected structure, statistics, and created starter visuals",
+    "text": "Summary\n\nYou loaded Iris using scikit-learn and converted it to a pandas DataFrame\n\nYou standardized column names to snake_case\n\nYou saved the dataset to data/iris.csv for future lessons\n\nYou inspected structure, summary statistics, and created starter visuals",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
     ]
@@ -304,7 +264,137 @@
     "href": "03-data-cleaning-and-preparation.html",
     "title": "Data Cleaning and Preparation",
     "section": "",
-    "text": "ID: DS-L03\nType: Lesson\nAudience: Public\nTheme: Cleaning logic, encoding, validation\n\n\nContent coming soon.",
+    "text": "Lesson Overview\nIn this lesson, you will practice essential data cleaning steps used in real data science workflows.\nAs in previous chapters, all code runs inside this Quarto (.qmd) file. When you render the book, Quarto executes the Python chunks and embeds results directly into the page.\nBy the end of this lesson, you will be able to:",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
+    ]
+  },
+  {
+    "objectID": "03-data-cleaning-and-preparation.html#lesson-overview",
+    "href": "03-data-cleaning-and-preparation.html#lesson-overview",
+    "title": "Data Cleaning and Preparation",
+    "section": "",
+    "text": "Inspect a dataset for common quality issues\n\nDetect and handle duplicate rows\n\nStandardize column names\n\nHandle missing values using clear rules\n\nFix inconsistent data types\n\nValidate and save a cleaned dataset",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
+    ]
+  },
+  {
+    "objectID": "03-data-cleaning-and-preparation.html#cleaning-philosophy",
+    "href": "03-data-cleaning-and-preparation.html#cleaning-philosophy",
+    "title": "Data Cleaning and Preparation",
+    "section": "Cleaning Philosophy",
+    "text": "Cleaning Philosophy\nData cleaning should be:\n\nMeasured before modification\n\nMinimal and justified\n\nReproducible\n\nVerified with explicit checks\n\nNever modify data without first understanding what you are changing.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
+    ]
+  },
+  {
+    "objectID": "03-data-cleaning-and-preparation.html#chapter-initialization",
+    "href": "03-data-cleaning-and-preparation.html#chapter-initialization",
+    "title": "Data Cleaning and Preparation",
+    "section": "Chapter Initialization",
+    "text": "Chapter Initialization\n\nfrom cdi_viz.theme import cdi_notebook_init, show_and_save_mpl\n\ncdi_notebook_init(chapter=\"03\", title_x=0)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
+    ]
+  },
+  {
+    "objectID": "03-data-cleaning-and-preparation.html#load-the-dataset",
+    "href": "03-data-cleaning-and-preparation.html#load-the-dataset",
+    "title": "Data Cleaning and Preparation",
+    "section": "Load the Dataset",
+    "text": "Load the Dataset\n\nimport pandas as pd\n\ndf = pd.read_csv(\"data/iris.csv\")\ndf.head()\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
+    ]
+  },
+  {
+    "objectID": "03-data-cleaning-and-preparation.html#initial-inspection",
+    "href": "03-data-cleaning-and-preparation.html#initial-inspection",
+    "title": "Data Cleaning and Preparation",
+    "section": "Initial Inspection",
+    "text": "Initial Inspection\n\nprint(\"Shape:\", df.shape)\nprint(\"\\nColumn names:\", df.columns.tolist())\nprint(\"\\nData types:\")\nprint(df.dtypes)\n\nShape: (150, 5)\n\nColumn names: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']\n\nData types:\nsepal_length    float64\nsepal_width     float64\npetal_length    float64\npetal_width     float64\nspecies             str\ndtype: object\n\n\n\nprint(\"Summary statistics:\")\nprint(df.describe(include=\"all\"))\n\nprint(\"\\nMissing values per column:\")\nprint(df.isna().sum())\n\nSummary statistics:\n        sepal_length  sepal_width  petal_length  petal_width species\ncount     150.000000   150.000000    150.000000   150.000000     150\nunique           NaN          NaN           NaN          NaN       3\ntop              NaN          NaN           NaN          NaN  setosa\nfreq             NaN          NaN           NaN          NaN      50\nmean        5.843333     3.057333      3.758000     1.199333     NaN\nstd         0.828066     0.435866      1.765298     0.762238     NaN\nmin         4.300000     2.000000      1.000000     0.100000     NaN\n25%         5.100000     2.800000      1.600000     0.300000     NaN\n50%         5.800000     3.000000      4.350000     1.300000     NaN\n75%         6.400000     3.300000      5.100000     1.800000     NaN\nmax         7.900000     4.400000      6.900000     2.500000     NaN\n\nMissing values per column:\nsepal_length    0\nsepal_width     0\npetal_length    0\npetal_width     0\nspecies         0\ndtype: int64",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
+    ]
+  },
+  {
+    "objectID": "03-data-cleaning-and-preparation.html#detect-column-types",
+    "href": "03-data-cleaning-and-preparation.html#detect-column-types",
+    "title": "Data Cleaning and Preparation",
+    "section": "Detect Column Types",
+    "text": "Detect Column Types\n\nnum_cols = df.select_dtypes(include=\"number\").columns.tolist()\ncat_cols = df.select_dtypes(exclude=\"number\").columns.tolist()\n\nprint(\"Numeric columns:\", num_cols)\nprint(\"Categorical columns:\", cat_cols)\n\nNumeric columns: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']\nCategorical columns: ['species']",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
+    ]
+  },
+  {
+    "objectID": "03-data-cleaning-and-preparation.html#detect-and-remove-duplicates",
+    "href": "03-data-cleaning-and-preparation.html#detect-and-remove-duplicates",
+    "title": "Data Cleaning and Preparation",
+    "section": "Detect and Remove Duplicates",
+    "text": "Detect and Remove Duplicates\n\ndup_count = int(df.duplicated().sum())\nprint(\"Duplicate rows found:\", dup_count)\n\nif dup_count &gt; 0:\n    print(\"\\nInspect duplicates carefully before removal.\")\n    print(df[df.duplicated()].head())\n\nDuplicate rows found: 1\n\nInspect duplicates carefully before removal.\n     sepal_length  sepal_width  petal_length  petal_width    species\n142           5.8          2.7           5.1          1.9  virginica\n\n\n\nif dup_count &gt; 0:\n    df = df.drop_duplicates().reset_index(drop=True)\n\nprint(\"Shape after duplicate handling:\", df.shape)\n\nShape after duplicate handling: (149, 5)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
+    ]
+  },
+  {
+    "objectID": "03-data-cleaning-and-preparation.html#column-name-hygiene",
+    "href": "03-data-cleaning-and-preparation.html#column-name-hygiene",
+    "title": "Data Cleaning and Preparation",
+    "section": "Column Name Hygiene",
+    "text": "Column Name Hygiene\n\ndf.columns = [\n    str(c).strip().lower().replace(\" \", \"_\").replace(\"(\", \"\").replace(\")\", \"\")\n    for c in df.columns\n]\n\nprint(\"Updated columns:\", df.columns.tolist())\n\nUpdated columns: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
+    ]
+  },
+  {
+    "objectID": "03-data-cleaning-and-preparation.html#handle-missing-values",
+    "href": "03-data-cleaning-and-preparation.html#handle-missing-values",
+    "title": "Data Cleaning and Preparation",
+    "section": "Handle Missing Values",
+    "text": "Handle Missing Values\n\nprint(df.isna().sum())\n\nsepal_length    0\nsepal_width     0\npetal_length    0\npetal_width     0\nspecies         0\ndtype: int64\n\n\n\nnum_cols = df.select_dtypes(include=\"number\").columns.tolist()\ncat_cols = df.select_dtypes(exclude=\"number\").columns.tolist()\n\ndf[num_cols] = df[num_cols].fillna(df[num_cols].median())\n\nfor c in cat_cols:\n    if df[c].isna().any():\n        df[c] = df[c].fillna(df[c].mode().iloc[0])",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
+    ]
+  },
+  {
+    "objectID": "03-data-cleaning-and-preparation.html#fix-data-types",
+    "href": "03-data-cleaning-and-preparation.html#fix-data-types",
+    "title": "Data Cleaning and Preparation",
+    "section": "Fix Data Types",
+    "text": "Fix Data Types\n\nfor c in num_cols:\n    df[c] = pd.to_numeric(df[c], errors=\"coerce\")\n\nif \"species\" in df.columns:\n    df[\"species\"] = df[\"species\"].astype(\"category\")\n\nprint(df.dtypes)\n\nsepal_length     float64\nsepal_width      float64\npetal_length     float64\npetal_width      float64\nspecies         category\ndtype: object",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
+    ]
+  },
+  {
+    "objectID": "03-data-cleaning-and-preparation.html#validation-checks",
+    "href": "03-data-cleaning-and-preparation.html#validation-checks",
+    "title": "Data Cleaning and Preparation",
+    "section": "Validation Checks",
+    "text": "Validation Checks\n\nprint(\"Final shape:\", df.shape)\nprint(\"Total missing values:\", int(df.isna().sum().sum()))\nprint(\"Duplicate rows:\", int(df.duplicated().sum()))\n\nassert int(df.isna().sum().sum()) == 0, \"Missing values remain.\"\nassert int(df.duplicated().sum()) == 0, \"Duplicates remain.\"\n\nFinal shape: (149, 5)\nTotal missing values: 0\nDuplicate rows: 0",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
+    ]
+  },
+  {
+    "objectID": "03-data-cleaning-and-preparation.html#save-clean-dataset",
+    "href": "03-data-cleaning-and-preparation.html#save-clean-dataset",
+    "title": "Data Cleaning and Preparation",
+    "section": "Save Clean Dataset",
+    "text": "Save Clean Dataset\n\nfrom pathlib import Path\n\nPath(\"data\").mkdir(exist_ok=True)\ndf.to_csv(\"data/iris_clean.csv\", index=False)\n\nprint(\"Saved cleaned dataset to: data/iris_clean.csv\")\n\nSaved cleaned dataset to: data/iris_clean.csv",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
+    ]
+  },
+  {
+    "objectID": "03-data-cleaning-and-preparation.html#summary",
+    "href": "03-data-cleaning-and-preparation.html#summary",
+    "title": "Data Cleaning and Preparation",
+    "section": "Summary",
+    "text": "Summary\n\nYou inspected dataset quality\n\nYou applied disciplined cleaning steps\n\nYou validated the dataset explicitly\n\nYou saved a reproducible cleaned version for later lessons",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
     ]
@@ -314,7 +404,127 @@
     "href": "04-data-wrangling-basics.html",
     "title": "Data Wrangling Basics",
     "section": "",
-    "text": "ID: DS-L04\nType: Lesson\nAudience: Public\nTheme: Filtering, grouping, joins, reshaping\n\n\nContent coming soon.",
+    "text": "Lesson Overview\nData rarely arrives in the exact format you need for analysis.\nIn this lesson, you will learn how to transform, filter, group, and reshape data using pandas.\nAs in previous chapters, all code runs inside this Quarto (.qmd) file and executes when you render the book.\nBy the end of this lesson, you will be able to:",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
+    ]
+  },
+  {
+    "objectID": "04-data-wrangling-basics.html#lesson-overview",
+    "href": "04-data-wrangling-basics.html#lesson-overview",
+    "title": "Data Wrangling Basics",
+    "section": "",
+    "text": "Select and filter rows and columns\n\nCreate new derived features\n\nSort and reorder data\n\nGroup and aggregate values\n\nApply conditional logic\n\nPrepare structured outputs for analysis",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
+    ]
+  },
+  {
+    "objectID": "04-data-wrangling-basics.html#chapter-initialization",
+    "href": "04-data-wrangling-basics.html#chapter-initialization",
+    "title": "Data Wrangling Basics",
+    "section": "Chapter Initialization",
+    "text": "Chapter Initialization\n\nfrom cdi_viz.theme import cdi_notebook_init\n\ncdi_notebook_init(chapter=\"04\", title_x=0)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
+    ]
+  },
+  {
+    "objectID": "04-data-wrangling-basics.html#load-the-clean-dataset",
+    "href": "04-data-wrangling-basics.html#load-the-clean-dataset",
+    "title": "Data Wrangling Basics",
+    "section": "Load the Clean Dataset",
+    "text": "Load the Clean Dataset\nWe use the cleaned dataset created in Lesson 03.\n\nimport pandas as pd\n\ndf = pd.read_csv(\"data/iris_clean.csv\")\ndf.head()\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
+    ]
+  },
+  {
+    "objectID": "04-data-wrangling-basics.html#selecting-columns",
+    "href": "04-data-wrangling-basics.html#selecting-columns",
+    "title": "Data Wrangling Basics",
+    "section": "Selecting Columns",
+    "text": "Selecting Columns\n\ndf[[\"sepal_length\", \"petal_length\"]].head()\n\n\n\n\n\n\n\n\nsepal_length\npetal_length\n\n\n\n\n0\n5.1\n1.4\n\n\n1\n4.9\n1.4\n\n\n2\n4.7\n1.3\n\n\n3\n4.6\n1.5\n\n\n4\n5.0\n1.4",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
+    ]
+  },
+  {
+    "objectID": "04-data-wrangling-basics.html#filtering-rows",
+    "href": "04-data-wrangling-basics.html#filtering-rows",
+    "title": "Data Wrangling Basics",
+    "section": "Filtering Rows",
+    "text": "Filtering Rows\nExample: filter rows where petal_length &gt; 4.\n\ndf_filtered = df[df[\"petal_length\"] &gt; 4]\ndf_filtered.head()\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\n\n\n\n\n50\n7.0\n3.2\n4.7\n1.4\nversicolor\n\n\n51\n6.4\n3.2\n4.5\n1.5\nversicolor\n\n\n52\n6.9\n3.1\n4.9\n1.5\nversicolor\n\n\n54\n6.5\n2.8\n4.6\n1.5\nversicolor\n\n\n55\n5.7\n2.8\n4.5\n1.3\nversicolor",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
+    ]
+  },
+  {
+    "objectID": "04-data-wrangling-basics.html#creating-new-features",
+    "href": "04-data-wrangling-basics.html#creating-new-features",
+    "title": "Data Wrangling Basics",
+    "section": "Creating New Features",
+    "text": "Creating New Features\nWe create a new feature: petal_area.\n\ndf[\"petal_area\"] = df[\"petal_length\"] * df[\"petal_width\"]\ndf.head()\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\npetal_area\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n0.28\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n0.28\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n0.26\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n0.30\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa\n0.28",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
+    ]
+  },
+  {
+    "objectID": "04-data-wrangling-basics.html#sorting-data",
+    "href": "04-data-wrangling-basics.html#sorting-data",
+    "title": "Data Wrangling Basics",
+    "section": "Sorting Data",
+    "text": "Sorting Data\n\ndf_sorted = df.sort_values(by=\"petal_area\", ascending=False)\ndf_sorted.head()\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\npetal_area\n\n\n\n\n118\n7.7\n2.6\n6.9\n2.3\nvirginica\n15.87\n\n\n109\n7.2\n3.6\n6.1\n2.5\nvirginica\n15.25\n\n\n100\n6.3\n3.3\n6.0\n2.5\nvirginica\n15.00\n\n\n117\n7.7\n3.8\n6.7\n2.2\nvirginica\n14.74\n\n\n143\n6.7\n3.3\n5.7\n2.5\nvirginica\n14.25",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
+    ]
+  },
+  {
+    "objectID": "04-data-wrangling-basics.html#grouping-and-aggregation",
+    "href": "04-data-wrangling-basics.html#grouping-and-aggregation",
+    "title": "Data Wrangling Basics",
+    "section": "Grouping and Aggregation",
+    "text": "Grouping and Aggregation\nCompute the mean petal_area per species.\n\ngrouped = (\n    df.groupby(\"species\")\n      .agg(mean_petal_area=(\"petal_area\", \"mean\"),\n           mean_sepal_length=(\"sepal_length\", \"mean\"))\n      .reset_index()\n)\n\ngrouped\n\n\n\n\n\n\n\n\nspecies\nmean_petal_area\nmean_sepal_length\n\n\n\n\n0\nsetosa\n0.36560\n5.006000\n\n\n1\nversicolor\n5.72040\n5.936000\n\n\n2\nvirginica\n11.32898\n6.604082",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
+    ]
+  },
+  {
+    "objectID": "04-data-wrangling-basics.html#conditional-logic",
+    "href": "04-data-wrangling-basics.html#conditional-logic",
+    "title": "Data Wrangling Basics",
+    "section": "Conditional Logic",
+    "text": "Conditional Logic\nCreate a simple size category based on petal_area.\n\ndf[\"size_category\"] = df[\"petal_area\"].apply(\n    lambda x: \"large\" if x &gt; df[\"petal_area\"].median() else \"small\"\n)\n\ndf.head()\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\npetal_area\nsize_category\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n0.28\nsmall\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n0.28\nsmall\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n0.26\nsmall\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n0.30\nsmall\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa\n0.28\nsmall",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
+    ]
+  },
+  {
+    "objectID": "04-data-wrangling-basics.html#reshaping-example-long-format",
+    "href": "04-data-wrangling-basics.html#reshaping-example-long-format",
+    "title": "Data Wrangling Basics",
+    "section": "Reshaping Example (Long Format)",
+    "text": "Reshaping Example (Long Format)\nConvert selected columns to long format.\n\ndf_long = df.melt(\n    id_vars=\"species\",\n    value_vars=[\"sepal_length\", \"sepal_width\", \"petal_length\", \"petal_width\"],\n    var_name=\"measurement\",\n    value_name=\"value\"\n)\n\ndf_long.head()\n\n\n\n\n\n\n\n\nspecies\nmeasurement\nvalue\n\n\n\n\n0\nsetosa\nsepal_length\n5.1\n\n\n1\nsetosa\nsepal_length\n4.9\n\n\n2\nsetosa\nsepal_length\n4.7\n\n\n3\nsetosa\nsepal_length\n4.6\n\n\n4\nsetosa\nsepal_length\n5.0",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
+    ]
+  },
+  {
+    "objectID": "04-data-wrangling-basics.html#validation-checks",
+    "href": "04-data-wrangling-basics.html#validation-checks",
+    "title": "Data Wrangling Basics",
+    "section": "Validation Checks",
+    "text": "Validation Checks\n\nprint(\"Shape:\", df.shape)\nprint(\"Missing values:\", int(df.isna().sum().sum()))\n\nShape: (149, 7)\nMissing values: 0",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
+    ]
+  },
+  {
+    "objectID": "04-data-wrangling-basics.html#summary",
+    "href": "04-data-wrangling-basics.html#summary",
+    "title": "Data Wrangling Basics",
+    "section": "Summary",
+    "text": "Summary\n\nYou selected and filtered data\n\nYou created derived features\n\nYou grouped and aggregated values\n\nYou applied conditional logic\n\nYou reshaped data into long format\n\nThese transformations form the foundation of real-world data preparation workflows.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
     ]

@@ -1,11 +1,177 @@
-# Data Wrangling Basics
+# Data Wrangling Basics {#lesson04}
 
 :::cdi-message
 - **ID:** DS-L04
 - **Type:** Lesson
 - **Audience:** Public
-- **Theme:** Filtering, grouping, joins, reshaping
+- **Theme:** Transforming and reshaping data using reproducible workflows
 :::
 
-Content coming soon.
+Data rarely arrives in the exact format you need for analysis.
 
+In this lesson, you will learn how to transform, filter, group, and reshape data using pandas.  
+As in previous chapters, all code runs inside this Quarto (`.qmd`) file and executes when you render the book.
+
+---
+
+## Lesson Overview
+
+By the end of this lesson, you will be able to:
+
+- Select and filter rows and columns  
+- Create new derived features  
+- Sort and reorder data  
+- Group and aggregate values  
+- Apply conditional logic  
+- Prepare structured outputs for analysis  
+
+---
+
+## Chapter Initialization
+
+```{python}
+#| label: 04-chapter-init
+
+from cdi_viz.theme import cdi_notebook_init
+
+cdi_notebook_init(chapter="04", title_x=0)
+```
+
+---
+
+## Load the Clean Dataset
+
+We use the cleaned dataset created in Lesson 03.
+
+```{python}
+#| label: 04-load-clean-data
+
+import pandas as pd
+
+df = pd.read_csv("data/iris_clean.csv")
+df.head()
+```
+
+---
+
+## Selecting Columns
+
+```{python}
+#| label: 04-select-columns
+
+df[["sepal_length", "petal_length"]].head()
+```
+
+---
+
+## Filtering Rows
+
+Example: filter rows where petal_length > 4.
+
+```{python}
+#| label: 04-filter-rows
+
+df_filtered = df[df["petal_length"] > 4]
+df_filtered.head()
+```
+
+---
+
+## Creating New Features
+
+We create a new feature: petal_area.
+
+```{python}
+#| label: 04-create-feature
+
+df["petal_area"] = df["petal_length"] * df["petal_width"]
+df.head()
+```
+
+---
+
+## Sorting Data
+
+```{python}
+#| label: 04-sort-data
+
+df_sorted = df.sort_values(by="petal_area", ascending=False)
+df_sorted.head()
+```
+
+---
+
+## Grouping and Aggregation
+
+Compute the mean petal_area per species.
+
+```{python}
+#| label: 04-groupby-mean
+
+grouped = (
+    df.groupby("species")
+      .agg(mean_petal_area=("petal_area", "mean"),
+           mean_sepal_length=("sepal_length", "mean"))
+      .reset_index()
+)
+
+grouped
+```
+
+---
+
+## Conditional Logic
+
+Create a simple size category based on petal_area.
+
+```{python}
+#| label: 04-conditional-logic
+
+df["size_category"] = df["petal_area"].apply(
+    lambda x: "large" if x > df["petal_area"].median() else "small"
+)
+
+df.head()
+```
+
+---
+
+## Reshaping Example (Long Format)
+
+Convert selected columns to long format.
+
+```{python}
+#| label: 04-melt-example
+
+df_long = df.melt(
+    id_vars="species",
+    value_vars=["sepal_length", "sepal_width", "petal_length", "petal_width"],
+    var_name="measurement",
+    value_name="value"
+)
+
+df_long.head()
+```
+
+---
+
+## Validation Checks
+
+```{python}
+#| label: 04-validation-checks
+
+print("Shape:", df.shape)
+print("Missing values:", int(df.isna().sum().sum()))
+```
+
+---
+
+## Summary
+
+- You selected and filtered data  
+- You created derived features  
+- You grouped and aggregated values  
+- You applied conditional logic  
+- You reshaped data into long format  
+
+These transformations form the foundation of real-world data preparation workflows.

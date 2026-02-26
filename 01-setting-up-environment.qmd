@@ -1,121 +1,179 @@
-# Setting Up Your Data Analysis Environment {#lesson01}
+# Setting Up Your Environment {#lesson01}
 
-::: cdi-message
--   **ID:** DS-L01
--   **Type:** Lesson
--   **Audience:** Public
--   **Theme:** Environment setup, reproducibility, and workflow
-    preparation
+:::cdi-message
+- **ID:** DS-L01
+- **Type:** Lesson
+- **Audience:** Public
+- **Theme:** Project setup, Quarto workflow, and reproducible execution
 :::
 
-This project is **purely Python-based**, unless explicitly stated
-otherwise.
+This guide is **Python-first** and **Quarto-first**.
 
-Before we begin exploring data, you need a simple and reliable workspace
-so you can run code smoothly and follow every lesson without issues.
+You will write and run code inside Quarto chapter files (`.qmd`). When you render the book, Quarto executes the Python chunks and places the results (tables, figures, printed output) directly into the published pages.
 
-------------------------------------------------------------------------
+---
 
-## Recommended Setup
+## What you are setting up
 
-Use **Jupyter Notebook** via the **Anaconda** distribution.
+By the end of this lesson you will have:
 
-**Why this option?**
+- Python installed and available from the terminal  
+- A project virtual environment (`.venv`) with required packages  
+- Quarto installed for rendering the book  
+- A working build command that generates the site into `docs/`  
 
-Anaconda installs Python, Jupyter Notebook, and essential data-science
-libraries in one streamlined setup.
+---
 
-**Steps:**
+## Required software
 
-1.  Download Anaconda: https://www.anaconda.com/download\
-2.  Install it (default settings are fine)\
-3.  Open **Anaconda Navigator**\
-4.  Launch **Jupyter Notebook**
+### 1) Python (3.10 or newer)
 
-------------------------------------------------------------------------
+Check if Python is available:
 
-## Tools Used in This Guide
+```{bash}
+#| label: 01-check-python
+python3 --version
+```
 
-::: cdi-message
-This guide uses widely adopted open-source tools from the Python
-data-science ecosystem, including Python, Pandas, NumPy, Matplotlib,
-Seaborn, Scikit-learn, and Jupyter. These tools form the foundation of
-modern data analysis and machine learning workflows.
+If that command fails, install Python using one of these options:
+
+- macOS: Homebrew `brew install python`  
+- Windows: Install from python.org (ensure "Add Python to PATH" is selected)  
+- Linux: Use your package manager (for example `apt`, `dnf`, `pacman`)  
+
+### 2) Quarto
+
+Quarto renders the book and runs the Python code inside chapters.
+
+Check if Quarto is installed:
+
+```{bash}
+#| label: 01-check-quarto
+quarto --version
+```
+
+If Quarto is not installed, install it from the Quarto website and confirm the version prints successfully.
+
+---
+
+## Recommended editor
+
+Use any editor you like. A good default is **VS Code** because it works well with:
+
+- `.qmd` editing  
+- Python formatting and linting  
+- Git workflow  
+
+---
+
+## Project environment
+
+This repo uses a local virtual environment so your package versions are isolated and reproducible.
+
+### Use the provided setup script
+
+From the project root:
+
+```{bash}
+#| label: 01-setup-env-script
+bash scripts/bash/setup-env.sh
+```
+
+Then activate the environment:
+
+```{bash}
+#| label: 01-activate-venv
+source .venv/bin/activate
+```
+
+Confirm the interpreter path points to `.venv`:
+
+```{bash}
+#| label: 01-which-python
+which python
+python --version
+```
+
+:::cdi-message
+If you are on Windows, activation uses a different command.
+
+- PowerShell: `.venv\Scripts\Activate.ps1`  
+- cmd: `.venv\Scripts\activate.bat`  
 :::
 
-------------------------------------------------------------------------
+### What the script does
 
-## Installing Required Libraries
+- Creates `.venv/`  
+- Installs packages from `requirements.txt`  
+- Optionally registers a Jupyter kernel named `data-science`  
 
-Run the following command in a Jupyter Notebook cell:
+The Jupyter kernel is optional. The core workflow in this guide is Quarto rendering.
 
-``` bash
-!pip install pandas numpy matplotlib seaborn
+---
+
+## Render the book
+
+Once the environment is active, render the book with the build script:
+
+```{bash}
+#| label: 01-build-book-script
+bash scripts/bash/build.sh
 ```
 
-> **Note:**\
-> If you are using Anaconda, these libraries are usually preinstalled.\
-> The command above ensures your environment is up to date.
+This runs `quarto render` and writes the output to `docs/`.
 
-------------------------------------------------------------------------
+---
 
-## Practice Dataset
+## Sanity check
 
-We will use the **Iris dataset** in the early lessons of this guide.
+After building the book, open the generated site.
 
-You do **not** need to download it manually at this stage.
+### Quick open (recommended)
 
--   A later lesson will generate `data/iris.csv` automatically\
--   This lesson focuses only on ensuring your environment is ready
+macOS:
 
-------------------------------------------------------------------------
-
-## Test Your Setup
-
-You may run the test below after the dataset exists:
-
-``` python
-import pandas as pd
-
-df = pd.read_csv('data/iris.csv')
-print(df.head())
+```{bash}
+#| label: 01-open-mac
+open docs/index.html
 ```
 
-Expected output (first rows):
+Linux:
 
-       sepal_length  sepal_width  petal_length  petal_width species
-    0           5.1          3.5           1.4          0.2  setosa
-    1           4.9          3.0           1.4          0.2  setosa
-    2           4.7          3.2           1.3          0.2  setosa
-    3           4.6          3.1           1.5          0.2  setosa
-    4           5.0          3.6           1.4          0.2  setosa
+```{bash}
+#| label: 01-open-linux
+xdg-open docs/index.html
+```
 
-------------------------------------------------------------------------
+Windows (PowerShell):
 
-## Troubleshooting
+```{powershell}
+#| label: 01-open-windows
+start docs/index.html
+```
 
-If something does not work as expected:
+If the homepage loads and chapter navigation works, your environment is correctly configured.
 
--   Restart your notebook and try again\
--   Confirm the file path is `data/iris.csv`\
--   Ensure the `data/` folder exists\
--   Re-run the installation command if needed
+### Development mode (optional)
 
-Setup issues are common. Take your time.
+You can also run:
 
-------------------------------------------------------------------------
+```{bash}
+#| label: 01-preview-book
+quarto preview
+```
 
-## Exercise
+This starts a local development server and watches files for changes. It is useful when actively editing chapters because the browser reloads automatically.
 
--   Confirm that Jupyter Notebook opens successfully\
--   Run the library installation command without errors\
--   Verify that you can run a simple Python cell
+:::cdi-message
+The preview server runs continuously and may use a local port.
+For simple verification, opening `docs/index.html` is usually sufficient.
+:::
 
-------------------------------------------------------------------------
+---
 
 ## Summary
 
--   You set up a Python-based data analysis environment\
--   You installed essential data science libraries\
--   You verified that your notebook can execute Python code\
--   You prepared your system for working with real datasets
+- You confirmed Python and Quarto are installed  
+- You created a reproducible virtual environment using `.venv`  
+- You rendered the Quarto book successfully  
+- You are ready to begin loading and exploring data  

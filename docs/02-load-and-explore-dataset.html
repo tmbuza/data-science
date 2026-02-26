@@ -153,12 +153,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome to Data Science Foundations in Python</span></a>
+  <a href="./00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome to CDI Data Science Foundations in Python</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-setting-up-environment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Setting Up Your Data Analysis Environment</span></a>
+  <a href="./01-setting-up-environment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Setting Up Your Environment</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -211,15 +211,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#lesson-overview" id="toc-lesson-overview" class="nav-link active" data-scroll-target="#lesson-overview">Lesson Overview</a></li>
-  <li><a href="#notebook-initialization" id="toc-notebook-initialization" class="nav-link" data-scroll-target="#notebook-initialization">Notebook Initialization</a></li>
+  <li><a href="#chapter-initialization" id="toc-chapter-initialization" class="nav-link active" data-scroll-target="#chapter-initialization">Chapter Initialization</a></li>
   <li><a href="#load-the-dataset" id="toc-load-the-dataset" class="nav-link" data-scroll-target="#load-the-dataset">Load the Dataset</a></li>
-  <li><a href="#save-the-dataset" id="toc-save-the-dataset" class="nav-link" data-scroll-target="#save-the-dataset">Save the Dataset</a></li>
-  <li><a href="#inspect-dataset-structure" id="toc-inspect-dataset-structure" class="nav-link" data-scroll-target="#inspect-dataset-structure">Inspect Dataset Structure</a></li>
+  <li><a href="#save-the-dataset-for-future-lessons" id="toc-save-the-dataset-for-future-lessons" class="nav-link" data-scroll-target="#save-the-dataset-for-future-lessons">Save the Dataset for Future Lessons</a></li>
+  <li><a href="#inspect-the-dataset-structure" id="toc-inspect-the-dataset-structure" class="nav-link" data-scroll-target="#inspect-the-dataset-structure">Inspect the Dataset Structure</a></li>
   <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics">Summary Statistics</a></li>
+  <li><a href="#basic-exploratory-visualizations" id="toc-basic-exploratory-visualizations" class="nav-link" data-scroll-target="#basic-exploratory-visualizations">Basic Exploratory Visualizations</a>
+  <ul class="collapse">
   <li><a href="#histograms-of-numeric-features" id="toc-histograms-of-numeric-features" class="nav-link" data-scroll-target="#histograms-of-numeric-features">Histograms of Numeric Features</a></li>
-  <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot">Scatter Plot</a></li>
+  <li><a href="#scatter-sepal_length-vs-petal_length" id="toc-scatter-sepal_length-vs-petal_length" class="nav-link" data-scroll-target="#scatter-sepal_length-vs-petal_length">Scatter: sepal_length vs petal_length</a></li>
   <li><a href="#pairplot-by-species" id="toc-pairplot-by-species" class="nav-link" data-scroll-target="#pairplot-by-species">Pairplot by Species</a></li>
+  </ul></li>
   <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
@@ -255,38 +257,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Theme:</strong> Data loading, structure inspection, and initial exploration</li>
 </ul>
 </div>
-<p>Every data science project begins with understanding your data. Before you clean it, visualize it, or build any model, you must first know what the dataset contains, how it is structured, and what patterns already exist.</p>
-<p>In this lesson, you will load a dataset into Python, inspect its features, explore basic statistics, and create initial visualizations.</p>
-<hr>
-<section id="lesson-overview" class="level2">
-<h2 class="anchored" data-anchor-id="lesson-overview">Lesson Overview</h2>
-<p>By the end of this lesson, you will be able to:</p>
+<p>Every data science project begins with understanding the dataset.</p>
+<p>In this guide, code is executed inside Quarto chapter files (<code>.qmd</code>). When you render the book, Quarto runs the Python chunks and embeds the results directly into the page.</p>
+<p>In this lesson, you will:</p>
 <ul>
 <li>Load a dataset into a pandas DataFrame<br>
 </li>
-<li>Inspect its structure, shape, and datatypes<br>
+<li>Inspect its structure and data types<br>
 </li>
 <li>Generate summary statistics<br>
 </li>
-<li>Visualize initial feature patterns<br>
+<li>Create initial visualizations<br>
 </li>
-<li>Save the dataset for later lessons</li>
+<li>Save the dataset for reuse in later lessons</li>
 </ul>
 <hr>
-</section>
-<section id="notebook-initialization" class="level2">
-<h2 class="anchored" data-anchor-id="notebook-initialization">Notebook Initialization</h2>
-<div id="notebook-init" class="cell" data-execution_count="1">
+<section id="chapter-initialization" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-initialization">Chapter Initialization</h2>
+<div id="chapter-init" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> cdi_viz.theme <span class="im">import</span> cdi_notebook_init, show_and_save_mpl</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Lesson ID drives figure naming (e.g., figures/02_001.png)</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>cdi_notebook_init(chapter<span class="op">=</span><span class="st">"02"</span>, title_x<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>cdi_notebook_init(chapter<span class="op">=</span><span class="st">"02"</span>, title_x<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
 <section id="load-the-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="load-the-dataset">Load the Dataset</h2>
-<div id="cell-load-iris-dataset" class="cell" data-execution_count="2">
+<p>We load Iris using scikit-learn, convert it into a DataFrame, rename columns to <code>snake_case</code>, then save it to disk.</p>
+<div id="cell-02-load-iris" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -295,16 +293,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(iris.data, columns<span class="op">=</span>iris.feature_names)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"species"</span>] <span class="op">=</span> pd.Categorical.from_codes(iris.target, iris.target_names)</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>df.columns <span class="op">=</span> [</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sepal_length"</span>,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sepal_width"</span>,</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"petal_length"</span>,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"petal_width"</span>,</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"species"</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="load-iris-dataset" class="cell-output cell-output-display" data-execution_count="2">
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>df.columns <span class="op">=</span> [<span class="st">"sepal_length"</span>, <span class="st">"sepal_width"</span>, <span class="st">"petal_length"</span>, <span class="st">"petal_width"</span>, <span class="st">"species"</span>]</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="load-iris" class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -368,9 +360,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <hr>
 </section>
-<section id="save-the-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="save-the-dataset">Save the Dataset</h2>
-<div id="save-iris-dataset" class="cell" data-execution_count="3">
+<section id="save-the-dataset-for-future-lessons" class="level2">
+<h2 class="anchored" data-anchor-id="save-the-dataset-for-future-lessons">Save the Dataset for Future Lessons</h2>
+<p>We store datasets in <code>data/</code> throughout this course.</p>
+<div id="save-iris" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>Path(<span class="st">"data"</span>).mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
@@ -383,16 +376,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <hr>
 </section>
-<section id="inspect-dataset-structure" class="level2">
-<h2 class="anchored" data-anchor-id="inspect-dataset-structure">Inspect Dataset Structure</h2>
+<section id="inspect-the-dataset-structure" class="level2">
+<h2 class="anchored" data-anchor-id="inspect-the-dataset-structure">Inspect the Dataset Structure</h2>
 <div id="inspect-structure" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Columns:"</span>, df.columns.tolist())</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Shape:"</span>, df.shape)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data types:"</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.dtypes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Columns:"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.columns.tolist())</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Shape (rows, cols):"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.shape)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Data types:"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.dtypes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Columns: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
-Shape: (150, 5)
+<pre><code>Columns:
+['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
+
+Shape (rows, cols):
+(150, 5)
+
 Data types:
 sepal_length     float64
 sepal_width      float64
@@ -406,7 +407,7 @@ dtype: object</code></pre>
 </section>
 <section id="summary-statistics" class="level2">
 <h2 class="anchored" data-anchor-id="summary-statistics">Summary Statistics</h2>
-<div id="cell-summary-statistics" class="cell" data-execution_count="5">
+<div id="cell-02-summary-statistics" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="summary-statistics" class="cell-output cell-output-display" data-execution_count="5">
 <div>
@@ -487,8 +488,11 @@ dtype: object</code></pre>
 </div>
 <hr>
 </section>
-<section id="histograms-of-numeric-features" class="level2">
-<h2 class="anchored" data-anchor-id="histograms-of-numeric-features">Histograms of Numeric Features</h2>
+<section id="basic-exploratory-visualizations" class="level2">
+<h2 class="anchored" data-anchor-id="basic-exploratory-visualizations">Basic Exploratory Visualizations</h2>
+<p>At this stage, visuals are used to inspect and spot-check the dataset.</p>
+<section id="histograms-of-numeric-features" class="level3">
+<h3 class="anchored" data-anchor-id="histograms-of-numeric-features">Histograms of Numeric Features</h3>
 <div id="histograms" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -512,10 +516,9 @@ dtype: object</code></pre>
 <pre><code>'figures/02_001.png'</code></pre>
 </div>
 </div>
-<hr>
 </section>
-<section id="scatter-plot" class="level2">
-<h2 class="anchored" data-anchor-id="scatter-plot">Scatter Plot</h2>
+<section id="scatter-sepal_length-vs-petal_length" class="level3">
+<h3 class="anchored" data-anchor-id="scatter-sepal_length-vs-petal_length">Scatter: sepal_length vs petal_length</h3>
 <div id="scatter-sepal-vs-petal" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>ax.scatter(df[<span class="st">"sepal_length"</span>], df[<span class="st">"petal_length"</span>], alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
@@ -536,10 +539,9 @@ dtype: object</code></pre>
 <pre><code>'figures/02_002.png'</code></pre>
 </div>
 </div>
-<hr>
 </section>
-<section id="pairplot-by-species" class="level2">
-<h2 class="anchored" data-anchor-id="pairplot-by-species">Pairplot by Species</h2>
+<section id="pairplot-by-species" class="level3">
+<h3 class="anchored" data-anchor-id="pairplot-by-species">Pairplot by Species</h3>
 <div id="pairplot-by-species" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -561,9 +563,17 @@ dtype: object</code></pre>
 </div>
 <hr>
 </section>
+</section>
 <section id="exercise" class="level2">
 <h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
-<div id="exercise-exploration" class="cell" data-execution_count="9">
+<ul>
+<li>Print the last five rows of the dataset<br>
+</li>
+<li>Count how many rows exist for each species<br>
+</li>
+<li>Create a new feature called <code>petal_area</code> (<code>petal_length</code> × <code>petal_width</code>) and print the first five rows</li>
+</ul>
+<div id="exercise" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Last 5 rows:"</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.tail())</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -606,11 +616,11 @@ With petal_area:
 <ul>
 <li>You loaded Iris using scikit-learn and converted it to a pandas DataFrame<br>
 </li>
-<li>You standardized column names to snake_case<br>
+<li>You standardized column names to <code>snake_case</code><br>
 </li>
-<li>You saved the dataset to <code>data/iris.csv</code><br>
+<li>You saved the dataset to <code>data/iris.csv</code> for future lessons<br>
 </li>
-<li>You inspected structure, statistics, and created starter visuals</li>
+<li>You inspected structure, summary statistics, and created starter visuals</li>
 </ul>
 
 
@@ -1018,8 +1028,8 @@ With petal_area:
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01-setting-up-environment.html" class="pagination-link" aria-label="Setting Up Your Data Analysis Environment">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Setting Up Your Data Analysis Environment</span></span>
+      <a href="./01-setting-up-environment.html" class="pagination-link" aria-label="Setting Up Your Environment">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Setting Up Your Environment</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

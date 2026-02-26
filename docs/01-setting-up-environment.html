@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setting Up Your Data Analysis Environment – Data Science Foundations</title>
+<title>Setting Up Your Environment – Data Science Foundations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,41 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -118,7 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-setting-up-environment.html"><span class="chapter-title">Setting Up Your Data Analysis Environment</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-setting-up-environment.html"><span class="chapter-title">Setting Up Your Environment</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -150,12 +115,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome to Data Science Foundations in Python</span></a>
+  <a href="./00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome to CDI Data Science Foundations in Python</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-setting-up-environment.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Setting Up Your Data Analysis Environment</span></a>
+  <a href="./01-setting-up-environment.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Setting Up Your Environment</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -208,13 +173,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#recommended-setup" id="toc-recommended-setup" class="nav-link active" data-scroll-target="#recommended-setup">Recommended Setup</a></li>
-  <li><a href="#tools-used-in-this-guide" id="toc-tools-used-in-this-guide" class="nav-link" data-scroll-target="#tools-used-in-this-guide">Tools Used in This Guide</a></li>
-  <li><a href="#installing-required-libraries" id="toc-installing-required-libraries" class="nav-link" data-scroll-target="#installing-required-libraries">Installing Required Libraries</a></li>
-  <li><a href="#practice-dataset" id="toc-practice-dataset" class="nav-link" data-scroll-target="#practice-dataset">Practice Dataset</a></li>
-  <li><a href="#test-your-setup" id="toc-test-your-setup" class="nav-link" data-scroll-target="#test-your-setup">Test Your Setup</a></li>
-  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
+  <li><a href="#what-you-are-setting-up" id="toc-what-you-are-setting-up" class="nav-link active" data-scroll-target="#what-you-are-setting-up">What you are setting up</a></li>
+  <li><a href="#required-software" id="toc-required-software" class="nav-link" data-scroll-target="#required-software">Required software</a>
+  <ul class="collapse">
+  <li><a href="#python-3.10-or-newer" id="toc-python-3.10-or-newer" class="nav-link" data-scroll-target="#python-3.10-or-newer">1) Python (3.10 or newer)</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">2) Quarto</a></li>
+  </ul></li>
+  <li><a href="#recommended-editor" id="toc-recommended-editor" class="nav-link" data-scroll-target="#recommended-editor">Recommended editor</a></li>
+  <li><a href="#project-environment" id="toc-project-environment" class="nav-link" data-scroll-target="#project-environment">Project environment</a>
+  <ul class="collapse">
+  <li><a href="#use-the-provided-setup-script" id="toc-use-the-provided-setup-script" class="nav-link" data-scroll-target="#use-the-provided-setup-script">Use the provided setup script</a></li>
+  <li><a href="#what-the-script-does" id="toc-what-the-script-does" class="nav-link" data-scroll-target="#what-the-script-does">What the script does</a></li>
+  </ul></li>
+  <li><a href="#render-the-book" id="toc-render-the-book" class="nav-link" data-scroll-target="#render-the-book">Render the book</a></li>
+  <li><a href="#sanity-check" id="toc-sanity-check" class="nav-link" data-scroll-target="#sanity-check">Sanity check</a>
+  <ul class="collapse">
+  <li><a href="#quick-open-recommended" id="toc-quick-open-recommended" class="nav-link" data-scroll-target="#quick-open-recommended">Quick open (recommended)</a></li>
+  <li><a href="#development-mode-optional" id="toc-development-mode-optional" class="nav-link" data-scroll-target="#development-mode-optional">Development mode (optional)</a></li>
+  </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul>
 </nav>
@@ -224,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="lesson01" class="quarto-section-identifier"><span class="chapter-title">Setting Up Your Data Analysis Environment</span></span></h1>
+<h1 class="title"><span id="lesson01" class="quarto-section-identifier"><span class="chapter-title">Setting Up Your Environment</span></span></h1>
 </div>
 
 
@@ -246,110 +222,148 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>ID:</strong> DS-L01</li>
 <li><strong>Type:</strong> Lesson</li>
 <li><strong>Audience:</strong> Public</li>
-<li><strong>Theme:</strong> Environment setup, reproducibility, and workflow preparation</li>
+<li><strong>Theme:</strong> Project setup, Quarto workflow, and reproducible execution</li>
 </ul>
 </div>
-<p>This project is <strong>purely Python-based</strong>, unless explicitly stated otherwise.</p>
-<p>Before we begin exploring data, you need a simple and reliable workspace so you can run code smoothly and follow every lesson without issues.</p>
+<p>This guide is <strong>Python-first</strong> and <strong>Quarto-first</strong>.</p>
+<p>You will write and run code inside Quarto chapter files (<code>.qmd</code>). When you render the book, Quarto executes the Python chunks and places the results (tables, figures, printed output) directly into the published pages.</p>
 <hr>
-<section id="recommended-setup" class="level2">
-<h2 class="anchored" data-anchor-id="recommended-setup">Recommended Setup</h2>
-<p>Use <strong>Jupyter Notebook</strong> via the <strong>Anaconda</strong> distribution.</p>
-<p><strong>Why this option?</strong></p>
-<p>Anaconda installs Python, Jupyter Notebook, and essential data-science libraries in one streamlined setup.</p>
-<p><strong>Steps:</strong></p>
-<ol type="1">
-<li>Download Anaconda: https://www.anaconda.com/download<br>
+<section id="what-you-are-setting-up" class="level2">
+<h2 class="anchored" data-anchor-id="what-you-are-setting-up">What you are setting up</h2>
+<p>By the end of this lesson you will have:</p>
+<ul>
+<li>Python installed and available from the terminal<br>
 </li>
-<li>Install it (default settings are fine)<br>
+<li>A project virtual environment (<code>.venv</code>) with required packages<br>
 </li>
-<li>Open <strong>Anaconda Navigator</strong><br>
+<li>Quarto installed for rendering the book<br>
 </li>
-<li>Launch <strong>Jupyter Notebook</strong></li>
-</ol>
+<li>A working build command that generates the site into <code>docs/</code></li>
+</ul>
 <hr>
 </section>
-<section id="tools-used-in-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="tools-used-in-this-guide">Tools Used in This Guide</h2>
+<section id="required-software" class="level2">
+<h2 class="anchored" data-anchor-id="required-software">Required software</h2>
+<section id="python-3.10-or-newer" class="level3">
+<h3 class="anchored" data-anchor-id="python-3.10-or-newer">1) Python (3.10 or newer)</h3>
+<p>Check if Python is available:</p>
+<pre class="{bash}"><code>#| label: 01-check-python
+python3 --version</code></pre>
+<p>If that command fails, install Python using one of these options:</p>
+<ul>
+<li>macOS: Homebrew <code>brew install python</code><br>
+</li>
+<li>Windows: Install from python.org (ensure “Add Python to PATH” is selected)<br>
+</li>
+<li>Linux: Use your package manager (for example <code>apt</code>, <code>dnf</code>, <code>pacman</code>)</li>
+</ul>
+</section>
+<section id="quarto" class="level3">
+<h3 class="anchored" data-anchor-id="quarto">2) Quarto</h3>
+<p>Quarto renders the book and runs the Python code inside chapters.</p>
+<p>Check if Quarto is installed:</p>
+<pre class="{bash}"><code>#| label: 01-check-quarto
+quarto --version</code></pre>
+<p>If Quarto is not installed, install it from the Quarto website and confirm the version prints successfully.</p>
+<hr>
+</section>
+</section>
+<section id="recommended-editor" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-editor">Recommended editor</h2>
+<p>Use any editor you like. A good default is <strong>VS Code</strong> because it works well with:</p>
+<ul>
+<li><code>.qmd</code> editing<br>
+</li>
+<li>Python formatting and linting<br>
+</li>
+<li>Git workflow</li>
+</ul>
+<hr>
+</section>
+<section id="project-environment" class="level2">
+<h2 class="anchored" data-anchor-id="project-environment">Project environment</h2>
+<p>This repo uses a local virtual environment so your package versions are isolated and reproducible.</p>
+<section id="use-the-provided-setup-script" class="level3">
+<h3 class="anchored" data-anchor-id="use-the-provided-setup-script">Use the provided setup script</h3>
+<p>From the project root:</p>
+<pre class="{bash}"><code>#| label: 01-setup-env-script
+bash scripts/bash/setup-env.sh</code></pre>
+<p>Then activate the environment:</p>
+<pre class="{bash}"><code>#| label: 01-activate-venv
+source .venv/bin/activate</code></pre>
+<p>Confirm the interpreter path points to <code>.venv</code>:</p>
+<pre class="{bash}"><code>#| label: 01-which-python
+which python
+python --version</code></pre>
 <div class="cdi-message">
-<p>This guide uses widely adopted open-source tools from the Python data-science ecosystem, including Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, and Jupyter. These tools form the foundation of modern data analysis and machine learning workflows.</p>
+<p>If you are on Windows, activation uses a different command.</p>
+<ul>
+<li>PowerShell: <code>.venv\Scripts\Activate.ps1</code><br>
+</li>
+<li>cmd: <code>.venv\Scripts\activate.bat</code><br>
+</li>
+</ul>
+</div>
+</section>
+<section id="what-the-script-does" class="level3">
+<h3 class="anchored" data-anchor-id="what-the-script-does">What the script does</h3>
+<ul>
+<li>Creates <code>.venv/</code><br>
+</li>
+<li>Installs packages from <code>requirements.txt</code><br>
+</li>
+<li>Optionally registers a Jupyter kernel named <code>data-science</code></li>
+</ul>
+<p>The Jupyter kernel is optional. The core workflow in this guide is Quarto rendering.</p>
+<hr>
+</section>
+</section>
+<section id="render-the-book" class="level2">
+<h2 class="anchored" data-anchor-id="render-the-book">Render the book</h2>
+<p>Once the environment is active, render the book with the build script:</p>
+<pre class="{bash}"><code>#| label: 01-build-book-script
+bash scripts/bash/build.sh</code></pre>
+<p>This runs <code>quarto render</code> and writes the output to <code>docs/</code>.</p>
+<hr>
+</section>
+<section id="sanity-check" class="level2">
+<h2 class="anchored" data-anchor-id="sanity-check">Sanity check</h2>
+<p>After building the book, open the generated site.</p>
+<section id="quick-open-recommended" class="level3">
+<h3 class="anchored" data-anchor-id="quick-open-recommended">Quick open (recommended)</h3>
+<p>macOS:</p>
+<pre class="{bash}"><code>#| label: 01-open-mac
+open docs/index.html</code></pre>
+<p>Linux:</p>
+<pre class="{bash}"><code>#| label: 01-open-linux
+xdg-open docs/index.html</code></pre>
+<p>Windows (PowerShell):</p>
+<pre class="{powershell}"><code>#| label: 01-open-windows
+start docs/index.html</code></pre>
+<p>If the homepage loads and chapter navigation works, your environment is correctly configured.</p>
+</section>
+<section id="development-mode-optional" class="level3">
+<h3 class="anchored" data-anchor-id="development-mode-optional">Development mode (optional)</h3>
+<p>You can also run:</p>
+<pre class="{bash}"><code>#| label: 01-preview-book
+quarto preview</code></pre>
+<p>This starts a local development server and watches files for changes. It is useful when actively editing chapters because the browser reloads automatically.</p>
+<div class="cdi-message">
+<p>The preview server runs continuously and may use a local port. For simple verification, opening <code>docs/index.html</code> is usually sufficient.</p>
 </div>
 <hr>
 </section>
-<section id="installing-required-libraries" class="level2">
-<h2 class="anchored" data-anchor-id="installing-required-libraries">Installing Required Libraries</h2>
-<p>Run the following command in a Jupyter Notebook cell:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">!pip</span> install pandas numpy matplotlib seaborn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<blockquote class="blockquote">
-<p><strong>Note:</strong><br>
-If you are using Anaconda, these libraries are usually preinstalled.<br>
-The command above ensures your environment is up to date.</p>
-</blockquote>
-<hr>
-</section>
-<section id="practice-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="practice-dataset">Practice Dataset</h2>
-<p>We will use the <strong>Iris dataset</strong> in the early lessons of this guide.</p>
-<p>You do <strong>not</strong> need to download it manually at this stage.</p>
-<ul>
-<li>A later lesson will generate <code>data/iris.csv</code> automatically<br>
-</li>
-<li>This lesson focuses only on ensuring your environment is ready</li>
-</ul>
-<hr>
-</section>
-<section id="test-your-setup" class="level2">
-<h2 class="anchored" data-anchor-id="test-your-setup">Test Your Setup</h2>
-<p>You may run the test below after the dataset exists:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'data/iris.csv'</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Expected output (first rows):</p>
-<pre><code>   sepal_length  sepal_width  petal_length  petal_width species
-0           5.1          3.5           1.4          0.2  setosa
-1           4.9          3.0           1.4          0.2  setosa
-2           4.7          3.2           1.3          0.2  setosa
-3           4.6          3.1           1.5          0.2  setosa
-4           5.0          3.6           1.4          0.2  setosa</code></pre>
-<hr>
-</section>
-<section id="troubleshooting" class="level2">
-<h2 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h2>
-<p>If something does not work as expected:</p>
-<ul>
-<li>Restart your notebook and try again<br>
-</li>
-<li>Confirm the file path is <code>data/iris.csv</code><br>
-</li>
-<li>Ensure the <code>data/</code> folder exists<br>
-</li>
-<li>Re-run the installation command if needed</li>
-</ul>
-<p>Setup issues are common. Take your time.</p>
-<hr>
-</section>
-<section id="exercise" class="level2">
-<h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
-<ul>
-<li>Confirm that Jupyter Notebook opens successfully<br>
-</li>
-<li>Run the library installation command without errors<br>
-</li>
-<li>Verify that you can run a simple Python cell</li>
-</ul>
-<hr>
 </section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
 <ul>
-<li>You set up a Python-based data analysis environment<br>
+<li>You confirmed Python and Quarto are installed<br>
 </li>
-<li>You installed essential data science libraries<br>
+<li>You created a reproducible virtual environment using <code>.venv</code><br>
 </li>
-<li>You verified that your notebook can execute Python code<br>
+<li>You rendered the Quarto book successfully<br>
 </li>
-<li>You prepared your system for working with real datasets</li>
+<li>You are ready to begin loading and exploring data</li>
 </ul>
 
 
@@ -757,8 +771,8 @@ The command above ensures your environment is up to date.</p>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./00-preface.html" class="pagination-link" aria-label="Welcome to Data Science Foundations in Python">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Welcome to Data Science Foundations in Python</span></span>
+      <a href="./00-preface.html" class="pagination-link" aria-label="Welcome to CDI Data Science Foundations in Python">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Welcome to CDI Data Science Foundations in Python</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

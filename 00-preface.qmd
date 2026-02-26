@@ -1,118 +1,109 @@
-# Welcome to Data Science Foundations in Python {#preface}
+# Welcome to CDI Data Science Foundations in Python {#preface}
 
-Welcome to **Complex Data Insights (CDI)** --- a structured learning
-pathway designed to teach real data skills through clear explanations,
-intentional progression, and reproducible workflows.
+Welcome to **Complex Data Insights (CDI)**, a practical learning pathway designed to teach real data skills through clear explanations, structured lessons, and hands-on practice.
 
-This guide focuses entirely on **Python**, one of the most widely used
-languages in data science, analytics, machine learning, and scientific
-computing.
+This guide is **Python-first** and **Quarto-first**.
 
-Whether you are new to data work or returning to strengthen your
-foundations, this guide is built to help you move from raw data to
-interpretable insight in a clear and disciplined way.
+Each chapter is written as a `.qmd` file. When you render the book, Quarto executes the Python chunks and embeds the results (tables, figures, and printed output) directly into the published pages. This keeps the guide reproducible and consistent.
 
-------------------------------------------------------------------------
+---
 
 ## What You Will Learn
 
 Across this guide, you will learn how to:
 
--   Think analytically about data problems\
--   Load, inspect, and structure datasets\
--   Clean and prepare messy data responsibly\
--   Explore patterns through clear visualization\
--   Apply summary statistics correctly\
--   Interpret results with caution and clarity\
--   Build reproducible analytical documents using Quarto
+- Think analytically about data problems  
+- Load, clean, and structure datasets  
+- Explore data through visualization  
+- Apply essential statistical reasoning  
+- Prepare data for machine learning  
+- Work with realistic datasets  
+- Build reproducible, end-to-end workflows  
 
-Each chapter builds on the previous one.\
-The progression is intentional.
+Each lesson builds on the previous one, forming a clear progression.
 
-------------------------------------------------------------------------
+---
 
-## How This Guide Is Structured
+## Course Structure
 
-This guide is organized as a complete workflow:
+The CDI Data Science Foundations path is divided into two parts.
 
-**Data → Preparation → Exploration → Visualization → Interpretation**
+### Foundations Track (Lessons 01–06)
 
-Rather than isolated notebooks, you are working within a structured
-Quarto book.\
-This means:
+This track introduces the core foundations of data science with Python, including:
 
--   Code and narrative live together\
--   Results are rendered programmatically\
--   The project is reproducible from start to finish\
--   The entire workflow can be version-controlled
+- Environment setup and workflow  
+- Loading and inspecting datasets  
+- Data cleaning fundamentals  
+- Introductory data wrangling  
+- Visualization basics  
+- Summary statistics and insight generation  
 
-You are not only learning data science.\
-You are learning how to structure analysis professionally.
+These lessons are designed to build confidence with essential tools and concepts.
 
-------------------------------------------------------------------------
+### Extended Track (Premium)
+
+The extended track builds on the foundations and moves into applied, real-world data science, including:
+
+- Intermediate and advanced data wrangling  
+- Working with realistic, messy datasets  
+- Advanced exploratory data analysis  
+- Feature engineering  
+- Machine learning (classification and regression)  
+- Model evaluation and tuning  
+- End-to-end projects and deployment workflows  
+
+---
 
 ## About Figures and Reproducibility
 
-All figures in this guide are generated programmatically during
-execution.
+All figures in this guide are generated programmatically during rendering. This ensures that plots are reproducible, consistent across lessons, and rendered reliably in the published materials.
 
-This ensures that:
+---
 
--   Results are reproducible\
--   Visualizations remain consistent\
--   The published book reflects the underlying code\
--   Changes in data automatically update outputs
+## References and Citations
 
-Reproducibility is not an afterthought.\
-It is part of the workflow.
+When a lesson draws on external sources, in-line citations appear within the text, with the corresponding references listed at the end of that lesson page. A complete list of references used throughout the guide is also collected in the **References** section at the end of the guide.
 
-------------------------------------------------------------------------
+---
 
 ## How to Use This Guide
 
 This guide is designed to be:
 
--   **Self-paced** --- move forward when concepts are clear\
--   **Hands-on** --- run and modify the code yourself\
--   **Structured** --- follow the workflow in order\
--   **Revisitable** --- return to earlier chapters as needed
+- **Self-paced**  
+- **Hands-on**  
+- **Modular**  
+- **Accessible**  
 
-If something feels unclear, slow down and revisit the reasoning before
-moving forward.
-
-Understanding is cumulative.
-
-------------------------------------------------------------------------
+---
 
 ## Lesson Workflow
 
-Each chapter follows a consistent pattern:
+Each lesson follows a consistent structure:
 
-1.  Concept explanation\
-2.  Guided code examples\
-3.  Output interpretation\
-4.  Short exercises\
-5.  Key takeaways
+1. Concept explanation  
+2. Guided code examples  
+3. Output interpretation  
+4. Short exercises  
+5. Key takeaways  
+6. Next steps  
 
-This structure reduces cognitive overload and keeps learning focused.
-
-------------------------------------------------------------------------
+---
 
 ## Data and Project Structure
 
 Throughout the guide:
 
--   Datasets are stored in a consistent `data/` directory\
--   Code execution is integrated into the Quarto book\
--   Outputs are rendered automatically into the final document
+- Datasets are stored in a consistent `data/` directory  
+- Early lessons generate `data/iris.csv` automatically  
+- Additional datasets are introduced as needed in later lessons  
 
-This project structure mirrors professional analytical work.
+---
 
-------------------------------------------------------------------------
-
+:::cdi-message
 ## About This Guide
 
 This guide follows a human-first, carefully curated approach.
-
-AI tools were used as assistants during drafting and refinement.\
-All final content has been reviewed and structured intentionally.
+AI tools were used as assistants during drafting and refinement, with all final content reviewed and approved by a human.
+:::
