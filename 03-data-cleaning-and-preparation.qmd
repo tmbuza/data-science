@@ -46,7 +46,7 @@ Never modify data without first understanding what you are changing.
 
 from cdi_viz.theme import cdi_notebook_init, show_and_save_mpl
 
-cdi_notebook_init(chapter="03", title_x=0)
+cdi_notebook_init(chapter="03", title_x=0.5)
 ```
 
 ---

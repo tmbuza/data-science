@@ -184,7 +184,7 @@
     "href": "02-load-and-explore-dataset.html",
     "title": "Load and Explore a Dataset",
     "section": "",
-    "text": "Chapter Initialization\nEvery data science project begins with understanding the dataset.\nIn this guide, code is executed inside Quarto chapter files (.qmd). When you render the book, Quarto runs the Python chunks and embeds the results directly into the page.\nIn this lesson, you will:\nfrom cdi_viz.theme import cdi_notebook_init, show_and_save_mpl\n\ncdi_notebook_init(chapter=\"02\", title_x=0)",
+    "text": "Chapter Initialization\nEvery data science project begins with understanding the dataset.\nIn this guide, code is executed inside Quarto chapter files (.qmd). When you render the book, Quarto runs the Python chunks and embeds the results directly into the page.\nIn this lesson, you will:\nfrom cdi_viz.theme import cdi_notebook_init, show_and_save_mpl\n\ncdi_notebook_init(chapter=\"02\", title_x=0.5)",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
     ]
@@ -294,7 +294,7 @@
     "href": "03-data-cleaning-and-preparation.html#chapter-initialization",
     "title": "Data Cleaning and Preparation",
     "section": "Chapter Initialization",
-    "text": "Chapter Initialization\n\nfrom cdi_viz.theme import cdi_notebook_init, show_and_save_mpl\n\ncdi_notebook_init(chapter=\"03\", title_x=0)",
+    "text": "Chapter Initialization\n\nfrom cdi_viz.theme import cdi_notebook_init, show_and_save_mpl\n\ncdi_notebook_init(chapter=\"03\", title_x=0.5)",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
     ]
@@ -424,7 +424,7 @@
     "href": "04-data-wrangling-basics.html#chapter-initialization",
     "title": "Data Wrangling Basics",
     "section": "Chapter Initialization",
-    "text": "Chapter Initialization\n\nfrom cdi_viz.theme import cdi_notebook_init\n\ncdi_notebook_init(chapter=\"04\", title_x=0)",
+    "text": "Chapter Initialization\n\nfrom cdi_viz.theme import cdi_notebook_init\n\ncdi_notebook_init(chapter=\"04\", title_x=0.5)",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
     ]
@@ -554,7 +554,7 @@
     "href": "05-visualization-basics.html#chapter-initialization",
     "title": "Visualization Basics",
     "section": "Chapter Initialization",
-    "text": "Chapter Initialization\n\nfrom cdi_viz.theme import cdi_notebook_init, show_and_save_mpl\n\ncdi_notebook_init(chapter=\"05\", title_x=0)",
+    "text": "Chapter Initialization\n\nfrom cdi_viz.theme import cdi_notebook_init, show_and_save_mpl\n\ncdi_notebook_init(chapter=\"05\", title_x=0.5)",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Visualization Basics</span>"
     ]
@@ -654,7 +654,7 @@
     "href": "06-summary-statistics-and-insights.html#chapter-initialization",
     "title": "Summary Statistics and Insights",
     "section": "Chapter Initialization",
-    "text": "Chapter Initialization\n\nfrom cdi_viz.theme import cdi_notebook_init, show_and_save_mpl\n\ncdi_notebook_init(chapter=\"06\", title_x=0)",
+    "text": "Chapter Initialization\n\nfrom cdi_viz.theme import cdi_notebook_init, show_and_save_mpl\n\ncdi_notebook_init(chapter=\"06\", title_x=0.5)",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
     ]

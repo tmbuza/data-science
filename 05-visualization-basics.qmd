@@ -39,7 +39,7 @@ By the end of this lesson, you will be able to:
 
 from cdi_viz.theme import cdi_notebook_init, show_and_save_mpl
 
-cdi_notebook_init(chapter="05", title_x=0)
+cdi_notebook_init(chapter="05", title_x=0.5)
 ```
 
 ---

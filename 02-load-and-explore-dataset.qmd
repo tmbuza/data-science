@@ -28,7 +28,7 @@ In this lesson, you will:
 
 from cdi_viz.theme import cdi_notebook_init, show_and_save_mpl
 
-cdi_notebook_init(chapter="02", title_x=0)
+cdi_notebook_init(chapter="02", title_x=0.5)
 ```
 
 ---
