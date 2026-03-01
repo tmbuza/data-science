@@ -26,7 +26,7 @@ By the end of this lesson you will have:
 
 ## Required software
 
-### 1) Python (3.10 or newer)
+### Python (3.10 or newer)
 
 Check if Python is available:
 
@@ -41,7 +41,7 @@ If that command fails, install Python using one of these options:
 - Windows: Install from python.org (ensure "Add Python to PATH" is selected)  
 - Linux: Use your package manager (for example `apt`, `dnf`, `pacman`)  
 
-### 2) Quarto
+### Quarto
 
 Quarto renders the book and runs the Python code inside chapters.
 
