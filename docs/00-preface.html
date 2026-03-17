@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Welcome to CDI Data Science Foundations in Python – Data Science Foundations</title>
+<title>Preface – Data Science Foundations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -69,6 +104,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="forest">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="assets/css/cdi.css">
@@ -83,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Getting Started</a></li><li class="breadcrumb-item"><a href="./00-preface.html"><span class="chapter-title">Welcome to CDI Data Science Foundations in Python</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Getting Started</a></li><li class="breadcrumb-item"><a href="./00-preface.html">Preface</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -124,7 +163,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00-preface.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Welcome to CDI Data Science Foundations in Python</span></a>
+  <a href="./00-preface.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -171,7 +211,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-visualization-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Visualization Basics</span></a>
+  <a href="./05-visualization-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Visualization Foundations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -184,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Premium Upgrade &amp; Completion</span></a>
+ <span class="menu-text">Upgrade &amp; Transition</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -192,7 +232,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06x1-complete-free-track.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Complete Free Track</span></a>
+  <a href="./06x1-complete-free-track.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Completing the Foundations Track</span></a>
   </div>
 </li>
       </ul>
@@ -228,27 +268,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-you-will-learn" id="toc-what-you-will-learn" class="nav-link active" data-scroll-target="#what-you-will-learn">What You Will Learn</a></li>
-  <li><a href="#course-structure" id="toc-course-structure" class="nav-link" data-scroll-target="#course-structure">Course Structure</a>
-  <ul class="collapse">
-  <li><a href="#foundations-track-lessons-0106" id="toc-foundations-track-lessons-0106" class="nav-link" data-scroll-target="#foundations-track-lessons-0106">Foundations Track (Lessons 01–06)</a></li>
-  <li><a href="#extended-track-premium" id="toc-extended-track-premium" class="nav-link" data-scroll-target="#extended-track-premium">Extended Track (Premium)</a></li>
-  </ul></li>
-  <li><a href="#about-figures-and-reproducibility" id="toc-about-figures-and-reproducibility" class="nav-link" data-scroll-target="#about-figures-and-reproducibility">About Figures and Reproducibility</a></li>
-  <li><a href="#references-and-citations" id="toc-references-and-citations" class="nav-link" data-scroll-target="#references-and-citations">References and Citations</a></li>
-  <li><a href="#how-to-use-this-guide" id="toc-how-to-use-this-guide" class="nav-link" data-scroll-target="#how-to-use-this-guide">How to Use This Guide</a></li>
-  <li><a href="#lesson-workflow" id="toc-lesson-workflow" class="nav-link" data-scroll-target="#lesson-workflow">Lesson Workflow</a></li>
-  <li><a href="#data-and-project-structure" id="toc-data-and-project-structure" class="nav-link" data-scroll-target="#data-and-project-structure">Data and Project Structure</a></li>
-  <li><a href="#about-this-guide" id="toc-about-this-guide" class="nav-link" data-scroll-target="#about-this-guide">About This Guide</a></li>
+  <li><a href="#why-this-guide-exists" id="toc-why-this-guide-exists" class="nav-link active" data-scroll-target="#why-this-guide-exists">Why This Guide Exists</a></li>
+  <li><a href="#what-you-will-learn" id="toc-what-you-will-learn" class="nav-link" data-scroll-target="#what-you-will-learn">What You Will Learn</a></li>
+  <li><a href="#how-this-guide-is-structured" id="toc-how-this-guide-is-structured" class="nav-link" data-scroll-target="#how-this-guide-is-structured">How This Guide Is Structured</a></li>
+  <li><a href="#how-to-approach-this-guide" id="toc-how-to-approach-this-guide" class="nav-link" data-scroll-target="#how-to-approach-this-guide">How to Approach This Guide</a></li>
+  <li><a href="#the-cdi-reasoning-workflow" id="toc-the-cdi-reasoning-workflow" class="nav-link" data-scroll-target="#the-cdi-reasoning-workflow">The CDI Reasoning Workflow</a></li>
+  <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next">What Comes Next</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Getting Started</a></li><li class="breadcrumb-item"><a href="./00-preface.html"><span class="chapter-title">Welcome to CDI Data Science Foundations in Python</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Getting Started</a></li><li class="breadcrumb-item"><a href="./00-preface.html">Preface</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="preface" class="quarto-section-identifier"><span class="chapter-title">Welcome to CDI Data Science Foundations in Python</span></span></h1>
+<h1 class="title">Preface</h1>
 </div>
 
 
@@ -265,133 +299,139 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Welcome to <strong>Complex Data Insights (CDI)</strong>, a practical learning pathway designed to teach real data skills through clear explanations, structured lessons, and hands-on practice.</p>
-<p>This guide is <strong>Python-first</strong> and <strong>Quarto-first</strong>.</p>
-<p>Each chapter is written as a <code>.qmd</code> file. When you render the book, Quarto executes the Python chunks and embeds the results (tables, figures, and printed output) directly into the published pages. This keeps the guide reproducible and consistent.</p>
+<div class="cdi-message">
+<ul>
+<li><strong>ID:</strong> DS-FREE-000</li>
+<li><strong>Type:</strong> Preface</li>
+<li><strong>Audience:</strong> Beginner to Intermediate</li>
+<li><strong>Theme:</strong> Analytical thinking and structured workflows</li>
+</ul>
+</div>
+<section id="why-this-guide-exists" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-guide-exists">Why This Guide Exists</h2>
+<p>Data science is often introduced through tools.</p>
+<ul>
+<li>Python.</li>
+<li>Libraries.</li>
+<li>Models.</li>
+</ul>
+<p>But tools alone do not produce understanding.</p>
+<p>What matters is how we move from:</p>
+<ul>
+<li>raw data<br>
+to<br>
+</li>
+<li>structured insight</li>
+</ul>
+<p>This guide introduces data science as a <strong>process of reasoning</strong>, not just a collection of techniques.</p>
 <hr>
+</section>
 <section id="what-you-will-learn" class="level2">
 <h2 class="anchored" data-anchor-id="what-you-will-learn">What You Will Learn</h2>
-<p>Across this guide, you will learn how to:</p>
+<p>This free track focuses on the foundations:</p>
 <ul>
-<li>Think analytically about data problems<br>
-</li>
-<li>Load, clean, and structure datasets<br>
-</li>
-<li>Explore data through visualization<br>
-</li>
-<li>Apply essential statistical reasoning<br>
-</li>
-<li>Prepare data for machine learning<br>
-</li>
-<li>Work with realistic datasets<br>
-</li>
-<li>Build reproducible, end-to-end workflows</li>
+<li>how to explore datasets</li>
+<li>how to clean and prepare data</li>
+<li>how to visualize patterns</li>
+<li>how to summarize findings clearly</li>
 </ul>
-<p>Each lesson builds on the previous one, forming a clear progression.</p>
+<p>The goal is not to memorize functions.</p>
+<p>The goal is to <strong>build a way of thinking</strong> that you can apply to any dataset.</p>
 <hr>
 </section>
-<section id="course-structure" class="level2">
-<h2 class="anchored" data-anchor-id="course-structure">Course Structure</h2>
-<p>The CDI Data Science Foundations path is divided into two parts.</p>
-<section id="foundations-track-lessons-0106" class="level3">
-<h3 class="anchored" data-anchor-id="foundations-track-lessons-0106">Foundations Track (Lessons 01–06)</h3>
-<p>This track introduces the core foundations of data science with Python, including:</p>
-<ul>
-<li>Environment setup and workflow<br>
-</li>
-<li>Loading and inspecting datasets<br>
-</li>
-<li>Data cleaning fundamentals<br>
-</li>
-<li>Introductory data wrangling<br>
-</li>
-<li>Visualization basics<br>
-</li>
-<li>Summary statistics and insight generation</li>
-</ul>
-<p>These lessons are designed to build confidence with essential tools and concepts.</p>
-</section>
-<section id="extended-track-premium" class="level3">
-<h3 class="anchored" data-anchor-id="extended-track-premium">Extended Track (Premium)</h3>
-<p>The extended track builds on the foundations and moves into applied, real-world data science, including:</p>
-<ul>
-<li>Intermediate and advanced data wrangling<br>
-</li>
-<li>Working with realistic, messy datasets<br>
-</li>
-<li>Advanced exploratory data analysis<br>
-</li>
-<li>Feature engineering<br>
-</li>
-<li>Machine learning (classification and regression)<br>
-</li>
-<li>Model evaluation and tuning<br>
-</li>
-<li>End-to-end projects and deployment workflows</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="about-figures-and-reproducibility" class="level2">
-<h2 class="anchored" data-anchor-id="about-figures-and-reproducibility">About Figures and Reproducibility</h2>
-<p>All figures in this guide are generated programmatically during rendering. This ensures that plots are reproducible, consistent across lessons, and rendered reliably in the published materials.</p>
-<hr>
-</section>
-<section id="references-and-citations" class="level2">
-<h2 class="anchored" data-anchor-id="references-and-citations">References and Citations</h2>
-<p>When a lesson draws on external sources, in-line citations appear within the text, with the corresponding references listed at the end of that lesson page. A complete list of references used throughout the guide is also collected in the <strong>References</strong> section at the end of the guide.</p>
-<hr>
-</section>
-<section id="how-to-use-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use-this-guide">How to Use This Guide</h2>
-<p>This guide is designed to be:</p>
-<ul>
-<li><strong>Self-paced</strong><br>
-</li>
-<li><strong>Hands-on</strong><br>
-</li>
-<li><strong>Modular</strong><br>
-</li>
-<li><strong>Accessible</strong></li>
-</ul>
-<hr>
-</section>
-<section id="lesson-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="lesson-workflow">Lesson Workflow</h2>
-<p>Each lesson follows a consistent structure:</p>
+<section id="how-this-guide-is-structured" class="level2">
+<h2 class="anchored" data-anchor-id="how-this-guide-is-structured">How This Guide Is Structured</h2>
+<p>Each chapter follows a consistent pattern:</p>
 <ol type="1">
-<li>Concept explanation<br>
-</li>
-<li>Guided code examples<br>
-</li>
-<li>Output interpretation<br>
-</li>
-<li>Short exercises<br>
-</li>
-<li>Key takeaways<br>
-</li>
-<li>Next steps</li>
+<li><p><strong>Explanation</strong><br>
+What concept we are learning and why it matters</p></li>
+<li><p><strong>Code</strong><br>
+Practical implementation using Python</p></li>
+<li><p><strong>Interpretation</strong><br>
+What the results actually mean</p></li>
+<li><p><strong>Takeaway</strong><br>
+The key idea you should retain</p></li>
+<li><p><strong>Exercise</strong><br>
+A small task to reinforce learning</p></li>
 </ol>
+<p>This structure is intentional.</p>
+<p>It ensures that learning moves beyond code into understanding.</p>
 <hr>
 </section>
-<section id="data-and-project-structure" class="level2">
-<h2 class="anchored" data-anchor-id="data-and-project-structure">Data and Project Structure</h2>
-<p>Throughout the guide:</p>
+<section id="how-to-approach-this-guide" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-approach-this-guide">How to Approach This Guide</h2>
+<p>You do not need prior experience in data science.</p>
+<p>But you should:</p>
 <ul>
-<li>Datasets are stored in a consistent <code>data/</code> directory<br>
+<li>run the code yourself<br>
 </li>
-<li>Early lessons generate <code>data/iris.csv</code> automatically<br>
+<li>observe outputs carefully<br>
 </li>
-<li>Additional datasets are introduced as needed in later lessons</li>
+<li>try to explain results in your own words</li>
 </ul>
+<p>Do not rush.</p>
+<p>Understanding grows from <strong>interaction</strong>, not passive reading.</p>
 <hr>
 </section>
-<section id="about-this-guide" class="level2 cdi-message">
-<h2 class="anchored" data-anchor-id="about-this-guide">About This Guide</h2>
-<p>This guide follows a human-first, carefully curated approach. AI tools were used as assistants during drafting and refinement, with all final content reviewed and approved by a human.</p>
+<section id="the-cdi-reasoning-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-cdi-reasoning-workflow">The CDI Reasoning Workflow</h2>
+<p>Data analysis is not a straight line.</p>
+<p>It is a process of iteration, where each step informs the next.</p>
+<div class="cell" data-layout-align="default">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>flowchart TB</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  A[Question or Problem] --&gt; B[Load &amp; Explore Data]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  B --&gt; C[Clean &amp; Prepare]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  B --&gt; D[Visualize Patterns]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  C --&gt; D</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  D --&gt; E[Summarize &amp; Interpret]</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  E --&gt; F[Refine Question / Hypothesis]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  F --&gt; B</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+  A[Question or Problem] --&gt; B[Load &amp; Explore Data]
+
+  B --&gt; C[Clean &amp; Prepare]
+  B --&gt; D[Visualize Patterns]
+
+  C --&gt; D
+  D --&gt; E[Summarize &amp; Interpret]
+
+  E --&gt; F[Refine Question / Hypothesis]
+  F --&gt; B
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>This diagram represents how analytical work actually happens:</p>
+<ul>
+<li>You begin with a question</li>
+<li>You explore and prepare data</li>
+<li>You visualize and summarize patterns</li>
+<li>You refine your understanding</li>
+<li>Then you return to the data again</li>
+</ul>
+<p>Insight is not produced in a single pass.</p>
+<p>It emerges through revisiting earlier steps with better questions.</p>
+<hr>
 </section>
+<section id="what-comes-next" class="level2">
+<h2 class="anchored" data-anchor-id="what-comes-next">What Comes Next</h2>
+<p>In the next chapter, we will set up the environment required to begin working with data.</p>
+<p>Once that is ready, we will move directly into exploring real datasets.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

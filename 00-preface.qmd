@@ -1,109 +1,124 @@
-# Welcome to CDI Data Science Foundations in Python {#preface}
+# Preface {-}
 
-Welcome to **Complex Data Insights (CDI)**, a practical learning pathway designed to teach real data skills through clear explanations, structured lessons, and hands-on practice.
+:::cdi-message
+- **ID:** DS-FREE-000
+- **Type:** Preface
+- **Audience:** Beginner to Intermediate
+- **Theme:** Analytical thinking and structured workflows
+:::
 
-This guide is **Python-first** and **Quarto-first**.
+## Why This Guide Exists
 
-Each chapter is written as a `.qmd` file. When you render the book, Quarto executes the Python chunks and embeds the results (tables, figures, and printed output) directly into the published pages. This keeps the guide reproducible and consistent.
+Data science is often introduced through tools.
+
+- Python.
+- Libraries.
+- Models.
+
+But tools alone do not produce understanding.
+
+What matters is how we move from:
+
+- raw data  
+to  
+- structured insight  
+
+This guide introduces data science as a **process of reasoning**, not just a collection of techniques.
 
 ---
 
 ## What You Will Learn
 
-Across this guide, you will learn how to:
+This free track focuses on the foundations:
 
-- Think analytically about data problems  
-- Load, clean, and structure datasets  
-- Explore data through visualization  
-- Apply essential statistical reasoning  
-- Prepare data for machine learning  
-- Work with realistic datasets  
-- Build reproducible, end-to-end workflows  
+- how to explore datasets
+- how to clean and prepare data
+- how to visualize patterns
+- how to summarize findings clearly
 
-Each lesson builds on the previous one, forming a clear progression.
+The goal is not to memorize functions.
 
----
-
-## Course Structure
-
-The CDI Data Science Foundations path is divided into two parts.
-
-### Foundations Track (Lessons 01–06)
-
-This track introduces the core foundations of data science with Python, including:
-
-- Environment setup and workflow  
-- Loading and inspecting datasets  
-- Data cleaning fundamentals  
-- Introductory data wrangling  
-- Visualization basics  
-- Summary statistics and insight generation  
-
-These lessons are designed to build confidence with essential tools and concepts.
-
-### Extended Track (Premium)
-
-The extended track builds on the foundations and moves into applied, real-world data science, including:
-
-- Intermediate and advanced data wrangling  
-- Working with realistic, messy datasets  
-- Advanced exploratory data analysis  
-- Feature engineering  
-- Machine learning (classification and regression)  
-- Model evaluation and tuning  
-- End-to-end projects and deployment workflows  
+The goal is to **build a way of thinking** that you can apply to any dataset.
 
 ---
 
-## About Figures and Reproducibility
+## How This Guide Is Structured
 
-All figures in this guide are generated programmatically during rendering. This ensures that plots are reproducible, consistent across lessons, and rendered reliably in the published materials.
+Each chapter follows a consistent pattern:
 
----
+1. **Explanation**  
+   What concept we are learning and why it matters  
 
-## References and Citations
+2. **Code**  
+   Practical implementation using Python  
 
-When a lesson draws on external sources, in-line citations appear within the text, with the corresponding references listed at the end of that lesson page. A complete list of references used throughout the guide is also collected in the **References** section at the end of the guide.
+3. **Interpretation**  
+   What the results actually mean  
 
----
+4. **Takeaway**  
+   The key idea you should retain  
 
-## How to Use This Guide
+5. **Exercise**  
+   A small task to reinforce learning  
 
-This guide is designed to be:
+This structure is intentional.
 
-- **Self-paced**  
-- **Hands-on**  
-- **Modular**  
-- **Accessible**  
-
----
-
-## Lesson Workflow
-
-Each lesson follows a consistent structure:
-
-1. Concept explanation  
-2. Guided code examples  
-3. Output interpretation  
-4. Short exercises  
-5. Key takeaways  
-6. Next steps  
+It ensures that learning moves beyond code into understanding.
 
 ---
 
-## Data and Project Structure
+## How to Approach This Guide
 
-Throughout the guide:
+You do not need prior experience in data science.
 
-- Datasets are stored in a consistent `data/` directory  
-- Early lessons generate `data/iris.csv` automatically  
-- Additional datasets are introduced as needed in later lessons  
+But you should:
+
+- run the code yourself  
+- observe outputs carefully  
+- try to explain results in your own words  
+
+Do not rush.
+
+Understanding grows from **interaction**, not passive reading.
 
 ---
 
-:::cdi-message
-## About This Guide
+## The CDI Reasoning Workflow
 
-This guide follows a human-first, carefully curated approach.
-AI tools were used as assistants during drafting and refinement, with all final content reviewed and approved by a human.
-:::
+Data analysis is not a straight line.
+
+It is a process of iteration, where each step informs the next.
+
+```{mermaid}
+flowchart TB
+  A[Question or Problem] --> B[Load & Explore Data]
+
+  B --> C[Clean & Prepare]
+  B --> D[Visualize Patterns]
+
+  C --> D
+  D --> E[Summarize & Interpret]
+
+  E --> F[Refine Question / Hypothesis]
+  F --> B
+```
+
+This diagram represents how analytical work actually happens:
+
+- You begin with a question
+- You explore and prepare data
+- You visualize and summarize patterns
+- You refine your understanding
+- Then you return to the data again
+
+Insight is not produced in a single pass.
+
+It emerges through revisiting earlier steps with better questions.
+
+---
+
+## What Comes Next
+
+In the next chapter, we will set up the environment required to begin working with data.
+
+Once that is ready, we will move directly into exploring real datasets.

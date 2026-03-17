@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Visualization Basics – Data Science Foundations</title>
+<title>Visualization Foundations – Data Science Foundations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -121,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-visualization-basics.html">Understanding Your Data</a></li><li class="breadcrumb-item"><a href="./05-visualization-basics.html"><span class="chapter-title">Visualization Basics</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-visualization-basics.html">Understanding Your Data</a></li><li class="breadcrumb-item"><a href="./05-visualization-basics.html"><span class="chapter-title">Visualization Foundations</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -162,7 +162,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome to CDI Data Science Foundations in Python</span></a>
+  <a href="./00-preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -209,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-visualization-basics.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Visualization Basics</span></a>
+  <a href="./05-visualization-basics.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Visualization Foundations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -222,7 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Premium Upgrade &amp; Completion</span></a>
+ <span class="menu-text">Upgrade &amp; Transition</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -230,7 +231,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06x1-complete-free-track.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Complete Free Track</span></a>
+  <a href="./06x1-complete-free-track.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Completing the Foundations Track</span></a>
   </div>
 </li>
       </ul>
@@ -267,23 +268,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#lesson-overview" id="toc-lesson-overview" class="nav-link active" data-scroll-target="#lesson-overview">Lesson Overview</a></li>
-  <li><a href="#chapter-initialization" id="toc-chapter-initialization" class="nav-link" data-scroll-target="#chapter-initialization">Chapter Initialization</a></li>
-  <li><a href="#load-the-clean-dataset" id="toc-load-the-clean-dataset" class="nav-link" data-scroll-target="#load-the-clean-dataset">Load the Clean Dataset</a></li>
-  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram">Histogram</a></li>
-  <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot">Boxplot</a></li>
-  <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot">Scatter Plot</a></li>
-  <li><a href="#pairplot-overview" id="toc-pairplot-overview" class="nav-link" data-scroll-target="#pairplot-overview">Pairplot Overview</a></li>
-  <li><a href="#visualization-best-practices" id="toc-visualization-best-practices" class="nav-link" data-scroll-target="#visualization-best-practices">Visualization Best Practices</a></li>
+  <li><a href="#load-the-dataset" id="toc-load-the-dataset" class="nav-link" data-scroll-target="#load-the-dataset">Load the Dataset</a></li>
+  <li><a href="#inspect-the-variables" id="toc-inspect-the-variables" class="nav-link" data-scroll-target="#inspect-the-variables">Inspect the Variables</a>
+  <ul class="collapse">
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  </ul></li>
+  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram">Histogram</a>
+  <ul class="collapse">
+  <li><a href="#interpretation-1" id="toc-interpretation-1" class="nav-link" data-scroll-target="#interpretation-1">Interpretation</a></li>
+  </ul></li>
+  <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot">Boxplot</a>
+  <ul class="collapse">
+  <li><a href="#interpretation-2" id="toc-interpretation-2" class="nav-link" data-scroll-target="#interpretation-2">Interpretation</a></li>
+  </ul></li>
+  <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot">Scatter Plot</a>
+  <ul class="collapse">
+  <li><a href="#interpretation-3" id="toc-interpretation-3" class="nav-link" data-scroll-target="#interpretation-3">Interpretation</a></li>
+  </ul></li>
+  <li><a href="#grouped-histogram" id="toc-grouped-histogram" class="nav-link" data-scroll-target="#grouped-histogram">Grouped Histogram</a>
+  <ul class="collapse">
+  <li><a href="#interpretation-4" id="toc-interpretation-4" class="nav-link" data-scroll-target="#interpretation-4">Interpretation</a></li>
+  </ul></li>
+  <li><a href="#pairplot-overview" id="toc-pairplot-overview" class="nav-link" data-scroll-target="#pairplot-overview">Pairplot Overview</a>
+  <ul class="collapse">
+  <li><a href="#interpretation-5" id="toc-interpretation-5" class="nav-link" data-scroll-target="#interpretation-5">Interpretation</a></li>
+  </ul></li>
+  <li><a href="#reading-visual-evidence-carefully" id="toc-reading-visual-evidence-carefully" class="nav-link" data-scroll-target="#reading-visual-evidence-carefully">Reading Visual Evidence Carefully</a></li>
+  <li><a href="#visualization-principles" id="toc-visualization-principles" class="nav-link" data-scroll-target="#visualization-principles">Visualization Principles</a></li>
+  <li><a href="#validation-through-visualization" id="toc-validation-through-visualization" class="nav-link" data-scroll-target="#validation-through-visualization">Validation Through Visualization</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-visualization-basics.html">Understanding Your Data</a></li><li class="breadcrumb-item"><a href="./05-visualization-basics.html"><span class="chapter-title">Visualization Basics</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-visualization-basics.html">Understanding Your Data</a></li><li class="breadcrumb-item"><a href="./05-visualization-basics.html"><span class="chapter-title">Visualization Foundations</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="lesson05" class="quarto-section-identifier"><span class="chapter-title">Visualization Basics</span></span></h1>
+<h1 class="title"><span id="lesson05" class="quarto-section-identifier"><span class="chapter-title">Visualization Foundations</span></span></h1>
 </div>
 
 
@@ -305,55 +328,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>ID:</strong> DS-L05</li>
 <li><strong>Type:</strong> Lesson</li>
 <li><strong>Audience:</strong> Public</li>
-<li><strong>Theme:</strong> Foundational data visualization using reproducible Quarto workflows</li>
+<li><strong>Theme:</strong> Foundational data visualization using clear, reproducible workflows</li>
 </ul>
 </div>
-<p>Visualization is one of the most powerful tools in data science.</p>
-<p>It allows you to:</p>
-<ul>
-<li>Understand distributions<br>
-</li>
-<li>Detect patterns and relationships<br>
-</li>
-<li>Identify anomalies<br>
-</li>
-<li>Communicate findings clearly</li>
-</ul>
-<p>As in previous chapters, all code runs inside this Quarto (<code>.qmd</code>) file and executes when you render the book.</p>
+<p>Visualization is one of the most important tools in data science.</p>
+<p>A good plot helps you detect structure, compare groups, identify unusual values, and communicate findings clearly. But visualization is not only about producing charts. It is also about learning how to read evidence from patterns.</p>
+<p>In this lesson, we focus on foundational plot types that appear repeatedly in real workflows. We will use the cleaned Iris dataset and practice both creating figures and interpreting what they show.</p>
 <hr>
 <section id="lesson-overview" class="level2">
 <h2 class="anchored" data-anchor-id="lesson-overview">Lesson Overview</h2>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
-<li>Create histograms and boxplots<br>
+<li>Create histograms, boxplots, scatter plots, and pairplots<br>
 </li>
-<li>Build scatter plots<br>
+<li>Compare numeric distributions across groups<br>
 </li>
-<li>Visualize grouped comparisons<br>
+<li>Use color to represent categories clearly<br>
 </li>
-<li>Customize plot titles and labels<br>
+<li>Interpret patterns, spread, overlap, and separation<br>
 </li>
-<li>Save figures reproducibly</li>
+<li>Build plots that are readable and analytically useful</li>
 </ul>
 <hr>
 </section>
-<section id="chapter-initialization" class="level2">
-<h2 class="anchored" data-anchor-id="chapter-initialization">Chapter Initialization</h2>
-<div id="chapter-init" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> cdi_viz.theme <span class="im">import</span> cdi_notebook_init, show_and_save_mpl</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>cdi_notebook_init(chapter<span class="op">=</span><span class="st">"05"</span>, title_x<span class="op">=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<hr>
-</section>
-<section id="load-the-clean-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="load-the-clean-dataset">Load the Clean Dataset</h2>
-<div id="cell-05-load-data" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/iris_clean.csv"</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="load-data" class="cell-output cell-output-display" data-execution_count="2">
+<section id="load-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="load-the-dataset">Load the Dataset</h2>
+<p>We use the cleaned dataset prepared in the previous lesson.</p>
+<div id="cell-05-load-data" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/iris_clean.csv"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="load-data" class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -417,143 +428,405 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <hr>
 </section>
+<section id="inspect-the-variables" class="level2">
+<h2 class="anchored" data-anchor-id="inspect-the-variables">Inspect the Variables</h2>
+<p>Before plotting, confirm the structure of the dataset.</p>
+<div id="inspect-variables" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Shape:"</span>, df.shape)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Columns:"</span>, df.columns.tolist())</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Data types:"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.dtypes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Shape: (149, 5)
+
+Columns: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
+
+Data types:
+sepal_length    float64
+sepal_width     float64
+petal_length    float64
+petal_width     float64
+species             str
+dtype: object</code></pre>
+</div>
+</div>
+<section id="interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation">Interpretation</h3>
+<p>Before making plots, ask:</p>
+<ul>
+<li>Which variables are numeric?</li>
+<li>Which variable defines the groups?</li>
+<li>Which comparisons are likely to be meaningful?</li>
+</ul>
+<p>For the Iris dataset, the numeric flower measurements and the categorical <code>species</code> variable naturally support both distribution plots and grouped comparisons.</p>
+<hr>
+</section>
+</section>
 <section id="histogram" class="level2">
 <h2 class="anchored" data-anchor-id="histogram">Histogram</h2>
-<p>Histograms help us understand the distribution of a variable.</p>
-<div id="histogram" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>ax.hist(df[<span class="st">"sepal_length"</span>], bins<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Distribution of Sepal Length"</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"sepal_length"</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Frequency"</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.2</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>show_and_save_mpl(fig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Histograms help us understand the distribution of a single numeric variable.</p>
+<div id="cell-05-histogram" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">5.5</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"sepal_length"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    bins<span class="op">=</span><span class="dv">12</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    kde<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>ax</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Distribution of Sepal Length"</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Sepal Length"</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Count"</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
-<div id="histogram-1" class="quarto-figure quarto-figure-center anchored">
+<div id="histogram" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="05-visualization-basics_files/figure-html/histogram-output-1.png" class="img-fluid figure-img"></p>
 <figcaption>Iris — Distribution of Sepal Length</figcaption>
 </figure>
 </div>
 </div>
-<div id="histogram-2" class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>'figures/05_001.png'</code></pre>
 </div>
-</div>
+<section id="interpretation-1" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-1">Interpretation</h3>
+<p>When reading a histogram, look for:</p>
+<ul>
+<li>the center of the distribution</li>
+<li>the spread of values</li>
+<li>skewness</li>
+<li>possible multiple peaks</li>
+</ul>
+<p>If a variable shows multiple peaks, that can suggest the data may contain meaningful subgroups.</p>
 <hr>
+</section>
 </section>
 <section id="boxplot" class="level2">
 <h2 class="anchored" data-anchor-id="boxplot">Boxplot</h2>
-<p>Boxplots highlight spread and potential outliers.</p>
-<div id="boxplot" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<p>Boxplots summarize a distribution using the median, quartiles, and possible outliers.</p>
+<div id="cell-05-boxplot" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">5.5</span>))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"species"</span>, y<span class="op">=</span><span class="st">"sepal_length"</span>, ax<span class="op">=</span>ax)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Sepal Length by Species"</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, axis<span class="op">=</span><span class="st">"y"</span>, alpha<span class="op">=</span><span class="fl">0.2</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>show_and_save_mpl(fig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sns.boxplot(</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"species"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"sepal_length"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>ax</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Sepal Length by Species"</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Species"</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Sepal Length"</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
-<div id="boxplot-1" class="quarto-figure quarto-figure-center anchored">
+<div id="boxplot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="05-visualization-basics_files/figure-html/boxplot-output-1.png" class="img-fluid figure-img"></p>
 <figcaption>Iris — Sepal Length by Species</figcaption>
 </figure>
 </div>
 </div>
-<div id="boxplot-2" class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>'figures/05_002.png'</code></pre>
 </div>
-</div>
+<section id="interpretation-2" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-2">Interpretation</h3>
+<p>A boxplot helps you compare groups by showing:</p>
+<ul>
+<li>typical value differences through the median</li>
+<li>variation within each group</li>
+<li>possible outliers</li>
+<li>overlap across groups</li>
+</ul>
+<p>If two groups overlap strongly, that variable alone may not separate them well.</p>
 <hr>
+</section>
 </section>
 <section id="scatter-plot" class="level2">
 <h2 class="anchored" data-anchor-id="scatter-plot">Scatter Plot</h2>
-<p>Scatter plots reveal relationships between two variables.</p>
-<div id="scatter" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df,</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"sepal_length"</span>,</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"petal_length"</span>,</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">"species"</span>,</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>ax</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Sepal Length vs Petal Length"</span>)</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.2</span>)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>show_and_save_mpl(fig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Scatter plots show the relationship between two numeric variables.</p>
+<div id="cell-05-scatter" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">5.5</span>))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"sepal_length"</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"petal_length"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">"species"</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    s<span class="op">=</span><span class="dv">70</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.8</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>ax</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Sepal Length vs Petal Length"</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Sepal Length"</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Petal Length"</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
-<div id="scatter-1" class="quarto-figure quarto-figure-center anchored">
+<div id="scatter" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="05-visualization-basics_files/figure-html/scatter-output-1.png" class="img-fluid figure-img"></p>
 <figcaption>Iris — Sepal Length vs Petal Length</figcaption>
 </figure>
 </div>
 </div>
-<div id="scatter-2" class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>'figures/05_003.png'</code></pre>
 </div>
-</div>
+<section id="interpretation-3" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-3">Interpretation</h3>
+<p>Scatter plots help you evaluate:</p>
+<ul>
+<li>whether two variables move together</li>
+<li>whether groups cluster separately</li>
+<li>whether the pattern looks linear or non-linear</li>
+<li>whether any observations appear unusual</li>
+</ul>
+<p>In many datasets, scatter plots are among the fastest tools for detecting group structure.</p>
 <hr>
 </section>
-<section id="pairplot-overview" class="level2">
-<h2 class="anchored" data-anchor-id="pairplot-overview">Pairplot Overview</h2>
-<p>Pairplots provide a quick overview of relationships between multiple variables.</p>
-<div id="pairplot" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> sns.pairplot(df, hue<span class="op">=</span><span class="st">"species"</span>, corner<span class="op">=</span><span class="va">True</span>, plot_kws<span class="op">=</span>{<span class="st">"alpha"</span>: <span class="fl">0.7</span>})</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>g.fig.suptitle(<span class="st">"Iris — Pairplot Overview"</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>show_and_save_mpl(g.fig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="grouped-histogram" class="level2">
+<h2 class="anchored" data-anchor-id="grouped-histogram">Grouped Histogram</h2>
+<p>A grouped histogram helps compare distributions across categories.</p>
+<div id="cell-05-grouped-histogram" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">5.5</span>))</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"petal_length"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">"species"</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    bins<span class="op">=</span><span class="dv">15</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    kde<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>ax</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Petal Length Distribution by Species"</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Petal Length"</span>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Count"</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
-<div id="pairplot-1" class="quarto-figure quarto-figure-center anchored">
+<div id="grouped-histogram" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="05-visualization-basics_files/figure-html/pairplot-output-1.png" class="img-fluid figure-img"></p>
-<figcaption>Iris — Pairplot Overview</figcaption>
+<p><img src="05-visualization-basics_files/figure-html/grouped-histogram-output-1.png" class="img-fluid figure-img"></p>
+<figcaption>Iris — Petal Length Distribution by Species</figcaption>
 </figure>
 </div>
 </div>
-<div id="pairplot-2" class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>'figures/05_004.png'</code></pre>
 </div>
-</div>
+<section id="interpretation-4" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-4">Interpretation</h3>
+<p>This plot is useful when you want to compare whether groups differ in:</p>
+<ul>
+<li>location</li>
+<li>spread</li>
+<li>overlap</li>
+<li>shape of the distribution</li>
+</ul>
+<p>If one group’s values occupy a clearly different range, that variable may be especially useful for classification or interpretation.</p>
 <hr>
 </section>
-<section id="visualization-best-practices" class="level2">
-<h2 class="anchored" data-anchor-id="visualization-best-practices">Visualization Best Practices</h2>
-<ul>
-<li>Label axes clearly<br>
-</li>
-<li>Use meaningful titles<br>
-</li>
-<li>Avoid unnecessary decoration<br>
-</li>
-<li>Keep plots readable<br>
-</li>
-<li>Maintain consistent styling</li>
-</ul>
-<div class="cdi-message">
-<p>Good visualization supports interpretation.<br>
-Cluttered visualization hides insight.</p>
+</section>
+<section id="pairplot-overview" class="level2">
+<h2 class="anchored" data-anchor-id="pairplot-overview">Pairplot Overview</h2>
+<p>Pairplots provide a compact view of multiple variable relationships at once.</p>
+<div id="cell-05-pairplot" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> sns.pairplot(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    df,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">"species"</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    corner<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    plot_kws<span class="op">=</span>{<span class="st">"alpha"</span>: <span class="fl">0.7</span>}</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>g.fig.suptitle(<span class="st">"Iris — Pairplot by Species"</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="pairplot" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="05-visualization-basics_files/figure-html/pairplot-output-1.png" class="img-fluid figure-img"></p>
+<figcaption>Iris — Pairplot by Species</figcaption>
+</figure>
 </div>
+</div>
+</div>
+<section id="interpretation-5" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-5">Interpretation</h3>
+<p>Pairplots help you answer broader questions such as:</p>
+<ul>
+<li>Which variables best separate species?</li>
+<li>Which features seem strongly related?</li>
+<li>Which measurements appear redundant?</li>
+<li>Where do groups overlap and where do they separate cleanly?</li>
+</ul>
+<p>This is often one of the best first multivariate views of a dataset.</p>
+<hr>
+</section>
+</section>
+<section id="reading-visual-evidence-carefully" class="level2">
+<h2 class="anchored" data-anchor-id="reading-visual-evidence-carefully">Reading Visual Evidence Carefully</h2>
+<p>A plot is only useful if we interpret it carefully.</p>
+<p>When reading a figure, ask:</p>
+<ul>
+<li>What question is this plot helping answer?</li>
+<li>What pattern is visible?</li>
+<li>How strong is the pattern?</li>
+<li>Is there overlap, uncertainty, or ambiguity?</li>
+<li>Does this match what earlier summaries suggested?</li>
+</ul>
+<p>Visualization should support reasoning, not replace it.</p>
+<hr>
+</section>
+<section id="visualization-principles" class="level2">
+<h2 class="anchored" data-anchor-id="visualization-principles">Visualization Principles</h2>
+<p>Strong foundational plots usually share a few qualities:</p>
+<ul>
+<li>clear titles and labels</li>
+<li>readable axes</li>
+<li>purposeful use of color</li>
+<li>minimal clutter</li>
+<li>plot choice matched to the question</li>
+</ul>
+<p>A histogram is useful for one-variable distributions.<br>
+A boxplot is useful for comparing distributions across groups.<br>
+A scatter plot is useful for relationships between two variables.<br>
+A pairplot is useful for quick multivariate exploration.</p>
+<hr>
+</section>
+<section id="validation-through-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="validation-through-visualization">Validation Through Visualization</h2>
+<p>Plots can also function as validation tools.</p>
+<p>Use them to check:</p>
+<ul>
+<li>whether distributions look plausible</li>
+<li>whether outliers need review</li>
+<li>whether grouped differences are real or mostly overlap</li>
+<li>whether patterns are consistent with earlier cleaning and wrangling steps</li>
+</ul>
+<p>Visualization often reveals issues that summary tables alone can miss.</p>
 <hr>
 </section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
 <ul>
-<li>You created histograms, boxplots, and scatter plots<br>
-</li>
-<li>You visualized grouped comparisons<br>
-</li>
-<li>You applied consistent styling<br>
-</li>
-<li>You saved figures reproducibly using the CDI visualization utilities</li>
+<li>You used foundational plot types to explore the Iris dataset</li>
+<li>You compared distributions within and across species</li>
+<li>You examined relationships between numeric variables</li>
+<li>You used visual patterns to support interpretation</li>
+<li>You practiced moving from chart creation to analytical reasoning</li>
 </ul>
-<p>You are now prepared to generate structured insights from visual evidence.</p>
+<p>These are core visualization habits that carry forward into more advanced analysis.</p>
+<hr>
+</section>
+<section id="exercise" class="level2">
+<h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
+<p>Try the following:</p>
+<ol type="1">
+<li>Create a scatter plot of <code>sepal_width</code> versus <code>petal_width</code></li>
+<li>Plot a histogram of <code>petal_width</code></li>
+<li>Create a boxplot of <code>petal_width</code> by species</li>
+<li>Write one sentence describing which feature seems most useful for separating species</li>
+</ol>
+<div id="exercise" class="cell" data-execution_count="8">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">5.5</span>))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"sepal_width"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"petal_width"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">"species"</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    s<span class="op">=</span><span class="dv">70</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.8</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>ax</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Sepal Width vs Petal Width"</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Sepal Width"</span>)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Petal Width"</span>)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">5.5</span>))</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>sns.histplot(</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df,</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"petal_width"</span>,</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>    bins<span class="op">=</span><span class="dv">12</span>,</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>    kde<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>ax</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Distribution of Petal Width"</span>)</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Petal Width"</span>)</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Count"</span>)</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="fl">5.5</span>))</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>sns.boxplot(</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df,</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"species"</span>,</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"petal_width"</span>,</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>ax</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Petal Width by Species"</span>)</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Species"</span>)</span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Petal Width"</span>)</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Your interpretation:"</span>)</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Petal-related features appear more useful than sepal-related features for separating species because their group differences are more distinct."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="05-visualization-basics_files/figure-html/exercise-output-1.png" id="exercise-1" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="05-visualization-basics_files/figure-html/exercise-output-2.png" id="exercise-2" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="05-visualization-basics_files/figure-html/exercise-output-3.png" id="exercise-3" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Your interpretation:
+Petal-related features appear more useful than sepal-related features for separating species because their group differences are more distinct.</code></pre>
+</div>
+</div>
 
 
 </section>

@@ -31,3 +31,22 @@ def show_and_save_mpl(fig: Optional[plt.Figure] = None, dpi: int = 160) -> str:
     fig.savefig(out, dpi=dpi, bbox_inches="tight")
     plt.show()
     return str(out)
+
+def _project_root() -> Path:
+    return Path(__file__).resolve().parents[1]
+
+
+def _figures_dir() -> Path:
+    fig_dir = _project_root() / "figures"
+    fig_dir.mkdir(parents=True, exist_ok=True)
+    return fig_dir
+
+
+def show_and_save_mpl(fig: Optional[plt.Figure] = None, dpi: int = 160) -> None:
+    if fig is None:
+        fig = plt.gcf()
+
+    _STATE.fig_counter += 1
+    out = _figures_dir() / f"{_STATE.chapter}_{_STATE.fig_counter:03d}.png"
+    fig.savefig(out, dpi=dpi, bbox_inches="tight")
+    plt.show()

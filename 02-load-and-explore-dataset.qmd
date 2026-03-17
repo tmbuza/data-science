@@ -1,41 +1,53 @@
 # Load and Explore a Dataset {#lesson02}
 
 :::cdi-message
-- **ID:** DS-L02
-- **Type:** Lesson
-- **Audience:** Public
-- **Theme:** Data loading, structure inspection, and initial exploration
+- **ID:** CDI-DS-EXPLORE-002
+- **Type:** Core Lesson
+- **Audience:** Beginner / Intermediate
+- **Theme:** Exploration before interpretation
 :::
 
-Every data science project begins with understanding the dataset.
+Analytical work does not begin with modeling.
 
-In this guide, code is executed inside Quarto chapter files (`.qmd`). When you render the book, Quarto runs the Python chunks and embeds the results directly into the page.
+It begins with **looking carefully at the data**.
+
+Before fitting models or drawing conclusions, we need to understand:
+- what the dataset contains
+- how variables are structured
+- whether values look plausible
+- and whether early patterns deserve closer attention
+
+In CDI, this stage is not a formality. It is where we begin to build analytical judgment.
 
 In this lesson, you will:
 
-- Load a dataset into a pandas DataFrame  
-- Inspect its structure and data types  
-- Generate summary statistics  
-- Create initial visualizations  
-- Save the dataset for reuse in later lessons  
+- load the Iris dataset into a pandas DataFrame
+- inspect its structure and column types
+- generate summary statistics
+- create modern exploratory plots
+- save the dataset for reuse in later lessons
 
 ---
 
-## Chapter Initialization
+## Why this step matters
 
-```{python}
-#| label: 02-chapter-init
+A dataset can look clean at first glance and still contain issues that affect later analysis.
 
-from cdi_viz.theme import cdi_notebook_init, show_and_save_mpl
+Early exploration helps you answer practical questions such as:
 
-cdi_notebook_init(chapter="02", title_x=0.5)
-```
+- How many rows and columns do I have?
+- Which variables are numeric and which are categorical?
+- Do any values look unusual?
+- Are there visible group differences?
+- What should I examine more carefully next?
+
+This is the beginning of defensible analysis.
 
 ---
 
-## Load the Dataset
+## Load the dataset
 
-We load Iris using scikit-learn, convert it into a DataFrame, rename columns to `snake_case`, then save it to disk.
+We will use the Iris dataset from scikit-learn, convert it to a pandas DataFrame, and standardize the column names.
 
 ```{python}
 #| label: 02-load-iris
@@ -53,11 +65,18 @@ df.columns = ["sepal_length", "sepal_width", "petal_length", "petal_width", "spe
 df.head()
 ```
 
+### What happened here?
+
+- `iris.data` contains the numeric measurements
+- `iris.target` contains the species labels encoded as integers
+- `pd.Categorical.from_codes()` converts those encoded values into readable species names
+- the columns are renamed to `snake_case` so later code stays clean and consistent
+
 ---
 
-## Save the Dataset for Future Lessons
+## Save the dataset for future lessons
 
-We store datasets in `data/` throughout this course.
+We will keep reusable datasets inside a local `data/` folder.
 
 ```{python}
 #| label: 02-save-iris
@@ -70,9 +89,13 @@ df.to_csv("data/iris.csv", index=False)
 print("Saved dataset to: data/iris.csv")
 ```
 
+Saving the dataset at this point helps later lessons stay reproducible and consistent.
+
 ---
 
-## Inspect the Dataset Structure
+## Inspect the structure
+
+Before plotting or summarizing, inspect the shape and variable types.
 
 ```{python}
 #| label: 02-inspect-structure
@@ -80,16 +103,41 @@ print("Saved dataset to: data/iris.csv")
 print("Columns:")
 print(df.columns.tolist())
 
-print("\nShape (rows, cols):")
+print("\nShape (rows, columns):")
 print(df.shape)
 
 print("\nData types:")
 print(df.dtypes)
 ```
 
+### Interpretation
+
+At this stage, you should notice:
+
+- the dataset has **150 rows**
+- there are **4 numeric measurement columns**
+- `species` is a **categorical grouping variable**
+
+That already tells us this is a small, tidy dataset that is well suited for learning exploratory analysis.
+
 ---
 
-## Summary Statistics
+## Preview the data more carefully
+
+```{python}
+#| label: 02-preview-random
+#| code-fold: false
+
+df.sample(8, random_state=42)
+```
+
+Looking at a few random rows is often more informative than only checking the first five rows.
+
+It helps confirm that values look realistic across the dataset instead of only at the top.
+
+---
+
+## Summary statistics
 
 ```{python}
 #| label: 02-summary-statistics
@@ -97,66 +145,232 @@ print(df.dtypes)
 df.describe()
 ```
 
+### Interpretation
+
+These summary statistics help answer early questions:
+
+- What is the average size of each measurement?
+- Which variables have wider spread?
+- Are minimum and maximum values plausible?
+- Do some variables appear more variable than others?
+
+For Iris, petal measurements often show stronger separation across species than sepal measurements. We will confirm that visually next.
+
 ---
 
-## Basic Exploratory Visualizations
+## Species counts
 
-At this stage, visuals are used to inspect and spot-check the dataset.
+Before comparing groups, verify that each group is represented.
 
-### Histograms of Numeric Features
+```{python}
+#| label: 02-species-counts
+
+df["species"].value_counts().sort_index()
+```
+
+### Interpretation
+
+This dataset is balanced across species, which makes visual comparison easier.
+
+---
+
+## Exploratory visualizations
+
+We will use modern plotting with **seaborn** and **matplotlib**, without CDI theme dependencies.
+
+These plots are not yet final presentation graphics. Their purpose is to help us inspect the data and notice patterns worth explaining.
+
+### Distribution of numeric features
 
 ```{python}
 #| label: 02-histograms
-#| fig-cap: "Iris — Histograms of Numeric Features"
+#| fig-cap: "Iris — Distribution of Numeric Features"
 
+import seaborn as sns
 import matplotlib.pyplot as plt
 
-df[["sepal_length", "sepal_width", "petal_length", "petal_width"]].hist(
-    figsize=(10, 7),
-    bins=12
-)
-plt.suptitle("Iris — Histograms of Numeric Features", y=1.02)
-plt.tight_layout()
+sns.set_theme(style="whitegrid", context="notebook")
 
-show_and_save_mpl()
+df_long = df.melt(
+    value_vars=["sepal_length", "sepal_width", "petal_length", "petal_width"],
+    var_name="feature",
+    value_name="value"
+)
+
+g = sns.displot(
+    data=df_long,
+    x="value",
+    col="feature",
+    col_wrap=2,
+    bins=12,
+    height=3.6,
+    aspect=1.15,
+    facet_kws={"sharex": False, "sharey": False}
+)
+
+g.set_titles("{col_name}")
+g.set_axis_labels("Value", "Count")
+g.fig.suptitle("Iris — Distribution of Numeric Features", y=1.03)
+
+plt.show()
 ```
 
-### Scatter: sepal_length vs petal_length
+### Interpretation
+
+These histograms help us see:
+
+- the overall spread of each feature
+- whether values are concentrated or dispersed
+- whether some variables may contain overlapping or separated groups
+
+A single histogram does not separate species, but it gives a first impression of the measurement ranges.
+
+---
+
+### Boxplots by species
+
+```{python}
+#| label: 02-boxplots-by-species
+#| fig-cap: "Iris — Petal Length by Species"
+
+ffig, ax = plt.subplots(figsize=(8, 5))
+
+# Boxplot (soft blue palette)
+sns.boxplot(
+    data=df,
+    x="species",
+    y="petal_length",
+    width=0.5,
+    fliersize=0,
+    boxprops=dict(facecolor="darkblue", alpha=0.8),
+    medianprops=dict(color="steelblue", linewidth=1.8),
+    whiskerprops=dict(color="steelblue"),
+    capprops=dict(color="steelblue"),
+    ax=ax
+)
+
+# Points (warm contrast)
+sns.stripplot(
+    data=df,
+    x="species",
+    y="petal_length",
+    color="steelblue",
+    alpha=0.8,
+    size=4.5,
+    jitter=0.22,
+    ax=ax
+)
+
+ax.set_title("Petal Length by Species")
+ax.set_xlabel("Species")
+ax.set_ylabel("Petal Length")
+
+plt.show()
+```
+
+### Interpretation
+
+This plot compares distributions across species directly.
+
+You should already see that **petal length differs strongly by species**, which suggests this feature may be especially informative in later analyses.
+
+---
+
+### Scatter plot: sepal length vs petal length
 
 ```{python}
 #| label: 02-scatter-sepal-vs-petal
-#| fig-cap: "Iris — Sepal Length vs Petal Length"
+#| fig-cap: "Iris — Sepal Length vs Petal Length by Species"
 
-fig, ax = plt.subplots(figsize=(8, 5))
-ax.scatter(df["sepal_length"], df["petal_length"], alpha=0.7)
-ax.set_xlabel("sepal_length")
-ax.set_ylabel("petal_length")
-ax.grid(True, alpha=0.2)
+fig, ax = plt.subplots(figsize=(8, 5.5))
 
-show_and_save_mpl(fig)
+sns.scatterplot(
+    data=df,
+    x="sepal_length",
+    y="petal_length",
+    hue="species",
+    s=70,
+    alpha=0.8,
+    ax=ax
+)
+
+ax.set_title("Sepal Length vs Petal Length")
+ax.set_xlabel("Sepal Length")
+ax.set_ylabel("Petal Length")
+
+plt.show()
 ```
 
-### Pairplot by Species
+### Interpretation
+
+Scatter plots help us inspect relationships between two variables at the same time.
+
+Here, the species begin to separate into visible clusters, especially when petal length is involved. That is a strong exploratory signal that some measurements carry more discriminatory information than others.
+
+---
+
+### Pairwise relationships
 
 ```{python}
 #| label: 02-pairplot-by-species
-#| fig-cap: "Iris — Pairplot by Species"
+#| fig-cap: "Iris — Pairwise Relationships by Species"
 
-import seaborn as sns
+g = sns.pairplot(
+    df,
+    hue="species",
+    corner=True,
+    diag_kind="hist",
+    plot_kws={"alpha": 0.7, "s": 45}
+)
 
-g = sns.pairplot(df, hue="species", corner=True, plot_kws={"alpha": 0.7})
-g.fig.suptitle("Iris — Pairplot by Species", y=1.02)
+g.fig.suptitle("Iris — Pairwise Relationships by Species", y=1.02)
 
-show_and_save_mpl(g.fig)
+plt.show()
 ```
+
+### Interpretation
+
+The pairplot gives a broader view of the dataset:
+
+- which variable pairs show separation
+- where clusters overlap
+- whether some variables appear more useful for distinguishing species
+
+This kind of overview is valuable before choosing formal models.
+
+---
+
+## Create a simple derived feature
+
+Feature creation is often part of exploration.
+
+Here we create a new variable called `petal_area` as a simple combination of petal length and petal width.
+
+```{python}
+#| label: 02-create-derived-feature
+
+df["petal_area"] = df["petal_length"] * df["petal_width"]
+
+df.head()
+```
+
+This does not mean the new feature is automatically better. It simply shows how exploratory analysis can lead to new candidate variables.
 
 ---
 
 ## Exercise
 
-- Print the last five rows of the dataset  
-- Count how many rows exist for each species  
-- Create a new feature called `petal_area` (`petal_length` × `petal_width`) and print the first five rows  
+Try the following:
+
+1. Print the last five rows of the dataset.  
+2. Compute the mean of `petal_area` for each species.  
+3. Create a scatter plot of `sepal_width` versus `petal_width`.  
+4. Write one sentence describing which feature seems most useful for separating species.  
+
+---
+
+::: {.callout-tip collapse="true"}
+## Solution
 
 ```{python}
 #| label: 02-exercise
@@ -164,20 +378,60 @@ show_and_save_mpl(g.fig)
 print("Last 5 rows:")
 print(df.tail())
 
-print("\nRows per species:")
-print(df["species"].value_counts())
+print("\nMean petal_area by species:")
+print(df.groupby("species", observed=False)["petal_area"].mean())
 
-df["petal_area"] = df["petal_length"] * df["petal_width"]
+fig, ax = plt.subplots(figsize=(8, 5.5))
 
-print("\nWith petal_area:")
-print(df.head())
+sns.scatterplot(
+    data=df,
+    x="sepal_width",
+    y="petal_width",
+    hue="species",
+    s=70,
+    alpha=0.8,
+    ax=ax
+)
+
+ax.set_title("Sepal Width vs Petal Width")
+ax.set_xlabel("Sepal Width")
+ax.set_ylabel("Petal Width")
+
+plt.show()
 ```
+
+Interpretation:
+
+Petal-based features provide clearer separation between species than sepal-based features.
+:::
+
+---
+
+## CDI Insight
+
+Exploration is not just about making plots.
+
+It is about learning how the dataset behaves before you ask it to support conclusions.
+
+A responsible analyst does not rush from data loading to modeling. They pause, inspect, compare, question, and only then move forward.
+
+That habit is one of the foundations of reliable analysis.
 
 ---
 
 ## Summary
 
-- You loaded Iris using scikit-learn and converted it to a pandas DataFrame  
-- You standardized column names to `snake_case`  
-- You saved the dataset to `data/iris.csv` for future lessons  
-- You inspected structure, summary statistics, and created starter visuals  
+In this lesson, you:
+
+- loaded the Iris dataset into a pandas DataFrame
+- standardized the column names
+- saved the dataset to `data/iris.csv`
+- inspected structure, data types, and summary statistics
+- used modern exploratory plots to examine distributions and group differences
+- created a simple derived feature for further exploration
+
+---
+
+## Next Step
+
+→ **Clean and prepare the dataset for analysis**

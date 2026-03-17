@@ -1,103 +1,108 @@
-# Complete Free Track {#complete-free-track}
+# Completing the Foundations Track {#lesson06x1}
 
 :::cdi-message
 - **ID:** DS-L06X1
-- **Type:** Wrap-up
+- **Type:** Transition
 - **Audience:** Public
-- **Theme:** Consolidation, reproducibility, and next steps
+- **Theme:** From foundations to applied reasoning
 :::
 
-You have completed the Foundations Track of **CDI Data Science Foundations in Python**.
+You have completed the Foundations Track of the CDI Data Science pathway.
 
-This guide is **Quarto-first**. Every chapter is written as a `.qmd` file and executed during rendering, so the figures and outputs you see are reproducible.
+At this stage, you have developed the core habits that support reliable analysis:
 
----
+- loading and inspecting datasets  
+- cleaning and validating data  
+- transforming and structuring data  
+- visualizing patterns  
+- summarizing evidence using statistics  
 
-## What You Built
-
-Across Lessons 01–06, you built a complete, end-to-end workflow:
-
-- Set up a reproducible Python environment (`.venv`) and rendered a Quarto book  
-- Loaded a dataset and saved it into a consistent project structure (`data/`)  
-- Cleaned and validated the dataset (`data/iris_clean.csv`)  
-- Performed core data wrangling operations (filter, group, reshape)  
-- Created foundational visualizations and saved figures reproducibly  
-- Produced summary statistics and wrote careful interpretations  
+These are not isolated skills.  
+They form a connected workflow.
 
 ---
 
-## Your Project Structure
+## What You Have Built
 
-Your repo is already organized like a real, reproducible data project:
+Across these lessons, you have learned to:
 
-- `index.qmd` and chapter `.qmd` files define the book content  
-- `data/` contains datasets used by the lessons  
-- `figures/` stores saved plots created during rendering  
-- `cdi_viz/` contains reusable plotting and saving utilities  
-- `scripts/bash/` contains build and setup helpers  
-- `docs/` contains the rendered website (GitHub Pages output)  
+- move from raw data to a clean dataset  
+- structure data for analysis  
+- explore patterns visually  
+- support observations with summary statistics  
+- write interpretations grounded in evidence  
+
+This is the foundation of analytical thinking.
 
 ---
 
-## How to Rebuild Anytime
+## What Comes Next
 
-From the project root:
+The next stage moves beyond description.
 
-```{bash}
-#| label: 06x1-build-book
-bash scripts/bash/build.sh
-```
+You will begin to:
 
-After rendering, open the site:
+- formalize questions  
+- build simple models  
+- evaluate results carefully  
+- connect results back to real-world decisions  
 
-```{bash}
-#| label: 06x1-open-site-mac
-open docs/index.html
-```
+In CDI terms, this is the transition from:
+
+**exploration → structured reasoning → defensible inference**
+
+---
+
+## Key Mindset Shift
+
+In the Foundations Track, you asked:
+
+- What does the data look like?  
+- How do groups differ?  
+- What patterns are visible?  
+
+In the next stage, you will ask:
+
+- How confident are we in these patterns?  
+- Can we quantify relationships?  
+- How do we test assumptions?  
+- What conclusions are justified?  
+
+This shift is critical.
+
+---
+
+## The CDI Reasoning Loop
+
+As you move forward, your work will follow a loop:
+
+1. Define the question  
+2. Prepare and validate data  
+3. Explore patterns  
+4. Apply models or formal methods  
+5. Interpret results  
+6. Revisit earlier steps if needed  
+
+Analysis is not linear.  
+It is iterative.
+
+---
+
+## Transition Summary
+
+You are now prepared to:
+
+- move from descriptive analysis to structured modeling  
+- connect computation to reasoning  
+- produce results that are both reproducible and interpretable  
+
+---
+
+## Next Step
+
+Continue to the next section of the guide, where you will begin applying models and building deeper analytical understanding.
 
 :::cdi-message
-If you are editing chapters and want live reload, you can use `quarto preview`.
-For a quick verification after a build, opening `docs/index.html` is usually sufficient.
+The goal is not just to run analysis.  
+The goal is to produce reasoning you can defend.
 :::
-
----
-
-## What This Track Did Not Cover
-
-This Foundations Track focused on the core workflow. It did not yet cover:
-
-- Feature engineering and transformation design  
-- Train/test splitting and evaluation discipline  
-- Supervised learning (classification and regression)  
-- Model tuning, validation strategies, and leakage avoidance  
-- End-to-end project packaging and deployment workflows  
-
-Those topics belong to the extended track.
-
----
-
-## Next Steps
-
-### Solidify your practice
-Choose a new dataset (for example: housing, health, finance) and repeat Lessons 02–06.
-
-### Improve readability and reproducibility
-Adopt a consistent style:
-- clear variable names
-- small, named code chunks
-- explicit validation checks before saving outputs
-
-### Continue into the extended track
-If you want to move from foundations to applied projects, the extended track continues with:
-
-- deeper exploratory analysis  
-- feature engineering  
-- machine learning workflows  
-- model evaluation and interpretation  
-- end-to-end project structure and deployment  
-
----
-
-## Summary
-
-You now have a complete foundation workflow and a reproducible Quarto project that you can reuse for future datasets and future guides.

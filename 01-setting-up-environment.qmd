@@ -1,15 +1,22 @@
 # Setting Up Your Environment {#lesson01}
 
 :::cdi-message
-- **ID:** DS-L01
-- **Type:** Lesson
-- **Audience:** Public
-- **Theme:** Project setup, Quarto workflow, and reproducible execution
+- **ID:** CDI-DS-SETUP-001
+- **Type:** Foundation
+- **Audience:** Beginner / Intermediate
+- **Theme:** Reproducibility starts before analysis
 :::
 
 This guide is **Python-first** and **Quarto-first**.
 
-You will write and run code inside Quarto chapter files (`.qmd`). When you render the book, Quarto executes the Python chunks and places the results (tables, figures, printed output) directly into the published pages.
+In CDI, environment setup is not a technical formality — it is part of the analytical process.
+
+If your environment is inconsistent, your results can be:
+- incorrect  
+- non-reproducible  
+- or silently misleading  
+
+You will write and run code inside Quarto chapter files (`.qmd`). When you render the book, Quarto executes Python chunks and embeds results directly into the final output.
 
 ---
 
@@ -17,10 +24,11 @@ You will write and run code inside Quarto chapter files (`.qmd`). When you rende
 
 By the end of this lesson you will have:
 
-- Python installed and available from the terminal  
-- A project virtual environment (`.venv`) with required packages  
-- Quarto installed for rendering the book  
-- A working build command that generates the site into `docs/`  
+- Python installed and accessible from the terminal  
+- A project virtual environment (`.venv`)  
+- Required packages installed  
+- Quarto installed and working  
+- A working build pipeline that renders into `docs/`  
 
 ---
 
@@ -35,42 +43,44 @@ Check if Python is available:
 python3 --version
 ```
 
-If that command fails, install Python using one of these options:
+If this fails, install Python:
 
-- macOS: Homebrew `brew install python`  
-- Windows: Install from python.org (ensure "Add Python to PATH" is selected)  
-- Linux: Use your package manager (for example `apt`, `dnf`, `pacman`)  
+- macOS: `brew install python`  
+- Windows: Install from python.org (enable “Add to PATH”)  
+- Linux: Use your package manager (`apt`, `dnf`, `pacman`)  
+
+---
 
 ### Quarto
 
-Quarto renders the book and runs the Python code inside chapters.
+Quarto renders the book and executes code.
 
-Check if Quarto is installed:
+Check installation:
 
 ```{bash}
 #| label: 01-check-quarto
 quarto --version
 ```
 
-If Quarto is not installed, install it from the Quarto website and confirm the version prints successfully.
+If missing, install from https://quarto.org and confirm the version prints.
 
 ---
 
 ## Recommended editor
 
-Use any editor you like. A good default is **VS Code** because it works well with:
+A good default is **VS Code** because it supports:
 
 - `.qmd` editing  
-- Python formatting and linting  
+- Python integration  
 - Git workflow  
 
 ---
 
 ## Project environment
 
-This repo uses a local virtual environment so your package versions are isolated and reproducible.
+This project uses a **local virtual environment** to ensure reproducibility.
 
-### Use the provided setup script
+### Use the setup script
 
 From the project root:
 
@@ -79,14 +89,14 @@ From the project root:
 bash scripts/bash/setup-env.sh
 ```
 
-Then activate the environment:
+Activate the environment:
 
 ```{bash}
 #| label: 01-activate-venv
 source .venv/bin/activate
 ```
 
-Confirm the interpreter path points to `.venv`:
+Verify:
 
 ```{bash}
 #| label: 01-which-python
@@ -94,86 +104,102 @@ which python
 python --version
 ```
 
+The path should point to `.venv`.
+
 :::cdi-message
-If you are on Windows, activation uses a different command.
+If you are on Windows:
 
 - PowerShell: `.venv\Scripts\Activate.ps1`  
 - cmd: `.venv\Scripts\activate.bat`  
 :::
 
+---
+
 ### What the script does
 
 - Creates `.venv/`  
 - Installs packages from `requirements.txt`  
-- Optionally registers a Jupyter kernel named `data-science`  
+- Optionally registers a Jupyter kernel  
 
-The Jupyter kernel is optional. The core workflow in this guide is Quarto rendering.
+CDI workflow primarily uses Quarto rendering, not notebooks.
 
 ---
 
 ## Render the book
 
-Once the environment is active, render the book with the build script:
+With the environment active:
 
 ```{bash}
 #| label: 01-build-book-script
 bash scripts/bash/build.sh
 ```
 
-This runs `quarto render` and writes the output to `docs/`.
+This runs `quarto render` and outputs to `docs/`.
 
 ---
 
-## Sanity check
+## Sanity check (critical step)
 
-After building the book, open the generated site.
+Open the generated site.
 
-### Quick open (recommended)
-
-macOS:
+### macOS
 
 ```{bash}
 #| label: 01-open-mac
 open docs/index.html
 ```
 
-Linux:
+### Linux
 
 ```{bash}
 #| label: 01-open-linux
 xdg-open docs/index.html
 ```
 
-Windows (PowerShell):
+### Windows
 
 ```{powershell}
 #| label: 01-open-windows
 start docs/index.html
 ```
 
-If the homepage loads and chapter navigation works, your environment is correctly configured.
+If the site loads and navigation works, your environment is correctly configured.
 
-### Development mode (optional)
+---
 
-You can also run:
+## Development mode (optional)
 
 ```{bash}
 #| label: 01-preview-book
 quarto preview
 ```
 
-This starts a local development server and watches files for changes. It is useful when actively editing chapters because the browser reloads automatically.
+This launches a live server that reloads on changes.
 
-:::cdi-message
-The preview server runs continuously and may use a local port.
-For simple verification, opening `docs/index.html` is usually sufficient.
-:::
+---
+
+## CDI Insight
+
+Environment setup is the **first step in reproducibility**.
+
+Before analyzing data, you must ensure:
+- your tools are consistent  
+- your dependencies are controlled  
+- your workflow is repeatable  
+
+This is what allows your results to be trusted.
 
 ---
 
 ## Summary
 
-- You confirmed Python and Quarto are installed  
-- You created a reproducible virtual environment using `.venv`  
-- You rendered the Quarto book successfully  
-- You are ready to begin loading and exploring data  
+- Python and Quarto are installed  
+- A reproducible `.venv` environment is created  
+- The Quarto book builds successfully  
+- You are ready to start working with data  
+
+---
+
+## Next Step
+
+→ **Load and explore your first dataset**

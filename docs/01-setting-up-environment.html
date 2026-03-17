@@ -124,7 +124,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00-preface.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome to CDI Data Science Foundations in Python</span></a>
+  <a href="./00-preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -171,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-visualization-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Visualization Basics</span></a>
+  <a href="./05-visualization-basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Visualization Foundations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -184,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Premium Upgrade &amp; Completion</span></a>
+ <span class="menu-text">Upgrade &amp; Transition</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -192,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06x1-complete-free-track.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Complete Free Track</span></a>
+  <a href="./06x1-complete-free-track.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Completing the Foundations Track</span></a>
   </div>
 </li>
       </ul>
@@ -237,16 +238,20 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#recommended-editor" id="toc-recommended-editor" class="nav-link" data-scroll-target="#recommended-editor">Recommended editor</a></li>
   <li><a href="#project-environment" id="toc-project-environment" class="nav-link" data-scroll-target="#project-environment">Project environment</a>
   <ul class="collapse">
-  <li><a href="#use-the-provided-setup-script" id="toc-use-the-provided-setup-script" class="nav-link" data-scroll-target="#use-the-provided-setup-script">Use the provided setup script</a></li>
+  <li><a href="#use-the-setup-script" id="toc-use-the-setup-script" class="nav-link" data-scroll-target="#use-the-setup-script">Use the setup script</a></li>
   <li><a href="#what-the-script-does" id="toc-what-the-script-does" class="nav-link" data-scroll-target="#what-the-script-does">What the script does</a></li>
   </ul></li>
   <li><a href="#render-the-book" id="toc-render-the-book" class="nav-link" data-scroll-target="#render-the-book">Render the book</a></li>
-  <li><a href="#sanity-check" id="toc-sanity-check" class="nav-link" data-scroll-target="#sanity-check">Sanity check</a>
+  <li><a href="#sanity-check-critical-step" id="toc-sanity-check-critical-step" class="nav-link" data-scroll-target="#sanity-check-critical-step">Sanity check (critical step)</a>
   <ul class="collapse">
-  <li><a href="#quick-open-recommended" id="toc-quick-open-recommended" class="nav-link" data-scroll-target="#quick-open-recommended">Quick open (recommended)</a></li>
-  <li><a href="#development-mode-optional" id="toc-development-mode-optional" class="nav-link" data-scroll-target="#development-mode-optional">Development mode (optional)</a></li>
+  <li><a href="#macos" id="toc-macos" class="nav-link" data-scroll-target="#macos">macOS</a></li>
+  <li><a href="#linux" id="toc-linux" class="nav-link" data-scroll-target="#linux">Linux</a></li>
+  <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows">Windows</a></li>
   </ul></li>
+  <li><a href="#development-mode-optional" id="toc-development-mode-optional" class="nav-link" data-scroll-target="#development-mode-optional">Development mode (optional)</a></li>
+  <li><a href="#cdi-insight" id="toc-cdi-insight" class="nav-link" data-scroll-target="#cdi-insight">CDI Insight</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step">Next Step</a></li>
   </ul>
 </nav>
     </div>
@@ -274,26 +279,32 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> DS-L01</li>
-<li><strong>Type:</strong> Lesson</li>
-<li><strong>Audience:</strong> Public</li>
-<li><strong>Theme:</strong> Project setup, Quarto workflow, and reproducible execution</li>
+<li><strong>ID:</strong> CDI-DS-SETUP-001</li>
+<li><strong>Type:</strong> Foundation</li>
+<li><strong>Audience:</strong> Beginner / Intermediate</li>
+<li><strong>Theme:</strong> Reproducibility starts before analysis</li>
 </ul>
 </div>
 <p>This guide is <strong>Python-first</strong> and <strong>Quarto-first</strong>.</p>
-<p>You will write and run code inside Quarto chapter files (<code>.qmd</code>). When you render the book, Quarto executes the Python chunks and places the results (tables, figures, printed output) directly into the published pages.</p>
+<p>In CDI, environment setup is not a technical formality — it is part of the analytical process.</p>
+<p>If your environment is inconsistent, your results can be: - incorrect<br>
+- non-reproducible<br>
+- or silently misleading</p>
+<p>You will write and run code inside Quarto chapter files (<code>.qmd</code>). When you render the book, Quarto executes Python chunks and embeds results directly into the final output.</p>
 <hr>
 <section id="what-you-are-setting-up" class="level2">
 <h2 class="anchored" data-anchor-id="what-you-are-setting-up">What you are setting up</h2>
 <p>By the end of this lesson you will have:</p>
 <ul>
-<li>Python installed and available from the terminal<br>
+<li>Python installed and accessible from the terminal<br>
 </li>
-<li>A project virtual environment (<code>.venv</code>) with required packages<br>
+<li>A project virtual environment (<code>.venv</code>)<br>
 </li>
-<li>Quarto installed for rendering the book<br>
+<li>Required packages installed<br>
 </li>
-<li>A working build command that generates the site into <code>docs/</code></li>
+<li>Quarto installed and working<br>
+</li>
+<li>A working build pipeline that renders into <code>docs/</code></li>
 </ul>
 <hr>
 </section>
@@ -304,32 +315,33 @@ ul.task-list li input[type="checkbox"] {
 <p>Check if Python is available:</p>
 <pre class="{bash}"><code>#| label: 01-check-python
 python3 --version</code></pre>
-<p>If that command fails, install Python using one of these options:</p>
+<p>If this fails, install Python:</p>
 <ul>
-<li>macOS: Homebrew <code>brew install python</code><br>
+<li>macOS: <code>brew install python</code><br>
 </li>
-<li>Windows: Install from python.org (ensure “Add Python to PATH” is selected)<br>
+<li>Windows: Install from python.org (enable “Add to PATH”)<br>
 </li>
-<li>Linux: Use your package manager (for example <code>apt</code>, <code>dnf</code>, <code>pacman</code>)</li>
+<li>Linux: Use your package manager (<code>apt</code>, <code>dnf</code>, <code>pacman</code>)</li>
 </ul>
+<hr>
 </section>
 <section id="quarto" class="level3">
 <h3 class="anchored" data-anchor-id="quarto">Quarto</h3>
-<p>Quarto renders the book and runs the Python code inside chapters.</p>
-<p>Check if Quarto is installed:</p>
+<p>Quarto renders the book and executes code.</p>
+<p>Check installation:</p>
 <pre class="{bash}"><code>#| label: 01-check-quarto
 quarto --version</code></pre>
-<p>If Quarto is not installed, install it from the Quarto website and confirm the version prints successfully.</p>
+<p>If missing, install from https://quarto.org and confirm the version prints.</p>
 <hr>
 </section>
 </section>
 <section id="recommended-editor" class="level2">
 <h2 class="anchored" data-anchor-id="recommended-editor">Recommended editor</h2>
-<p>Use any editor you like. A good default is <strong>VS Code</strong> because it works well with:</p>
+<p>A good default is <strong>VS Code</strong> because it supports:</p>
 <ul>
 <li><code>.qmd</code> editing<br>
 </li>
-<li>Python formatting and linting<br>
+<li>Python integration<br>
 </li>
 <li>Git workflow</li>
 </ul>
@@ -337,21 +349,22 @@ quarto --version</code></pre>
 </section>
 <section id="project-environment" class="level2">
 <h2 class="anchored" data-anchor-id="project-environment">Project environment</h2>
-<p>This repo uses a local virtual environment so your package versions are isolated and reproducible.</p>
-<section id="use-the-provided-setup-script" class="level3">
-<h3 class="anchored" data-anchor-id="use-the-provided-setup-script">Use the provided setup script</h3>
+<p>This project uses a <strong>local virtual environment</strong> to ensure reproducibility.</p>
+<section id="use-the-setup-script" class="level3">
+<h3 class="anchored" data-anchor-id="use-the-setup-script">Use the setup script</h3>
 <p>From the project root:</p>
 <pre class="{bash}"><code>#| label: 01-setup-env-script
 bash scripts/bash/setup-env.sh</code></pre>
-<p>Then activate the environment:</p>
+<p>Activate the environment:</p>
 <pre class="{bash}"><code>#| label: 01-activate-venv
 source .venv/bin/activate</code></pre>
-<p>Confirm the interpreter path points to <code>.venv</code>:</p>
+<p>Verify:</p>
 <pre class="{bash}"><code>#| label: 01-which-python
 which python
 python --version</code></pre>
+<p>The path should point to <code>.venv</code>.</p>
 <div class="cdi-message">
-<p>If you are on Windows, activation uses a different command.</p>
+<p>If you are on Windows:</p>
 <ul>
 <li>PowerShell: <code>.venv\Scripts\Activate.ps1</code><br>
 </li>
@@ -359,6 +372,7 @@ python --version</code></pre>
 </li>
 </ul>
 </div>
+<hr>
 </section>
 <section id="what-the-script-does" class="level3">
 <h3 class="anchored" data-anchor-id="what-the-script-does">What the script does</h3>
@@ -367,59 +381,73 @@ python --version</code></pre>
 </li>
 <li>Installs packages from <code>requirements.txt</code><br>
 </li>
-<li>Optionally registers a Jupyter kernel named <code>data-science</code></li>
+<li>Optionally registers a Jupyter kernel</li>
 </ul>
-<p>The Jupyter kernel is optional. The core workflow in this guide is Quarto rendering.</p>
+<p>CDI workflow primarily uses Quarto rendering, not notebooks.</p>
 <hr>
 </section>
 </section>
 <section id="render-the-book" class="level2">
 <h2 class="anchored" data-anchor-id="render-the-book">Render the book</h2>
-<p>Once the environment is active, render the book with the build script:</p>
+<p>With the environment active:</p>
 <pre class="{bash}"><code>#| label: 01-build-book-script
 bash scripts/bash/build.sh</code></pre>
-<p>This runs <code>quarto render</code> and writes the output to <code>docs/</code>.</p>
+<p>This runs <code>quarto render</code> and outputs to <code>docs/</code>.</p>
 <hr>
 </section>
-<section id="sanity-check" class="level2">
-<h2 class="anchored" data-anchor-id="sanity-check">Sanity check</h2>
-<p>After building the book, open the generated site.</p>
-<section id="quick-open-recommended" class="level3">
-<h3 class="anchored" data-anchor-id="quick-open-recommended">Quick open (recommended)</h3>
-<p>macOS:</p>
+<section id="sanity-check-critical-step" class="level2">
+<h2 class="anchored" data-anchor-id="sanity-check-critical-step">Sanity check (critical step)</h2>
+<p>Open the generated site.</p>
+<section id="macos" class="level3">
+<h3 class="anchored" data-anchor-id="macos">macOS</h3>
 <pre class="{bash}"><code>#| label: 01-open-mac
 open docs/index.html</code></pre>
-<p>Linux:</p>
+</section>
+<section id="linux" class="level3">
+<h3 class="anchored" data-anchor-id="linux">Linux</h3>
 <pre class="{bash}"><code>#| label: 01-open-linux
 xdg-open docs/index.html</code></pre>
-<p>Windows (PowerShell):</p>
+</section>
+<section id="windows" class="level3">
+<h3 class="anchored" data-anchor-id="windows">Windows</h3>
 <pre class="{powershell}"><code>#| label: 01-open-windows
 start docs/index.html</code></pre>
-<p>If the homepage loads and chapter navigation works, your environment is correctly configured.</p>
-</section>
-<section id="development-mode-optional" class="level3">
-<h3 class="anchored" data-anchor-id="development-mode-optional">Development mode (optional)</h3>
-<p>You can also run:</p>
-<pre class="{bash}"><code>#| label: 01-preview-book
-quarto preview</code></pre>
-<p>This starts a local development server and watches files for changes. It is useful when actively editing chapters because the browser reloads automatically.</p>
-<div class="cdi-message">
-<p>The preview server runs continuously and may use a local port. For simple verification, opening <code>docs/index.html</code> is usually sufficient.</p>
-</div>
+<p>If the site loads and navigation works, your environment is correctly configured.</p>
 <hr>
 </section>
+</section>
+<section id="development-mode-optional" class="level2">
+<h2 class="anchored" data-anchor-id="development-mode-optional">Development mode (optional)</h2>
+<pre class="{bash}"><code>#| label: 01-preview-book
+quarto preview</code></pre>
+<p>This launches a live server that reloads on changes.</p>
+<hr>
+</section>
+<section id="cdi-insight" class="level2">
+<h2 class="anchored" data-anchor-id="cdi-insight">CDI Insight</h2>
+<p>Environment setup is the <strong>first step in reproducibility</strong>.</p>
+<p>Before analyzing data, you must ensure: - your tools are consistent<br>
+- your dependencies are controlled<br>
+- your workflow is repeatable</p>
+<p>This is what allows your results to be trusted.</p>
+<hr>
 </section>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
 <ul>
-<li>You confirmed Python and Quarto are installed<br>
+<li>Python and Quarto are installed<br>
 </li>
-<li>You created a reproducible virtual environment using <code>.venv</code><br>
+<li>A reproducible <code>.venv</code> environment is created<br>
 </li>
-<li>You rendered the Quarto book successfully<br>
+<li>The Quarto book builds successfully<br>
 </li>
-<li>You are ready to begin loading and exploring data</li>
+<li>You are ready to start working with data</li>
 </ul>
+<hr>
+</section>
+<section id="next-step" class="level2">
+<h2 class="anchored" data-anchor-id="next-step">Next Step</h2>
+<p>→ <strong>Load and explore your first dataset</strong></p>
 
 
 </section>
@@ -826,8 +854,8 @@ quarto preview</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./00-preface.html" class="pagination-link" aria-label="Welcome to CDI Data Science Foundations in Python">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Welcome to CDI Data Science Foundations in Python</span></span>
+      <a href="./00-preface.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
