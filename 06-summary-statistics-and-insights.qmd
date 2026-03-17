@@ -103,10 +103,25 @@ A simple set of histograms helps connect the summary table to visible distributi
 
 num_cols = ["sepal_length", "sepal_width", "petal_length", "petal_width"]
 
-df[num_cols].hist(figsize=(10, 7), bins=12)
+df_long = df.melt(
+    value_vars=num_cols,
+    var_name="feature",
+    value_name="value"
+)
 
-plt.suptitle("Iris — Distributions of Numeric Features", y=1.02)
-plt.tight_layout()
+g = sns.displot(
+    data=df_long,
+    x="value",
+    col="feature",
+    col_wrap=2,
+    bins=12,
+    kde=True,
+    height=3.5,
+    aspect=1.2
+)
+
+g.fig.suptitle("Iris — Distributions of Numeric Features", y=1.02)
+
 plt.show()
 ```
 
@@ -403,6 +418,8 @@ Try the following:
 2. Create a table with the median of each numeric feature by species
 3. Write one short paragraph interpreting your results without causal language
 
+::: {.callout-tip collapse="true"}
+## Solution
 ```{python}
 #| label: 06-exercise
 
@@ -430,6 +447,8 @@ print(median_table_ex)
 print("\nYour interpretation:")
 print("The grouped summaries suggest that species differ descriptively across several measurements, with petal-related variables showing clearer separation than sepal-related variables.")
 ```
+
+:::
 
 ---
 

@@ -25,7 +25,6 @@ data-science/
 ├── ...
 ├── data/
 ├── figures/
-├── cdi_viz/
 ├── scripts/
 │   └── bash/
 ├── docs/
@@ -40,9 +39,6 @@ data-science/
 
 - `figures/`  
   Stores saved plots generated during rendering.
-
-- `cdi_viz/`  
-  Contains reusable visualization utilities (e.g., `theme.py`).
 
 - `scripts/bash/`  
   Contains helper scripts such as `setup-env.sh` and `build.sh`.
@@ -132,20 +128,6 @@ df["category_col"] = df["category_col"].astype("category")
 
 ---
 
-## Plot Saving Pattern
-
-All plots are saved using the CDI visualization utility:
-
-```python
-from cdi_viz.theme import show_and_save_mpl
-
-show_and_save_mpl(fig)
-```
-
-This ensures figures are saved consistently into the `figures/` directory.
-
----
-
 ## Reproducibility Checklist
 
 Before finalizing any chapter:
@@ -159,6 +141,24 @@ Before finalizing any chapter:
 
 ---
 
+## Data Sources
+
+- **Iris dataset** [@iris]
+
+---
+
+## Software and Tools
+
+This guide uses a small set of widely adopted tools for data analysis and visualization:
+
+- **Python** [@python] — general-purpose programming language for data analysis  
+- **pandas** [@pandas] — data manipulation and tabular data handling  
+- **NumPy** [@numpy] — numerical computing and array operations  
+- **matplotlib** [@matplotlib] — foundational plotting library  
+- **seaborn** [@seaborn] — statistical data visualization built on matplotlib  
+
+These tools form a standard ecosystem for reproducible data science workflows.
+
 ## Closing Note
 
 The goal of this Foundations Track is not just to teach syntax.
@@ -167,7 +167,7 @@ It is to teach structure, discipline, and reproducibility.
 
 The same workflow you used here can be applied to:
 
-- New datasets
-- New domains
-- Larger analytical projects
-- Future CDI guides
+- new datasets  
+- new domains  
+- larger analytical projects  
+- future CDI guides

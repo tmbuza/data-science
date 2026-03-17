@@ -2,6 +2,8 @@ project:
   type: book
   output-dir: docs
 
+bibliography: library/references.bib
+
 book:
   title: "Data Science Foundations"
   subtitle: "A Structured Python Workflow from Raw Data to Interpretation"

@@ -325,6 +325,8 @@ Try the following:
 3. Create a boxplot of `petal_width` by species
 4. Write one sentence describing which feature seems most useful for separating species
 
+::: {.callout-tip collapse="true"}
+## Solution
 ```{python}
 #| label: 05-exercise
 
@@ -380,3 +382,5 @@ plt.show()
 print("Your interpretation:")
 print("Petal-related features appear more useful than sepal-related features for separating species because their group differences are more distinct.")
 ```
+
+:::

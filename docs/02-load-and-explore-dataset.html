@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -339,7 +359,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>It begins with <strong>looking carefully at the data</strong>.</p>
 <p>Before fitting models or drawing conclusions, we need to understand: - what the dataset contains - how variables are structured - whether values look plausible - and whether early patterns deserve closer attention</p>
 <p>In CDI, this stage is not a formality. It is where we begin to build analytical judgment.</p>
-<p>In this lesson, you will:</p>
+<p>In this lesson, we work with the classic Iris dataset <span class="citation" data-cites="iris">(<a href="99-references.html#ref-iris" role="doc-biblioref">Fisher 1936</a>)</span>, which contains measurements of flower characteristics across three species.</p>
+<p>You will:</p>
 <ul>
 <li>load the Iris dataset into a pandas DataFrame</li>
 <li>inspect its structure and column types</li>
@@ -1118,6 +1139,11 @@ Name: petal_area, dtype: float64</code></pre>
 <p>→ <strong>Clean and prepare the dataset for analysis</strong></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-iris" class="csl-entry" role="listitem">
+Fisher, Ronald A. 1936. <span>“The Use of Multiple Measurements in Taxonomic Problems.”</span> <em>Annals of Eugenics</em>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

@@ -212,7 +212,7 @@
     "href": "02-load-and-explore-dataset.html",
     "title": "Load and Explore a Dataset",
     "section": "",
-    "text": "Why this step matters\nAnalytical work does not begin with modeling.\nIt begins with looking carefully at the data.\nBefore fitting models or drawing conclusions, we need to understand: - what the dataset contains - how variables are structured - whether values look plausible - and whether early patterns deserve closer attention\nIn CDI, this stage is not a formality. It is where we begin to build analytical judgment.\nIn this lesson, you will:\nA dataset can look clean at first glance and still contain issues that affect later analysis.\nEarly exploration helps you answer practical questions such as:\nThis is the beginning of defensible analysis.",
+    "text": "Why this step matters\nAnalytical work does not begin with modeling.\nIt begins with looking carefully at the data.\nBefore fitting models or drawing conclusions, we need to understand: - what the dataset contains - how variables are structured - whether values look plausible - and whether early patterns deserve closer attention\nIn CDI, this stage is not a formality. It is where we begin to build analytical judgment.\nIn this lesson, we work with the classic Iris dataset (Fisher 1936), which contains measurements of flower characteristics across three species.\nYou will:\nA dataset can look clean at first glance and still contain issues that affect later analysis.\nEarly exploration helps you answer practical questions such as:\nThis is the beginning of defensible analysis.",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
@@ -355,7 +355,7 @@
     "href": "02-load-and-explore-dataset.html#next-step",
     "title": "Load and Explore a Dataset",
     "section": "Next Step",
-    "text": "Next Step\n→ Clean and prepare the dataset for analysis",
+    "text": "Next Step\n→ Clean and prepare the dataset for analysis\n\n\n\n\nFisher, Ronald A. 1936. “The Use of Multiple Measurements in Taxonomic Problems.” Annals of Eugenics.",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
@@ -806,7 +806,7 @@
     "href": "05-visualization-basics.html#exercise",
     "title": "Visualization Foundations",
     "section": "Exercise",
-    "text": "Exercise\nTry the following:\n\nCreate a scatter plot of sepal_width versus petal_width\nPlot a histogram of petal_width\nCreate a boxplot of petal_width by species\nWrite one sentence describing which feature seems most useful for separating species\n\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.scatterplot(\n    data=df,\n    x=\"sepal_width\",\n    y=\"petal_width\",\n    hue=\"species\",\n    s=70,\n    alpha=0.8,\n    ax=ax\n)\n\nax.set_title(\"Sepal Width vs Petal Width\")\nax.set_xlabel(\"Sepal Width\")\nax.set_ylabel(\"Petal Width\")\n\nplt.show()\n\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.histplot(\n    data=df,\n    x=\"petal_width\",\n    bins=12,\n    kde=True,\n    ax=ax\n)\n\nax.set_title(\"Distribution of Petal Width\")\nax.set_xlabel(\"Petal Width\")\nax.set_ylabel(\"Count\")\n\nplt.show()\n\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.boxplot(\n    data=df,\n    x=\"species\",\n    y=\"petal_width\",\n    ax=ax\n)\n\nax.set_title(\"Petal Width by Species\")\nax.set_xlabel(\"Species\")\nax.set_ylabel(\"Petal Width\")\n\nplt.show()\n\nprint(\"Your interpretation:\")\nprint(\"Petal-related features appear more useful than sepal-related features for separating species because their group differences are more distinct.\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYour interpretation:\nPetal-related features appear more useful than sepal-related features for separating species because their group differences are more distinct.",
+    "text": "Exercise\nTry the following:\n\nCreate a scatter plot of sepal_width versus petal_width\nPlot a histogram of petal_width\nCreate a boxplot of petal_width by species\nWrite one sentence describing which feature seems most useful for separating species\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.scatterplot(\n    data=df,\n    x=\"sepal_width\",\n    y=\"petal_width\",\n    hue=\"species\",\n    s=70,\n    alpha=0.8,\n    ax=ax\n)\n\nax.set_title(\"Sepal Width vs Petal Width\")\nax.set_xlabel(\"Sepal Width\")\nax.set_ylabel(\"Petal Width\")\n\nplt.show()\n\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.histplot(\n    data=df,\n    x=\"petal_width\",\n    bins=12,\n    kde=True,\n    ax=ax\n)\n\nax.set_title(\"Distribution of Petal Width\")\nax.set_xlabel(\"Petal Width\")\nax.set_ylabel(\"Count\")\n\nplt.show()\n\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.boxplot(\n    data=df,\n    x=\"species\",\n    y=\"petal_width\",\n    ax=ax\n)\n\nax.set_title(\"Petal Width by Species\")\nax.set_xlabel(\"Species\")\nax.set_ylabel(\"Petal Width\")\n\nplt.show()\n\nprint(\"Your interpretation:\")\nprint(\"Petal-related features appear more useful than sepal-related features for separating species because their group differences are more distinct.\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYour interpretation:\nPetal-related features appear more useful than sepal-related features for separating species because their group differences are more distinct.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Visualization Foundations</span>"
@@ -872,7 +872,7 @@
     "href": "06-summary-statistics-and-insights.html#visual-check-of-numeric-distributions",
     "title": "Summary Statistics and Insights",
     "section": "Visual Check of Numeric Distributions",
-    "text": "Visual Check of Numeric Distributions\nA simple set of histograms helps connect the summary table to visible distributions.\n\n\nCode\nnum_cols = [\"sepal_length\", \"sepal_width\", \"petal_length\", \"petal_width\"]\n\ndf[num_cols].hist(figsize=(10, 7), bins=12)\n\nplt.suptitle(\"Iris — Distributions of Numeric Features\", y=1.02)\nplt.tight_layout()\nplt.show()\n\n\n\n\n\nIris — Distributions of Numeric Features\n\n\n\n\n\nInterpretation\nThese histograms help you assess:\n\nwhether distributions are narrow or wide\nwhether some features appear more variable than others\nwhether there may be multiple peaks suggesting subgroup structure\n\nThis is useful because a summary table alone may hide distribution shape.",
+    "text": "Visual Check of Numeric Distributions\nA simple set of histograms helps connect the summary table to visible distributions.\n\n\nCode\nnum_cols = [\"sepal_length\", \"sepal_width\", \"petal_length\", \"petal_width\"]\n\ndf_long = df.melt(\n    value_vars=num_cols,\n    var_name=\"feature\",\n    value_name=\"value\"\n)\n\ng = sns.displot(\n    data=df_long,\n    x=\"value\",\n    col=\"feature\",\n    col_wrap=2,\n    bins=12,\n    kde=True,\n    height=3.5,\n    aspect=1.2\n)\n\ng.fig.suptitle(\"Iris — Distributions of Numeric Features\", y=1.02)\n\nplt.show()\n\n\n\n\n\nIris — Distributions of Numeric Features\n\n\n\n\n\nInterpretation\nThese histograms help you assess:\n\nwhether distributions are narrow or wide\nwhether some features appear more variable than others\nwhether there may be multiple peaks suggesting subgroup structure\n\nThis is useful because a summary table alone may hide distribution shape.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
@@ -982,7 +982,7 @@
     "href": "06-summary-statistics-and-insights.html#exercise",
     "title": "Summary Statistics and Insights",
     "section": "Exercise",
-    "text": "Exercise\nTry the following:\n\nCompute the mean and standard deviation of sepal_width by species\nCreate a table with the median of each numeric feature by species\nWrite one short paragraph interpreting your results without causal language\n\n\n\nCode\nsepal_width_stats = (\n    df.groupby(\"species\", observed=False)\n      .agg(\n          sepal_width_mean=(\"sepal_width\", \"mean\"),\n          sepal_width_sd=(\"sepal_width\", \"std\"),\n      )\n      .reset_index()\n)\n\nprint(\"Sepal width mean and standard deviation by species:\")\nprint(sepal_width_stats)\n\nmedian_table_ex = (\n    df.groupby(\"species\", observed=False)[num_cols]\n      .median()\n      .reset_index()\n)\n\nprint(\"\\nMedian table by species:\")\nprint(median_table_ex)\n\nprint(\"\\nYour interpretation:\")\nprint(\"The grouped summaries suggest that species differ descriptively across several measurements, with petal-related variables showing clearer separation than sepal-related variables.\")\n\n\nSepal width mean and standard deviation by species:\n      species  sepal_width_mean  sepal_width_sd\n0      setosa          3.428000        0.379064\n1  versicolor          2.770000        0.313798\n2   virginica          2.979592        0.323380\n\nMedian table by species:\n      species  sepal_length  sepal_width  petal_length  petal_width\n0      setosa           5.0          3.4          1.50          0.2\n1  versicolor           5.9          2.8          4.35          1.3\n2   virginica           6.5          3.0          5.60          2.0\n\nYour interpretation:\nThe grouped summaries suggest that species differ descriptively across several measurements, with petal-related variables showing clearer separation than sepal-related variables.",
+    "text": "Exercise\nTry the following:\n\nCompute the mean and standard deviation of sepal_width by species\nCreate a table with the median of each numeric feature by species\nWrite one short paragraph interpreting your results without causal language\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nCode\nsepal_width_stats = (\n    df.groupby(\"species\", observed=False)\n      .agg(\n          sepal_width_mean=(\"sepal_width\", \"mean\"),\n          sepal_width_sd=(\"sepal_width\", \"std\"),\n      )\n      .reset_index()\n)\n\nprint(\"Sepal width mean and standard deviation by species:\")\nprint(sepal_width_stats)\n\nmedian_table_ex = (\n    df.groupby(\"species\", observed=False)[num_cols]\n      .median()\n      .reset_index()\n)\n\nprint(\"\\nMedian table by species:\")\nprint(median_table_ex)\n\nprint(\"\\nYour interpretation:\")\nprint(\"The grouped summaries suggest that species differ descriptively across several measurements, with petal-related variables showing clearer separation than sepal-related variables.\")\n\n\nSepal width mean and standard deviation by species:\n      species  sepal_width_mean  sepal_width_sd\n0      setosa          3.428000        0.379064\n1  versicolor          2.770000        0.313798\n2   virginica          2.979592        0.323380\n\nMedian table by species:\n      species  sepal_length  sepal_width  petal_length  petal_width\n0      setosa           5.0          3.4          1.50          0.2\n1  versicolor           5.9          2.8          4.35          1.3\n2   virginica           6.5          3.0          5.60          2.0\n\nYour interpretation:\nThe grouped summaries suggest that species differ descriptively across several measurements, with petal-related variables showing clearer separation than sepal-related variables.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
@@ -1092,7 +1092,7 @@
     "href": "99-appendix.html#project-structure-overview",
     "title": "Appendix",
     "section": "",
-    "text": "data-science/\n├── index.qmd\n├── 00-preface.qmd\n├── 01-setting-up-environment.qmd\n├── ...\n├── data/\n├── figures/\n├── cdi_viz/\n├── scripts/\n│   └── bash/\n├── docs/\n├── _quarto.yml\n└── requirements.txt\n\nKey Directories\n\ndata/\nStores raw and cleaned datasets.\nfigures/\nStores saved plots generated during rendering.\ncdi_viz/\nContains reusable visualization utilities (e.g., theme.py).\nscripts/bash/\nContains helper scripts such as setup-env.sh and build.sh.\ndocs/\nContains the rendered Quarto website (GitHub Pages output).",
+    "text": "data-science/\n├── index.qmd\n├── 00-preface.qmd\n├── 01-setting-up-environment.qmd\n├── ...\n├── data/\n├── figures/\n├── scripts/\n│   └── bash/\n├── docs/\n├── _quarto.yml\n└── requirements.txt\n\nKey Directories\n\ndata/\nStores raw and cleaned datasets.\nfigures/\nStores saved plots generated during rendering.\nscripts/bash/\nContains helper scripts such as setup-env.sh and build.sh.\ndocs/\nContains the rendered Quarto website (GitHub Pages output).",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix</span>"
@@ -1132,17 +1132,6 @@
     ]
   },
   {
-    "objectID": "99-appendix.html#plot-saving-pattern",
-    "href": "99-appendix.html#plot-saving-pattern",
-    "title": "Appendix",
-    "section": "Plot Saving Pattern",
-    "text": "Plot Saving Pattern\nAll plots are saved using the CDI visualization utility:\nfrom cdi_viz.theme import show_and_save_mpl\n\nshow_and_save_mpl(fig)\nThis ensures figures are saved consistently into the figures/ directory.",
-    "crumbs": [
-      "Appendix",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix</span>"
-    ]
-  },
-  {
     "objectID": "99-appendix.html#reproducibility-checklist",
     "href": "99-appendix.html#reproducibility-checklist",
     "title": "Appendix",
@@ -1154,14 +1143,47 @@
     ]
   },
   {
+    "objectID": "99-appendix.html#data-sources",
+    "href": "99-appendix.html#data-sources",
+    "title": "Appendix",
+    "section": "Data Sources",
+    "text": "Data Sources\n\nIris dataset (Fisher 1936)",
+    "crumbs": [
+      "Appendix",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix</span>"
+    ]
+  },
+  {
+    "objectID": "99-appendix.html#software-and-tools",
+    "href": "99-appendix.html#software-and-tools",
+    "title": "Appendix",
+    "section": "Software and Tools",
+    "text": "Software and Tools\nThis guide uses a small set of widely adopted tools for data analysis and visualization:\n\nPython (Python Software Foundation 2024) — general-purpose programming language for data analysis\n\npandas (McKinney et al. 2010) — data manipulation and tabular data handling\n\nNumPy (Harris et al. 2020) — numerical computing and array operations\n\nmatplotlib (Hunter 2007) — foundational plotting library\n\nseaborn (Waskom 2021) — statistical data visualization built on matplotlib\n\nThese tools form a standard ecosystem for reproducible data science workflows.",
+    "crumbs": [
+      "Appendix",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix</span>"
+    ]
+  },
+  {
     "objectID": "99-appendix.html#closing-note",
     "href": "99-appendix.html#closing-note",
     "title": "Appendix",
     "section": "Closing Note",
-    "text": "Closing Note\nThe goal of this Foundations Track is not just to teach syntax.\nIt is to teach structure, discipline, and reproducibility.\nThe same workflow you used here can be applied to:\n\nNew datasets\nNew domains\nLarger analytical projects\nFuture CDI guides",
+    "text": "Closing Note\nThe goal of this Foundations Track is not just to teach syntax.\nIt is to teach structure, discipline, and reproducibility.\nThe same workflow you used here can be applied to:\n\nnew datasets\n\nnew domains\n\nlarger analytical projects\n\nfuture CDI guides\n\n\n\n\n\nFisher, Ronald A. 1936. “The Use of Multiple Measurements in Taxonomic Problems.” Annals of Eugenics.\n\n\nHarris, Charles R. et al. 2020. “Array Programming with NumPy.” Nature. https://doi.org/10.1038/s41586-020-2649-2.\n\n\nHunter, J. D. 2007. “Matplotlib: A 2D Graphics Environment.” Computing in Science & Engineering. https://doi.org/10.1109/MCSE.2007.55.\n\n\nMcKinney, Wes et al. 2010. “Pandas-Dev/Pandas: Pandas.” Zenodo. https://doi.org/10.5281/zenodo.3509134.\n\n\nPython Software Foundation. 2024. “Python Language Reference.” https://www.python.org/.\n\n\nWaskom, Michael L. 2021. “Seaborn: Statistical Data Visualization.” Journal of Open Source Software. https://doi.org/10.21105/joss.03021.",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix</span>"
+    ]
+  },
+  {
+    "objectID": "99-references.html",
+    "href": "99-references.html",
+    "title": "References",
+    "section": "",
+    "text": "Fisher, Ronald A. 1936. “The Use of Multiple Measurements in\nTaxonomic Problems.” Annals of Eugenics.\n\n\nHarris, Charles R. et al. 2020. “Array Programming with\nNumPy.” Nature. https://doi.org/10.1038/s41586-020-2649-2.\n\n\nHunter, J. D. 2007. “Matplotlib: A 2D Graphics\nEnvironment.” Computing in Science & Engineering. https://doi.org/10.1109/MCSE.2007.55.\n\n\nMcKinney, Wes et al. 2010. “Pandas-Dev/Pandas: Pandas.”\nZenodo. https://doi.org/10.5281/zenodo.3509134.\n\n\nPython Software Foundation. 2024. “Python Language\nReference.” https://www.python.org/.\n\n\nWaskom, Michael L. 2021. “Seaborn: Statistical Data\nVisualization.” Journal of Open Source Software. https://doi.org/10.21105/joss.03021.",
+    "crumbs": [
+      "Appendix",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>References</span>"
     ]
   }
 ]

@@ -19,7 +19,9 @@ Before fitting models or drawing conclusions, we need to understand:
 
 In CDI, this stage is not a formality. It is where we begin to build analytical judgment.
 
-In this lesson, you will:
+In this lesson, we work with the classic Iris dataset [@iris], which contains measurements of flower characteristics across three species.
+
+You will:
 
 - load the Iris dataset into a pandas DataFrame
 - inspect its structure and column types

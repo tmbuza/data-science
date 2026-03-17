@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -282,8 +302,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#handle-missing-values" id="toc-handle-missing-values" class="nav-link" data-scroll-target="#handle-missing-values">Handle missing values</a></li>
   <li><a href="#convert-dtype" id="toc-convert-dtype" class="nav-link" data-scroll-target="#convert-dtype">Convert dtype</a></li>
   </ul></li>
-  <li><a href="#plot-saving-pattern" id="toc-plot-saving-pattern" class="nav-link" data-scroll-target="#plot-saving-pattern">Plot Saving Pattern</a></li>
   <li><a href="#reproducibility-checklist" id="toc-reproducibility-checklist" class="nav-link" data-scroll-target="#reproducibility-checklist">Reproducibility Checklist</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data Sources</a></li>
+  <li><a href="#software-and-tools" id="toc-software-and-tools" class="nav-link" data-scroll-target="#software-and-tools">Software and Tools</a></li>
   <li><a href="#closing-note" id="toc-closing-note" class="nav-link" data-scroll-target="#closing-note">Closing Note</a></li>
   </ul>
 </nav>
@@ -331,7 +352,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 ├── ...
 ├── data/
 ├── figures/
-├── cdi_viz/
 ├── scripts/
 │   └── bash/
 ├── docs/
@@ -344,8 +364,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Stores raw and cleaned datasets.</p></li>
 <li><p><code>figures/</code><br>
 Stores saved plots generated during rendering.</p></li>
-<li><p><code>cdi_viz/</code><br>
-Contains reusable visualization utilities (e.g., <code>theme.py</code>).</p></li>
 <li><p><code>scripts/bash/</code><br>
 Contains helper scripts such as <code>setup-env.sh</code> and <code>build.sh</code>.</p></li>
 <li><p><code>docs/</code><br>
@@ -410,15 +428,6 @@ docs/ (static site)</code></pre>
 <hr>
 </section>
 </section>
-<section id="plot-saving-pattern" class="level2">
-<h2 class="anchored" data-anchor-id="plot-saving-pattern">Plot Saving Pattern</h2>
-<p>All plots are saved using the CDI visualization utility:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> cdi_viz.theme <span class="im">import</span> show_and_save_mpl</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>show_and_save_mpl(fig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This ensures figures are saved consistently into the <code>figures/</code> directory.</p>
-<hr>
-</section>
 <section id="reproducibility-checklist" class="level2">
 <h2 class="anchored" data-anchor-id="reproducibility-checklist">Reproducibility Checklist</h2>
 <p>Before finalizing any chapter:</p>
@@ -432,19 +441,65 @@ docs/ (static site)</code></pre>
 </ul>
 <hr>
 </section>
+<section id="data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="data-sources">Data Sources</h2>
+<ul>
+<li><strong>Iris dataset</strong> <span class="citation" data-cites="iris">(<a href="99-references.html#ref-iris" role="doc-biblioref">Fisher 1936</a>)</span></li>
+</ul>
+<hr>
+</section>
+<section id="software-and-tools" class="level2">
+<h2 class="anchored" data-anchor-id="software-and-tools">Software and Tools</h2>
+<p>This guide uses a small set of widely adopted tools for data analysis and visualization:</p>
+<ul>
+<li><strong>Python</strong> <span class="citation" data-cites="python">(<a href="99-references.html#ref-python" role="doc-biblioref">Python Software Foundation 2024</a>)</span> — general-purpose programming language for data analysis<br>
+</li>
+<li><strong>pandas</strong> <span class="citation" data-cites="pandas">(<a href="99-references.html#ref-pandas" role="doc-biblioref">McKinney et al. 2010</a>)</span> — data manipulation and tabular data handling<br>
+</li>
+<li><strong>NumPy</strong> <span class="citation" data-cites="numpy">(<a href="99-references.html#ref-numpy" role="doc-biblioref">Harris et al. 2020</a>)</span> — numerical computing and array operations<br>
+</li>
+<li><strong>matplotlib</strong> <span class="citation" data-cites="matplotlib">(<a href="99-references.html#ref-matplotlib" role="doc-biblioref">Hunter 2007</a>)</span> — foundational plotting library<br>
+</li>
+<li><strong>seaborn</strong> <span class="citation" data-cites="seaborn">(<a href="99-references.html#ref-seaborn" role="doc-biblioref">Waskom 2021</a>)</span> — statistical data visualization built on matplotlib</li>
+</ul>
+<p>These tools form a standard ecosystem for reproducible data science workflows.</p>
+</section>
 <section id="closing-note" class="level2">
 <h2 class="anchored" data-anchor-id="closing-note">Closing Note</h2>
 <p>The goal of this Foundations Track is not just to teach syntax.</p>
 <p>It is to teach structure, discipline, and reproducibility.</p>
 <p>The same workflow you used here can be applied to:</p>
 <ul>
-<li>New datasets</li>
-<li>New domains</li>
-<li>Larger analytical projects</li>
-<li>Future CDI guides</li>
+<li>new datasets<br>
+</li>
+<li>new domains<br>
+</li>
+<li>larger analytical projects<br>
+</li>
+<li>future CDI guides</li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-iris" class="csl-entry" role="listitem">
+Fisher, Ronald A. 1936. <span>“The Use of Multiple Measurements in Taxonomic Problems.”</span> <em>Annals of Eugenics</em>.
+</div>
+<div id="ref-numpy" class="csl-entry" role="listitem">
+Harris, Charles R. et al. 2020. <span>“Array Programming with <span>NumPy</span>.”</span> <em>Nature</em>. <a href="https://doi.org/10.1038/s41586-020-2649-2">https://doi.org/10.1038/s41586-020-2649-2</a>.
+</div>
+<div id="ref-matplotlib" class="csl-entry" role="listitem">
+Hunter, J. D. 2007. <span>“Matplotlib: A 2D Graphics Environment.”</span> <em>Computing in Science &amp; Engineering</em>. <a href="https://doi.org/10.1109/MCSE.2007.55">https://doi.org/10.1109/MCSE.2007.55</a>.
+</div>
+<div id="ref-pandas" class="csl-entry" role="listitem">
+McKinney, Wes et al. 2010. <span>“Pandas-Dev/Pandas: Pandas.”</span> <em>Zenodo</em>. <a href="https://doi.org/10.5281/zenodo.3509134">https://doi.org/10.5281/zenodo.3509134</a>.
+</div>
+<div id="ref-python" class="csl-entry" role="listitem">
+Python Software Foundation. 2024. <span>“Python Language Reference.”</span> <a href="https://www.python.org/">https://www.python.org/</a>.
+</div>
+<div id="ref-seaborn" class="csl-entry" role="listitem">
+Waskom, Michael L. 2021. <span>“Seaborn: Statistical Data Visualization.”</span> <em>Journal of Open Source Software</em>. <a href="https://doi.org/10.21105/joss.03021">https://doi.org/10.21105/joss.03021</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
