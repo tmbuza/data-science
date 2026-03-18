@@ -3,15 +3,21 @@
 :::cdi-message
 - **ID:** DS-L05
 - **Type:** Lesson
-- **Audience:** Public
+- **Audience:** Beginner / Intermediate
 - **Theme:** Foundational data visualization using clear, reproducible workflows
 :::
 
 Visualization is one of the most important tools in data science.
 
-A good plot helps you detect structure, compare groups, identify unusual values, and communicate findings clearly. But visualization is not only about producing charts. It is also about learning how to read evidence from patterns.
+A good plot helps reveal structure, compare groups, identify unusual values, and communicate findings clearly.
 
-In this lesson, we focus on foundational plot types that appear repeatedly in real workflows. We will use the cleaned Iris dataset and practice both creating figures and interpreting what they show.
+But visualization is not only about producing charts.
+
+It is also about learning how to read evidence from patterns.
+
+In this lesson, we focus on foundational plot types that appear in real analytical workflows.
+
+We use the cleaned Iris dataset to practice both creating figures and interpreting what they show.
 
 ---
 
@@ -19,11 +25,11 @@ In this lesson, we focus on foundational plot types that appear repeatedly in re
 
 By the end of this lesson, you will be able to:
 
-- Create histograms, boxplots, scatter plots, and pairplots  
-- Compare numeric distributions across groups  
-- Use color to represent categories clearly  
-- Interpret patterns, spread, overlap, and separation  
-- Build plots that are readable and analytically useful  
+- create histograms, boxplots, scatter plots, and pairplots  
+- compare numeric distributions across groups  
+- use color to represent categories clearly  
+- interpret patterns, spread, overlap, and separation  
+- build plots that are readable and analytically useful  
 
 ---
 
@@ -61,12 +67,11 @@ print(df.dtypes)
 
 Before making plots, ask:
 
-- Which variables are numeric?
-- Which variable defines the groups?
-- Which comparisons are likely to be meaningful?
+- which variables are numeric?  
+- which variable defines the groups?  
+- which comparisons are likely to be meaningful?  
 
-For the Iris dataset, the numeric flower measurements and the categorical `species` variable naturally support both distribution plots and grouped comparisons.
-
+For the Iris dataset, the numeric flower measurements and the categorical `species` variable support both distribution plots and grouped comparisons.
 ---
 
 ## Histogram
@@ -98,12 +103,12 @@ plt.show()
 
 When reading a histogram, look for:
 
-- the center of the distribution
-- the spread of values
-- skewness
-- possible multiple peaks
+- the center of the distribution  
+- the spread of values  
+- skewness  
+- possible multiple peaks  
 
-If a variable shows multiple peaks, that can suggest the data may contain meaningful subgroups.
+If a variable shows multiple peaks, this may suggest the presence of meaningful subgroups.
 
 ---
 
@@ -133,12 +138,12 @@ plt.show()
 
 ### Interpretation
 
-A boxplot helps you compare groups by showing:
+A boxplot helps compare groups by showing:
 
-- typical value differences through the median
-- variation within each group
-- possible outliers
-- overlap across groups
+- differences in typical values through the median  
+- variation within each group  
+- possible outliers  
+- overlap across groups  
 
 If two groups overlap strongly, that variable alone may not separate them well.
 
@@ -175,12 +180,12 @@ plt.show()
 
 Scatter plots help you evaluate:
 
-- whether two variables move together
-- whether groups cluster separately
-- whether the pattern looks linear or non-linear
-- whether any observations appear unusual
+- whether two variables move together  
+- whether groups form distinct clusters  
+- whether the pattern appears linear or non-linear  
+- whether any observations appear unusual  
 
-In many datasets, scatter plots are among the fastest tools for detecting group structure.
+In many datasets, scatter plots are among the fastest ways to detect group structure.
 
 ---
 
@@ -212,14 +217,14 @@ plt.show()
 
 ### Interpretation
 
-This plot is useful when you want to compare whether groups differ in:
+This plot helps compare whether groups differ in:
 
-- location
-- spread
-- overlap
-- shape of the distribution
+- location  
+- spread  
+- overlap  
+- shape of the distribution  
 
-If one group's values occupy a clearly different range, that variable may be especially useful for classification or interpretation.
+If one group's values occupy a clearly different range, that variable may be useful for distinguishing between groups.
 
 ---
 
@@ -245,28 +250,30 @@ plt.show()
 
 ### Interpretation
 
-Pairplots help you answer broader questions such as:
+### Interpretation
 
-- Which variables best separate species?
-- Which features seem strongly related?
-- Which measurements appear redundant?
-- Where do groups overlap and where do they separate cleanly?
+Pairplots help answer broader questions such as:
 
-This is often one of the best first multivariate views of a dataset.
+- which variables best separate species?  
+- which features appear strongly related?  
+- which measurements appear redundant?  
+- where groups overlap and where they separate clearly?  
+
+This is often one of the most useful first multivariate views of a dataset.
 
 ---
 
 ## Reading Visual Evidence Carefully
 
-A plot is only useful if we interpret it carefully.
+A plot is only useful if it is interpreted carefully.
 
 When reading a figure, ask:
 
-- What question is this plot helping answer?
-- What pattern is visible?
-- How strong is the pattern?
-- Is there overlap, uncertainty, or ambiguity?
-- Does this match what earlier summaries suggested?
+- what question does this plot help answer?  
+- what pattern is visible?  
+- how strong is the pattern?  
+- is there overlap, uncertainty, or ambiguity?  
+- does this align with earlier summaries?  
 
 Visualization should support reasoning, not replace it.
 
@@ -274,13 +281,13 @@ Visualization should support reasoning, not replace it.
 
 ## Visualization Principles
 
-Strong foundational plots usually share a few qualities:
+Strong foundational plots share a few key qualities:
 
-- clear titles and labels
-- readable axes
-- purposeful use of color
-- minimal clutter
-- plot choice matched to the question
+- clear titles and labels  
+- readable axes  
+- purposeful use of color  
+- minimal clutter  
+- plot choice matched to the question  
 
 A histogram is useful for one-variable distributions.  
 A boxplot is useful for comparing distributions across groups.  
@@ -306,11 +313,11 @@ Visualization often reveals issues that summary tables alone can miss.
 
 ## Summary
 
-- You used foundational plot types to explore the Iris dataset
-- You compared distributions within and across species
-- You examined relationships between numeric variables
-- You used visual patterns to support interpretation
-- You practiced moving from chart creation to analytical reasoning
+- you used foundational plot types to explore the Iris dataset  
+- you compared distributions within and across species  
+- you examined relationships between numeric variables  
+- you used visual patterns to support interpretation  
+- you practiced moving from chart creation to analytical reasoning  
 
 These are core visualization habits that carry forward into more advanced analysis.
 
@@ -384,3 +391,11 @@ print("Petal-related features appear more useful than sepal-related features for
 ```
 
 :::
+
+## CDI Insight
+
+Visualization is not about producing more plots.
+
+It is about choosing the right view of the data to support understanding.
+
+A clear plot reduces uncertainty. A poor plot can introduce it.

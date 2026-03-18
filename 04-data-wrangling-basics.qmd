@@ -3,14 +3,17 @@
 :::cdi-message
 - **ID:** DS-L04
 - **Type:** Lesson
-- **Audience:** Public
+- **Audience:** Beginner / Intermediate
 - **Theme:** Transforming and reshaping data using reproducible workflows
 :::
 
-Data rarely arrives in the exact format you need for analysis.
+Data rarely arrives in the exact format required for analysis.
 
-In this lesson, you will learn how to transform, filter, group, and reshape data using pandas.  
-As in previous chapters, all code runs inside this Quarto (`.qmd`) file and executes when you render the book.
+In this lesson, you will learn how to transform, filter, group, and reshape data using pandas.
+
+As in previous chapters, all code runs inside this Quarto (`.qmd`) file.
+
+When the book is rendered, Python code is executed and results are embedded directly into the page.
 
 ---
 
@@ -18,24 +21,12 @@ As in previous chapters, all code runs inside this Quarto (`.qmd`) file and exec
 
 By the end of this lesson, you will be able to:
 
-- Select and filter rows and columns  
-- Create new derived features  
-- Sort and reorder data  
-- Group and aggregate values  
-- Apply conditional logic  
-- Prepare structured outputs for analysis  
-
----
-
-## Chapter Initialization
-
-```{python}
-#| label: 04-chapter-init
-
-from cdi_viz.theme import cdi_notebook_init
-
-cdi_notebook_init(chapter="04", title_x=0.5)
-```
+- select and filter rows and columns  
+- create derived features  
+- sort and reorder data  
+- group and aggregate values  
+- apply conditional logic  
+- prepare structured outputs for analysis    
 
 ---
 
@@ -56,6 +47,8 @@ df.head()
 
 ## Selecting Columns
 
+Select a subset of columns for focused analysis.
+
 ```{python}
 #| label: 04-select-columns
 
@@ -66,7 +59,9 @@ df[["sepal_length", "petal_length"]].head()
 
 ## Filtering Rows
 
-Example: filter rows where petal_length > 4.
+Filter rows based on a condition.
+
+Example: select rows where petal_length > 4.
 
 ```{python}
 #| label: 04-filter-rows
@@ -79,7 +74,9 @@ df_filtered.head()
 
 ## Creating New Features
 
-We create a new feature: petal_area.
+Feature creation extends the dataset with new variables.
+
+Here, we define a new feature, `petal_area`.
 
 ```{python}
 #| label: 04-create-feature
@@ -92,6 +89,8 @@ df.head()
 
 ## Sorting Data
 
+Sort the dataset to examine extreme or ordered values.
+
 ```{python}
 #| label: 04-sort-data
 
@@ -103,7 +102,9 @@ df_sorted.head()
 
 ## Grouping and Aggregation
 
-Compute the mean petal_area per species.
+Summarize values across groups.
+
+Here, we compute the mean petal_area per species.
 
 ```{python}
 #| label: 04-groupby-mean
@@ -122,7 +123,9 @@ grouped
 
 ## Conditional Logic
 
-Create a simple size category based on petal_area.
+Create categorical variables based on defined rules.
+
+Here, we assign a size category based on petal_area.
 
 ```{python}
 #| label: 04-conditional-logic
@@ -138,7 +141,7 @@ df.head()
 
 ## Reshaping Example (Long Format)
 
-Convert selected columns to long format.
+Reshape the dataset into long format for flexible analysis and visualization.
 
 ```{python}
 #| label: 04-melt-example
@@ -156,6 +159,8 @@ df_long.head()
 ---
 
 ## Validation Checks
+
+After transformation, confirm that the dataset remains consistent and complete.
 
 ```{python}
 #| label: 04-validation-checks

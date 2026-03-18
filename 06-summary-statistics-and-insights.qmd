@@ -7,11 +7,13 @@
 - **Theme:** Using summary statistics to move from numbers to interpretation
 :::
 
-In this final lesson of the Foundations Track, you will use summary statistics to move from raw measurements to interpretable evidence.
+In this final lesson of the Foundations Track, you use summary statistics to move from raw measurements to interpretable evidence.
 
-Summary statistics are useful because they help us describe the center, spread, and differences in a dataset without inspecting every row individually. But descriptive summaries are only valuable when they are connected to clear interpretation.
+Summary statistics help describe the center, spread, and differences in a dataset without inspecting every row individually.
 
-In this lesson, you will compute descriptive statistics, compare grouped summaries, examine simple relationships, and write careful insights grounded in evidence.
+However, descriptive summaries are only useful when they are connected to clear interpretation.
+
+In this lesson, you compute descriptive statistics, compare grouped summaries, examine simple relationships, and write careful insights grounded in evidence.
 
 ---
 
@@ -61,11 +63,13 @@ print(df.dtypes)
 
 Before computing summaries, ask:
 
-- Which variables are numeric?
-- Which variable defines the groups?
-- Which summaries are likely to be most informative?
+- which variables are numeric?  
+- which variable defines the groups?  
+- which summaries are likely to be most informative?  
 
 For the Iris dataset, the flower measurements are numeric and `species` provides a natural grouping variable.
+
+
 
 ---
 
@@ -83,11 +87,11 @@ df.describe()
 
 This table helps you review:
 
-- the typical range of each feature
-- the approximate center using the mean
-- variability using the standard deviation
-- minimum and maximum values
-- quartiles that help describe spread
+- the typical range of each feature  
+- the approximate center using the mean  
+- variability using the standard deviation  
+- minimum and maximum values  
+- quartiles that describe spread  
 
 A numeric summary is often the first checkpoint before deeper comparison.
 
@@ -129,11 +133,11 @@ plt.show()
 
 These histograms help you assess:
 
-- whether distributions are narrow or wide
-- whether some features appear more variable than others
-- whether there may be multiple peaks suggesting subgroup structure
+- whether distributions are narrow or wide  
+- whether some features appear more variable than others  
+- whether there may be multiple peaks suggesting subgroup structure  
 
-This is useful because a summary table alone may hide distribution shape.
+A summary table alone may not reveal distribution shape.
 
 ---
 
@@ -167,9 +171,9 @@ plt.show()
 
 ### Interpretation
 
-Category counts help you check whether groups are balanced.
+Category counts help you assess whether groups are balanced.
 
-Balanced group sizes make grouped comparisons easier to interpret, while strong imbalance can affect how patterns appear in tables and plots.
+Balanced group sizes make comparisons easier to interpret, while strong imbalance can affect how patterns appear in tables and plots.
 
 ---
 
@@ -200,13 +204,13 @@ group_summary
 
 ### Interpretation
 
-Grouped summaries help you answer questions such as:
+Grouped summaries help answer questions such as:
 
-- Which species has the largest average petals?
-- Which variable differs most across species?
-- Which groups appear similar and which appear distinct?
+- which species has the largest average petals?  
+- which variable differs most across species?  
+- which groups appear similar and which appear distinct?  
 
-This is where descriptive statistics begin to support actual insight.
+This is where descriptive statistics begin to support insight.
 
 ---
 
@@ -226,9 +230,9 @@ median_table = (
 median_table
 ```
 
-### Why this matters
+### Interpretation
 
-Comparing both means and medians helps you judge whether a group's center is stable or whether a few values may be pulling the mean upward or downward.
+Comparing means and medians helps you assess whether a group's center is stable or influenced by a few values.
 
 ---
 
@@ -261,11 +265,11 @@ This plot combines summary and variation.
 
 It helps you compare:
 
-- average petal length across species
-- within-group spread through the standard deviation bars
-- whether group differences appear large or modest
+- average petal length across species  
+- within-group spread using standard deviation  
+- whether group differences appear large or modest  
 
-When a grouped mean plot agrees with earlier visualizations, confidence in the descriptive pattern increases.
+When this agrees with earlier visualizations, confidence in the pattern increases.
 
 ---
 
@@ -289,7 +293,7 @@ feature_separation
 
 A larger difference in group means suggests that a feature may separate species more clearly.
 
-This does not prove classification quality on its own, but it provides a useful descriptive signal about which variables are more informative.
+This does not establish classification performance, but it provides a useful descriptive signal about which variables are more informative.
 
 ---
 
@@ -328,9 +332,9 @@ plt.show()
 
 A correlation heatmap helps you see:
 
-- which measurements tend to increase together
-- which relationships appear weak
-- where redundancy may exist between variables
+- which measurements tend to increase together  
+- which relationships appear weak  
+- where redundancy may exist between variables  
 
 This can guide later feature selection and interpretation.
 
@@ -374,11 +378,11 @@ print(report)
 
 ### Interpretation
 
-A good insights report does three things:
+A good insights report:
 
-- states what the evidence shows
-- links that evidence to careful interpretation
-- avoids claims that go beyond the analysis
+- states what the evidence shows  
+- links evidence to careful interpretation  
+- avoids claims that go beyond the analysis  
 
 This habit is central to CDI-style reasoning.
 
@@ -398,15 +402,15 @@ assert int(df.isna().sum().sum()) == 0, "Missing values remain in the dataset."
 assert "species" in df.columns, "Grouping variable species is missing."
 ```
 
-### Why this matters
+### Interpretation
 
-Even in a summary chapter, validation is useful.
+Even in a summary-focused chapter, validation remains important.
 
 It confirms that:
 
-- the dataset is still clean
-- expected variables are present
-- grouped summaries were constructed correctly
+- the dataset is still clean  
+- expected variables are present  
+- grouped summaries were constructed correctly  
 
 ---
 
@@ -454,10 +458,21 @@ print("The grouped summaries suggest that species differ descriptively across se
 
 ## Summary
 
-- You computed descriptive statistics for numeric and categorical variables
-- You compared group means, standard deviations, and medians
-- You used simple visuals to support statistical summaries
-- You examined linear relationships with a correlation matrix
-- You wrote an insights report grounded in descriptive evidence
+- you computed descriptive statistics for numeric and categorical variables  
+- you compared group means, standard deviations, and medians  
+- you used simple visuals to support statistical summaries  
+- you examined linear relationships using a correlation matrix  
+- you wrote an insights report grounded in descriptive evidence  
 
 This chapter closes the Foundations Track by showing how summary statistics support careful interpretation, not just calculation.
+
+
+## CDI Insight
+
+Summary statistics are not the end of analysis.
+
+They are a way to organize evidence so that interpretation becomes clearer and more defensible.
+
+A responsible analyst does not report numbers alone.
+
+They explain what those numbers mean — and what they do not.

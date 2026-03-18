@@ -1,7 +1,7 @@
 # Preface {-}
 
 :::cdi-message
-- **ID:** DS-FREE-000
+- **ID:** DS-000
 - **Type:** Preface
 - **Audience:** Beginner to Intermediate
 - **Theme:** Analytical thinking and structured workflows
@@ -11,9 +11,10 @@
 
 Data science is often introduced through tools.
 
-- Python.
-- Libraries.
-- Models.
+- Python  
+- R  
+- SQL  
+- libraries and frameworks  
 
 But tools alone do not produce understanding.
 
@@ -23,18 +24,20 @@ What matters is how we move from:
 to  
 - structured insight  
 
-This guide introduces data science as a **process of reasoning**, not just a collection of techniques.
+This guide uses **Python** as the working environment, but the focus is not Python.
 
----
+The focus is how to move from data to insight in a way that is clear, structured, and defensible.
+
+Data science is introduced here as a **process of reasoning**, not just a collection of techniques.
 
 ## What You Will Learn
 
-This free track focuses on the foundations:
+This track focuses on the foundations:
 
-- how to explore datasets
-- how to clean and prepare data
-- how to visualize patterns
-- how to summarize findings clearly
+- exploring datasets  
+- cleaning and preparing data  
+- visualizing patterns  
+- summarizing findings clearly  
 
 The goal is not to memorize functions.
 
@@ -53,17 +56,21 @@ Each chapter follows a consistent pattern:
    Practical implementation using Python  
 
 3. **Interpretation**  
-   What the results actually mean  
+   What the results mean  
 
-4. **Takeaway**  
-   The key idea you should retain  
+4. **Summary**  
+   The key ideas to retain  
 
 5. **Exercise**  
-   A small task to reinforce learning  
+   A short task to reinforce learning  
+
+Code blocks are folded by default to keep the guide readable.
+
+You can expand them when you want to inspect or run the implementation.
 
 This structure is intentional.
 
-It ensures that learning moves beyond code into understanding.
+It ensures that learning moves from code to interpretation, and from interpretation to understanding.
 
 ---
 
@@ -87,7 +94,7 @@ Understanding grows from **interaction**, not passive reading.
 
 Data analysis is not a straight line.
 
-It is a process of iteration, where each step informs the next.
+It is an iterative process, where each step informs the next.
 
 ```{mermaid}
 flowchart TB
@@ -102,18 +109,6 @@ flowchart TB
   E --> F[Refine Question / Hypothesis]
   F --> B
 ```
-
-This diagram represents how analytical work actually happens:
-
-- You begin with a question
-- You explore and prepare data
-- You visualize and summarize patterns
-- You refine your understanding
-- Then you return to the data again
-
-Insight is not produced in a single pass.
-
-It emerges through revisiting earlier steps with better questions.
 
 ---
 

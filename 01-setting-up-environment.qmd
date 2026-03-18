@@ -1,7 +1,7 @@
 # Setting Up Your Environment {#lesson01}
 
 :::cdi-message
-- **ID:** CDI-DS-SETUP-001
+- **ID:** DS-L01
 - **Type:** Foundation
 - **Audience:** Beginner / Intermediate
 - **Theme:** Reproducibility starts before analysis
