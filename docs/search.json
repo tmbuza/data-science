@@ -696,18 +696,7 @@
     "href": "05-visualization-basics.html#inspect-the-variables",
     "title": "Visualization Foundations",
     "section": "Inspect the Variables",
-    "text": "Inspect the Variables\nBefore plotting, confirm the structure of the dataset.\n\n\nCode\nprint(\"Shape:\", df.shape)\nprint(\"\\nColumns:\", df.columns.tolist())\nprint(\"\\nData types:\")\nprint(df.dtypes)\n\n\nShape: (149, 5)\n\nColumns: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']\n\nData types:\nsepal_length    float64\nsepal_width     float64\npetal_length    float64\npetal_width     float64\nspecies             str\ndtype: object\n\n\n\nInterpretation\nBefore making plots, ask:\n\nwhich variables are numeric?\n\nwhich variable defines the groups?\n\nwhich comparisons are likely to be meaningful?",
-    "crumbs": [
-      "Foundations",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Visualization Foundations</span>"
-    ]
-  },
-  {
-    "objectID": "05-visualization-basics.html#for-the-iris-dataset-the-numeric-flower-measurements-and-the-categorical-species-variable-support-both-distribution-plots-and-grouped-comparisons.",
-    "href": "05-visualization-basics.html#for-the-iris-dataset-the-numeric-flower-measurements-and-the-categorical-species-variable-support-both-distribution-plots-and-grouped-comparisons.",
-    "title": "Visualization Foundations",
-    "section": "For the Iris dataset, the numeric flower measurements and the categorical species variable support both distribution plots and grouped comparisons.",
-    "text": "For the Iris dataset, the numeric flower measurements and the categorical species variable support both distribution plots and grouped comparisons.",
+    "text": "Inspect the Variables\nBefore plotting, confirm the structure of the dataset.\n\n\nCode\nprint(\"Shape:\", df.shape)\nprint(\"\\nColumns:\", df.columns.tolist())\nprint(\"\\nData types:\")\nprint(df.dtypes)\n\n\nShape: (149, 5)\n\nColumns: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']\n\nData types:\nsepal_length    float64\nsepal_width     float64\npetal_length    float64\npetal_width     float64\nspecies             str\ndtype: object\n\n\n\nInterpretation\nBefore making plots, ask:\n\nwhich variables are numeric?\n\nwhich variable defines the groups?\n\nwhich comparisons are likely to be meaningful?\n\nFor the Iris dataset, the numeric flower measurements and the categorical species variable support both distribution plots and grouped comparisons.",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Visualization Foundations</span>"
@@ -762,7 +751,7 @@
     "href": "05-visualization-basics.html#pairplot-overview",
     "title": "Visualization Foundations",
     "section": "Pairplot Overview",
-    "text": "Pairplot Overview\nPairplots provide a compact view of multiple variable relationships at once.\n\n\nCode\ng = sns.pairplot(\n    df,\n    hue=\"species\",\n    corner=True,\n    plot_kws={\"alpha\": 0.7}\n)\n\ng.fig.suptitle(\"Iris — Pairplot by Species\", y=1.02)\n\nplt.show()\n\n\n\n\n\nIris — Pairplot by Species\n\n\n\n\n\nInterpretation\n\n\nInterpretation\nPairplots help answer broader questions such as:\n\nwhich variables best separate species?\n\nwhich features appear strongly related?\n\nwhich measurements appear redundant?\n\nwhere groups overlap and where they separate clearly?\n\nThis is often one of the most useful first multivariate views of a dataset.",
+    "text": "Pairplot Overview\nPairplots provide a compact view of multiple variable relationships at once.\n\n\nCode\ng = sns.pairplot(\n    df,\n    hue=\"species\",\n    corner=True,\n    plot_kws={\"alpha\": 0.7}\n)\n\ng.fig.suptitle(\"Iris — Pairplot by Species\", y=1.02)\n\nplt.show()\n\n\n\n\n\nIris — Pairplot by Species\n\n\n\n\n\nInterpretation\nPairplots help answer broader questions such as:\n\nwhich variables best separate species?\n\nwhich features appear strongly related?\n\nwhich measurements appear redundant?\n\nwhere groups overlap and where they separate clearly?\n\nThis is often one of the most useful first multivariate views of a dataset.",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Visualization Foundations</span>"

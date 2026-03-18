@@ -72,6 +72,7 @@ Before making plots, ask:
 - which comparisons are likely to be meaningful?  
 
 For the Iris dataset, the numeric flower measurements and the categorical `species` variable support both distribution plots and grouped comparisons.
+
 ---
 
 ## Histogram
@@ -248,7 +249,6 @@ g.fig.suptitle("Iris — Pairplot by Species", y=1.02)
 plt.show()
 ```
 
-### Interpretation
 
 ### Interpretation
 
