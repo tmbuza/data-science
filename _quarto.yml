@@ -4,6 +4,7 @@ project:
 
 bibliography: library/references.bib
 date: last-modified
+date-format: "MMM YYYY"
 
 book:
   title: "Data Science Foundations"

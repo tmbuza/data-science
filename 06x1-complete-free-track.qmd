@@ -3,7 +3,7 @@
 :::cdi-message
 - **ID:** DS-L06X1
 - **Type:** Transition
-- **Audience:** Public
+- **Audience:** Beginner / Intermediate
 - **Theme:** From foundations to applied reasoning
 :::
 
@@ -17,8 +17,9 @@ At this stage, you have developed the core habits that support reliable analysis
 - visualizing patterns  
 - summarizing evidence using statistics  
 
-These are not isolated skills.  
-They form a connected workflow.
+These are not isolated skills.
+
+They form a connected analytical workflow.
 
 ---
 
@@ -45,7 +46,7 @@ You will begin to:
 - formalize questions  
 - build simple models  
 - evaluate results carefully  
-- connect results back to real-world decisions  
+- connect results to real-world decisions  
 
 In CDI terms, this is the transition from:
 
@@ -57,34 +58,35 @@ In CDI terms, this is the transition from:
 
 In the Foundations Track, you asked:
 
-- What does the data look like?  
-- How do groups differ?  
-- What patterns are visible?  
+- what does the data look like?  
+- how do groups differ?  
+- what patterns are visible?  
 
 In the next stage, you will ask:
 
-- How confident are we in these patterns?  
-- Can we quantify relationships?  
-- How do we test assumptions?  
-- What conclusions are justified?  
+- how confident are we in these patterns?  
+- can we quantify relationships?  
+- how do we test assumptions?  
+- what conclusions are justified?  
 
-This shift is critical.
+This shift is essential.
 
 ---
 
 ## The CDI Reasoning Loop
 
-As you move forward, your work will follow a loop:
+As you move forward, your work follows an iterative process:
 
-1. Define the question  
-2. Prepare and validate data  
-3. Explore patterns  
-4. Apply models or formal methods  
-5. Interpret results  
-6. Revisit earlier steps if needed  
+1. define the question  
+2. prepare and validate data  
+3. explore patterns  
+4. apply models or formal methods  
+5. interpret results  
+6. revisit earlier steps as needed  
 
-Analysis is not linear.  
-It is iterative.
+Analysis is not linear.
+
+It improves through iteration.
 
 ---
 
@@ -94,15 +96,16 @@ You are now prepared to:
 
 - move from descriptive analysis to structured modeling  
 - connect computation to reasoning  
-- produce results that are both reproducible and interpretable  
+- produce results that are reproducible and interpretable  
 
 ---
 
 ## Next Step
 
-Continue to the next section of the guide, where you will begin applying models and building deeper analytical understanding.
+Continue to the next section of the guide, where you begin applying models and developing deeper analytical understanding.
 
 :::cdi-message
-The goal is not just to run analysis.  
+The goal is not just to run analysis.
+
 The goal is to produce reasoning you can defend.
 :::

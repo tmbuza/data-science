@@ -35,16 +35,16 @@ data-science/
 ### Key Directories
 
 - `data/`  
-  Stores raw and cleaned datasets.
+  stores raw and cleaned datasets  
 
 - `figures/`  
-  Stores saved plots generated during rendering.
+  stores plots that are explicitly saved during rendering 
 
 - `scripts/bash/`  
-  Contains helper scripts such as `setup-env.sh` and `build.sh`.
+  contains helper scripts such as `setup-env.sh` and `build.sh`  
 
 - `docs/`  
-  Contains the rendered Quarto website (GitHub Pages output).
+  contains the rendered Quarto site (GitHub Pages output)  
 
 ---
 
@@ -132,12 +132,12 @@ df["category_col"] = df["category_col"].astype("category")
 
 Before finalizing any chapter:
 
-- Confirm no missing values remain (unless justified)
-- Confirm no unintended duplicates
-- Confirm correct data types
-- Confirm figures render correctly
-- Rebuild the book (`quarto render`)
-- Open `docs/index.html` to verify output
+- confirm no missing values remain (unless justified)  
+- confirm no unintended duplicates  
+- confirm correct data types  
+- confirm figures render correctly  
+- rebuild the book (`quarto render`)  
+- open `docs/index.html` to verify output  
 
 ---
 
@@ -159,6 +159,8 @@ This guide uses a small set of widely adopted tools for data analysis and visual
 
 These tools form a standard ecosystem for reproducible data science workflows.
 
+---
+
 ## Closing Note
 
 The goal of this Foundations Track is not just to teach syntax.
@@ -170,4 +172,4 @@ The same workflow you used here can be applied to:
 - new datasets  
 - new domains  
 - larger analytical projects  
-- future CDI guides
+- future CDI guides  

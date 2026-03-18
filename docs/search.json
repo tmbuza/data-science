@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Data Science Foundations",
     "section": "",
-    "text": "Free Guide · Updated March 18, 2026",
+    "text": "Free Guide · Updated Mar 2026",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.html</span>"
     ]
@@ -1037,7 +1037,7 @@
     "href": "06x1-complete-free-track.html",
     "title": "Completing the Foundations Track",
     "section": "",
-    "text": "What You Have Built\nYou have completed the Foundations Track of the CDI Data Science pathway.\nAt this stage, you have developed the core habits that support reliable analysis:\nThese are not isolated skills.\nThey form a connected workflow.\nAcross these lessons, you have learned to:\nThis is the foundation of analytical thinking.",
+    "text": "What You Have Built\nYou have completed the Foundations Track of the CDI Data Science pathway.\nAt this stage, you have developed the core habits that support reliable analysis:\nThese are not isolated skills.\nThey form a connected analytical workflow.\nAcross these lessons, you have learned to:\nThis is the foundation of analytical thinking.",
     "crumbs": [
       "Upgrade & Transition",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
@@ -1059,7 +1059,7 @@
     "href": "06x1-complete-free-track.html#what-comes-next",
     "title": "Completing the Foundations Track",
     "section": "What Comes Next",
-    "text": "What Comes Next\nThe next stage moves beyond description.\nYou will begin to:\n\nformalize questions\n\nbuild simple models\n\nevaluate results carefully\n\nconnect results back to real-world decisions\n\nIn CDI terms, this is the transition from:\nexploration → structured reasoning → defensible inference",
+    "text": "What Comes Next\nThe next stage moves beyond description.\nYou will begin to:\n\nformalize questions\n\nbuild simple models\n\nevaluate results carefully\n\nconnect results to real-world decisions\n\nIn CDI terms, this is the transition from:\nexploration → structured reasoning → defensible inference",
     "crumbs": [
       "Upgrade & Transition",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
@@ -1070,7 +1070,7 @@
     "href": "06x1-complete-free-track.html#key-mindset-shift",
     "title": "Completing the Foundations Track",
     "section": "Key Mindset Shift",
-    "text": "Key Mindset Shift\nIn the Foundations Track, you asked:\n\nWhat does the data look like?\n\nHow do groups differ?\n\nWhat patterns are visible?\n\nIn the next stage, you will ask:\n\nHow confident are we in these patterns?\n\nCan we quantify relationships?\n\nHow do we test assumptions?\n\nWhat conclusions are justified?\n\nThis shift is critical.",
+    "text": "Key Mindset Shift\nIn the Foundations Track, you asked:\n\nwhat does the data look like?\n\nhow do groups differ?\n\nwhat patterns are visible?\n\nIn the next stage, you will ask:\n\nhow confident are we in these patterns?\n\ncan we quantify relationships?\n\nhow do we test assumptions?\n\nwhat conclusions are justified?\n\nThis shift is essential.",
     "crumbs": [
       "Upgrade & Transition",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
@@ -1081,7 +1081,7 @@
     "href": "06x1-complete-free-track.html#the-cdi-reasoning-loop",
     "title": "Completing the Foundations Track",
     "section": "The CDI Reasoning Loop",
-    "text": "The CDI Reasoning Loop\nAs you move forward, your work will follow a loop:\n\nDefine the question\n\nPrepare and validate data\n\nExplore patterns\n\nApply models or formal methods\n\nInterpret results\n\nRevisit earlier steps if needed\n\nAnalysis is not linear.\nIt is iterative.",
+    "text": "The CDI Reasoning Loop\nAs you move forward, your work follows an iterative process:\n\ndefine the question\n\nprepare and validate data\n\nexplore patterns\n\napply models or formal methods\n\ninterpret results\n\nrevisit earlier steps as needed\n\nAnalysis is not linear.\nIt improves through iteration.",
     "crumbs": [
       "Upgrade & Transition",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
@@ -1092,7 +1092,7 @@
     "href": "06x1-complete-free-track.html#transition-summary",
     "title": "Completing the Foundations Track",
     "section": "Transition Summary",
-    "text": "Transition Summary\nYou are now prepared to:\n\nmove from descriptive analysis to structured modeling\n\nconnect computation to reasoning\n\nproduce results that are both reproducible and interpretable",
+    "text": "Transition Summary\nYou are now prepared to:\n\nmove from descriptive analysis to structured modeling\n\nconnect computation to reasoning\n\nproduce results that are reproducible and interpretable",
     "crumbs": [
       "Upgrade & Transition",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
@@ -1103,7 +1103,7 @@
     "href": "06x1-complete-free-track.html#next-step",
     "title": "Completing the Foundations Track",
     "section": "Next Step",
-    "text": "Next Step\nContinue to the next section of the guide, where you will begin applying models and building deeper analytical understanding.\n\nThe goal is not just to run analysis.\nThe goal is to produce reasoning you can defend.",
+    "text": "Next Step\nContinue to the next section of the guide, where you begin applying models and developing deeper analytical understanding.\n\nThe goal is not just to run analysis.\nThe goal is to produce reasoning you can defend.",
     "crumbs": [
       "Upgrade & Transition",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
@@ -1125,7 +1125,7 @@
     "href": "99-appendix.html#project-structure-overview",
     "title": "Appendix",
     "section": "",
-    "text": "data-science/\n├── index.qmd\n├── 00-preface.qmd\n├── 01-setting-up-environment.qmd\n├── ...\n├── data/\n├── figures/\n├── scripts/\n│   └── bash/\n├── docs/\n├── _quarto.yml\n└── requirements.txt\n\nKey Directories\n\ndata/\nStores raw and cleaned datasets.\nfigures/\nStores saved plots generated during rendering.\nscripts/bash/\nContains helper scripts such as setup-env.sh and build.sh.\ndocs/\nContains the rendered Quarto website (GitHub Pages output).",
+    "text": "data-science/\n├── index.qmd\n├── 00-preface.qmd\n├── 01-setting-up-environment.qmd\n├── ...\n├── data/\n├── figures/\n├── scripts/\n│   └── bash/\n├── docs/\n├── _quarto.yml\n└── requirements.txt\n\nKey Directories\n\ndata/\nstores raw and cleaned datasets\nfigures/\nstores plots that are explicitly saved during rendering\nscripts/bash/\ncontains helper scripts such as setup-env.sh and build.sh\ndocs/\ncontains the rendered Quarto site (GitHub Pages output)",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix</span>"
@@ -1169,7 +1169,7 @@
     "href": "99-appendix.html#reproducibility-checklist",
     "title": "Appendix",
     "section": "Reproducibility Checklist",
-    "text": "Reproducibility Checklist\nBefore finalizing any chapter:\n\nConfirm no missing values remain (unless justified)\nConfirm no unintended duplicates\nConfirm correct data types\nConfirm figures render correctly\nRebuild the book (quarto render)\nOpen docs/index.html to verify output",
+    "text": "Reproducibility Checklist\nBefore finalizing any chapter:\n\nconfirm no missing values remain (unless justified)\n\nconfirm no unintended duplicates\n\nconfirm correct data types\n\nconfirm figures render correctly\n\nrebuild the book (quarto render)\n\nopen docs/index.html to verify output",
     "crumbs": [
       "Appendix",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix</span>"

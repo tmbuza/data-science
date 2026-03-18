@@ -163,62 +163,6 @@ pre{
   padding-left: 1.1rem;
 }
 
-/* ==========================================
-   CDI Override for Mermaid Forest Theme
-   Keep forest layout, replace colors
-   ========================================== */
-
-/* Nodes (boxes) */
-.mermaid .node rect,
-.mermaid .node polygon,
-.mermaid .node path {
-  fill: #eef7fb !important;        /* light CDI blue */
-  stroke: #036281 !important;      /* CDI teal */
-  stroke-width: 1.6px !important;
-}
-
-/* Node text */
-.mermaid .nodeLabel,
-.mermaid text {
-  fill: #036281 !important;        /* teal text (strong identity) */
-  font-weight: 600 !important;
-}
-
-/* Arrows / edges */
-.mermaid .edgePath path {
-  stroke: #036281 !important;
-  stroke-width: 1.8px !important;
-  stroke-linecap: round !important;
-}
-
-/* Arrowheads */
-.mermaid marker path {
-  fill: #036281 !important;
-  stroke: #036281 !important;
-}
-
-/* Edge labels (if used later) */
-.mermaid .edgeLabel rect {
-  fill: #ffffff !important;
-}
-
-.mermaid .edgeLabel text {
-  fill: #0f172a !important;
-}
-
-/* Subgraphs */
-.mermaid .cluster rect {
-  fill: #f4f8fb !important;
-  stroke: #b9d7e2 !important;
-}
-
-/* Notes (optional highlight system) */
-.mermaid .note rect,
-.mermaid .note polygon {
-  fill: #fff8db !important;
-  stroke: #f7c546 !important;
-}
-
-.mermaid .note text {
-  fill: #3b3b3b !important;
+.quarto-title-meta {
+  display: none !important;;
 }
