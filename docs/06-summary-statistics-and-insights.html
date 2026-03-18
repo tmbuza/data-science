@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-03-18">
 
 <title>Summary Statistics and Insights – Data Science Foundations</title>
 <style>
@@ -292,31 +293,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#median-table-by-species" id="toc-median-table-by-species" class="nav-link" data-scroll-target="#median-table-by-species">Median Table by Species</a>
   <ul class="collapse">
-  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">Why this matters</a></li>
+  <li><a href="#interpretation-5" id="toc-interpretation-5" class="nav-link" data-scroll-target="#interpretation-5">Interpretation</a></li>
   </ul></li>
   <li><a href="#visual-comparison-of-group-means" id="toc-visual-comparison-of-group-means" class="nav-link" data-scroll-target="#visual-comparison-of-group-means">Visual Comparison of Group Means</a>
   <ul class="collapse">
-  <li><a href="#interpretation-5" id="toc-interpretation-5" class="nav-link" data-scroll-target="#interpretation-5">Interpretation</a></li>
+  <li><a href="#interpretation-6" id="toc-interpretation-6" class="nav-link" data-scroll-target="#interpretation-6">Interpretation</a></li>
   </ul></li>
   <li><a href="#key-feature-differences" id="toc-key-feature-differences" class="nav-link" data-scroll-target="#key-feature-differences">Key Feature Differences</a>
   <ul class="collapse">
-  <li><a href="#interpretation-6" id="toc-interpretation-6" class="nav-link" data-scroll-target="#interpretation-6">Interpretation</a></li>
+  <li><a href="#interpretation-7" id="toc-interpretation-7" class="nav-link" data-scroll-target="#interpretation-7">Interpretation</a></li>
   </ul></li>
   <li><a href="#correlation-matrix" id="toc-correlation-matrix" class="nav-link" data-scroll-target="#correlation-matrix">Correlation Matrix</a></li>
   <li><a href="#correlation-heatmap" id="toc-correlation-heatmap" class="nav-link" data-scroll-target="#correlation-heatmap">Correlation Heatmap</a>
   <ul class="collapse">
-  <li><a href="#interpretation-7" id="toc-interpretation-7" class="nav-link" data-scroll-target="#interpretation-7">Interpretation</a></li>
+  <li><a href="#interpretation-8" id="toc-interpretation-8" class="nav-link" data-scroll-target="#interpretation-8">Interpretation</a></li>
   </ul></li>
   <li><a href="#generate-a-simple-insights-report" id="toc-generate-a-simple-insights-report" class="nav-link" data-scroll-target="#generate-a-simple-insights-report">Generate a Simple Insights Report</a>
   <ul class="collapse">
-  <li><a href="#interpretation-8" id="toc-interpretation-8" class="nav-link" data-scroll-target="#interpretation-8">Interpretation</a></li>
+  <li><a href="#interpretation-9" id="toc-interpretation-9" class="nav-link" data-scroll-target="#interpretation-9">Interpretation</a></li>
   </ul></li>
   <li><a href="#validation-checks" id="toc-validation-checks" class="nav-link" data-scroll-target="#validation-checks">Validation Checks</a>
   <ul class="collapse">
-  <li><a href="#why-this-matters-1" id="toc-why-this-matters-1" class="nav-link" data-scroll-target="#why-this-matters-1">Why this matters</a></li>
+  <li><a href="#interpretation-10" id="toc-interpretation-10" class="nav-link" data-scroll-target="#interpretation-10">Interpretation</a></li>
   </ul></li>
   <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#cdi-insight" id="toc-cdi-insight" class="nav-link" data-scroll-target="#cdi-insight">CDI Insight</a></li>
   </ul>
 </nav>
     </div>
@@ -333,6 +335,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 18, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -350,9 +358,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Theme:</strong> Using summary statistics to move from numbers to interpretation</li>
 </ul>
 </div>
-<p>In this final lesson of the Foundations Track, you will use summary statistics to move from raw measurements to interpretable evidence.</p>
-<p>Summary statistics are useful because they help us describe the center, spread, and differences in a dataset without inspecting every row individually. But descriptive summaries are only valuable when they are connected to clear interpretation.</p>
-<p>In this lesson, you will compute descriptive statistics, compare grouped summaries, examine simple relationships, and write careful insights grounded in evidence.</p>
+<p>In this final lesson of the Foundations Track, you use summary statistics to move from raw measurements to interpretable evidence.</p>
+<p>Summary statistics help describe the center, spread, and differences in a dataset without inspecting every row individually.</p>
+<p>However, descriptive summaries are only useful when they are connected to clear interpretation.</p>
+<p>In this lesson, you compute descriptive statistics, compare grouped summaries, examine simple relationships, and write careful insights grounded in evidence.</p>
 <hr>
 <section id="lesson-overview" class="level2">
 <h2 class="anchored" data-anchor-id="lesson-overview">Lesson Overview</h2>
@@ -476,9 +485,11 @@ dtype: object</code></pre>
 <h3 class="anchored" data-anchor-id="interpretation">Interpretation</h3>
 <p>Before computing summaries, ask:</p>
 <ul>
-<li>Which variables are numeric?</li>
-<li>Which variable defines the groups?</li>
-<li>Which summaries are likely to be most informative?</li>
+<li>which variables are numeric?<br>
+</li>
+<li>which variable defines the groups?<br>
+</li>
+<li>which summaries are likely to be most informative?</li>
 </ul>
 <p>For the Iris dataset, the flower measurements are numeric and <code>species</code> provides a natural grouping variable.</p>
 <hr>
@@ -573,11 +584,15 @@ dtype: object</code></pre>
 <h3 class="anchored" data-anchor-id="interpretation-1">Interpretation</h3>
 <p>This table helps you review:</p>
 <ul>
-<li>the typical range of each feature</li>
-<li>the approximate center using the mean</li>
-<li>variability using the standard deviation</li>
-<li>minimum and maximum values</li>
-<li>quartiles that help describe spread</li>
+<li>the typical range of each feature<br>
+</li>
+<li>the approximate center using the mean<br>
+</li>
+<li>variability using the standard deviation<br>
+</li>
+<li>minimum and maximum values<br>
+</li>
+<li>quartiles that describe spread</li>
 </ul>
 <p>A numeric summary is often the first checkpoint before deeper comparison.</p>
 <hr>
@@ -625,11 +640,13 @@ dtype: object</code></pre>
 <h3 class="anchored" data-anchor-id="interpretation-2">Interpretation</h3>
 <p>These histograms help you assess:</p>
 <ul>
-<li>whether distributions are narrow or wide</li>
-<li>whether some features appear more variable than others</li>
+<li>whether distributions are narrow or wide<br>
+</li>
+<li>whether some features appear more variable than others<br>
+</li>
 <li>whether there may be multiple peaks suggesting subgroup structure</li>
 </ul>
-<p>This is useful because a summary table alone may hide distribution shape.</p>
+<p>A summary table alone may not reveal distribution shape.</p>
 <hr>
 </section>
 </section>
@@ -677,8 +694,8 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section id="interpretation-3" class="level3">
 <h3 class="anchored" data-anchor-id="interpretation-3">Interpretation</h3>
-<p>Category counts help you check whether groups are balanced.</p>
-<p>Balanced group sizes make grouped comparisons easier to interpret, while strong imbalance can affect how patterns appear in tables and plots.</p>
+<p>Category counts help you assess whether groups are balanced.</p>
+<p>Balanced group sizes make comparisons easier to interpret, while strong imbalance can affect how patterns appear in tables and plots.</p>
 <hr>
 </section>
 </section>
@@ -769,13 +786,15 @@ Name: count, dtype: int64</code></pre>
 </div>
 <section id="interpretation-4" class="level3">
 <h3 class="anchored" data-anchor-id="interpretation-4">Interpretation</h3>
-<p>Grouped summaries help you answer questions such as:</p>
+<p>Grouped summaries help answer questions such as:</p>
 <ul>
-<li>Which species has the largest average petals?</li>
-<li>Which variable differs most across species?</li>
-<li>Which groups appear similar and which appear distinct?</li>
+<li>which species has the largest average petals?<br>
+</li>
+<li>which variable differs most across species?<br>
+</li>
+<li>which groups appear similar and which appear distinct?</li>
 </ul>
-<p>This is where descriptive statistics begin to support actual insight.</p>
+<p>This is where descriptive statistics begin to support insight.</p>
 <hr>
 </section>
 </section>
@@ -839,9 +858,9 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<section id="why-this-matters" class="level3">
-<h3 class="anchored" data-anchor-id="why-this-matters">Why this matters</h3>
-<p>Comparing both means and medians helps you judge whether a group’s center is stable or whether a few values may be pulling the mean upward or downward.</p>
+<section id="interpretation-5" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-5">Interpretation</h3>
+<p>Comparing means and medians helps you assess whether a group’s center is stable or influenced by a few values.</p>
 <hr>
 </section>
 </section>
@@ -875,16 +894,18 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<section id="interpretation-5" class="level3">
-<h3 class="anchored" data-anchor-id="interpretation-5">Interpretation</h3>
+<section id="interpretation-6" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-6">Interpretation</h3>
 <p>This plot combines summary and variation.</p>
 <p>It helps you compare:</p>
 <ul>
-<li>average petal length across species</li>
-<li>within-group spread through the standard deviation bars</li>
+<li>average petal length across species<br>
+</li>
+<li>within-group spread using standard deviation<br>
+</li>
 <li>whether group differences appear large or modest</li>
 </ul>
-<p>When a grouped mean plot agrees with earlier visualizations, confidence in the descriptive pattern increases.</p>
+<p>When this agrees with earlier visualizations, confidence in the pattern increases.</p>
 <hr>
 </section>
 </section>
@@ -909,10 +930,10 @@ Name: count, dtype: int64</code></pre>
  'petal_width': np.float64(1.7825714285714285)}</code></pre>
 </div>
 </div>
-<section id="interpretation-6" class="level3">
-<h3 class="anchored" data-anchor-id="interpretation-6">Interpretation</h3>
+<section id="interpretation-7" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-7">Interpretation</h3>
 <p>A larger difference in group means suggests that a feature may separate species more clearly.</p>
-<p>This does not prove classification quality on its own, but it provides a useful descriptive signal about which variables are more informative.</p>
+<p>This does not establish classification performance, but it provides a useful descriptive signal about which variables are more informative.</p>
 <hr>
 </section>
 </section>
@@ -1002,12 +1023,14 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<section id="interpretation-7" class="level3">
-<h3 class="anchored" data-anchor-id="interpretation-7">Interpretation</h3>
+<section id="interpretation-8" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-8">Interpretation</h3>
 <p>A correlation heatmap helps you see:</p>
 <ul>
-<li>which measurements tend to increase together</li>
-<li>which relationships appear weak</li>
+<li>which measurements tend to increase together<br>
+</li>
+<li>which relationships appear weak<br>
+</li>
 <li>where redundancy may exist between variables</li>
 </ul>
 <p>This can guide later feature selection and interpretation.</p>
@@ -1072,12 +1095,14 @@ versicolor           4.260000
 </code></pre>
 </div>
 </div>
-<section id="interpretation-8" class="level3">
-<h3 class="anchored" data-anchor-id="interpretation-8">Interpretation</h3>
-<p>A good insights report does three things:</p>
+<section id="interpretation-9" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-9">Interpretation</h3>
+<p>A good insights report:</p>
 <ul>
-<li>states what the evidence shows</li>
-<li>links that evidence to careful interpretation</li>
+<li>states what the evidence shows<br>
+</li>
+<li>links evidence to careful interpretation<br>
+</li>
 <li>avoids claims that go beyond the analysis</li>
 </ul>
 <p>This habit is central to CDI-style reasoning.</p>
@@ -1104,13 +1129,15 @@ Grouped summary shape: (3, 9)
 Median table shape: (3, 5)</code></pre>
 </div>
 </div>
-<section id="why-this-matters-1" class="level3">
-<h3 class="anchored" data-anchor-id="why-this-matters-1">Why this matters</h3>
-<p>Even in a summary chapter, validation is useful.</p>
+<section id="interpretation-10" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-10">Interpretation</h3>
+<p>Even in a summary-focused chapter, validation remains important.</p>
 <p>It confirms that:</p>
 <ul>
-<li>the dataset is still clean</li>
-<li>expected variables are present</li>
+<li>the dataset is still clean<br>
+</li>
+<li>expected variables are present<br>
+</li>
 <li>grouped summaries were constructed correctly</li>
 </ul>
 <hr>
@@ -1188,13 +1215,24 @@ The grouped summaries suggest that species differ descriptively across several m
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
 <ul>
-<li>You computed descriptive statistics for numeric and categorical variables</li>
-<li>You compared group means, standard deviations, and medians</li>
-<li>You used simple visuals to support statistical summaries</li>
-<li>You examined linear relationships with a correlation matrix</li>
-<li>You wrote an insights report grounded in descriptive evidence</li>
+<li>you computed descriptive statistics for numeric and categorical variables<br>
+</li>
+<li>you compared group means, standard deviations, and medians<br>
+</li>
+<li>you used simple visuals to support statistical summaries<br>
+</li>
+<li>you examined linear relationships using a correlation matrix<br>
+</li>
+<li>you wrote an insights report grounded in descriptive evidence</li>
 </ul>
 <p>This chapter closes the Foundations Track by showing how summary statistics support careful interpretation, not just calculation.</p>
+</section>
+<section id="cdi-insight" class="level2">
+<h2 class="anchored" data-anchor-id="cdi-insight">CDI Insight</h2>
+<p>Summary statistics are not the end of analysis.</p>
+<p>They are a way to organize evidence so that interpretation becomes clearer and more defensible.</p>
+<p>A responsible analyst does not report numbers alone.</p>
+<p>They explain what those numbers mean — and what they do not.</p>
 
 
 </section>

@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-03-18">
 
 <title>Visualization Foundations – Data Science Foundations</title>
 <style>
@@ -273,6 +274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
   </ul></li>
+  <li><a href="#for-the-iris-dataset-the-numeric-flower-measurements-and-the-categorical-species-variable-support-both-distribution-plots-and-grouped-comparisons." id="toc-for-the-iris-dataset-the-numeric-flower-measurements-and-the-categorical-species-variable-support-both-distribution-plots-and-grouped-comparisons." class="nav-link" data-scroll-target="#for-the-iris-dataset-the-numeric-flower-measurements-and-the-categorical-species-variable-support-both-distribution-plots-and-grouped-comparisons.">For the Iris dataset, the numeric flower measurements and the categorical <code>species</code> variable support both distribution plots and grouped comparisons.</a></li>
   <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram">Histogram</a>
   <ul class="collapse">
   <li><a href="#interpretation-1" id="toc-interpretation-1" class="nav-link" data-scroll-target="#interpretation-1">Interpretation</a></li>
@@ -292,12 +294,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#pairplot-overview" id="toc-pairplot-overview" class="nav-link" data-scroll-target="#pairplot-overview">Pairplot Overview</a>
   <ul class="collapse">
   <li><a href="#interpretation-5" id="toc-interpretation-5" class="nav-link" data-scroll-target="#interpretation-5">Interpretation</a></li>
+  <li><a href="#interpretation-6" id="toc-interpretation-6" class="nav-link" data-scroll-target="#interpretation-6">Interpretation</a></li>
   </ul></li>
   <li><a href="#reading-visual-evidence-carefully" id="toc-reading-visual-evidence-carefully" class="nav-link" data-scroll-target="#reading-visual-evidence-carefully">Reading Visual Evidence Carefully</a></li>
   <li><a href="#visualization-principles" id="toc-visualization-principles" class="nav-link" data-scroll-target="#visualization-principles">Visualization Principles</a></li>
   <li><a href="#validation-through-visualization" id="toc-validation-through-visualization" class="nav-link" data-scroll-target="#validation-through-visualization">Validation Through Visualization</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
+  <li><a href="#cdi-insight" id="toc-cdi-insight" class="nav-link" data-scroll-target="#cdi-insight">CDI Insight</a></li>
   </ul>
 </nav>
     </div>
@@ -314,6 +318,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 18, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -327,27 +337,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><strong>ID:</strong> DS-L05</li>
 <li><strong>Type:</strong> Lesson</li>
-<li><strong>Audience:</strong> Public</li>
+<li><strong>Audience:</strong> Beginner / Intermediate</li>
 <li><strong>Theme:</strong> Foundational data visualization using clear, reproducible workflows</li>
 </ul>
 </div>
 <p>Visualization is one of the most important tools in data science.</p>
-<p>A good plot helps you detect structure, compare groups, identify unusual values, and communicate findings clearly. But visualization is not only about producing charts. It is also about learning how to read evidence from patterns.</p>
-<p>In this lesson, we focus on foundational plot types that appear repeatedly in real workflows. We will use the cleaned Iris dataset and practice both creating figures and interpreting what they show.</p>
+<p>A good plot helps reveal structure, compare groups, identify unusual values, and communicate findings clearly.</p>
+<p>But visualization is not only about producing charts.</p>
+<p>It is also about learning how to read evidence from patterns.</p>
+<p>In this lesson, we focus on foundational plot types that appear in real analytical workflows.</p>
+<p>We use the cleaned Iris dataset to practice both creating figures and interpreting what they show.</p>
 <hr>
 <section id="lesson-overview" class="level2">
 <h2 class="anchored" data-anchor-id="lesson-overview">Lesson Overview</h2>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
-<li>Create histograms, boxplots, scatter plots, and pairplots<br>
+<li>create histograms, boxplots, scatter plots, and pairplots<br>
 </li>
-<li>Compare numeric distributions across groups<br>
+<li>compare numeric distributions across groups<br>
 </li>
-<li>Use color to represent categories clearly<br>
+<li>use color to represent categories clearly<br>
 </li>
-<li>Interpret patterns, spread, overlap, and separation<br>
+<li>interpret patterns, spread, overlap, and separation<br>
 </li>
-<li>Build plots that are readable and analytically useful</li>
+<li>build plots that are readable and analytically useful</li>
 </ul>
 <hr>
 </section>
@@ -457,13 +470,16 @@ dtype: object</code></pre>
 <h3 class="anchored" data-anchor-id="interpretation">Interpretation</h3>
 <p>Before making plots, ask:</p>
 <ul>
-<li>Which variables are numeric?</li>
-<li>Which variable defines the groups?</li>
-<li>Which comparisons are likely to be meaningful?</li>
+<li>which variables are numeric?<br>
+</li>
+<li>which variable defines the groups?<br>
+</li>
+<li>which comparisons are likely to be meaningful?</li>
 </ul>
-<p>For the Iris dataset, the numeric flower measurements and the categorical <code>species</code> variable naturally support both distribution plots and grouped comparisons.</p>
-<hr>
 </section>
+</section>
+<section id="for-the-iris-dataset-the-numeric-flower-measurements-and-the-categorical-species-variable-support-both-distribution-plots-and-grouped-comparisons." class="level2">
+<h2 class="anchored" data-anchor-id="for-the-iris-dataset-the-numeric-flower-measurements-and-the-categorical-species-variable-support-both-distribution-plots-and-grouped-comparisons.">For the Iris dataset, the numeric flower measurements and the categorical <code>species</code> variable support both distribution plots and grouped comparisons.</h2>
 </section>
 <section id="histogram" class="level2">
 <h2 class="anchored" data-anchor-id="histogram">Histogram</h2>
@@ -500,12 +516,15 @@ dtype: object</code></pre>
 <h3 class="anchored" data-anchor-id="interpretation-1">Interpretation</h3>
 <p>When reading a histogram, look for:</p>
 <ul>
-<li>the center of the distribution</li>
-<li>the spread of values</li>
-<li>skewness</li>
+<li>the center of the distribution<br>
+</li>
+<li>the spread of values<br>
+</li>
+<li>skewness<br>
+</li>
 <li>possible multiple peaks</li>
 </ul>
-<p>If a variable shows multiple peaks, that can suggest the data may contain meaningful subgroups.</p>
+<p>If a variable shows multiple peaks, this may suggest the presence of meaningful subgroups.</p>
 <hr>
 </section>
 </section>
@@ -541,11 +560,14 @@ dtype: object</code></pre>
 </div>
 <section id="interpretation-2" class="level3">
 <h3 class="anchored" data-anchor-id="interpretation-2">Interpretation</h3>
-<p>A boxplot helps you compare groups by showing:</p>
+<p>A boxplot helps compare groups by showing:</p>
 <ul>
-<li>typical value differences through the median</li>
-<li>variation within each group</li>
-<li>possible outliers</li>
+<li>differences in typical values through the median<br>
+</li>
+<li>variation within each group<br>
+</li>
+<li>possible outliers<br>
+</li>
 <li>overlap across groups</li>
 </ul>
 <p>If two groups overlap strongly, that variable alone may not separate them well.</p>
@@ -589,12 +611,15 @@ dtype: object</code></pre>
 <h3 class="anchored" data-anchor-id="interpretation-3">Interpretation</h3>
 <p>Scatter plots help you evaluate:</p>
 <ul>
-<li>whether two variables move together</li>
-<li>whether groups cluster separately</li>
-<li>whether the pattern looks linear or non-linear</li>
+<li>whether two variables move together<br>
+</li>
+<li>whether groups form distinct clusters<br>
+</li>
+<li>whether the pattern appears linear or non-linear<br>
+</li>
 <li>whether any observations appear unusual</li>
 </ul>
-<p>In many datasets, scatter plots are among the fastest tools for detecting group structure.</p>
+<p>In many datasets, scatter plots are among the fastest ways to detect group structure.</p>
 <hr>
 </section>
 </section>
@@ -632,14 +657,17 @@ dtype: object</code></pre>
 </div>
 <section id="interpretation-4" class="level3">
 <h3 class="anchored" data-anchor-id="interpretation-4">Interpretation</h3>
-<p>This plot is useful when you want to compare whether groups differ in:</p>
+<p>This plot helps compare whether groups differ in:</p>
 <ul>
-<li>location</li>
-<li>spread</li>
-<li>overlap</li>
+<li>location<br>
+</li>
+<li>spread<br>
+</li>
+<li>overlap<br>
+</li>
 <li>shape of the distribution</li>
 </ul>
-<p>If one group’s values occupy a clearly different range, that variable may be especially useful for classification or interpretation.</p>
+<p>If one group’s values occupy a clearly different range, that variable may be useful for distinguishing between groups.</p>
 <hr>
 </section>
 </section>
@@ -671,39 +699,53 @@ dtype: object</code></pre>
 </div>
 <section id="interpretation-5" class="level3">
 <h3 class="anchored" data-anchor-id="interpretation-5">Interpretation</h3>
-<p>Pairplots help you answer broader questions such as:</p>
+</section>
+<section id="interpretation-6" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation-6">Interpretation</h3>
+<p>Pairplots help answer broader questions such as:</p>
 <ul>
-<li>Which variables best separate species?</li>
-<li>Which features seem strongly related?</li>
-<li>Which measurements appear redundant?</li>
-<li>Where do groups overlap and where do they separate cleanly?</li>
+<li>which variables best separate species?<br>
+</li>
+<li>which features appear strongly related?<br>
+</li>
+<li>which measurements appear redundant?<br>
+</li>
+<li>where groups overlap and where they separate clearly?</li>
 </ul>
-<p>This is often one of the best first multivariate views of a dataset.</p>
+<p>This is often one of the most useful first multivariate views of a dataset.</p>
 <hr>
 </section>
 </section>
 <section id="reading-visual-evidence-carefully" class="level2">
 <h2 class="anchored" data-anchor-id="reading-visual-evidence-carefully">Reading Visual Evidence Carefully</h2>
-<p>A plot is only useful if we interpret it carefully.</p>
+<p>A plot is only useful if it is interpreted carefully.</p>
 <p>When reading a figure, ask:</p>
 <ul>
-<li>What question is this plot helping answer?</li>
-<li>What pattern is visible?</li>
-<li>How strong is the pattern?</li>
-<li>Is there overlap, uncertainty, or ambiguity?</li>
-<li>Does this match what earlier summaries suggested?</li>
+<li>what question does this plot help answer?<br>
+</li>
+<li>what pattern is visible?<br>
+</li>
+<li>how strong is the pattern?<br>
+</li>
+<li>is there overlap, uncertainty, or ambiguity?<br>
+</li>
+<li>does this align with earlier summaries?</li>
 </ul>
 <p>Visualization should support reasoning, not replace it.</p>
 <hr>
 </section>
 <section id="visualization-principles" class="level2">
 <h2 class="anchored" data-anchor-id="visualization-principles">Visualization Principles</h2>
-<p>Strong foundational plots usually share a few qualities:</p>
+<p>Strong foundational plots share a few key qualities:</p>
 <ul>
-<li>clear titles and labels</li>
-<li>readable axes</li>
-<li>purposeful use of color</li>
-<li>minimal clutter</li>
+<li>clear titles and labels<br>
+</li>
+<li>readable axes<br>
+</li>
+<li>purposeful use of color<br>
+</li>
+<li>minimal clutter<br>
+</li>
 <li>plot choice matched to the question</li>
 </ul>
 <p>A histogram is useful for one-variable distributions.<br>
@@ -728,11 +770,15 @@ A pairplot is useful for quick multivariate exploration.</p>
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
 <ul>
-<li>You used foundational plot types to explore the Iris dataset</li>
-<li>You compared distributions within and across species</li>
-<li>You examined relationships between numeric variables</li>
-<li>You used visual patterns to support interpretation</li>
-<li>You practiced moving from chart creation to analytical reasoning</li>
+<li>you used foundational plot types to explore the Iris dataset<br>
+</li>
+<li>you compared distributions within and across species<br>
+</li>
+<li>you examined relationships between numeric variables<br>
+</li>
+<li>you used visual patterns to support interpretation<br>
+</li>
+<li>you practiced moving from chart creation to analytical reasoning</li>
 </ul>
 <p>These are core visualization habits that carry forward into more advanced analysis.</p>
 <hr>
@@ -842,6 +888,12 @@ Petal-related features appear more useful than sepal-related features for separa
 </div>
 </div>
 </div>
+</section>
+<section id="cdi-insight" class="level2">
+<h2 class="anchored" data-anchor-id="cdi-insight">CDI Insight</h2>
+<p>Visualization is not about producing more plots.</p>
+<p>It is about choosing the right view of the data to support understanding.</p>
+<p>A clear plot reduces uncertainty. A poor plot can introduce it.</p>
 
 
 </section>

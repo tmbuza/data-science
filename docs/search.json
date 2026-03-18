@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Data Science Foundations",
     "section": "",
-    "text": "Free Guide · Updated Feb 2026",
+    "text": "Free Guide · Updated March 18, 2026",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>index.html</span>"
     ]
@@ -14,7 +14,7 @@
     "href": "00-preface.html",
     "title": "Preface",
     "section": "",
-    "text": "Why This Guide Exists\nData science is often introduced through tools.\nBut tools alone do not produce understanding.\nWhat matters is how we move from:\nThis guide introduces data science as a process of reasoning, not just a collection of techniques.",
+    "text": "Why This Guide Exists\nData science is often introduced through tools.\nBut tools alone do not produce understanding.\nWhat matters is how we move from:\nThis guide uses Python as the working environment, but the focus is not Python.\nThe focus is how to move from data to insight in a way that is clear, structured, and defensible.\nData science is introduced here as a process of reasoning, not just a collection of techniques.",
     "crumbs": [
       "Getting Started",
       "Preface"
@@ -25,7 +25,7 @@
     "href": "00-preface.html#why-this-guide-exists",
     "title": "Preface",
     "section": "",
-    "text": "Python.\nLibraries.\nModels.\n\n\n\n\nraw data\nto\n\nstructured insight",
+    "text": "Python\n\nR\n\nSQL\n\nlibraries and frameworks\n\n\n\n\nraw data\nto\n\nstructured insight",
     "crumbs": [
       "Getting Started",
       "Preface"
@@ -36,7 +36,7 @@
     "href": "00-preface.html#what-you-will-learn",
     "title": "Preface",
     "section": "What You Will Learn",
-    "text": "What You Will Learn\nThis free track focuses on the foundations:\n\nhow to explore datasets\nhow to clean and prepare data\nhow to visualize patterns\nhow to summarize findings clearly\n\nThe goal is not to memorize functions.\nThe goal is to build a way of thinking that you can apply to any dataset.",
+    "text": "What You Will Learn\nThis track focuses on the foundations:\n\nexploring datasets\n\ncleaning and preparing data\n\nvisualizing patterns\n\nsummarizing findings clearly\n\nThe goal is not to memorize functions.\nThe goal is to build a way of thinking that you can apply to any dataset.",
     "crumbs": [
       "Getting Started",
       "Preface"
@@ -47,7 +47,7 @@
     "href": "00-preface.html#how-this-guide-is-structured",
     "title": "Preface",
     "section": "How This Guide Is Structured",
-    "text": "How This Guide Is Structured\nEach chapter follows a consistent pattern:\n\nExplanation\nWhat concept we are learning and why it matters\nCode\nPractical implementation using Python\nInterpretation\nWhat the results actually mean\nTakeaway\nThe key idea you should retain\nExercise\nA small task to reinforce learning\n\nThis structure is intentional.\nIt ensures that learning moves beyond code into understanding.",
+    "text": "How This Guide Is Structured\nEach chapter follows a consistent pattern:\n\nExplanation\nWhat concept we are learning and why it matters\nCode\nPractical implementation using Python\nInterpretation\nWhat the results mean\nSummary\nThe key ideas to retain\nExercise\nA short task to reinforce learning\n\nCode blocks are folded by default to keep the guide readable.\nYou can expand them when you want to inspect or run the implementation.\nThis structure is intentional.\nIt ensures that learning moves from code to interpretation, and from interpretation to understanding.",
     "crumbs": [
       "Getting Started",
       "Preface"
@@ -69,7 +69,7 @@
     "href": "00-preface.html#the-cdi-reasoning-workflow",
     "title": "Preface",
     "section": "The CDI Reasoning Workflow",
-    "text": "The CDI Reasoning Workflow\nData analysis is not a straight line.\nIt is a process of iteration, where each step informs the next.\n\n\nCode\nflowchart TB\n  A[Question or Problem] --&gt; B[Load & Explore Data]\n\n  B --&gt; C[Clean & Prepare]\n  B --&gt; D[Visualize Patterns]\n\n  C --&gt; D\n  D --&gt; E[Summarize & Interpret]\n\n  E --&gt; F[Refine Question / Hypothesis]\n  F --&gt; B\n\n\n\n\n\nflowchart TB\n  A[Question or Problem] --&gt; B[Load & Explore Data]\n\n  B --&gt; C[Clean & Prepare]\n  B --&gt; D[Visualize Patterns]\n\n  C --&gt; D\n  D --&gt; E[Summarize & Interpret]\n\n  E --&gt; F[Refine Question / Hypothesis]\n  F --&gt; B\n\n\n\n\n\n\nThis diagram represents how analytical work actually happens:\n\nYou begin with a question\nYou explore and prepare data\nYou visualize and summarize patterns\nYou refine your understanding\nThen you return to the data again\n\nInsight is not produced in a single pass.\nIt emerges through revisiting earlier steps with better questions.",
+    "text": "The CDI Reasoning Workflow\nData analysis is not a straight line.\nIt is an iterative process, where each step informs the next.\n\n\nCode\nflowchart TB\n  A[Question or Problem] --&gt; B[Load & Explore Data]\n\n  B --&gt; C[Clean & Prepare]\n  B --&gt; D[Visualize Patterns]\n\n  C --&gt; D\n  D --&gt; E[Summarize & Interpret]\n\n  E --&gt; F[Refine Question / Hypothesis]\n  F --&gt; B\n\n\n\n\n\nflowchart TB\n  A[Question or Problem] --&gt; B[Load & Explore Data]\n\n  B --&gt; C[Clean & Prepare]\n  B --&gt; D[Visualize Patterns]\n\n  C --&gt; D\n  D --&gt; E[Summarize & Interpret]\n\n  E --&gt; F[Refine Question / Hypothesis]\n  F --&gt; B",
     "crumbs": [
       "Getting Started",
       "Preface"
@@ -212,7 +212,7 @@
     "href": "02-load-and-explore-dataset.html",
     "title": "Load and Explore a Dataset",
     "section": "",
-    "text": "Why this step matters\nAnalytical work does not begin with modeling.\nIt begins with looking carefully at the data.\nBefore fitting models or drawing conclusions, we need to understand: - what the dataset contains - how variables are structured - whether values look plausible - and whether early patterns deserve closer attention\nIn CDI, this stage is not a formality. It is where we begin to build analytical judgment.\nIn this lesson, we work with the classic Iris dataset (Fisher 1936), which contains measurements of flower characteristics across three species.\nYou will:\nA dataset can look clean at first glance and still contain issues that affect later analysis.\nEarly exploration helps you answer practical questions such as:\nThis is the beginning of defensible analysis.",
+    "text": "Why this step matters\nAnalytical work does not begin with modeling.\nIt begins with looking carefully at the data.\nBefore fitting models or drawing conclusions, we need to understand:\nIn CDI, this stage is not a formality. It is where analytical judgment begins.\nIn this lesson, we work with the classic Iris dataset (Fisher 1936), which contains measurements of flower characteristics across three species.\nYou will:\nA dataset can appear clean at first glance and still contain issues that affect later analysis.\nEarly exploration helps answer practical questions:\nThis is where defensible analysis begins.",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
@@ -223,7 +223,7 @@
     "href": "02-load-and-explore-dataset.html#why-this-step-matters",
     "title": "Load and Explore a Dataset",
     "section": "",
-    "text": "How many rows and columns do I have?\nWhich variables are numeric and which are categorical?\nDo any values look unusual?\nAre there visible group differences?\nWhat should I examine more carefully next?",
+    "text": "how many rows and columns are present?\n\nwhich variables are numeric and which are categorical?\n\ndo any values look unusual?\n\nare there visible group differences?\n\nwhat should be examined more carefully next?",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
@@ -300,7 +300,18 @@
     "href": "02-load-and-explore-dataset.html#exploratory-visualizations",
     "title": "Load and Explore a Dataset",
     "section": "Exploratory visualizations",
-    "text": "Exploratory visualizations\nWe will use modern plotting with seaborn and matplotlib, without CDI theme dependencies.\nThese plots are not yet final presentation graphics. Their purpose is to help us inspect the data and notice patterns worth explaining.\n\nDistribution of numeric features\n\n\nCode\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nsns.set_theme(style=\"whitegrid\", context=\"notebook\")\n\ndf_long = df.melt(\n    value_vars=[\"sepal_length\", \"sepal_width\", \"petal_length\", \"petal_width\"],\n    var_name=\"feature\",\n    value_name=\"value\"\n)\n\ng = sns.displot(\n    data=df_long,\n    x=\"value\",\n    col=\"feature\",\n    col_wrap=2,\n    bins=12,\n    height=3.6,\n    aspect=1.15,\n    facet_kws={\"sharex\": False, \"sharey\": False}\n)\n\ng.set_titles(\"{col_name}\")\ng.set_axis_labels(\"Value\", \"Count\")\ng.fig.suptitle(\"Iris — Distribution of Numeric Features\", y=1.03)\n\nplt.show()\n\n\n\n\n\nIris — Distribution of Numeric Features\n\n\n\n\n\n\nInterpretation\nThese histograms help us see:\n\nthe overall spread of each feature\nwhether values are concentrated or dispersed\nwhether some variables may contain overlapping or separated groups\n\nA single histogram does not separate species, but it gives a first impression of the measurement ranges.\n\n\n\nBoxplots by species\n\n\nCode\nffig, ax = plt.subplots(figsize=(8, 5))\n\n# Boxplot (soft blue palette)\nsns.boxplot(\n    data=df,\n    x=\"species\",\n    y=\"petal_length\",\n    width=0.5,\n    fliersize=0,\n    boxprops=dict(facecolor=\"darkblue\", alpha=0.8),\n    medianprops=dict(color=\"steelblue\", linewidth=1.8),\n    whiskerprops=dict(color=\"steelblue\"),\n    capprops=dict(color=\"steelblue\"),\n    ax=ax\n)\n\n# Points (warm contrast)\nsns.stripplot(\n    data=df,\n    x=\"species\",\n    y=\"petal_length\",\n    color=\"steelblue\",\n    alpha=0.8,\n    size=4.5,\n    jitter=0.22,\n    ax=ax\n)\n\nax.set_title(\"Petal Length by Species\")\nax.set_xlabel(\"Species\")\nax.set_ylabel(\"Petal Length\")\n\nplt.show()\n\n\n\n\n\nIris — Petal Length by Species\n\n\n\n\n\n\nInterpretation\nThis plot compares distributions across species directly.\nYou should already see that petal length differs strongly by species, which suggests this feature may be especially informative in later analyses.\n\n\n\nScatter plot: sepal length vs petal length\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.scatterplot(\n    data=df,\n    x=\"sepal_length\",\n    y=\"petal_length\",\n    hue=\"species\",\n    s=70,\n    alpha=0.8,\n    ax=ax\n)\n\nax.set_title(\"Sepal Length vs Petal Length\")\nax.set_xlabel(\"Sepal Length\")\nax.set_ylabel(\"Petal Length\")\n\nplt.show()\n\n\n\n\n\nIris — Sepal Length vs Petal Length by Species\n\n\n\n\n\n\nInterpretation\nScatter plots help us inspect relationships between two variables at the same time.\nHere, the species begin to separate into visible clusters, especially when petal length is involved. That is a strong exploratory signal that some measurements carry more discriminatory information than others.\n\n\n\nPairwise relationships\n\n\nCode\ng = sns.pairplot(\n    df,\n    hue=\"species\",\n    corner=True,\n    diag_kind=\"hist\",\n    plot_kws={\"alpha\": 0.7, \"s\": 45}\n)\n\ng.fig.suptitle(\"Iris — Pairwise Relationships by Species\", y=1.02)\n\nplt.show()\n\n\n\n\n\nIris — Pairwise Relationships by Species\n\n\n\n\n\n\nInterpretation\nThe pairplot gives a broader view of the dataset:\n\nwhich variable pairs show separation\nwhere clusters overlap\nwhether some variables appear more useful for distinguishing species\n\nThis kind of overview is valuable before choosing formal models.",
+    "text": "Exploratory visualizations\nWe will use modern plotting with seaborn and matplotlib, without CDI theme dependencies.\nThese plots are not yet final presentation graphics. Their purpose is to help us inspect the data and notice patterns worth explaining.\n\nDistribution of numeric features\n\n\nCode\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nsns.set_theme(style=\"whitegrid\", context=\"notebook\")\n\ndf_long = df.melt(\n    value_vars=[\"sepal_length\", \"sepal_width\", \"petal_length\", \"petal_width\"],\n    var_name=\"feature\",\n    value_name=\"value\"\n)\n\ng = sns.displot(\n    data=df_long,\n    x=\"value\",\n    col=\"feature\",\n    col_wrap=2,\n    bins=12,\n    height=3.6,\n    aspect=1.15,\n    facet_kws={\"sharex\": False, \"sharey\": False}\n)\n\ng.set_titles(\"{col_name}\")\ng.set_axis_labels(\"Value\", \"Count\")\ng.fig.suptitle(\"Iris — Distribution of Numeric Features\", y=1.03)\n\nplt.show()\n\n\n\n\n\nIris — Distribution of Numeric Features\n\n\n\n\n\n\nInterpretation\nThese histograms help us see:\n\nthe overall spread of each feature\nwhether values are concentrated or dispersed\nwhether some variables may contain overlapping or separated groups\n\nA single histogram does not separate species, but it gives a first impression of the measurement ranges.\n\n\n\nBoxplot by species\nA boxplot gives a compact summary of group differences using the median, quartiles, and overall spread.\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.boxplot(\n    data=df,\n    x=\"species\",\n    y=\"petal_length\",\n    width=0.5,\n    fliersize=0,\n    ax=ax\n)\n\nax.set_title(\"Petal Length by Species\")\nax.set_xlabel(\"Species\")\nax.set_ylabel(\"Petal Length\")\n\nplt.show()\n\n\n\n\n\nIris — Petal Length by Species (Boxplot Only)\n\n\n\n\n\n\nInterpretation\nThis plot makes it easy to compare:\n\nthe typical petal length in each species\nthe spread within each group\nwhether groups overlap\n\nHowever, a boxplot hides the individual observations.\nThat means we cannot directly see how densely values are clustered or how points are distributed within each group.\n\n\nBoxplot with observed points\nTo make the distribution more visible, we can overlay the individual observations.\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.boxplot(\n    data=df,\n    x=\"species\",\n    y=\"petal_length\",\n    width=0.5,\n    fliersize=0,\n    ax=ax\n)\n\nsns.stripplot(\n    data=df,\n    x=\"species\",\n    y=\"petal_length\",\n    color=\"black\",\n    alpha=0.6,\n    size=4,\n    jitter=0.22,\n    ax=ax\n)\n\nax.set_title(\"Petal Length by Species\")\nax.set_xlabel(\"Species\")\nax.set_ylabel(\"Petal Length\")\n\nplt.show()\n\n\n\n\n\nIris — Petal Length by Species (Boxplot with Observed Points)\n\n\n\n\n\n\nInterpretation\nAdding the observed points makes the plot more informative.\nNow we can see:\n\nhow values are distributed within each species\n\nwhether observations are tightly clustered or more dispersed\n\nwhere overlap is limited or more substantial\n\nThis provides a fuller view than the boxplot alone.\nPetal length differs strongly by species.\nThis makes it a strong candidate for distinguishing between groups in later analysis.\n\n\n\nScatter plot: sepal length vs petal length\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.scatterplot(\n    data=df,\n    x=\"sepal_length\",\n    y=\"petal_length\",\n    hue=\"species\",\n    s=70,\n    alpha=0.8,\n    ax=ax\n)\n\nax.set_title(\"Sepal Length vs Petal Length\")\nax.set_xlabel(\"Sepal Length\")\nax.set_ylabel(\"Petal Length\")\n\nplt.show()\n\n\n\n\n\nIris — Sepal Length vs Petal Length by Species\n\n\n\n\n\n\nInterpretation\nScatter plots help us inspect relationships between two variables.\nHere, the species begin to separate into visible clusters, especially when petal length is involved.\nThis is a strong exploratory signal that some measurements carry more discriminatory information than others.\n\n\n\nPairwise relationships\n\n\nCode\ng = sns.pairplot(\n    df,\n    hue=\"species\",\n    corner=True,\n    diag_kind=\"hist\",\n    plot_kws={\"alpha\": 0.7, \"s\": 45}\n)\n\ng.fig.suptitle(\"Iris — Pairwise Relationships by Species\", y=1.02)\n\nplt.show()\n\n\n\n\n\nIris — Pairwise Relationships by Species\n\n\n\n\n\n\nInterpretation\nThe pairplot provides a broader view of the dataset:\n\nwhich variable pairs show clear separation\n\nwhere clusters overlap\n\nwhich variables appear more useful for distinguishing species",
+    "crumbs": [
+      "Working with Data",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
+    ]
+  },
+  {
+    "objectID": "02-load-and-explore-dataset.html#this-type-of-overview-is-valuable-before-moving-to-formal-modeling.",
+    "href": "02-load-and-explore-dataset.html#this-type-of-overview-is-valuable-before-moving-to-formal-modeling.",
+    "title": "Load and Explore a Dataset",
+    "section": "This type of overview is valuable before moving to formal modeling.",
+    "text": "This type of overview is valuable before moving to formal modeling.",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
@@ -311,7 +322,7 @@
     "href": "02-load-and-explore-dataset.html#create-a-simple-derived-feature",
     "title": "Load and Explore a Dataset",
     "section": "Create a simple derived feature",
-    "text": "Create a simple derived feature\nFeature creation is often part of exploration.\nHere we create a new variable called petal_area as a simple combination of petal length and petal width.\n\n\nCode\ndf[\"petal_area\"] = df[\"petal_length\"] * df[\"petal_width\"]\n\ndf.head()\n\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\npetal_area\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n0.28\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n0.28\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n0.26\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n0.30\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa\n0.28\n\n\n\n\n\n\n\nThis does not mean the new feature is automatically better. It simply shows how exploratory analysis can lead to new candidate variables.",
+    "text": "Create a simple derived feature\nFeature creation is often part of exploration.\nHere, we define a new variable, petal_area, as a simple combination of petal length and petal width.\n\n\nCode\ndf[\"petal_area\"] = df[\"petal_length\"] * df[\"petal_width\"]\n\ndf.head()\n\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\npetal_area\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n0.28\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n0.28\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n0.26\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n0.30\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa\n0.28\n\n\n\n\n\n\n\nThis does not mean the new feature is automatically better.\nIt illustrates how exploratory analysis can lead to new candidate variables.",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
@@ -333,7 +344,7 @@
     "href": "02-load-and-explore-dataset.html#cdi-insight",
     "title": "Load and Explore a Dataset",
     "section": "CDI Insight",
-    "text": "CDI Insight\nExploration is not just about making plots.\nIt is about learning how the dataset behaves before you ask it to support conclusions.\nA responsible analyst does not rush from data loading to modeling. They pause, inspect, compare, question, and only then move forward.\nThat habit is one of the foundations of reliable analysis.",
+    "text": "CDI Insight\nExploration is not just about making plots.\nIt is about understanding how the dataset behaves before it is used to support conclusions.\nA responsible analyst does not move directly from data loading to modeling.\nThey pause, inspect, compare, and question — and only then move forward.\nThat habit is a foundation of reliable analysis.",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
@@ -344,7 +355,7 @@
     "href": "02-load-and-explore-dataset.html#summary",
     "title": "Load and Explore a Dataset",
     "section": "Summary",
-    "text": "Summary\nIn this lesson, you:\n\nloaded the Iris dataset into a pandas DataFrame\nstandardized the column names\nsaved the dataset to data/iris.csv\ninspected structure, data types, and summary statistics\nused modern exploratory plots to examine distributions and group differences\ncreated a simple derived feature for further exploration",
+    "text": "Summary\nIn this lesson, you:\n\nloaded the Iris dataset into a pandas DataFrame\n\nstandardized column names\n\nsaved the dataset to data/iris.csv\n\ninspected structure, data types, and summary statistics\n\nused exploratory visualizations to examine distributions and group differences\n\ncreated a simple derived feature for further exploration",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
@@ -355,7 +366,7 @@
     "href": "02-load-and-explore-dataset.html#next-step",
     "title": "Load and Explore a Dataset",
     "section": "Next Step",
-    "text": "Next Step\n→ Clean and prepare the dataset for analysis\n\n\n\n\nFisher, Ronald A. 1936. “The Use of Multiple Measurements in Taxonomic Problems.” Annals of Eugenics.",
+    "text": "Next Step\nNext, we clean and prepare the dataset for analysis.\n\n\n\n\nFisher, Ronald A. 1936. “The Use of Multiple Measurements in Taxonomic Problems.” Annals of Eugenics.",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Load and Explore a Dataset</span>"
@@ -366,7 +377,7 @@
     "href": "03-data-cleaning-and-preparation.html",
     "title": "Data Cleaning and Preparation",
     "section": "",
-    "text": "Lesson Overview\nIn this lesson, you will practice essential data cleaning steps used in real data science workflows.\nAs in previous chapters, all code runs inside this Quarto (.qmd) file. When you render the book, Quarto executes the Python chunks and embeds results directly into the page.\nBy the end of this lesson, you will be able to:",
+    "text": "Lesson Overview\nIn this lesson, you will apply essential data cleaning steps used in real analytical workflows.\nAs in previous chapters, all code runs inside this Quarto (.qmd) file.\nWhen the book is rendered, Python code is executed and results are embedded directly into the page.\nBy the end of this lesson, you will be able to:",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
@@ -377,7 +388,7 @@
     "href": "03-data-cleaning-and-preparation.html#lesson-overview",
     "title": "Data Cleaning and Preparation",
     "section": "",
-    "text": "Inspect a dataset for common quality issues\n\nDetect and handle duplicate rows\n\nStandardize column names\n\nHandle missing values using clear rules\n\nFix inconsistent data types\n\nValidate and save a cleaned dataset",
+    "text": "inspect a dataset for common quality issues\n\ndetect and handle duplicate rows\n\nstandardize column names\n\nhandle missing values using clear rules\n\ncorrect inconsistent data types\n\nvalidate and save a cleaned dataset",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
@@ -388,18 +399,7 @@
     "href": "03-data-cleaning-and-preparation.html#cleaning-philosophy",
     "title": "Data Cleaning and Preparation",
     "section": "Cleaning Philosophy",
-    "text": "Cleaning Philosophy\nData cleaning should be:\n\nMeasured before modification\n\nMinimal and justified\n\nReproducible\n\nVerified with explicit checks\n\nNever modify data without first understanding what you are changing.",
-    "crumbs": [
-      "Working with Data",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
-    ]
-  },
-  {
-    "objectID": "03-data-cleaning-and-preparation.html#chapter-initialization",
-    "href": "03-data-cleaning-and-preparation.html#chapter-initialization",
-    "title": "Data Cleaning and Preparation",
-    "section": "Chapter Initialization",
-    "text": "Chapter Initialization\n\n\nCode\nfrom cdi_viz.theme import cdi_notebook_init, show_and_save_mpl\n\ncdi_notebook_init(chapter=\"03\", title_x=0.5)",
+    "text": "Cleaning Philosophy\nData cleaning should be:\n\nmeasured before modification\n\nminimal and justified\n\nreproducible\n\nverified with explicit checks\n\nNever modify data without first understanding what is being changed.\nAlways validate the results of cleaning steps with explicit checks.",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
@@ -516,11 +516,22 @@
     ]
   },
   {
+    "objectID": "03-data-cleaning-and-preparation.html#next-step",
+    "href": "03-data-cleaning-and-preparation.html#next-step",
+    "title": "Data Cleaning and Preparation",
+    "section": "Next Step",
+    "text": "Next Step\nTransform and organize the cleaned dataset for analysis.",
+    "crumbs": [
+      "Working with Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Data Cleaning and Preparation</span>"
+    ]
+  },
+  {
     "objectID": "04-data-wrangling-basics.html",
     "href": "04-data-wrangling-basics.html",
     "title": "Data Wrangling Basics",
     "section": "",
-    "text": "Lesson Overview\nData rarely arrives in the exact format you need for analysis.\nIn this lesson, you will learn how to transform, filter, group, and reshape data using pandas.\nAs in previous chapters, all code runs inside this Quarto (.qmd) file and executes when you render the book.\nBy the end of this lesson, you will be able to:",
+    "text": "Lesson Overview\nData rarely arrives in the exact format required for analysis.\nIn this lesson, you will learn how to transform, filter, group, and reshape data using pandas.\nAs in previous chapters, all code runs inside this Quarto (.qmd) file.\nWhen the book is rendered, Python code is executed and results are embedded directly into the page.\nBy the end of this lesson, you will be able to:",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
@@ -531,18 +542,7 @@
     "href": "04-data-wrangling-basics.html#lesson-overview",
     "title": "Data Wrangling Basics",
     "section": "",
-    "text": "Select and filter rows and columns\n\nCreate new derived features\n\nSort and reorder data\n\nGroup and aggregate values\n\nApply conditional logic\n\nPrepare structured outputs for analysis",
-    "crumbs": [
-      "Working with Data",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
-    ]
-  },
-  {
-    "objectID": "04-data-wrangling-basics.html#chapter-initialization",
-    "href": "04-data-wrangling-basics.html#chapter-initialization",
-    "title": "Data Wrangling Basics",
-    "section": "Chapter Initialization",
-    "text": "Chapter Initialization\n\n\nCode\nfrom cdi_viz.theme import cdi_notebook_init\n\ncdi_notebook_init(chapter=\"04\", title_x=0.5)",
+    "text": "select and filter rows and columns\n\ncreate derived features\n\nsort and reorder data\n\ngroup and aggregate values\n\napply conditional logic\n\nprepare structured outputs for analysis",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
@@ -564,7 +564,7 @@
     "href": "04-data-wrangling-basics.html#selecting-columns",
     "title": "Data Wrangling Basics",
     "section": "Selecting Columns",
-    "text": "Selecting Columns\n\n\nCode\ndf[[\"sepal_length\", \"petal_length\"]].head()\n\n\n\n\n\n\n\n\n\nsepal_length\npetal_length\n\n\n\n\n0\n5.1\n1.4\n\n\n1\n4.9\n1.4\n\n\n2\n4.7\n1.3\n\n\n3\n4.6\n1.5\n\n\n4\n5.0\n1.4",
+    "text": "Selecting Columns\nSelect a subset of columns for focused analysis.\n\n\nCode\ndf[[\"sepal_length\", \"petal_length\"]].head()\n\n\n\n\n\n\n\n\n\nsepal_length\npetal_length\n\n\n\n\n0\n5.1\n1.4\n\n\n1\n4.9\n1.4\n\n\n2\n4.7\n1.3\n\n\n3\n4.6\n1.5\n\n\n4\n5.0\n1.4",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
@@ -575,7 +575,7 @@
     "href": "04-data-wrangling-basics.html#filtering-rows",
     "title": "Data Wrangling Basics",
     "section": "Filtering Rows",
-    "text": "Filtering Rows\nExample: filter rows where petal_length &gt; 4.\n\n\nCode\ndf_filtered = df[df[\"petal_length\"] &gt; 4]\ndf_filtered.head()\n\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\n\n\n\n\n50\n7.0\n3.2\n4.7\n1.4\nversicolor\n\n\n51\n6.4\n3.2\n4.5\n1.5\nversicolor\n\n\n52\n6.9\n3.1\n4.9\n1.5\nversicolor\n\n\n54\n6.5\n2.8\n4.6\n1.5\nversicolor\n\n\n55\n5.7\n2.8\n4.5\n1.3\nversicolor",
+    "text": "Filtering Rows\nFilter rows based on a condition.\nExample: select rows where petal_length &gt; 4.\n\n\nCode\ndf_filtered = df[df[\"petal_length\"] &gt; 4]\ndf_filtered.head()\n\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\n\n\n\n\n50\n7.0\n3.2\n4.7\n1.4\nversicolor\n\n\n51\n6.4\n3.2\n4.5\n1.5\nversicolor\n\n\n52\n6.9\n3.1\n4.9\n1.5\nversicolor\n\n\n54\n6.5\n2.8\n4.6\n1.5\nversicolor\n\n\n55\n5.7\n2.8\n4.5\n1.3\nversicolor",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
@@ -586,7 +586,7 @@
     "href": "04-data-wrangling-basics.html#creating-new-features",
     "title": "Data Wrangling Basics",
     "section": "Creating New Features",
-    "text": "Creating New Features\nWe create a new feature: petal_area.\n\n\nCode\ndf[\"petal_area\"] = df[\"petal_length\"] * df[\"petal_width\"]\ndf.head()\n\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\npetal_area\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n0.28\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n0.28\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n0.26\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n0.30\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa\n0.28",
+    "text": "Creating New Features\nFeature creation extends the dataset with new variables.\nHere, we define a new feature, petal_area.\n\n\nCode\ndf[\"petal_area\"] = df[\"petal_length\"] * df[\"petal_width\"]\ndf.head()\n\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\npetal_area\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n0.28\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n0.28\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n0.26\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n0.30\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa\n0.28",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
@@ -597,7 +597,7 @@
     "href": "04-data-wrangling-basics.html#sorting-data",
     "title": "Data Wrangling Basics",
     "section": "Sorting Data",
-    "text": "Sorting Data\n\n\nCode\ndf_sorted = df.sort_values(by=\"petal_area\", ascending=False)\ndf_sorted.head()\n\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\npetal_area\n\n\n\n\n118\n7.7\n2.6\n6.9\n2.3\nvirginica\n15.87\n\n\n109\n7.2\n3.6\n6.1\n2.5\nvirginica\n15.25\n\n\n100\n6.3\n3.3\n6.0\n2.5\nvirginica\n15.00\n\n\n117\n7.7\n3.8\n6.7\n2.2\nvirginica\n14.74\n\n\n143\n6.7\n3.3\n5.7\n2.5\nvirginica\n14.25",
+    "text": "Sorting Data\nSort the dataset to examine extreme or ordered values.\n\n\nCode\ndf_sorted = df.sort_values(by=\"petal_area\", ascending=False)\ndf_sorted.head()\n\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\npetal_area\n\n\n\n\n118\n7.7\n2.6\n6.9\n2.3\nvirginica\n15.87\n\n\n109\n7.2\n3.6\n6.1\n2.5\nvirginica\n15.25\n\n\n100\n6.3\n3.3\n6.0\n2.5\nvirginica\n15.00\n\n\n117\n7.7\n3.8\n6.7\n2.2\nvirginica\n14.74\n\n\n143\n6.7\n3.3\n5.7\n2.5\nvirginica\n14.25",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
@@ -608,7 +608,7 @@
     "href": "04-data-wrangling-basics.html#grouping-and-aggregation",
     "title": "Data Wrangling Basics",
     "section": "Grouping and Aggregation",
-    "text": "Grouping and Aggregation\nCompute the mean petal_area per species.\n\n\nCode\ngrouped = (\n    df.groupby(\"species\")\n      .agg(mean_petal_area=(\"petal_area\", \"mean\"),\n           mean_sepal_length=(\"sepal_length\", \"mean\"))\n      .reset_index()\n)\n\ngrouped\n\n\n\n\n\n\n\n\n\nspecies\nmean_petal_area\nmean_sepal_length\n\n\n\n\n0\nsetosa\n0.36560\n5.006000\n\n\n1\nversicolor\n5.72040\n5.936000\n\n\n2\nvirginica\n11.32898\n6.604082",
+    "text": "Grouping and Aggregation\nSummarize values across groups.\nHere, we compute the mean petal_area per species.\n\n\nCode\ngrouped = (\n    df.groupby(\"species\")\n      .agg(mean_petal_area=(\"petal_area\", \"mean\"),\n           mean_sepal_length=(\"sepal_length\", \"mean\"))\n      .reset_index()\n)\n\ngrouped\n\n\n\n\n\n\n\n\n\nspecies\nmean_petal_area\nmean_sepal_length\n\n\n\n\n0\nsetosa\n0.36560\n5.006000\n\n\n1\nversicolor\n5.72040\n5.936000\n\n\n2\nvirginica\n11.32898\n6.604082",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
@@ -619,7 +619,7 @@
     "href": "04-data-wrangling-basics.html#conditional-logic",
     "title": "Data Wrangling Basics",
     "section": "Conditional Logic",
-    "text": "Conditional Logic\nCreate a simple size category based on petal_area.\n\n\nCode\ndf[\"size_category\"] = df[\"petal_area\"].apply(\n    lambda x: \"large\" if x &gt; df[\"petal_area\"].median() else \"small\"\n)\n\ndf.head()\n\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\npetal_area\nsize_category\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n0.28\nsmall\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n0.28\nsmall\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n0.26\nsmall\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n0.30\nsmall\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa\n0.28\nsmall",
+    "text": "Conditional Logic\nCreate categorical variables based on defined rules.\nHere, we assign a size category based on petal_area.\n\n\nCode\ndf[\"size_category\"] = df[\"petal_area\"].apply(\n    lambda x: \"large\" if x &gt; df[\"petal_area\"].median() else \"small\"\n)\n\ndf.head()\n\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\npetal_area\nsize_category\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n0.28\nsmall\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n0.28\nsmall\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n0.26\nsmall\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n0.30\nsmall\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa\n0.28\nsmall",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
@@ -630,7 +630,7 @@
     "href": "04-data-wrangling-basics.html#reshaping-example-long-format",
     "title": "Data Wrangling Basics",
     "section": "Reshaping Example (Long Format)",
-    "text": "Reshaping Example (Long Format)\nConvert selected columns to long format.\n\n\nCode\ndf_long = df.melt(\n    id_vars=\"species\",\n    value_vars=[\"sepal_length\", \"sepal_width\", \"petal_length\", \"petal_width\"],\n    var_name=\"measurement\",\n    value_name=\"value\"\n)\n\ndf_long.head()\n\n\n\n\n\n\n\n\n\nspecies\nmeasurement\nvalue\n\n\n\n\n0\nsetosa\nsepal_length\n5.1\n\n\n1\nsetosa\nsepal_length\n4.9\n\n\n2\nsetosa\nsepal_length\n4.7\n\n\n3\nsetosa\nsepal_length\n4.6\n\n\n4\nsetosa\nsepal_length\n5.0",
+    "text": "Reshaping Example (Long Format)\nReshape the dataset into long format for flexible analysis and visualization.\n\n\nCode\ndf_long = df.melt(\n    id_vars=\"species\",\n    value_vars=[\"sepal_length\", \"sepal_width\", \"petal_length\", \"petal_width\"],\n    var_name=\"measurement\",\n    value_name=\"value\"\n)\n\ndf_long.head()\n\n\n\n\n\n\n\n\n\nspecies\nmeasurement\nvalue\n\n\n\n\n0\nsetosa\nsepal_length\n5.1\n\n\n1\nsetosa\nsepal_length\n4.9\n\n\n2\nsetosa\nsepal_length\n4.7\n\n\n3\nsetosa\nsepal_length\n4.6\n\n\n4\nsetosa\nsepal_length\n5.0",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
@@ -641,7 +641,7 @@
     "href": "04-data-wrangling-basics.html#validation-checks",
     "title": "Data Wrangling Basics",
     "section": "Validation Checks",
-    "text": "Validation Checks\n\n\nCode\nprint(\"Shape:\", df.shape)\nprint(\"Missing values:\", int(df.isna().sum().sum()))\n\n\nShape: (149, 7)\nMissing values: 0",
+    "text": "Validation Checks\nAfter transformation, confirm that the dataset remains consistent and complete.\n\n\nCode\nprint(\"Shape:\", df.shape)\nprint(\"Missing values:\", int(df.isna().sum().sum()))\n\n\nShape: (149, 7)\nMissing values: 0",
     "crumbs": [
       "Working with Data",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data Wrangling Basics</span>"
@@ -663,7 +663,7 @@
     "href": "05-visualization-basics.html",
     "title": "Visualization Foundations",
     "section": "",
-    "text": "Lesson Overview\nVisualization is one of the most important tools in data science.\nA good plot helps you detect structure, compare groups, identify unusual values, and communicate findings clearly. But visualization is not only about producing charts. It is also about learning how to read evidence from patterns.\nIn this lesson, we focus on foundational plot types that appear repeatedly in real workflows. We will use the cleaned Iris dataset and practice both creating figures and interpreting what they show.\nBy the end of this lesson, you will be able to:",
+    "text": "Lesson Overview\nVisualization is one of the most important tools in data science.\nA good plot helps reveal structure, compare groups, identify unusual values, and communicate findings clearly.\nBut visualization is not only about producing charts.\nIt is also about learning how to read evidence from patterns.\nIn this lesson, we focus on foundational plot types that appear in real analytical workflows.\nWe use the cleaned Iris dataset to practice both creating figures and interpreting what they show.\nBy the end of this lesson, you will be able to:",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Visualization Foundations</span>"
@@ -674,7 +674,7 @@
     "href": "05-visualization-basics.html#lesson-overview",
     "title": "Visualization Foundations",
     "section": "",
-    "text": "Create histograms, boxplots, scatter plots, and pairplots\n\nCompare numeric distributions across groups\n\nUse color to represent categories clearly\n\nInterpret patterns, spread, overlap, and separation\n\nBuild plots that are readable and analytically useful",
+    "text": "create histograms, boxplots, scatter plots, and pairplots\n\ncompare numeric distributions across groups\n\nuse color to represent categories clearly\n\ninterpret patterns, spread, overlap, and separation\n\nbuild plots that are readable and analytically useful",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Visualization Foundations</span>"
@@ -696,7 +696,18 @@
     "href": "05-visualization-basics.html#inspect-the-variables",
     "title": "Visualization Foundations",
     "section": "Inspect the Variables",
-    "text": "Inspect the Variables\nBefore plotting, confirm the structure of the dataset.\n\n\nCode\nprint(\"Shape:\", df.shape)\nprint(\"\\nColumns:\", df.columns.tolist())\nprint(\"\\nData types:\")\nprint(df.dtypes)\n\n\nShape: (149, 5)\n\nColumns: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']\n\nData types:\nsepal_length    float64\nsepal_width     float64\npetal_length    float64\npetal_width     float64\nspecies             str\ndtype: object\n\n\n\nInterpretation\nBefore making plots, ask:\n\nWhich variables are numeric?\nWhich variable defines the groups?\nWhich comparisons are likely to be meaningful?\n\nFor the Iris dataset, the numeric flower measurements and the categorical species variable naturally support both distribution plots and grouped comparisons.",
+    "text": "Inspect the Variables\nBefore plotting, confirm the structure of the dataset.\n\n\nCode\nprint(\"Shape:\", df.shape)\nprint(\"\\nColumns:\", df.columns.tolist())\nprint(\"\\nData types:\")\nprint(df.dtypes)\n\n\nShape: (149, 5)\n\nColumns: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']\n\nData types:\nsepal_length    float64\nsepal_width     float64\npetal_length    float64\npetal_width     float64\nspecies             str\ndtype: object\n\n\n\nInterpretation\nBefore making plots, ask:\n\nwhich variables are numeric?\n\nwhich variable defines the groups?\n\nwhich comparisons are likely to be meaningful?",
+    "crumbs": [
+      "Understanding Your Data",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Visualization Foundations</span>"
+    ]
+  },
+  {
+    "objectID": "05-visualization-basics.html#for-the-iris-dataset-the-numeric-flower-measurements-and-the-categorical-species-variable-support-both-distribution-plots-and-grouped-comparisons.",
+    "href": "05-visualization-basics.html#for-the-iris-dataset-the-numeric-flower-measurements-and-the-categorical-species-variable-support-both-distribution-plots-and-grouped-comparisons.",
+    "title": "Visualization Foundations",
+    "section": "For the Iris dataset, the numeric flower measurements and the categorical species variable support both distribution plots and grouped comparisons.",
+    "text": "For the Iris dataset, the numeric flower measurements and the categorical species variable support both distribution plots and grouped comparisons.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Visualization Foundations</span>"
@@ -707,7 +718,7 @@
     "href": "05-visualization-basics.html#histogram",
     "title": "Visualization Foundations",
     "section": "Histogram",
-    "text": "Histogram\nHistograms help us understand the distribution of a single numeric variable.\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.histplot(\n    data=df,\n    x=\"sepal_length\",\n    bins=12,\n    kde=True,\n    ax=ax\n)\n\nax.set_title(\"Distribution of Sepal Length\")\nax.set_xlabel(\"Sepal Length\")\nax.set_ylabel(\"Count\")\n\nplt.show()\n\n\n\n\n\nIris — Distribution of Sepal Length\n\n\n\n\n\nInterpretation\nWhen reading a histogram, look for:\n\nthe center of the distribution\nthe spread of values\nskewness\npossible multiple peaks\n\nIf a variable shows multiple peaks, that can suggest the data may contain meaningful subgroups.",
+    "text": "Histogram\nHistograms help us understand the distribution of a single numeric variable.\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.histplot(\n    data=df,\n    x=\"sepal_length\",\n    bins=12,\n    kde=True,\n    ax=ax\n)\n\nax.set_title(\"Distribution of Sepal Length\")\nax.set_xlabel(\"Sepal Length\")\nax.set_ylabel(\"Count\")\n\nplt.show()\n\n\n\n\n\nIris — Distribution of Sepal Length\n\n\n\n\n\nInterpretation\nWhen reading a histogram, look for:\n\nthe center of the distribution\n\nthe spread of values\n\nskewness\n\npossible multiple peaks\n\nIf a variable shows multiple peaks, this may suggest the presence of meaningful subgroups.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Visualization Foundations</span>"
@@ -718,7 +729,7 @@
     "href": "05-visualization-basics.html#boxplot",
     "title": "Visualization Foundations",
     "section": "Boxplot",
-    "text": "Boxplot\nBoxplots summarize a distribution using the median, quartiles, and possible outliers.\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.boxplot(\n    data=df,\n    x=\"species\",\n    y=\"sepal_length\",\n    ax=ax\n)\n\nax.set_title(\"Sepal Length by Species\")\nax.set_xlabel(\"Species\")\nax.set_ylabel(\"Sepal Length\")\n\nplt.show()\n\n\n\n\n\nIris — Sepal Length by Species\n\n\n\n\n\nInterpretation\nA boxplot helps you compare groups by showing:\n\ntypical value differences through the median\nvariation within each group\npossible outliers\noverlap across groups\n\nIf two groups overlap strongly, that variable alone may not separate them well.",
+    "text": "Boxplot\nBoxplots summarize a distribution using the median, quartiles, and possible outliers.\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.boxplot(\n    data=df,\n    x=\"species\",\n    y=\"sepal_length\",\n    ax=ax\n)\n\nax.set_title(\"Sepal Length by Species\")\nax.set_xlabel(\"Species\")\nax.set_ylabel(\"Sepal Length\")\n\nplt.show()\n\n\n\n\n\nIris — Sepal Length by Species\n\n\n\n\n\nInterpretation\nA boxplot helps compare groups by showing:\n\ndifferences in typical values through the median\n\nvariation within each group\n\npossible outliers\n\noverlap across groups\n\nIf two groups overlap strongly, that variable alone may not separate them well.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Visualization Foundations</span>"
@@ -729,7 +740,7 @@
     "href": "05-visualization-basics.html#scatter-plot",
     "title": "Visualization Foundations",
     "section": "Scatter Plot",
-    "text": "Scatter Plot\nScatter plots show the relationship between two numeric variables.\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.scatterplot(\n    data=df,\n    x=\"sepal_length\",\n    y=\"petal_length\",\n    hue=\"species\",\n    s=70,\n    alpha=0.8,\n    ax=ax\n)\n\nax.set_title(\"Sepal Length vs Petal Length\")\nax.set_xlabel(\"Sepal Length\")\nax.set_ylabel(\"Petal Length\")\n\nplt.show()\n\n\n\n\n\nIris — Sepal Length vs Petal Length\n\n\n\n\n\nInterpretation\nScatter plots help you evaluate:\n\nwhether two variables move together\nwhether groups cluster separately\nwhether the pattern looks linear or non-linear\nwhether any observations appear unusual\n\nIn many datasets, scatter plots are among the fastest tools for detecting group structure.",
+    "text": "Scatter Plot\nScatter plots show the relationship between two numeric variables.\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.scatterplot(\n    data=df,\n    x=\"sepal_length\",\n    y=\"petal_length\",\n    hue=\"species\",\n    s=70,\n    alpha=0.8,\n    ax=ax\n)\n\nax.set_title(\"Sepal Length vs Petal Length\")\nax.set_xlabel(\"Sepal Length\")\nax.set_ylabel(\"Petal Length\")\n\nplt.show()\n\n\n\n\n\nIris — Sepal Length vs Petal Length\n\n\n\n\n\nInterpretation\nScatter plots help you evaluate:\n\nwhether two variables move together\n\nwhether groups form distinct clusters\n\nwhether the pattern appears linear or non-linear\n\nwhether any observations appear unusual\n\nIn many datasets, scatter plots are among the fastest ways to detect group structure.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Visualization Foundations</span>"
@@ -740,7 +751,7 @@
     "href": "05-visualization-basics.html#grouped-histogram",
     "title": "Visualization Foundations",
     "section": "Grouped Histogram",
-    "text": "Grouped Histogram\nA grouped histogram helps compare distributions across categories.\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.histplot(\n    data=df,\n    x=\"petal_length\",\n    hue=\"species\",\n    bins=15,\n    kde=True,\n    ax=ax\n)\n\nax.set_title(\"Petal Length Distribution by Species\")\nax.set_xlabel(\"Petal Length\")\nax.set_ylabel(\"Count\")\n\nplt.show()\n\n\n\n\n\nIris — Petal Length Distribution by Species\n\n\n\n\n\nInterpretation\nThis plot is useful when you want to compare whether groups differ in:\n\nlocation\nspread\noverlap\nshape of the distribution\n\nIf one group’s values occupy a clearly different range, that variable may be especially useful for classification or interpretation.",
+    "text": "Grouped Histogram\nA grouped histogram helps compare distributions across categories.\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.histplot(\n    data=df,\n    x=\"petal_length\",\n    hue=\"species\",\n    bins=15,\n    kde=True,\n    ax=ax\n)\n\nax.set_title(\"Petal Length Distribution by Species\")\nax.set_xlabel(\"Petal Length\")\nax.set_ylabel(\"Count\")\n\nplt.show()\n\n\n\n\n\nIris — Petal Length Distribution by Species\n\n\n\n\n\nInterpretation\nThis plot helps compare whether groups differ in:\n\nlocation\n\nspread\n\noverlap\n\nshape of the distribution\n\nIf one group’s values occupy a clearly different range, that variable may be useful for distinguishing between groups.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Visualization Foundations</span>"
@@ -751,7 +762,7 @@
     "href": "05-visualization-basics.html#pairplot-overview",
     "title": "Visualization Foundations",
     "section": "Pairplot Overview",
-    "text": "Pairplot Overview\nPairplots provide a compact view of multiple variable relationships at once.\n\n\nCode\ng = sns.pairplot(\n    df,\n    hue=\"species\",\n    corner=True,\n    plot_kws={\"alpha\": 0.7}\n)\n\ng.fig.suptitle(\"Iris — Pairplot by Species\", y=1.02)\n\nplt.show()\n\n\n\n\n\nIris — Pairplot by Species\n\n\n\n\n\nInterpretation\nPairplots help you answer broader questions such as:\n\nWhich variables best separate species?\nWhich features seem strongly related?\nWhich measurements appear redundant?\nWhere do groups overlap and where do they separate cleanly?\n\nThis is often one of the best first multivariate views of a dataset.",
+    "text": "Pairplot Overview\nPairplots provide a compact view of multiple variable relationships at once.\n\n\nCode\ng = sns.pairplot(\n    df,\n    hue=\"species\",\n    corner=True,\n    plot_kws={\"alpha\": 0.7}\n)\n\ng.fig.suptitle(\"Iris — Pairplot by Species\", y=1.02)\n\nplt.show()\n\n\n\n\n\nIris — Pairplot by Species\n\n\n\n\n\nInterpretation\n\n\nInterpretation\nPairplots help answer broader questions such as:\n\nwhich variables best separate species?\n\nwhich features appear strongly related?\n\nwhich measurements appear redundant?\n\nwhere groups overlap and where they separate clearly?\n\nThis is often one of the most useful first multivariate views of a dataset.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Visualization Foundations</span>"
@@ -762,7 +773,7 @@
     "href": "05-visualization-basics.html#reading-visual-evidence-carefully",
     "title": "Visualization Foundations",
     "section": "Reading Visual Evidence Carefully",
-    "text": "Reading Visual Evidence Carefully\nA plot is only useful if we interpret it carefully.\nWhen reading a figure, ask:\n\nWhat question is this plot helping answer?\nWhat pattern is visible?\nHow strong is the pattern?\nIs there overlap, uncertainty, or ambiguity?\nDoes this match what earlier summaries suggested?\n\nVisualization should support reasoning, not replace it.",
+    "text": "Reading Visual Evidence Carefully\nA plot is only useful if it is interpreted carefully.\nWhen reading a figure, ask:\n\nwhat question does this plot help answer?\n\nwhat pattern is visible?\n\nhow strong is the pattern?\n\nis there overlap, uncertainty, or ambiguity?\n\ndoes this align with earlier summaries?\n\nVisualization should support reasoning, not replace it.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Visualization Foundations</span>"
@@ -773,7 +784,7 @@
     "href": "05-visualization-basics.html#visualization-principles",
     "title": "Visualization Foundations",
     "section": "Visualization Principles",
-    "text": "Visualization Principles\nStrong foundational plots usually share a few qualities:\n\nclear titles and labels\nreadable axes\npurposeful use of color\nminimal clutter\nplot choice matched to the question\n\nA histogram is useful for one-variable distributions.\nA boxplot is useful for comparing distributions across groups.\nA scatter plot is useful for relationships between two variables.\nA pairplot is useful for quick multivariate exploration.",
+    "text": "Visualization Principles\nStrong foundational plots share a few key qualities:\n\nclear titles and labels\n\nreadable axes\n\npurposeful use of color\n\nminimal clutter\n\nplot choice matched to the question\n\nA histogram is useful for one-variable distributions.\nA boxplot is useful for comparing distributions across groups.\nA scatter plot is useful for relationships between two variables.\nA pairplot is useful for quick multivariate exploration.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Visualization Foundations</span>"
@@ -795,7 +806,7 @@
     "href": "05-visualization-basics.html#summary",
     "title": "Visualization Foundations",
     "section": "Summary",
-    "text": "Summary\n\nYou used foundational plot types to explore the Iris dataset\nYou compared distributions within and across species\nYou examined relationships between numeric variables\nYou used visual patterns to support interpretation\nYou practiced moving from chart creation to analytical reasoning\n\nThese are core visualization habits that carry forward into more advanced analysis.",
+    "text": "Summary\n\nyou used foundational plot types to explore the Iris dataset\n\nyou compared distributions within and across species\n\nyou examined relationships between numeric variables\n\nyou used visual patterns to support interpretation\n\nyou practiced moving from chart creation to analytical reasoning\n\nThese are core visualization habits that carry forward into more advanced analysis.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Visualization Foundations</span>"
@@ -813,11 +824,22 @@
     ]
   },
   {
+    "objectID": "05-visualization-basics.html#cdi-insight",
+    "href": "05-visualization-basics.html#cdi-insight",
+    "title": "Visualization Foundations",
+    "section": "CDI Insight",
+    "text": "CDI Insight\nVisualization is not about producing more plots.\nIt is about choosing the right view of the data to support understanding.\nA clear plot reduces uncertainty. A poor plot can introduce it.",
+    "crumbs": [
+      "Understanding Your Data",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Visualization Foundations</span>"
+    ]
+  },
+  {
     "objectID": "06-summary-statistics-and-insights.html",
     "href": "06-summary-statistics-and-insights.html",
     "title": "Summary Statistics and Insights",
     "section": "",
-    "text": "Lesson Overview\nIn this final lesson of the Foundations Track, you will use summary statistics to move from raw measurements to interpretable evidence.\nSummary statistics are useful because they help us describe the center, spread, and differences in a dataset without inspecting every row individually. But descriptive summaries are only valuable when they are connected to clear interpretation.\nIn this lesson, you will compute descriptive statistics, compare grouped summaries, examine simple relationships, and write careful insights grounded in evidence.\nBy the end of this lesson, you will be able to:",
+    "text": "Lesson Overview\nIn this final lesson of the Foundations Track, you use summary statistics to move from raw measurements to interpretable evidence.\nSummary statistics help describe the center, spread, and differences in a dataset without inspecting every row individually.\nHowever, descriptive summaries are only useful when they are connected to clear interpretation.\nIn this lesson, you compute descriptive statistics, compare grouped summaries, examine simple relationships, and write careful insights grounded in evidence.\nBy the end of this lesson, you will be able to:",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
@@ -850,7 +872,7 @@
     "href": "06-summary-statistics-and-insights.html#inspect-the-structure",
     "title": "Summary Statistics and Insights",
     "section": "Inspect the Structure",
-    "text": "Inspect the Structure\nBefore summarizing, confirm the structure of the dataset.\n\n\nCode\nprint(\"Shape:\", df.shape)\nprint(\"\\nColumns:\", df.columns.tolist())\nprint(\"\\nData types:\")\nprint(df.dtypes)\n\n\nShape: (149, 5)\n\nColumns: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']\n\nData types:\nsepal_length    float64\nsepal_width     float64\npetal_length    float64\npetal_width     float64\nspecies             str\ndtype: object\n\n\n\nInterpretation\nBefore computing summaries, ask:\n\nWhich variables are numeric?\nWhich variable defines the groups?\nWhich summaries are likely to be most informative?\n\nFor the Iris dataset, the flower measurements are numeric and species provides a natural grouping variable.",
+    "text": "Inspect the Structure\nBefore summarizing, confirm the structure of the dataset.\n\n\nCode\nprint(\"Shape:\", df.shape)\nprint(\"\\nColumns:\", df.columns.tolist())\nprint(\"\\nData types:\")\nprint(df.dtypes)\n\n\nShape: (149, 5)\n\nColumns: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']\n\nData types:\nsepal_length    float64\nsepal_width     float64\npetal_length    float64\npetal_width     float64\nspecies             str\ndtype: object\n\n\n\nInterpretation\nBefore computing summaries, ask:\n\nwhich variables are numeric?\n\nwhich variable defines the groups?\n\nwhich summaries are likely to be most informative?\n\nFor the Iris dataset, the flower measurements are numeric and species provides a natural grouping variable.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
@@ -861,7 +883,7 @@
     "href": "06-summary-statistics-and-insights.html#descriptive-statistics-for-numeric-variables",
     "title": "Summary Statistics and Insights",
     "section": "Descriptive Statistics for Numeric Variables",
-    "text": "Descriptive Statistics for Numeric Variables\ndescribe() gives a compact summary of central tendency and spread.\n\n\nCode\ndf.describe()\n\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\n\n\n\n\ncount\n149.000000\n149.000000\n149.000000\n149.000000\n\n\nmean\n5.843624\n3.059732\n3.748993\n1.194631\n\n\nstd\n0.830851\n0.436342\n1.767791\n0.762622\n\n\nmin\n4.300000\n2.000000\n1.000000\n0.100000\n\n\n25%\n5.100000\n2.800000\n1.600000\n0.300000\n\n\n50%\n5.800000\n3.000000\n4.300000\n1.300000\n\n\n75%\n6.400000\n3.300000\n5.100000\n1.800000\n\n\nmax\n7.900000\n4.400000\n6.900000\n2.500000\n\n\n\n\n\n\n\n\nInterpretation\nThis table helps you review:\n\nthe typical range of each feature\nthe approximate center using the mean\nvariability using the standard deviation\nminimum and maximum values\nquartiles that help describe spread\n\nA numeric summary is often the first checkpoint before deeper comparison.",
+    "text": "Descriptive Statistics for Numeric Variables\ndescribe() gives a compact summary of central tendency and spread.\n\n\nCode\ndf.describe()\n\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\n\n\n\n\ncount\n149.000000\n149.000000\n149.000000\n149.000000\n\n\nmean\n5.843624\n3.059732\n3.748993\n1.194631\n\n\nstd\n0.830851\n0.436342\n1.767791\n0.762622\n\n\nmin\n4.300000\n2.000000\n1.000000\n0.100000\n\n\n25%\n5.100000\n2.800000\n1.600000\n0.300000\n\n\n50%\n5.800000\n3.000000\n4.300000\n1.300000\n\n\n75%\n6.400000\n3.300000\n5.100000\n1.800000\n\n\nmax\n7.900000\n4.400000\n6.900000\n2.500000\n\n\n\n\n\n\n\n\nInterpretation\nThis table helps you review:\n\nthe typical range of each feature\n\nthe approximate center using the mean\n\nvariability using the standard deviation\n\nminimum and maximum values\n\nquartiles that describe spread\n\nA numeric summary is often the first checkpoint before deeper comparison.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
@@ -872,7 +894,7 @@
     "href": "06-summary-statistics-and-insights.html#visual-check-of-numeric-distributions",
     "title": "Summary Statistics and Insights",
     "section": "Visual Check of Numeric Distributions",
-    "text": "Visual Check of Numeric Distributions\nA simple set of histograms helps connect the summary table to visible distributions.\n\n\nCode\nnum_cols = [\"sepal_length\", \"sepal_width\", \"petal_length\", \"petal_width\"]\n\ndf_long = df.melt(\n    value_vars=num_cols,\n    var_name=\"feature\",\n    value_name=\"value\"\n)\n\ng = sns.displot(\n    data=df_long,\n    x=\"value\",\n    col=\"feature\",\n    col_wrap=2,\n    bins=12,\n    kde=True,\n    height=3.5,\n    aspect=1.2\n)\n\ng.fig.suptitle(\"Iris — Distributions of Numeric Features\", y=1.02)\n\nplt.show()\n\n\n\n\n\nIris — Distributions of Numeric Features\n\n\n\n\n\nInterpretation\nThese histograms help you assess:\n\nwhether distributions are narrow or wide\nwhether some features appear more variable than others\nwhether there may be multiple peaks suggesting subgroup structure\n\nThis is useful because a summary table alone may hide distribution shape.",
+    "text": "Visual Check of Numeric Distributions\nA simple set of histograms helps connect the summary table to visible distributions.\n\n\nCode\nnum_cols = [\"sepal_length\", \"sepal_width\", \"petal_length\", \"petal_width\"]\n\ndf_long = df.melt(\n    value_vars=num_cols,\n    var_name=\"feature\",\n    value_name=\"value\"\n)\n\ng = sns.displot(\n    data=df_long,\n    x=\"value\",\n    col=\"feature\",\n    col_wrap=2,\n    bins=12,\n    kde=True,\n    height=3.5,\n    aspect=1.2\n)\n\ng.fig.suptitle(\"Iris — Distributions of Numeric Features\", y=1.02)\n\nplt.show()\n\n\n\n\n\nIris — Distributions of Numeric Features\n\n\n\n\n\nInterpretation\nThese histograms help you assess:\n\nwhether distributions are narrow or wide\n\nwhether some features appear more variable than others\n\nwhether there may be multiple peaks suggesting subgroup structure\n\nA summary table alone may not reveal distribution shape.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
@@ -883,7 +905,7 @@
     "href": "06-summary-statistics-and-insights.html#categorical-summary",
     "title": "Summary Statistics and Insights",
     "section": "Categorical Summary",
-    "text": "Categorical Summary\nFor a categorical variable, counts are often the simplest descriptive summary.\n\n\nCode\nspecies_counts = df[\"species\"].value_counts()\nspecies_counts\n\n\nspecies\nsetosa        50\nversicolor    50\nvirginica     49\nName: count, dtype: int64\n\n\n\nVisual: Species Distribution\n\n\nCode\nfig, ax = plt.subplots(figsize=(7, 4))\n\nspecies_counts.plot(kind=\"bar\", ax=ax)\n\nax.set_title(\"Count of Samples by Species\")\nax.set_xlabel(\"Species\")\nax.set_ylabel(\"Count\")\n\nplt.show()\n\n\n\n\n\nIris — Count of Samples by Species\n\n\n\n\n\n\nInterpretation\nCategory counts help you check whether groups are balanced.\nBalanced group sizes make grouped comparisons easier to interpret, while strong imbalance can affect how patterns appear in tables and plots.",
+    "text": "Categorical Summary\nFor a categorical variable, counts are often the simplest descriptive summary.\n\n\nCode\nspecies_counts = df[\"species\"].value_counts()\nspecies_counts\n\n\nspecies\nsetosa        50\nversicolor    50\nvirginica     49\nName: count, dtype: int64\n\n\n\nVisual: Species Distribution\n\n\nCode\nfig, ax = plt.subplots(figsize=(7, 4))\n\nspecies_counts.plot(kind=\"bar\", ax=ax)\n\nax.set_title(\"Count of Samples by Species\")\nax.set_xlabel(\"Species\")\nax.set_ylabel(\"Count\")\n\nplt.show()\n\n\n\n\n\nIris — Count of Samples by Species\n\n\n\n\n\n\nInterpretation\nCategory counts help you assess whether groups are balanced.\nBalanced group sizes make comparisons easier to interpret, while strong imbalance can affect how patterns appear in tables and plots.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
@@ -894,7 +916,7 @@
     "href": "06-summary-statistics-and-insights.html#grouped-summary-statistics",
     "title": "Summary Statistics and Insights",
     "section": "Grouped Summary Statistics",
-    "text": "Grouped Summary Statistics\nA common workflow is to summarize numeric variables by a grouping column.\n\n\nCode\ngroup_summary = (\n    df.groupby(\"species\", observed=False)\n      .agg(\n          sepal_length_mean=(\"sepal_length\", \"mean\"),\n          sepal_length_sd=(\"sepal_length\", \"std\"),\n          sepal_width_mean=(\"sepal_width\", \"mean\"),\n          sepal_width_sd=(\"sepal_width\", \"std\"),\n          petal_length_mean=(\"petal_length\", \"mean\"),\n          petal_length_sd=(\"petal_length\", \"std\"),\n          petal_width_mean=(\"petal_width\", \"mean\"),\n          petal_width_sd=(\"petal_width\", \"std\"),\n      )\n      .reset_index()\n)\n\ngroup_summary\n\n\n\n\n\n\n\n\n\nspecies\nsepal_length_mean\nsepal_length_sd\nsepal_width_mean\nsepal_width_sd\npetal_length_mean\npetal_length_sd\npetal_width_mean\npetal_width_sd\n\n\n\n\n0\nsetosa\n5.006000\n0.352490\n3.428000\n0.379064\n1.462000\n0.173664\n0.246000\n0.105386\n\n\n1\nversicolor\n5.936000\n0.516171\n2.770000\n0.313798\n4.260000\n0.469911\n1.326000\n0.197753\n\n\n2\nvirginica\n6.604082\n0.632113\n2.979592\n0.323380\n5.561224\n0.553706\n2.028571\n0.276887\n\n\n\n\n\n\n\n\nInterpretation\nGrouped summaries help you answer questions such as:\n\nWhich species has the largest average petals?\nWhich variable differs most across species?\nWhich groups appear similar and which appear distinct?\n\nThis is where descriptive statistics begin to support actual insight.",
+    "text": "Grouped Summary Statistics\nA common workflow is to summarize numeric variables by a grouping column.\n\n\nCode\ngroup_summary = (\n    df.groupby(\"species\", observed=False)\n      .agg(\n          sepal_length_mean=(\"sepal_length\", \"mean\"),\n          sepal_length_sd=(\"sepal_length\", \"std\"),\n          sepal_width_mean=(\"sepal_width\", \"mean\"),\n          sepal_width_sd=(\"sepal_width\", \"std\"),\n          petal_length_mean=(\"petal_length\", \"mean\"),\n          petal_length_sd=(\"petal_length\", \"std\"),\n          petal_width_mean=(\"petal_width\", \"mean\"),\n          petal_width_sd=(\"petal_width\", \"std\"),\n      )\n      .reset_index()\n)\n\ngroup_summary\n\n\n\n\n\n\n\n\n\nspecies\nsepal_length_mean\nsepal_length_sd\nsepal_width_mean\nsepal_width_sd\npetal_length_mean\npetal_length_sd\npetal_width_mean\npetal_width_sd\n\n\n\n\n0\nsetosa\n5.006000\n0.352490\n3.428000\n0.379064\n1.462000\n0.173664\n0.246000\n0.105386\n\n\n1\nversicolor\n5.936000\n0.516171\n2.770000\n0.313798\n4.260000\n0.469911\n1.326000\n0.197753\n\n\n2\nvirginica\n6.604082\n0.632113\n2.979592\n0.323380\n5.561224\n0.553706\n2.028571\n0.276887\n\n\n\n\n\n\n\n\nInterpretation\nGrouped summaries help answer questions such as:\n\nwhich species has the largest average petals?\n\nwhich variable differs most across species?\n\nwhich groups appear similar and which appear distinct?\n\nThis is where descriptive statistics begin to support insight.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
@@ -905,7 +927,7 @@
     "href": "06-summary-statistics-and-insights.html#median-table-by-species",
     "title": "Summary Statistics and Insights",
     "section": "Median Table by Species",
-    "text": "Median Table by Species\nMeans are useful, but medians can provide a more robust summary when you want a center less influenced by unusual values.\n\n\nCode\nmedian_table = (\n    df.groupby(\"species\", observed=False)[num_cols]\n      .median()\n      .reset_index()\n)\n\nmedian_table\n\n\n\n\n\n\n\n\n\nspecies\nsepal_length\nsepal_width\npetal_length\npetal_width\n\n\n\n\n0\nsetosa\n5.0\n3.4\n1.50\n0.2\n\n\n1\nversicolor\n5.9\n2.8\n4.35\n1.3\n\n\n2\nvirginica\n6.5\n3.0\n5.60\n2.0\n\n\n\n\n\n\n\n\nWhy this matters\nComparing both means and medians helps you judge whether a group’s center is stable or whether a few values may be pulling the mean upward or downward.",
+    "text": "Median Table by Species\nMeans are useful, but medians can provide a more robust summary when you want a center less influenced by unusual values.\n\n\nCode\nmedian_table = (\n    df.groupby(\"species\", observed=False)[num_cols]\n      .median()\n      .reset_index()\n)\n\nmedian_table\n\n\n\n\n\n\n\n\n\nspecies\nsepal_length\nsepal_width\npetal_length\npetal_width\n\n\n\n\n0\nsetosa\n5.0\n3.4\n1.50\n0.2\n\n\n1\nversicolor\n5.9\n2.8\n4.35\n1.3\n\n\n2\nvirginica\n6.5\n3.0\n5.60\n2.0\n\n\n\n\n\n\n\n\nInterpretation\nComparing means and medians helps you assess whether a group’s center is stable or influenced by a few values.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
@@ -916,7 +938,7 @@
     "href": "06-summary-statistics-and-insights.html#visual-comparison-of-group-means",
     "title": "Summary Statistics and Insights",
     "section": "Visual Comparison of Group Means",
-    "text": "Visual Comparison of Group Means\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.barplot(\n    data=df,\n    x=\"species\",\n    y=\"petal_length\",\n    errorbar=\"sd\",\n    ax=ax\n)\n\nax.set_title(\"Mean Petal Length by Species\")\nax.set_xlabel(\"Species\")\nax.set_ylabel(\"Petal Length\")\n\nplt.show()\n\n\n\n\n\nIris — Mean Petal Length by Species\n\n\n\n\n\nInterpretation\nThis plot combines summary and variation.\nIt helps you compare:\n\naverage petal length across species\nwithin-group spread through the standard deviation bars\nwhether group differences appear large or modest\n\nWhen a grouped mean plot agrees with earlier visualizations, confidence in the descriptive pattern increases.",
+    "text": "Visual Comparison of Group Means\n\n\nCode\nfig, ax = plt.subplots(figsize=(8, 5.5))\n\nsns.barplot(\n    data=df,\n    x=\"species\",\n    y=\"petal_length\",\n    errorbar=\"sd\",\n    ax=ax\n)\n\nax.set_title(\"Mean Petal Length by Species\")\nax.set_xlabel(\"Species\")\nax.set_ylabel(\"Petal Length\")\n\nplt.show()\n\n\n\n\n\nIris — Mean Petal Length by Species\n\n\n\n\n\nInterpretation\nThis plot combines summary and variation.\nIt helps you compare:\n\naverage petal length across species\n\nwithin-group spread using standard deviation\n\nwhether group differences appear large or modest\n\nWhen this agrees with earlier visualizations, confidence in the pattern increases.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
@@ -927,7 +949,7 @@
     "href": "06-summary-statistics-and-insights.html#key-feature-differences",
     "title": "Summary Statistics and Insights",
     "section": "Key Feature Differences",
-    "text": "Key Feature Differences\nA simple way to identify strong separation is to compare the range of group means across variables.\n\n\nCode\nfeature_separation = {\n    col: df.groupby(\"species\", observed=False)[col].mean().max()\n         - df.groupby(\"species\", observed=False)[col].mean().min()\n    for col in num_cols\n}\n\nfeature_separation\n\n\n{'sepal_length': np.float64(1.5980816326530611),\n 'sepal_width': np.float64(0.6579999999999999),\n 'petal_length': np.float64(4.099224489795919),\n 'petal_width': np.float64(1.7825714285714285)}\n\n\n\nInterpretation\nA larger difference in group means suggests that a feature may separate species more clearly.\nThis does not prove classification quality on its own, but it provides a useful descriptive signal about which variables are more informative.",
+    "text": "Key Feature Differences\nA simple way to identify strong separation is to compare the range of group means across variables.\n\n\nCode\nfeature_separation = {\n    col: df.groupby(\"species\", observed=False)[col].mean().max()\n         - df.groupby(\"species\", observed=False)[col].mean().min()\n    for col in num_cols\n}\n\nfeature_separation\n\n\n{'sepal_length': np.float64(1.5980816326530611),\n 'sepal_width': np.float64(0.6579999999999999),\n 'petal_length': np.float64(4.099224489795919),\n 'petal_width': np.float64(1.7825714285714285)}\n\n\n\nInterpretation\nA larger difference in group means suggests that a feature may separate species more clearly.\nThis does not establish classification performance, but it provides a useful descriptive signal about which variables are more informative.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
@@ -949,7 +971,7 @@
     "href": "06-summary-statistics-and-insights.html#correlation-heatmap",
     "title": "Summary Statistics and Insights",
     "section": "Correlation Heatmap",
-    "text": "Correlation Heatmap\n\n\nCode\nfig, ax = plt.subplots(figsize=(7, 5.5))\n\nsns.heatmap(\n    corr,\n    annot=True,\n    fmt=\".2f\",\n    ax=ax\n)\n\nax.set_title(\"Correlation Heatmap\")\n\nplt.show()\n\n\n\n\n\nIris — Correlation Heatmap\n\n\n\n\n\nInterpretation\nA correlation heatmap helps you see:\n\nwhich measurements tend to increase together\nwhich relationships appear weak\nwhere redundancy may exist between variables\n\nThis can guide later feature selection and interpretation.",
+    "text": "Correlation Heatmap\n\n\nCode\nfig, ax = plt.subplots(figsize=(7, 5.5))\n\nsns.heatmap(\n    corr,\n    annot=True,\n    fmt=\".2f\",\n    ax=ax\n)\n\nax.set_title(\"Correlation Heatmap\")\n\nplt.show()\n\n\n\n\n\nIris — Correlation Heatmap\n\n\n\n\n\nInterpretation\nA correlation heatmap helps you see:\n\nwhich measurements tend to increase together\n\nwhich relationships appear weak\n\nwhere redundancy may exist between variables\n\nThis can guide later feature selection and interpretation.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
@@ -960,7 +982,7 @@
     "href": "06-summary-statistics-and-insights.html#generate-a-simple-insights-report",
     "title": "Summary Statistics and Insights",
     "section": "Generate a Simple Insights Report",
-    "text": "Generate a Simple Insights Report\nAn insights report should link evidence to interpretation without overstating what the data can support.\n\n\nCode\ntop_sep = (\n    df.groupby(\"species\", observed=False)[\"petal_length\"]\n      .mean()\n      .sort_values(ascending=False)\n      .reset_index(name=\"petal_length_mean\")\n)\n\nreport = f\"\"\"Insights Report (Iris)\n\n1) Dataset size\n- Rows: {df.shape[0]}\n- Columns: {df.shape[1]}\n\n2) Group separation\n- Petal-related features show strong descriptive differences across species.\n- Mean petal length by species:\n{top_sep.to_string(index=False)}\n\n3) Consistency with earlier plots\n- These grouped summaries are consistent with the separation seen in visualization-based exploration.\n\n4) Caution\n- These are descriptive patterns only.\n- They support comparison, but they do not justify causal claims.\n\"\"\"\n\nprint(report)\n\n\nInsights Report (Iris)\n\n1) Dataset size\n- Rows: 149\n- Columns: 5\n\n2) Group separation\n- Petal-related features show strong descriptive differences across species.\n- Mean petal length by species:\n   species  petal_length_mean\n virginica           5.561224\nversicolor           4.260000\n    setosa           1.462000\n\n3) Consistency with earlier plots\n- These grouped summaries are consistent with the separation seen in visualization-based exploration.\n\n4) Caution\n- These are descriptive patterns only.\n- They support comparison, but they do not justify causal claims.\n\n\n\n\nInterpretation\nA good insights report does three things:\n\nstates what the evidence shows\nlinks that evidence to careful interpretation\navoids claims that go beyond the analysis\n\nThis habit is central to CDI-style reasoning.",
+    "text": "Generate a Simple Insights Report\nAn insights report should link evidence to interpretation without overstating what the data can support.\n\n\nCode\ntop_sep = (\n    df.groupby(\"species\", observed=False)[\"petal_length\"]\n      .mean()\n      .sort_values(ascending=False)\n      .reset_index(name=\"petal_length_mean\")\n)\n\nreport = f\"\"\"Insights Report (Iris)\n\n1) Dataset size\n- Rows: {df.shape[0]}\n- Columns: {df.shape[1]}\n\n2) Group separation\n- Petal-related features show strong descriptive differences across species.\n- Mean petal length by species:\n{top_sep.to_string(index=False)}\n\n3) Consistency with earlier plots\n- These grouped summaries are consistent with the separation seen in visualization-based exploration.\n\n4) Caution\n- These are descriptive patterns only.\n- They support comparison, but they do not justify causal claims.\n\"\"\"\n\nprint(report)\n\n\nInsights Report (Iris)\n\n1) Dataset size\n- Rows: 149\n- Columns: 5\n\n2) Group separation\n- Petal-related features show strong descriptive differences across species.\n- Mean petal length by species:\n   species  petal_length_mean\n virginica           5.561224\nversicolor           4.260000\n    setosa           1.462000\n\n3) Consistency with earlier plots\n- These grouped summaries are consistent with the separation seen in visualization-based exploration.\n\n4) Caution\n- These are descriptive patterns only.\n- They support comparison, but they do not justify causal claims.\n\n\n\n\nInterpretation\nA good insights report:\n\nstates what the evidence shows\n\nlinks evidence to careful interpretation\n\navoids claims that go beyond the analysis\n\nThis habit is central to CDI-style reasoning.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
@@ -971,7 +993,7 @@
     "href": "06-summary-statistics-and-insights.html#validation-checks",
     "title": "Summary Statistics and Insights",
     "section": "Validation Checks",
-    "text": "Validation Checks\n\n\nCode\nprint(\"Total missing values:\", int(df.isna().sum().sum()))\nprint(\"Numeric columns used:\", num_cols)\nprint(\"Grouped summary shape:\", group_summary.shape)\nprint(\"Median table shape:\", median_table.shape)\n\nassert int(df.isna().sum().sum()) == 0, \"Missing values remain in the dataset.\"\nassert \"species\" in df.columns, \"Grouping variable species is missing.\"\n\n\nTotal missing values: 0\nNumeric columns used: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']\nGrouped summary shape: (3, 9)\nMedian table shape: (3, 5)\n\n\n\nWhy this matters\nEven in a summary chapter, validation is useful.\nIt confirms that:\n\nthe dataset is still clean\nexpected variables are present\ngrouped summaries were constructed correctly",
+    "text": "Validation Checks\n\n\nCode\nprint(\"Total missing values:\", int(df.isna().sum().sum()))\nprint(\"Numeric columns used:\", num_cols)\nprint(\"Grouped summary shape:\", group_summary.shape)\nprint(\"Median table shape:\", median_table.shape)\n\nassert int(df.isna().sum().sum()) == 0, \"Missing values remain in the dataset.\"\nassert \"species\" in df.columns, \"Grouping variable species is missing.\"\n\n\nTotal missing values: 0\nNumeric columns used: ['sepal_length', 'sepal_width', 'petal_length', 'petal_width']\nGrouped summary shape: (3, 9)\nMedian table shape: (3, 5)\n\n\n\nInterpretation\nEven in a summary-focused chapter, validation remains important.\nIt confirms that:\n\nthe dataset is still clean\n\nexpected variables are present\n\ngrouped summaries were constructed correctly",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
@@ -993,7 +1015,18 @@
     "href": "06-summary-statistics-and-insights.html#summary",
     "title": "Summary Statistics and Insights",
     "section": "Summary",
-    "text": "Summary\n\nYou computed descriptive statistics for numeric and categorical variables\nYou compared group means, standard deviations, and medians\nYou used simple visuals to support statistical summaries\nYou examined linear relationships with a correlation matrix\nYou wrote an insights report grounded in descriptive evidence\n\nThis chapter closes the Foundations Track by showing how summary statistics support careful interpretation, not just calculation.",
+    "text": "Summary\n\nyou computed descriptive statistics for numeric and categorical variables\n\nyou compared group means, standard deviations, and medians\n\nyou used simple visuals to support statistical summaries\n\nyou examined linear relationships using a correlation matrix\n\nyou wrote an insights report grounded in descriptive evidence\n\nThis chapter closes the Foundations Track by showing how summary statistics support careful interpretation, not just calculation.",
+    "crumbs": [
+      "Understanding Your Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"
+    ]
+  },
+  {
+    "objectID": "06-summary-statistics-and-insights.html#cdi-insight",
+    "href": "06-summary-statistics-and-insights.html#cdi-insight",
+    "title": "Summary Statistics and Insights",
+    "section": "CDI Insight",
+    "text": "CDI Insight\nSummary statistics are not the end of analysis.\nThey are a way to organize evidence so that interpretation becomes clearer and more defensible.\nA responsible analyst does not report numbers alone.\nThey explain what those numbers mean — and what they do not.",
     "crumbs": [
       "Understanding Your Data",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Summary Statistics and Insights</span>"

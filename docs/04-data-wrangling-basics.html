@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-03-18">
 
 <title>Data Wrangling Basics – Data Science Foundations</title>
 <style>
@@ -268,7 +269,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#lesson-overview" id="toc-lesson-overview" class="nav-link active" data-scroll-target="#lesson-overview">Lesson Overview</a></li>
-  <li><a href="#chapter-initialization" id="toc-chapter-initialization" class="nav-link" data-scroll-target="#chapter-initialization">Chapter Initialization</a></li>
   <li><a href="#load-the-clean-dataset" id="toc-load-the-clean-dataset" class="nav-link" data-scroll-target="#load-the-clean-dataset">Load the Clean Dataset</a></li>
   <li><a href="#selecting-columns" id="toc-selecting-columns" class="nav-link" data-scroll-target="#selecting-columns">Selecting Columns</a></li>
   <li><a href="#filtering-rows" id="toc-filtering-rows" class="nav-link" data-scroll-target="#filtering-rows">Filtering Rows</a></li>
@@ -295,6 +295,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 18, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -308,56 +314,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><strong>ID:</strong> DS-L04</li>
 <li><strong>Type:</strong> Lesson</li>
-<li><strong>Audience:</strong> Public</li>
+<li><strong>Audience:</strong> Beginner / Intermediate</li>
 <li><strong>Theme:</strong> Transforming and reshaping data using reproducible workflows</li>
 </ul>
 </div>
-<p>Data rarely arrives in the exact format you need for analysis.</p>
-<p>In this lesson, you will learn how to transform, filter, group, and reshape data using pandas.<br>
-As in previous chapters, all code runs inside this Quarto (<code>.qmd</code>) file and executes when you render the book.</p>
+<p>Data rarely arrives in the exact format required for analysis.</p>
+<p>In this lesson, you will learn how to transform, filter, group, and reshape data using pandas.</p>
+<p>As in previous chapters, all code runs inside this Quarto (<code>.qmd</code>) file.</p>
+<p>When the book is rendered, Python code is executed and results are embedded directly into the page.</p>
 <hr>
 <section id="lesson-overview" class="level2">
 <h2 class="anchored" data-anchor-id="lesson-overview">Lesson Overview</h2>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
-<li>Select and filter rows and columns<br>
+<li>select and filter rows and columns<br>
 </li>
-<li>Create new derived features<br>
+<li>create derived features<br>
 </li>
-<li>Sort and reorder data<br>
+<li>sort and reorder data<br>
 </li>
-<li>Group and aggregate values<br>
+<li>group and aggregate values<br>
 </li>
-<li>Apply conditional logic<br>
+<li>apply conditional logic<br>
 </li>
-<li>Prepare structured outputs for analysis</li>
+<li>prepare structured outputs for analysis</li>
 </ul>
-<hr>
-</section>
-<section id="chapter-initialization" class="level2">
-<h2 class="anchored" data-anchor-id="chapter-initialization">Chapter Initialization</h2>
-<div id="chapter-init" class="cell" data-execution_count="1">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> cdi_viz.theme <span class="im">import</span> cdi_notebook_init</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>cdi_notebook_init(chapter<span class="op">=</span><span class="st">"04"</span>, title_x<span class="op">=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
 <hr>
 </section>
 <section id="load-the-clean-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="load-the-clean-dataset">Load the Clean Dataset</h2>
 <p>We use the cleaned dataset created in Lesson 03.</p>
-<div id="cell-04-load-clean-data" class="cell" data-execution_count="2">
+<div id="cell-04-load-clean-data" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/iris_clean.csv"</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data/iris_clean.csv"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="load-clean-data" class="cell-output cell-output-display" data-execution_count="2">
+<div id="load-clean-data" class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -423,12 +418,13 @@ As in previous chapters, all code runs inside this Quarto (<code>.qmd</code>) fi
 </section>
 <section id="selecting-columns" class="level2">
 <h2 class="anchored" data-anchor-id="selecting-columns">Selecting Columns</h2>
-<div id="cell-04-select-columns" class="cell" data-execution_count="3">
+<p>Select a subset of columns for focused analysis.</p>
+<div id="cell-04-select-columns" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"sepal_length"</span>, <span class="st">"petal_length"</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"sepal_length"</span>, <span class="st">"petal_length"</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="select-columns" class="cell-output cell-output-display" data-execution_count="3">
+<div id="select-columns" class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -476,14 +472,15 @@ As in previous chapters, all code runs inside this Quarto (<code>.qmd</code>) fi
 </section>
 <section id="filtering-rows" class="level2">
 <h2 class="anchored" data-anchor-id="filtering-rows">Filtering Rows</h2>
-<p>Example: filter rows where petal_length &gt; 4.</p>
-<div id="cell-04-filter-rows" class="cell" data-execution_count="4">
+<p>Filter rows based on a condition.</p>
+<p>Example: select rows where petal_length &gt; 4.</p>
+<div id="cell-04-filter-rows" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="op">=</span> df[df[<span class="st">"petal_length"</span>] <span class="op">&gt;</span> <span class="dv">4</span>]</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df_filtered.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="op">=</span> df[df[<span class="st">"petal_length"</span>] <span class="op">&gt;</span> <span class="dv">4</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df_filtered.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="filter-rows" class="cell-output cell-output-display" data-execution_count="4">
+<div id="filter-rows" class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -549,14 +546,15 @@ As in previous chapters, all code runs inside this Quarto (<code>.qmd</code>) fi
 </section>
 <section id="creating-new-features" class="level2">
 <h2 class="anchored" data-anchor-id="creating-new-features">Creating New Features</h2>
-<p>We create a new feature: petal_area.</p>
-<div id="cell-04-create-feature" class="cell" data-execution_count="5">
+<p>Feature creation extends the dataset with new variables.</p>
+<p>Here, we define a new feature, <code>petal_area</code>.</p>
+<div id="cell-04-create-feature" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"petal_area"</span>] <span class="op">=</span> df[<span class="st">"petal_length"</span>] <span class="op">*</span> df[<span class="st">"petal_width"</span>]</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"petal_area"</span>] <span class="op">=</span> df[<span class="st">"petal_length"</span>] <span class="op">*</span> df[<span class="st">"petal_width"</span>]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="create-feature" class="cell-output cell-output-display" data-execution_count="5">
+<div id="create-feature" class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
@@ -628,13 +626,14 @@ As in previous chapters, all code runs inside this Quarto (<code>.qmd</code>) fi
 </section>
 <section id="sorting-data" class="level2">
 <h2 class="anchored" data-anchor-id="sorting-data">Sorting Data</h2>
-<div id="cell-04-sort-data" class="cell" data-execution_count="6">
+<p>Sort the dataset to examine extreme or ordered values.</p>
+<div id="cell-04-sort-data" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df_sorted <span class="op">=</span> df.sort_values(by<span class="op">=</span><span class="st">"petal_area"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df_sorted.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_sorted <span class="op">=</span> df.sort_values(by<span class="op">=</span><span class="st">"petal_area"</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df_sorted.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="sort-data" class="cell-output cell-output-display" data-execution_count="6">
+<div id="sort-data" class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
 
@@ -706,20 +705,21 @@ As in previous chapters, all code runs inside this Quarto (<code>.qmd</code>) fi
 </section>
 <section id="grouping-and-aggregation" class="level2">
 <h2 class="anchored" data-anchor-id="grouping-and-aggregation">Grouping and Aggregation</h2>
-<p>Compute the mean petal_area per species.</p>
-<div id="cell-04-groupby-mean" class="cell" data-execution_count="7">
+<p>Summarize values across groups.</p>
+<p>Here, we compute the mean petal_area per species.</p>
+<div id="cell-04-groupby-mean" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>grouped <span class="op">=</span> (</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    df.groupby(<span class="st">"species"</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>      .agg(mean_petal_area<span class="op">=</span>(<span class="st">"petal_area"</span>, <span class="st">"mean"</span>),</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>           mean_sepal_length<span class="op">=</span>(<span class="st">"sepal_length"</span>, <span class="st">"mean"</span>))</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>      .reset_index()</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>grouped</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>grouped <span class="op">=</span> (</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    df.groupby(<span class="st">"species"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>      .agg(mean_petal_area<span class="op">=</span>(<span class="st">"petal_area"</span>, <span class="st">"mean"</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>           mean_sepal_length<span class="op">=</span>(<span class="st">"sepal_length"</span>, <span class="st">"mean"</span>))</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>      .reset_index()</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>grouped</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="groupby-mean" class="cell-output cell-output-display" data-execution_count="7">
+<div id="groupby-mean" class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -761,17 +761,18 @@ As in previous chapters, all code runs inside this Quarto (<code>.qmd</code>) fi
 </section>
 <section id="conditional-logic" class="level2">
 <h2 class="anchored" data-anchor-id="conditional-logic">Conditional Logic</h2>
-<p>Create a simple size category based on petal_area.</p>
-<div id="cell-04-conditional-logic" class="cell" data-execution_count="8">
+<p>Create categorical variables based on defined rules.</p>
+<p>Here, we assign a size category based on petal_area.</p>
+<div id="cell-04-conditional-logic" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"size_category"</span>] <span class="op">=</span> df[<span class="st">"petal_area"</span>].<span class="bu">apply</span>(</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> x: <span class="st">"large"</span> <span class="cf">if</span> x <span class="op">&gt;</span> df[<span class="st">"petal_area"</span>].median() <span class="cf">else</span> <span class="st">"small"</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"size_category"</span>] <span class="op">=</span> df[<span class="st">"petal_area"</span>].<span class="bu">apply</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> x: <span class="st">"large"</span> <span class="cf">if</span> x <span class="op">&gt;</span> df[<span class="st">"petal_area"</span>].median() <span class="cf">else</span> <span class="st">"small"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="conditional-logic" class="cell-output cell-output-display" data-execution_count="8">
+<div id="conditional-logic" class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -849,20 +850,20 @@ As in previous chapters, all code runs inside this Quarto (<code>.qmd</code>) fi
 </section>
 <section id="reshaping-example-long-format" class="level2">
 <h2 class="anchored" data-anchor-id="reshaping-example-long-format">Reshaping Example (Long Format)</h2>
-<p>Convert selected columns to long format.</p>
-<div id="cell-04-melt-example" class="cell" data-execution_count="9">
+<p>Reshape the dataset into long format for flexible analysis and visualization.</p>
+<div id="cell-04-melt-example" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> df.melt(</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    id_vars<span class="op">=</span><span class="st">"species"</span>,</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    value_vars<span class="op">=</span>[<span class="st">"sepal_length"</span>, <span class="st">"sepal_width"</span>, <span class="st">"petal_length"</span>, <span class="st">"petal_width"</span>],</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    var_name<span class="op">=</span><span class="st">"measurement"</span>,</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    value_name<span class="op">=</span><span class="st">"value"</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>df_long.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> df.melt(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    id_vars<span class="op">=</span><span class="st">"species"</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    value_vars<span class="op">=</span>[<span class="st">"sepal_length"</span>, <span class="st">"sepal_width"</span>, <span class="st">"petal_length"</span>, <span class="st">"petal_width"</span>],</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    var_name<span class="op">=</span><span class="st">"measurement"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    value_name<span class="op">=</span><span class="st">"value"</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>df_long.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="melt-example" class="cell-output cell-output-display" data-execution_count="9">
+<div id="melt-example" class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
@@ -916,11 +917,12 @@ As in previous chapters, all code runs inside this Quarto (<code>.qmd</code>) fi
 </section>
 <section id="validation-checks" class="level2">
 <h2 class="anchored" data-anchor-id="validation-checks">Validation Checks</h2>
-<div id="validation-checks" class="cell" data-execution_count="10">
+<p>After transformation, confirm that the dataset remains consistent and complete.</p>
+<div id="validation-checks" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Shape:"</span>, df.shape)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Missing values:"</span>, <span class="bu">int</span>(df.isna().<span class="bu">sum</span>().<span class="bu">sum</span>()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Shape:"</span>, df.shape)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Missing values:"</span>, <span class="bu">int</span>(df.isna().<span class="bu">sum</span>().<span class="bu">sum</span>()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Shape: (149, 7)
