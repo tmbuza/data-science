@@ -13,27 +13,18 @@ book:
   chapters:
     - index.qmd
 
-    - part: "Getting Started"
+    - part: "Foundations"
       chapters:
         - 00-preface.qmd
         - 01-setting-up-environment.qmd
-
-    - part: "Working with Data"
-      chapters:
         - 02-load-and-explore-dataset.qmd
         - 03-data-cleaning-and-preparation.qmd
         - 04-data-wrangling-basics.qmd
-
-    - part: "Understanding Your Data"
-      chapters:
         - 05-visualization-basics.qmd
         - 06-summary-statistics-and-insights.qmd
-
-    - part: "Upgrade & Transition"
-      chapters:
         - 06x1-complete-free-track.qmd
 
-    - part: "Appendix"
+    - part: "Reference"
       chapters:
         - 99-appendix.qmd
         - 99-references.qmd
