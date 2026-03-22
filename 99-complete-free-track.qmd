@@ -1,10 +1,10 @@
-# Completing the Foundations Track {#lesson06x1}
+# Completing the Foundations Track {#lesson99}
 
 :::cdi-message
-- **ID:** DS-L06X1
+- **ID:** DS-L99
 - **Type:** Transition
 - **Audience:** Beginner / Intermediate
-- **Theme:** From foundations to applied reasoning
+- **Theme:** From foundations to real-world systems
 :::
 
 You have completed the Foundations Track of the CDI Data Science pathway.
@@ -54,6 +54,24 @@ In CDI terms, this is the transition from:
 
 ---
 
+## From Analysis to Systems
+
+In this guide, you focused on understanding data.
+
+In practice, this is only part of the full workflow.
+
+The next stage introduces machine learning, where analysis is used to build predictive systems.
+
+These systems are then:
+
+- deployed into real environments  
+- monitored as new data arrives  
+- improved over time  
+
+This is how analytical work becomes a real-world system.
+
+---
+
 ## Key Mindset Shift
 
 In the Foundations Track, you asked:
@@ -66,6 +84,7 @@ In the next stage, you will ask:
 
 - how confident are we in these patterns?  
 - can we quantify relationships?  
+- can we make predictions?  
 - how do we test assumptions?  
 - what conclusions are justified?  
 
@@ -90,22 +109,39 @@ It improves through iteration.
 
 ---
 
+## Where This Leads
+
+From here, you can continue into:
+
+- **Machine Learning** → building predictive models  
+- **Deployment** → making models usable in real systems  
+- **DevOps / MLOps** → maintaining and improving systems over time  
+
+Each stage builds on what you have already learned.
+
+---
+
 ## Transition Summary
 
 You are now prepared to:
 
 - move from descriptive analysis to structured modeling  
 - connect computation to reasoning  
-- produce results that are reproducible and interpretable  
+- begin building systems that operate beyond a single dataset  
 
 ---
 
-## Next Step
+## Final Thought
 
-Continue to the next section of the guide, where you begin applying models and developing deeper analytical understanding.
+Data analysis is not the final step.
+
+It is the foundation for building systems that learn, adapt, and improve.
+
+---
 
 :::cdi-message
 The goal is not just to run analysis.
 
-The goal is to produce reasoning you can defend.
+The goal is to produce reasoning you can defend,  
+and systems you can trust.
 :::

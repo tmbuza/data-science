@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setting Up Your Environment – Data Science Foundations</title>
+<title>From Analysis to Machine Learning – Data Science Foundations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02-load-and-explore-dataset.html" rel="next">
-<link href="./00-preface.html" rel="prev">
+<link href="./99-complete-free-track.html" rel="next">
+<link href="./06-summary-statistics-and-insights.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -70,6 +105,10 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<meta name="mermaid-theme" content="forest">
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="assets/css/cdi.css">
@@ -84,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Foundations</a></li><li class="breadcrumb-item"><a href="./01-setting-up-environment.html"><span class="chapter-title">Setting Up Your Environment</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Foundations</a></li><li class="breadcrumb-item"><a href="./07-from-analysis-to-ml.html"><span class="chapter-title">From Analysis to Machine Learning</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -131,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-setting-up-environment.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Setting Up Your Environment</span></a>
+  <a href="./01-setting-up-environment.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Setting Up Your Environment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -161,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./07-from-analysis-to-ml.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">From Analysis to Machine Learning</span></a>
+  <a href="./07-from-analysis-to-ml.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">From Analysis to Machine Learning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -202,38 +241,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-you-are-setting-up" id="toc-what-you-are-setting-up" class="nav-link active" data-scroll-target="#what-you-are-setting-up">What you are setting up</a></li>
-  <li><a href="#required-software" id="toc-required-software" class="nav-link" data-scroll-target="#required-software">Required software</a>
-  <ul class="collapse">
-  <li><a href="#python-3.10-or-newer" id="toc-python-3.10-or-newer" class="nav-link" data-scroll-target="#python-3.10-or-newer">Python (3.10 or newer)</a></li>
-  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto">Quarto</a></li>
-  </ul></li>
-  <li><a href="#recommended-editor" id="toc-recommended-editor" class="nav-link" data-scroll-target="#recommended-editor">Recommended editor</a></li>
-  <li><a href="#project-environment" id="toc-project-environment" class="nav-link" data-scroll-target="#project-environment">Project environment</a>
-  <ul class="collapse">
-  <li><a href="#use-the-setup-script" id="toc-use-the-setup-script" class="nav-link" data-scroll-target="#use-the-setup-script">Use the setup script</a></li>
-  <li><a href="#what-the-script-does" id="toc-what-the-script-does" class="nav-link" data-scroll-target="#what-the-script-does">What the script does</a></li>
-  </ul></li>
-  <li><a href="#render-the-book" id="toc-render-the-book" class="nav-link" data-scroll-target="#render-the-book">Render the book</a></li>
-  <li><a href="#sanity-check-critical-step" id="toc-sanity-check-critical-step" class="nav-link" data-scroll-target="#sanity-check-critical-step">Sanity check (critical step)</a>
-  <ul class="collapse">
-  <li><a href="#macos" id="toc-macos" class="nav-link" data-scroll-target="#macos">macOS</a></li>
-  <li><a href="#linux" id="toc-linux" class="nav-link" data-scroll-target="#linux">Linux</a></li>
-  <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows">Windows</a></li>
-  </ul></li>
-  <li><a href="#development-mode-optional" id="toc-development-mode-optional" class="nav-link" data-scroll-target="#development-mode-optional">Development mode (optional)</a></li>
-  <li><a href="#cdi-insight" id="toc-cdi-insight" class="nav-link" data-scroll-target="#cdi-insight">CDI Insight</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step">Next Step</a></li>
+  <li><a href="#from-understanding-to-prediction" id="toc-from-understanding-to-prediction" class="nav-link active" data-scroll-target="#from-understanding-to-prediction">From Understanding to Prediction</a></li>
+  <li><a href="#a-simple-workflow-extension" id="toc-a-simple-workflow-extension" class="nav-link" data-scroll-target="#a-simple-workflow-extension">A Simple Workflow Extension</a></li>
+  <li><a href="#what-happens-after-a-model-is-built" id="toc-what-happens-after-a-model-is-built" class="nav-link" data-scroll-target="#what-happens-after-a-model-is-built">What Happens After a Model is Built?</a></li>
+  <li><a href="#the-continuous-loop" id="toc-the-continuous-loop" class="nav-link" data-scroll-target="#the-continuous-loop">The Continuous Loop</a></li>
+  <li><a href="#where-this-leads-next" id="toc-where-this-leads-next" class="nav-link" data-scroll-target="#where-this-leads-next">Where This Leads Next</a></li>
+  <li><a href="#key-takeaway" id="toc-key-takeaway" class="nav-link" data-scroll-target="#key-takeaway">Key Takeaway</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Foundations</a></li><li class="breadcrumb-item"><a href="./01-setting-up-environment.html"><span class="chapter-title">Setting Up Your Environment</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Foundations</a></li><li class="breadcrumb-item"><a href="./07-from-analysis-to-ml.html"><span class="chapter-title">From Analysis to Machine Learning</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="lesson01" class="quarto-section-identifier"><span class="chapter-title">Setting Up Your Environment</span></span></h1>
+<h1 class="title"><span class="chapter-title">From Analysis to Machine Learning</span></h1>
 </div>
 
 
@@ -258,175 +280,114 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> DS-L01</li>
-<li><strong>Type:</strong> Foundation</li>
-<li><strong>Audience:</strong> Beginner / Intermediate</li>
-<li><strong>Theme:</strong> Reproducibility starts before analysis</li>
+<li><strong>ID:</strong> DSF-007</li>
+<li><strong>Type:</strong> Lesson</li>
+<li><strong>Audience:</strong> Public</li>
+<li><strong>Theme:</strong> Analysis-to-ML transition</li>
 </ul>
 </div>
-<p>This guide is <strong>Python-first</strong> and <strong>Quarto-first</strong>.</p>
-<p>In CDI, environment setup is not a technical formality — it is part of the analytical process.</p>
-<p>If your environment is inconsistent, your results can be: - incorrect<br>
-- non-reproducible<br>
-- or silently misleading</p>
-<p>You will write and run code inside Quarto chapter files (<code>.qmd</code>). When you render the book, Quarto executes Python chunks and embeds results directly into the final output.</p>
+<p>Up to this point, we have focused on understanding data.</p>
+<p>We explored patterns, cleaned datasets, visualized relationships, and summarized key insights.</p>
+<p>This is where many learning paths stop.</p>
+<p>But in practice, this is not the end of the workflow.</p>
+<p>It is a transition point.</p>
 <hr>
-<section id="what-you-are-setting-up" class="level2">
-<h2 class="anchored" data-anchor-id="what-you-are-setting-up">What you are setting up</h2>
-<p>By the end of this lesson you will have:</p>
+<section id="from-understanding-to-prediction" class="level2">
+<h2 class="anchored" data-anchor-id="from-understanding-to-prediction">From Understanding to Prediction</h2>
+<p>Data analysis helps us answer:</p>
 <ul>
-<li>Python installed and accessible from the terminal<br>
-</li>
-<li>A project virtual environment (<code>.venv</code>)<br>
-</li>
-<li>Required packages installed<br>
-</li>
-<li>Quarto installed and working<br>
-</li>
-<li>A working build pipeline that renders into <code>docs/</code></li>
+<li>What has happened?</li>
+<li>What patterns exist?</li>
+<li>What relationships can we observe?</li>
 </ul>
-<hr>
-</section>
-<section id="required-software" class="level2">
-<h2 class="anchored" data-anchor-id="required-software">Required software</h2>
-<section id="python-3.10-or-newer" class="level3">
-<h3 class="anchored" data-anchor-id="python-3.10-or-newer">Python (3.10 or newer)</h3>
-<p>Check if Python is available:</p>
-<pre class="{bash}"><code>#| label: 01-check-python
-python3 --version</code></pre>
-<p>If this fails, install Python:</p>
+<p>Machine learning extends this further.</p>
+<p>It helps us answer:</p>
 <ul>
-<li>macOS: <code>brew install python</code><br>
-</li>
-<li>Windows: Install from python.org (enable “Add to PATH”)<br>
-</li>
-<li>Linux: Use your package manager (<code>apt</code>, <code>dnf</code>, <code>pacman</code>)</li>
+<li>What is likely to happen next?</li>
+<li>Can we make reliable predictions?</li>
+<li>Can a system learn from data and generalize?</li>
 </ul>
+<p>Machine learning is not separate from analysis.</p>
+<p>It builds directly on it.</p>
+<p>Clean, well-structured data is what makes machine learning possible.</p>
 <hr>
 </section>
-<section id="quarto" class="level3">
-<h3 class="anchored" data-anchor-id="quarto">Quarto</h3>
-<p>Quarto renders the book and executes code.</p>
-<p>Check installation:</p>
-<pre class="{bash}"><code>#| label: 01-check-quarto
-quarto --version</code></pre>
-<p>If missing, install from https://quarto.org and confirm the version prints.</p>
-<hr>
-</section>
-</section>
-<section id="recommended-editor" class="level2">
-<h2 class="anchored" data-anchor-id="recommended-editor">Recommended editor</h2>
-<p>A good default is <strong>VS Code</strong> because it supports:</p>
-<ul>
-<li><code>.qmd</code> editing<br>
-</li>
-<li>Python integration<br>
-</li>
-<li>Git workflow</li>
-</ul>
-<hr>
-</section>
-<section id="project-environment" class="level2">
-<h2 class="anchored" data-anchor-id="project-environment">Project environment</h2>
-<p>This project uses a <strong>local virtual environment</strong> to ensure reproducibility.</p>
-<section id="use-the-setup-script" class="level3">
-<h3 class="anchored" data-anchor-id="use-the-setup-script">Use the setup script</h3>
-<p>From the project root:</p>
-<pre class="{bash}"><code>#| label: 01-setup-env-script
-bash scripts/bash/setup-env.sh</code></pre>
-<p>Activate the environment:</p>
-<pre class="{bash}"><code>#| label: 01-activate-venv
-source .venv/bin/activate</code></pre>
-<p>Verify:</p>
-<pre class="{bash}"><code>#| label: 01-which-python
-which python
-python --version</code></pre>
-<p>The path should point to <code>.venv</code>.</p>
-<div class="cdi-message">
-<p>If you are on Windows:</p>
-<ul>
-<li>PowerShell: <code>.venv\Scripts\Activate.ps1</code><br>
-</li>
-<li>cmd: <code>.venv\Scripts\activate.bat</code><br>
-</li>
-</ul>
+<section id="a-simple-workflow-extension" class="level2">
+<h2 class="anchored" data-anchor-id="a-simple-workflow-extension">A Simple Workflow Extension</h2>
+<div class="cell" data-layout-align="default">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    A[Data] --&gt; B[Analysis]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    B --&gt; C[ML Model]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    C --&gt; D[Deployment]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    D --&gt; E[Monitoring &amp; Improvement]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[Data] --&gt; B[Analysis]
+    B --&gt; C[ML Model]
+    C --&gt; D[Deployment]
+    D --&gt; E[Monitoring &amp; Improvement]
+</pre>
 </div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>This introduces an important idea:</p>
+<p>The work does not end after analysis.</p>
+<p>It moves toward building systems.</p>
 <hr>
 </section>
-<section id="what-the-script-does" class="level3">
-<h3 class="anchored" data-anchor-id="what-the-script-does">What the script does</h3>
+<section id="what-happens-after-a-model-is-built" class="level2">
+<h2 class="anchored" data-anchor-id="what-happens-after-a-model-is-built">What Happens After a Model is Built?</h2>
+<p>Once a model is trained, it can be deployed into a real system.</p>
+<p>At this stage:</p>
 <ul>
-<li>Creates <code>.venv/</code><br>
-</li>
-<li>Installs packages from <code>requirements.txt</code><br>
-</li>
-<li>Optionally registers a Jupyter kernel</li>
+<li>The model interacts with new data</li>
+<li>Predictions are made continuously</li>
+<li>Performance may change over time</li>
 </ul>
-<p>CDI workflow primarily uses Quarto rendering, not notebooks.</p>
-<hr>
-</section>
-</section>
-<section id="render-the-book" class="level2">
-<h2 class="anchored" data-anchor-id="render-the-book">Render the book</h2>
-<p>With the environment active:</p>
-<pre class="{bash}"><code>#| label: 01-build-book-script
-bash scripts/bash/build.sh</code></pre>
-<p>This runs <code>quarto render</code> and outputs to <code>docs/</code>.</p>
-<hr>
-</section>
-<section id="sanity-check-critical-step" class="level2">
-<h2 class="anchored" data-anchor-id="sanity-check-critical-step">Sanity check (critical step)</h2>
-<p>Open the generated site.</p>
-<section id="macos" class="level3">
-<h3 class="anchored" data-anchor-id="macos">macOS</h3>
-<pre class="{bash}"><code>#| label: 01-open-mac
-open docs/index.html</code></pre>
-</section>
-<section id="linux" class="level3">
-<h3 class="anchored" data-anchor-id="linux">Linux</h3>
-<pre class="{bash}"><code>#| label: 01-open-linux
-xdg-open docs/index.html</code></pre>
-</section>
-<section id="windows" class="level3">
-<h3 class="anchored" data-anchor-id="windows">Windows</h3>
-<pre class="{powershell}"><code>#| label: 01-open-windows
-start docs/index.html</code></pre>
-<p>If the site loads and navigation works, your environment is correctly configured.</p>
-<hr>
-</section>
-</section>
-<section id="development-mode-optional" class="level2">
-<h2 class="anchored" data-anchor-id="development-mode-optional">Development mode (optional)</h2>
-<pre class="{bash}"><code>#| label: 01-preview-book
-quarto preview</code></pre>
-<p>This launches a live server that reloads on changes.</p>
-<hr>
-</section>
-<section id="cdi-insight" class="level2">
-<h2 class="anchored" data-anchor-id="cdi-insight">CDI Insight</h2>
-<p>Environment setup is the <strong>first step in reproducibility</strong>.</p>
-<p>Before analyzing data, you must ensure: - your tools are consistent<br>
-- your dependencies are controlled<br>
-- your workflow is repeatable</p>
-<p>This is what allows your results to be trusted.</p>
-<hr>
-</section>
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>This leads to new questions:</p>
 <ul>
-<li>Python and Quarto are installed<br>
-</li>
-<li>A reproducible <code>.venv</code> environment is created<br>
-</li>
-<li>The Quarto book builds successfully<br>
-</li>
-<li>You are ready to start working with data</li>
+<li>Is the model still accurate?</li>
+<li>Has the data changed?</li>
+<li>Are there errors or unexpected behavior?</li>
+<li>What should be improved next?</li>
 </ul>
 <hr>
 </section>
-<section id="next-step" class="level2">
-<h2 class="anchored" data-anchor-id="next-step">Next Step</h2>
-<p>→ <strong>Load and explore your first dataset</strong></p>
+<section id="the-continuous-loop" class="level2">
+<h2 class="anchored" data-anchor-id="the-continuous-loop">The Continuous Loop</h2>
+<p>In real-world systems, this becomes a cycle:</p>
+<p>Build → Deploy → Operate → Monitor → Improve → Repeat</p>
+<p>This is often referred to as MLOps when applied to machine learning, and DevOps in broader software systems.</p>
+<hr>
+</section>
+<section id="where-this-leads-next" class="level2">
+<h2 class="anchored" data-anchor-id="where-this-leads-next">Where This Leads Next</h2>
+<p>In this guide, we focused on building a strong foundation in data analysis.</p>
+<p>In extended CDI tracks, we go further into:</p>
+<ul>
+<li>Building machine learning models</li>
+<li>Evaluating performance</li>
+<li>Preparing models for deployment</li>
+<li>Managing systems in real-world environments</li>
+</ul>
+<p>The key idea to carry forward is this:</p>
+<p>Analysis helps us understand data.<br>
+Machine learning helps us act on it.<br>
+Systems help us sustain and improve it.</p>
+<hr>
+</section>
+<section id="key-takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaway">Key Takeaway</h2>
+<p>Data analysis is not the final step.</p>
+<p>It is the foundation for building intelligent systems.</p>
 
 
 </section>
@@ -835,13 +796,13 @@ quarto preview</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./00-preface.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./06-summary-statistics-and-insights.html" class="pagination-link" aria-label="Summary Statistics and Insights">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Summary Statistics and Insights</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-load-and-explore-dataset.html" class="pagination-link" aria-label="Load and Explore a Dataset">
-        <span class="nav-page-text"><span class="chapter-title">Load and Explore a Dataset</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./99-complete-free-track.html" class="pagination-link" aria-label="Completing the Foundations Track">
+        <span class="nav-page-text"><span class="chapter-title">Completing the Foundations Track</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -124,6 +124,7 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -218,7 +219,12 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06x1-complete-free-track.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Completing the Foundations Track</span></a>
+  <a href="./07-from-analysis-to-ml.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">From Analysis to Machine Learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./99-complete-free-track.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Completing the Foundations Track</span></a>
   </div>
 </li>
       </ul>
@@ -234,12 +240,12 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./99-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
+  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./99-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -344,7 +350,7 @@ div.csl-indent {
 <li>whether early patterns deserve closer attention</li>
 </ul>
 <p>In CDI, this stage is not a formality. It is where analytical judgment begins.</p>
-<p>In this lesson, we work with the classic Iris dataset <span class="citation" data-cites="iris">(<a href="99-references.html#ref-iris" role="doc-biblioref">Fisher 1936</a>)</span>, which contains measurements of flower characteristics across three species.</p>
+<p>In this lesson, we work with the classic Iris dataset <span class="citation" data-cites="iris">(<a href="999-references.html#ref-iris" role="doc-biblioref">Fisher 1936</a>)</span>, which contains measurements of flower characteristics across three species.</p>
 <p>You will:</p>
 <ul>
 <li>load the dataset into a pandas DataFrame<br>
@@ -1286,6 +1292,8 @@ Fisher, Ronald A. 1936. <span>“The Use of Multiple Measurements in Taxonomic P
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // default icon
+            link.classList.add("external");
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -1616,4 +1624,5 @@ Fisher, Ronald A. 1936. <span>“The Use of Multiple Measurements in Taxonomic P
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

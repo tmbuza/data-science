@@ -1,0 +1,116 @@
+# From Analysis to Machine Learning
+
+:::cdi-message
+- **ID:** DSF-007
+- **Type:** Lesson
+- **Audience:** Public
+- **Theme:** Analysis-to-ML transition
+:::
+
+Up to this point, we have focused on understanding data.
+
+We explored patterns, cleaned datasets, visualized relationships, and summarized key insights.
+
+This is where many learning paths stop.
+
+But in practice, this is not the end of the workflow.
+
+It is a transition point.
+
+---
+
+## From Understanding to Prediction
+
+Data analysis helps us answer:
+
+- What has happened?
+- What patterns exist?
+- What relationships can we observe?
+
+Machine learning extends this further.
+
+It helps us answer:
+
+- What is likely to happen next?
+- Can we make reliable predictions?
+- Can a system learn from data and generalize?
+
+Machine learning is not separate from analysis.
+
+It builds directly on it.
+
+Clean, well-structured data is what makes machine learning possible.
+
+---
+
+## A Simple Workflow Extension
+
+```{mermaid}
+flowchart LR
+    A[Data] --> B[Analysis]
+    B --> C[ML Model]
+    C --> D[Deployment]
+    D --> E[Monitoring & Improvement]
+```
+
+This introduces an important idea:
+
+The work does not end after analysis.
+
+It moves toward building systems.
+
+---
+
+## What Happens After a Model is Built?
+
+Once a model is trained, it can be deployed into a real system.
+
+At this stage:
+
+- The model interacts with new data
+- Predictions are made continuously
+- Performance may change over time
+
+This leads to new questions:
+
+- Is the model still accurate?
+- Has the data changed?
+- Are there errors or unexpected behavior?
+- What should be improved next?
+
+---
+
+## The Continuous Loop
+
+In real-world systems, this becomes a cycle:
+
+Build → Deploy → Operate → Monitor → Improve → Repeat
+
+This is often referred to as MLOps when applied to machine learning, and DevOps in broader software systems.
+
+---
+
+## Where This Leads Next
+
+In this guide, we focused on building a strong foundation in data analysis.
+
+In extended CDI tracks, we go further into:
+
+- Building machine learning models
+- Evaluating performance
+- Preparing models for deployment
+- Managing systems in real-world environments
+
+The key idea to carry forward is this:
+
+Analysis helps us understand data.  
+Machine learning helps us act on it.  
+Systems help us sustain and improve it.
+
+---
+
+## Key Takeaway
+
+Data analysis is not the final step.
+
+It is the foundation for building intelligent systems.

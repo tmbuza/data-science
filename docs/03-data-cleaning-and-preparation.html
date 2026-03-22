@@ -104,6 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -198,7 +199,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06x1-complete-free-track.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Completing the Foundations Track</span></a>
+  <a href="./07-from-analysis-to-ml.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">From Analysis to Machine Learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./99-complete-free-track.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Completing the Foundations Track</span></a>
   </div>
 </li>
       </ul>
@@ -214,12 +220,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./99-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
+  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./99-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -727,6 +733,8 @@ Duplicate rows: 0</code></pre>
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // default icon
+            link.classList.add("external");
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -1057,4 +1065,5 @@ Duplicate rows: 0</code></pre>
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

@@ -1022,190 +1022,289 @@
     ]
   },
   {
-    "objectID": "06x1-complete-free-track.html",
-    "href": "06x1-complete-free-track.html",
+    "objectID": "07-from-analysis-to-ml.html",
+    "href": "07-from-analysis-to-ml.html",
+    "title": "From Analysis to Machine Learning",
+    "section": "",
+    "text": "From Understanding to Prediction\nUp to this point, we have focused on understanding data.\nWe explored patterns, cleaned datasets, visualized relationships, and summarized key insights.\nThis is where many learning paths stop.\nBut in practice, this is not the end of the workflow.\nIt is a transition point.\nData analysis helps us answer:\nMachine learning extends this further.\nIt helps us answer:\nMachine learning is not separate from analysis.\nIt builds directly on it.\nClean, well-structured data is what makes machine learning possible.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>From Analysis to Machine Learning</span>"
+    ]
+  },
+  {
+    "objectID": "07-from-analysis-to-ml.html#from-understanding-to-prediction",
+    "href": "07-from-analysis-to-ml.html#from-understanding-to-prediction",
+    "title": "From Analysis to Machine Learning",
+    "section": "",
+    "text": "What has happened?\nWhat patterns exist?\nWhat relationships can we observe?\n\n\n\n\nWhat is likely to happen next?\nCan we make reliable predictions?\nCan a system learn from data and generalize?",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>From Analysis to Machine Learning</span>"
+    ]
+  },
+  {
+    "objectID": "07-from-analysis-to-ml.html#a-simple-workflow-extension",
+    "href": "07-from-analysis-to-ml.html#a-simple-workflow-extension",
+    "title": "From Analysis to Machine Learning",
+    "section": "A Simple Workflow Extension",
+    "text": "A Simple Workflow Extension\n\n\nCode\nflowchart LR\n    A[Data] --&gt; B[Analysis]\n    B --&gt; C[ML Model]\n    C --&gt; D[Deployment]\n    D --&gt; E[Monitoring & Improvement]\n\n\n\n\n\nflowchart LR\n    A[Data] --&gt; B[Analysis]\n    B --&gt; C[ML Model]\n    C --&gt; D[Deployment]\n    D --&gt; E[Monitoring & Improvement]\n\n\n\n\n\n\nThis introduces an important idea:\nThe work does not end after analysis.\nIt moves toward building systems.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>From Analysis to Machine Learning</span>"
+    ]
+  },
+  {
+    "objectID": "07-from-analysis-to-ml.html#what-happens-after-a-model-is-built",
+    "href": "07-from-analysis-to-ml.html#what-happens-after-a-model-is-built",
+    "title": "From Analysis to Machine Learning",
+    "section": "What Happens After a Model is Built?",
+    "text": "What Happens After a Model is Built?\nOnce a model is trained, it can be deployed into a real system.\nAt this stage:\n\nThe model interacts with new data\nPredictions are made continuously\nPerformance may change over time\n\nThis leads to new questions:\n\nIs the model still accurate?\nHas the data changed?\nAre there errors or unexpected behavior?\nWhat should be improved next?",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>From Analysis to Machine Learning</span>"
+    ]
+  },
+  {
+    "objectID": "07-from-analysis-to-ml.html#the-continuous-loop",
+    "href": "07-from-analysis-to-ml.html#the-continuous-loop",
+    "title": "From Analysis to Machine Learning",
+    "section": "The Continuous Loop",
+    "text": "The Continuous Loop\nIn real-world systems, this becomes a cycle:\nBuild → Deploy → Operate → Monitor → Improve → Repeat\nThis is often referred to as MLOps when applied to machine learning, and DevOps in broader software systems.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>From Analysis to Machine Learning</span>"
+    ]
+  },
+  {
+    "objectID": "07-from-analysis-to-ml.html#where-this-leads-next",
+    "href": "07-from-analysis-to-ml.html#where-this-leads-next",
+    "title": "From Analysis to Machine Learning",
+    "section": "Where This Leads Next",
+    "text": "Where This Leads Next\nIn this guide, we focused on building a strong foundation in data analysis.\nIn extended CDI tracks, we go further into:\n\nBuilding machine learning models\nEvaluating performance\nPreparing models for deployment\nManaging systems in real-world environments\n\nThe key idea to carry forward is this:\nAnalysis helps us understand data.\nMachine learning helps us act on it.\nSystems help us sustain and improve it.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>From Analysis to Machine Learning</span>"
+    ]
+  },
+  {
+    "objectID": "07-from-analysis-to-ml.html#key-takeaway",
+    "href": "07-from-analysis-to-ml.html#key-takeaway",
+    "title": "From Analysis to Machine Learning",
+    "section": "Key Takeaway",
+    "text": "Key Takeaway\nData analysis is not the final step.\nIt is the foundation for building intelligent systems.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>From Analysis to Machine Learning</span>"
+    ]
+  },
+  {
+    "objectID": "99-complete-free-track.html",
+    "href": "99-complete-free-track.html",
     "title": "Completing the Foundations Track",
     "section": "",
     "text": "What You Have Built\nYou have completed the Foundations Track of the CDI Data Science pathway.\nAt this stage, you have developed the core habits that support reliable analysis:\nThese are not isolated skills.\nThey form a connected analytical workflow.\nAcross these lessons, you have learned to:\nThis is the foundation of analytical thinking.",
     "crumbs": [
       "Foundations",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
     ]
   },
   {
-    "objectID": "06x1-complete-free-track.html#what-you-have-built",
-    "href": "06x1-complete-free-track.html#what-you-have-built",
+    "objectID": "99-complete-free-track.html#what-you-have-built",
+    "href": "99-complete-free-track.html#what-you-have-built",
     "title": "Completing the Foundations Track",
     "section": "",
     "text": "move from raw data to a clean dataset\n\nstructure data for analysis\n\nexplore patterns visually\n\nsupport observations with summary statistics\n\nwrite interpretations grounded in evidence",
     "crumbs": [
       "Foundations",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
     ]
   },
   {
-    "objectID": "06x1-complete-free-track.html#what-comes-next",
-    "href": "06x1-complete-free-track.html#what-comes-next",
+    "objectID": "99-complete-free-track.html#what-comes-next",
+    "href": "99-complete-free-track.html#what-comes-next",
     "title": "Completing the Foundations Track",
     "section": "What Comes Next",
     "text": "What Comes Next\nThe next stage moves beyond description.\nYou will begin to:\n\nformalize questions\n\nbuild simple models\n\nevaluate results carefully\n\nconnect results to real-world decisions\n\nIn CDI terms, this is the transition from:\nexploration → structured reasoning → defensible inference",
     "crumbs": [
       "Foundations",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
     ]
   },
   {
-    "objectID": "06x1-complete-free-track.html#key-mindset-shift",
-    "href": "06x1-complete-free-track.html#key-mindset-shift",
+    "objectID": "99-complete-free-track.html#from-analysis-to-systems",
+    "href": "99-complete-free-track.html#from-analysis-to-systems",
     "title": "Completing the Foundations Track",
-    "section": "Key Mindset Shift",
-    "text": "Key Mindset Shift\nIn the Foundations Track, you asked:\n\nwhat does the data look like?\n\nhow do groups differ?\n\nwhat patterns are visible?\n\nIn the next stage, you will ask:\n\nhow confident are we in these patterns?\n\ncan we quantify relationships?\n\nhow do we test assumptions?\n\nwhat conclusions are justified?\n\nThis shift is essential.",
+    "section": "From Analysis to Systems",
+    "text": "From Analysis to Systems\nIn this guide, you focused on understanding data.\nIn practice, this is only part of the full workflow.\nThe next stage introduces machine learning, where analysis is used to build predictive systems.\nThese systems are then:\n\ndeployed into real environments\n\nmonitored as new data arrives\n\nimproved over time\n\nThis is how analytical work becomes a real-world system.",
     "crumbs": [
       "Foundations",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
     ]
   },
   {
-    "objectID": "06x1-complete-free-track.html#the-cdi-reasoning-loop",
-    "href": "06x1-complete-free-track.html#the-cdi-reasoning-loop",
+    "objectID": "99-complete-free-track.html#key-mindset-shift",
+    "href": "99-complete-free-track.html#key-mindset-shift",
+    "title": "Completing the Foundations Track",
+    "section": "Key Mindset Shift",
+    "text": "Key Mindset Shift\nIn the Foundations Track, you asked:\n\nwhat does the data look like?\n\nhow do groups differ?\n\nwhat patterns are visible?\n\nIn the next stage, you will ask:\n\nhow confident are we in these patterns?\n\ncan we quantify relationships?\n\ncan we make predictions?\n\nhow do we test assumptions?\n\nwhat conclusions are justified?\n\nThis shift is essential.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
+    ]
+  },
+  {
+    "objectID": "99-complete-free-track.html#the-cdi-reasoning-loop",
+    "href": "99-complete-free-track.html#the-cdi-reasoning-loop",
     "title": "Completing the Foundations Track",
     "section": "The CDI Reasoning Loop",
     "text": "The CDI Reasoning Loop\nAs you move forward, your work follows an iterative process:\n\ndefine the question\n\nprepare and validate data\n\nexplore patterns\n\napply models or formal methods\n\ninterpret results\n\nrevisit earlier steps as needed\n\nAnalysis is not linear.\nIt improves through iteration.",
     "crumbs": [
       "Foundations",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
     ]
   },
   {
-    "objectID": "06x1-complete-free-track.html#transition-summary",
-    "href": "06x1-complete-free-track.html#transition-summary",
+    "objectID": "99-complete-free-track.html#where-this-leads",
+    "href": "99-complete-free-track.html#where-this-leads",
+    "title": "Completing the Foundations Track",
+    "section": "Where This Leads",
+    "text": "Where This Leads\nFrom here, you can continue into:\n\nMachine Learning → building predictive models\n\nDeployment → making models usable in real systems\n\nDevOps / MLOps → maintaining and improving systems over time\n\nEach stage builds on what you have already learned.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
+    ]
+  },
+  {
+    "objectID": "99-complete-free-track.html#transition-summary",
+    "href": "99-complete-free-track.html#transition-summary",
     "title": "Completing the Foundations Track",
     "section": "Transition Summary",
-    "text": "Transition Summary\nYou are now prepared to:\n\nmove from descriptive analysis to structured modeling\n\nconnect computation to reasoning\n\nproduce results that are reproducible and interpretable",
+    "text": "Transition Summary\nYou are now prepared to:\n\nmove from descriptive analysis to structured modeling\n\nconnect computation to reasoning\n\nbegin building systems that operate beyond a single dataset",
     "crumbs": [
       "Foundations",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
     ]
   },
   {
-    "objectID": "06x1-complete-free-track.html#next-step",
-    "href": "06x1-complete-free-track.html#next-step",
+    "objectID": "99-complete-free-track.html#final-thought",
+    "href": "99-complete-free-track.html#final-thought",
     "title": "Completing the Foundations Track",
-    "section": "Next Step",
-    "text": "Next Step\nContinue to the next section of the guide, where you begin applying models and developing deeper analytical understanding.\n\nThe goal is not just to run analysis.\nThe goal is to produce reasoning you can defend.",
+    "section": "Final Thought",
+    "text": "Final Thought\nData analysis is not the final step.\nIt is the foundation for building systems that learn, adapt, and improve.\n\n\nThe goal is not just to run analysis.\nThe goal is to produce reasoning you can defend,\nand systems you can trust.",
     "crumbs": [
       "Foundations",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
     ]
   },
   {
-    "objectID": "99-appendix.html",
-    "href": "99-appendix.html",
+    "objectID": "999-appendix.html",
+    "href": "999-appendix.html",
     "title": "Appendix",
     "section": "",
     "text": "Project Structure Overview\nThis appendix collects technical reference material that supports the Foundations Track.\nIt documents the project structure, environment setup, rendering workflow, and reusable patterns used throughout the guide.\nA standard CDI Quarto-first project looks like this:",
     "crumbs": [
       "Reference",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Appendix</span>"
     ]
   },
   {
-    "objectID": "99-appendix.html#project-structure-overview",
-    "href": "99-appendix.html#project-structure-overview",
+    "objectID": "999-appendix.html#project-structure-overview",
+    "href": "999-appendix.html#project-structure-overview",
     "title": "Appendix",
     "section": "",
     "text": "data-science/\n├── index.qmd\n├── 00-preface.qmd\n├── 01-setting-up-environment.qmd\n├── ...\n├── data/\n├── figures/\n├── scripts/\n│   └── bash/\n├── docs/\n├── _quarto.yml\n└── requirements.txt\n\nKey Directories\n\ndata/\nstores raw and cleaned datasets\nfigures/\nstores plots that are explicitly saved during rendering\nscripts/bash/\ncontains helper scripts such as setup-env.sh and build.sh\ndocs/\ncontains the rendered Quarto site (GitHub Pages output)",
     "crumbs": [
       "Reference",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Appendix</span>"
     ]
   },
   {
-    "objectID": "99-appendix.html#environment-setup-reference",
-    "href": "99-appendix.html#environment-setup-reference",
+    "objectID": "999-appendix.html#environment-setup-reference",
+    "href": "999-appendix.html#environment-setup-reference",
     "title": "Appendix",
     "section": "Environment Setup Reference",
     "text": "Environment Setup Reference\nThis project uses a local virtual environment (.venv) for reproducibility.\n\nCreate environment manually\npython3 -m venv .venv\nsource .venv/bin/activate\npip install -r requirements.txt\n\n\nRender the book\nquarto render\nOr use the helper script:\nbash scripts/bash/build.sh",
     "crumbs": [
       "Reference",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Appendix</span>"
     ]
   },
   {
-    "objectID": "99-appendix.html#quarto-workflow-summary",
-    "href": "99-appendix.html#quarto-workflow-summary",
+    "objectID": "999-appendix.html#quarto-workflow-summary",
+    "href": "999-appendix.html#quarto-workflow-summary",
     "title": "Appendix",
     "section": "Quarto Workflow Summary",
     "text": "Quarto Workflow Summary\nThe workflow for this guide is:\nPython code\n    ↓\nQuarto chapter (.qmd)\n    ↓\nquarto render\n    ↓\ndocs/ (static site)\nAll figures and outputs are generated during rendering.",
     "crumbs": [
       "Reference",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Appendix</span>"
     ]
   },
   {
-    "objectID": "99-appendix.html#reusable-pandas-patterns",
-    "href": "99-appendix.html#reusable-pandas-patterns",
+    "objectID": "999-appendix.html#reusable-pandas-patterns",
+    "href": "999-appendix.html#reusable-pandas-patterns",
     "title": "Appendix",
     "section": "Reusable Pandas Patterns",
     "text": "Reusable Pandas Patterns\n\nSelect columns\ndf[[\"col1\", \"col2\"]]\n\n\nFilter rows\ndf[df[\"col\"] &gt; value]\n\n\nGroup and aggregate\ndf.groupby(\"group_col\").agg(\n    metric=(\"value_col\", \"mean\")\n)\n\n\nHandle missing values\ndf[\"col\"] = df[\"col\"].fillna(df[\"col\"].median())\n\n\nConvert dtype\ndf[\"category_col\"] = df[\"category_col\"].astype(\"category\")",
     "crumbs": [
       "Reference",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Appendix</span>"
     ]
   },
   {
-    "objectID": "99-appendix.html#reproducibility-checklist",
-    "href": "99-appendix.html#reproducibility-checklist",
+    "objectID": "999-appendix.html#reproducibility-checklist",
+    "href": "999-appendix.html#reproducibility-checklist",
     "title": "Appendix",
     "section": "Reproducibility Checklist",
     "text": "Reproducibility Checklist\nBefore finalizing any chapter:\n\nconfirm no missing values remain (unless justified)\n\nconfirm no unintended duplicates\n\nconfirm correct data types\n\nconfirm figures render correctly\n\nrebuild the book (quarto render)\n\nopen docs/index.html to verify output",
     "crumbs": [
       "Reference",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Appendix</span>"
     ]
   },
   {
-    "objectID": "99-appendix.html#data-sources",
-    "href": "99-appendix.html#data-sources",
+    "objectID": "999-appendix.html#data-sources",
+    "href": "999-appendix.html#data-sources",
     "title": "Appendix",
     "section": "Data Sources",
     "text": "Data Sources\n\nIris dataset (Fisher 1936)",
     "crumbs": [
       "Reference",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Appendix</span>"
     ]
   },
   {
-    "objectID": "99-appendix.html#software-and-tools",
-    "href": "99-appendix.html#software-and-tools",
+    "objectID": "999-appendix.html#software-and-tools",
+    "href": "999-appendix.html#software-and-tools",
     "title": "Appendix",
     "section": "Software and Tools",
     "text": "Software and Tools\nThis guide uses a small set of widely adopted tools for data analysis and visualization:\n\nPython (Python Software Foundation 2024) — general-purpose programming language for data analysis\n\npandas (McKinney et al. 2010) — data manipulation and tabular data handling\n\nNumPy (Harris et al. 2020) — numerical computing and array operations\n\nmatplotlib (Hunter 2007) — foundational plotting library\n\nseaborn (Waskom 2021) — statistical data visualization built on matplotlib\n\nThese tools form a standard ecosystem for reproducible data science workflows.",
     "crumbs": [
       "Reference",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Appendix</span>"
     ]
   },
   {
-    "objectID": "99-appendix.html#closing-note",
-    "href": "99-appendix.html#closing-note",
+    "objectID": "999-appendix.html#closing-note",
+    "href": "999-appendix.html#closing-note",
     "title": "Appendix",
     "section": "Closing Note",
     "text": "Closing Note\nThe goal of this Foundations Track is not just to teach syntax.\nIt is to teach structure, discipline, and reproducibility.\nThe same workflow you used here can be applied to:\n\nnew datasets\n\nnew domains\n\nlarger analytical projects\n\nfuture CDI guides\n\n\n\n\n\nFisher, Ronald A. 1936. “The Use of Multiple Measurements in Taxonomic Problems.” Annals of Eugenics.\n\n\nHarris, Charles R. et al. 2020. “Array Programming with NumPy.” Nature. https://doi.org/10.1038/s41586-020-2649-2.\n\n\nHunter, J. D. 2007. “Matplotlib: A 2D Graphics Environment.” Computing in Science & Engineering. https://doi.org/10.1109/MCSE.2007.55.\n\n\nMcKinney, Wes et al. 2010. “Pandas-Dev/Pandas: Pandas.” Zenodo. https://doi.org/10.5281/zenodo.3509134.\n\n\nPython Software Foundation. 2024. “Python Language Reference.” https://www.python.org/.\n\n\nWaskom, Michael L. 2021. “Seaborn: Statistical Data Visualization.” Journal of Open Source Software. https://doi.org/10.21105/joss.03021.",
     "crumbs": [
       "Reference",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Appendix</span>"
     ]
   },
   {
-    "objectID": "99-references.html",
-    "href": "99-references.html",
+    "objectID": "999-references.html",
+    "href": "999-references.html",
     "title": "References",
     "section": "",
     "text": "Fisher, Ronald A. 1936. “The Use of Multiple Measurements in\nTaxonomic Problems.” Annals of Eugenics.\n\n\nHarris, Charles R. et al. 2020. “Array Programming with\nNumPy.” Nature. https://doi.org/10.1038/s41586-020-2649-2.\n\n\nHunter, J. D. 2007. “Matplotlib: A 2D Graphics\nEnvironment.” Computing in Science & Engineering. https://doi.org/10.1109/MCSE.2007.55.\n\n\nMcKinney, Wes et al. 2010. “Pandas-Dev/Pandas: Pandas.”\nZenodo. https://doi.org/10.5281/zenodo.3509134.\n\n\nPython Software Foundation. 2024. “Python Language\nReference.” https://www.python.org/.\n\n\nWaskom, Michael L. 2021. “Seaborn: Statistical Data\nVisualization.” Journal of Open Source Software. https://doi.org/10.21105/joss.03021.",
     "crumbs": [
       "Reference",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>References</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>References</span>"
     ]
   }
 ]

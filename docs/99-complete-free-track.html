@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./99-appendix.html" rel="next">
-<link href="./06-summary-statistics-and-insights.html" rel="prev">
+<link href="./999-appendix.html" rel="next">
+<link href="./07-from-analysis-to-ml.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -69,6 +69,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="assets/css/cdi.css">
@@ -83,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Foundations</a></li><li class="breadcrumb-item"><a href="./06x1-complete-free-track.html"><span class="chapter-title">Completing the Foundations Track</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Foundations</a></li><li class="breadcrumb-item"><a href="./99-complete-free-track.html"><span class="chapter-title">Completing the Foundations Track</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -160,7 +161,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06x1-complete-free-track.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Completing the Foundations Track</span></a>
+  <a href="./07-from-analysis-to-ml.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">From Analysis to Machine Learning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./99-complete-free-track.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Completing the Foundations Track</span></a>
   </div>
 </li>
       </ul>
@@ -176,12 +182,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./99-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
+  <a href="./999-appendix.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Appendix</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./99-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
+  <a href="./999-references.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">References</span></a>
   </div>
 </li>
       </ul>
@@ -198,19 +204,21 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#what-you-have-built" id="toc-what-you-have-built" class="nav-link active" data-scroll-target="#what-you-have-built">What You Have Built</a></li>
   <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next">What Comes Next</a></li>
+  <li><a href="#from-analysis-to-systems" id="toc-from-analysis-to-systems" class="nav-link" data-scroll-target="#from-analysis-to-systems">From Analysis to Systems</a></li>
   <li><a href="#key-mindset-shift" id="toc-key-mindset-shift" class="nav-link" data-scroll-target="#key-mindset-shift">Key Mindset Shift</a></li>
   <li><a href="#the-cdi-reasoning-loop" id="toc-the-cdi-reasoning-loop" class="nav-link" data-scroll-target="#the-cdi-reasoning-loop">The CDI Reasoning Loop</a></li>
+  <li><a href="#where-this-leads" id="toc-where-this-leads" class="nav-link" data-scroll-target="#where-this-leads">Where This Leads</a></li>
   <li><a href="#transition-summary" id="toc-transition-summary" class="nav-link" data-scroll-target="#transition-summary">Transition Summary</a></li>
-  <li><a href="#next-step" id="toc-next-step" class="nav-link" data-scroll-target="#next-step">Next Step</a></li>
+  <li><a href="#final-thought" id="toc-final-thought" class="nav-link" data-scroll-target="#final-thought">Final Thought</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Foundations</a></li><li class="breadcrumb-item"><a href="./06x1-complete-free-track.html"><span class="chapter-title">Completing the Foundations Track</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./00-preface.html">Foundations</a></li><li class="breadcrumb-item"><a href="./99-complete-free-track.html"><span class="chapter-title">Completing the Foundations Track</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="lesson06x1" class="quarto-section-identifier"><span class="chapter-title">Completing the Foundations Track</span></span></h1>
+<h1 class="title"><span id="lesson99" class="quarto-section-identifier"><span class="chapter-title">Completing the Foundations Track</span></span></h1>
 </div>
 
 
@@ -235,10 +243,10 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> DS-L06X1</li>
+<li><strong>ID:</strong> DS-L99</li>
 <li><strong>Type:</strong> Transition</li>
 <li><strong>Audience:</strong> Beginner / Intermediate</li>
-<li><strong>Theme:</strong> From foundations to applied reasoning</li>
+<li><strong>Theme:</strong> From foundations to real-world systems</li>
 </ul>
 </div>
 <p>You have completed the Foundations Track of the CDI Data Science pathway.</p>
@@ -291,6 +299,22 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>exploration → structured reasoning → defensible inference</strong></p>
 <hr>
 </section>
+<section id="from-analysis-to-systems" class="level2">
+<h2 class="anchored" data-anchor-id="from-analysis-to-systems">From Analysis to Systems</h2>
+<p>In this guide, you focused on understanding data.</p>
+<p>In practice, this is only part of the full workflow.</p>
+<p>The next stage introduces machine learning, where analysis is used to build predictive systems.</p>
+<p>These systems are then:</p>
+<ul>
+<li>deployed into real environments<br>
+</li>
+<li>monitored as new data arrives<br>
+</li>
+<li>improved over time</li>
+</ul>
+<p>This is how analytical work becomes a real-world system.</p>
+<hr>
+</section>
 <section id="key-mindset-shift" class="level2">
 <h2 class="anchored" data-anchor-id="key-mindset-shift">Key Mindset Shift</h2>
 <p>In the Foundations Track, you asked:</p>
@@ -306,6 +330,8 @@ ul.task-list li input[type="checkbox"] {
 <li>how confident are we in these patterns?<br>
 </li>
 <li>can we quantify relationships?<br>
+</li>
+<li>can we make predictions?<br>
 </li>
 <li>how do we test assumptions?<br>
 </li>
@@ -334,6 +360,19 @@ ul.task-list li input[type="checkbox"] {
 <p>It improves through iteration.</p>
 <hr>
 </section>
+<section id="where-this-leads" class="level2">
+<h2 class="anchored" data-anchor-id="where-this-leads">Where This Leads</h2>
+<p>From here, you can continue into:</p>
+<ul>
+<li><strong>Machine Learning</strong> → building predictive models<br>
+</li>
+<li><strong>Deployment</strong> → making models usable in real systems<br>
+</li>
+<li><strong>DevOps / MLOps</strong> → maintaining and improving systems over time</li>
+</ul>
+<p>Each stage builds on what you have already learned.</p>
+<hr>
+</section>
 <section id="transition-summary" class="level2">
 <h2 class="anchored" data-anchor-id="transition-summary">Transition Summary</h2>
 <p>You are now prepared to:</p>
@@ -342,16 +381,19 @@ ul.task-list li input[type="checkbox"] {
 </li>
 <li>connect computation to reasoning<br>
 </li>
-<li>produce results that are reproducible and interpretable</li>
+<li>begin building systems that operate beyond a single dataset</li>
 </ul>
 <hr>
 </section>
-<section id="next-step" class="level2">
-<h2 class="anchored" data-anchor-id="next-step">Next Step</h2>
-<p>Continue to the next section of the guide, where you begin applying models and developing deeper analytical understanding.</p>
+<section id="final-thought" class="level2">
+<h2 class="anchored" data-anchor-id="final-thought">Final Thought</h2>
+<p>Data analysis is not the final step.</p>
+<p>It is the foundation for building systems that learn, adapt, and improve.</p>
+<hr>
 <div class="cdi-message">
 <p>The goal is not just to run analysis.</p>
-<p>The goal is to produce reasoning you can defend.</p>
+<p>The goal is to produce reasoning you can defend,<br>
+and systems you can trust.</p>
 </div>
 
 
@@ -444,6 +486,8 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // default icon
+            link.classList.add("external");
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -759,12 +803,12 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./06-summary-statistics-and-insights.html" class="pagination-link" aria-label="Summary Statistics and Insights">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Summary Statistics and Insights</span></span>
+      <a href="./07-from-analysis-to-ml.html" class="pagination-link" aria-label="From Analysis to Machine Learning">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">From Analysis to Machine Learning</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./99-appendix.html" class="pagination-link" aria-label="Appendix">
+      <a href="./999-appendix.html" class="pagination-link" aria-label="Appendix">
         <span class="nav-page-text"><span class="chapter-title">Appendix</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -774,4 +818,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

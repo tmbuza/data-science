@@ -22,18 +22,23 @@ book:
         - 04-data-wrangling-basics.qmd
         - 05-visualization-basics.qmd
         - 06-summary-statistics-and-insights.qmd
-        - 06x1-complete-free-track.qmd
+        - 07-from-analysis-to-ml.qmd
+        - 99-complete-free-track.qmd
 
     - part: "Reference"
       chapters:
-        - 99-appendix.qmd
-        - 99-references.qmd
+        - 999-appendix.qmd
+        - 999-references.qmd
 
 format:
   html:
     toc: true
     toc-depth: 3
     number-sections: false
+    number-depth: 2
+    smooth-scroll: true
+    anchor-sections: true
+    link-external-icon: true
     css: assets/css/cdi.css
     code-fold: true
     mermaid:
