@@ -1059,7 +1059,7 @@
     "href": "07-from-analysis-to-ml.html#what-happens-after-a-model-is-built",
     "title": "From Analysis to Machine Learning",
     "section": "What Happens After a Model is Built?",
-    "text": "What Happens After a Model is Built?\nOnce a model is trained, it can be deployed into a real system.\nAt this stage:\n\nThe model interacts with new data\nPredictions are made continuously\nPerformance may change over time\n\nThis leads to new questions:\n\nIs the model still accurate?\nHas the data changed?\nAre there errors or unexpected behavior?\nWhat should be improved next?",
+    "text": "What Happens After a Model is Built?\nOnce a model is trained, it can be deployed into a system.\nAt this stage:\n\nThe model interacts with new data\n\nPredictions are made continuously\n\nPerformance may change over time\n\nThis leads to new questions:\n\nIs the model still accurate?\n\nHas the data changed?\n\nAre there errors or unexpected behavior?\n\nWhat should be improved next?",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>From Analysis to Machine Learning</span>"
@@ -1070,7 +1070,7 @@
     "href": "07-from-analysis-to-ml.html#the-continuous-loop",
     "title": "From Analysis to Machine Learning",
     "section": "The Continuous Loop",
-    "text": "The Continuous Loop\n\n\nCode\nflowchart LR\n    A[Build] --&gt; B[Deploy]\n    B --&gt; C[Operate]\n    C --&gt; D[Monitor]\n    D --&gt; E[Improve]\n    E --&gt; A\n\n\n\n\n\nflowchart LR\n    A[Build] --&gt; B[Deploy]\n    B --&gt; C[Operate]\n    C --&gt; D[Monitor]\n    D --&gt; E[Improve]\n    E --&gt; A\n\n\n\n\n\n\nThis is often referred to as MLOps in machine learning workflows, and more broadly as DevOps in software systems.",
+    "text": "The Continuous Loop\n\n\nCode\nflowchart LR\n    A[Build] --&gt; B[Deploy]\n    B --&gt; C[Operate]\n    C --&gt; D[Monitor]\n    D --&gt; E[Improve]\n    E --&gt; A\n\n\n\n\n\nflowchart LR\n    A[Build] --&gt; B[Deploy]\n    B --&gt; C[Operate]\n    C --&gt; D[Monitor]\n    D --&gt; E[Improve]\n    E --&gt; A\n\n\n\n\n\n\nReal systems do not stop after deployment.\nThey operate in continuous cycles of monitoring and improvement.\nThis is often referred to as MLOps in machine learning workflows, and more broadly as DevOps in software systems.",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>From Analysis to Machine Learning</span>"
@@ -1088,11 +1088,22 @@
     ]
   },
   {
+    "objectID": "07-from-analysis-to-ml.html#from-models-to-systems",
+    "href": "07-from-analysis-to-ml.html#from-models-to-systems",
+    "title": "From Analysis to Machine Learning",
+    "section": "From Models to Systems",
+    "text": "From Models to Systems\nA useful way to summarize this progression is:\nML → Deployment → MLOps / DevOps\nThis reflects how analytical work moves from:\n\nbuilding models\n\nto making them usable\n\nto maintaining and improving them over time",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>From Analysis to Machine Learning</span>"
+    ]
+  },
+  {
     "objectID": "07-from-analysis-to-ml.html#where-this-leads-next",
     "href": "07-from-analysis-to-ml.html#where-this-leads-next",
     "title": "From Analysis to Machine Learning",
     "section": "Where This Leads Next",
-    "text": "Where This Leads Next\nIn this guide, we focused on building a strong foundation in data analysis.\nIn extended CDI tracks, we go further into:\n\nbuilding machine learning models\nevaluating performance\npreparing models for deployment\nmanaging systems in real-world environments\n\nThe key idea to carry forward is this:\nAnalysis helps us understand data.\nMachine learning helps us act on it.\nSystems help us sustain and improve it over time.",
+    "text": "Where This Leads Next\nIn this guide, we focused on building a strong foundation in data analysis.\nIn extended CDI tracks, we go further into:\n\nbuilding machine learning models\n\nevaluating performance\n\npreparing models for deployment\n\nworking with models in practical, real-world workflows\n\nThe key idea to carry forward is this:\nAnalysis helps us understand data.\nMachine learning helps us act on it.\nSystems help us sustain and improve it over time.",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>From Analysis to Machine Learning</span>"
@@ -1147,7 +1158,7 @@
     "href": "99-complete-free-track.html#from-analysis-to-systems",
     "title": "Completing the Foundations Track",
     "section": "From Analysis to Systems",
-    "text": "From Analysis to Systems\nIn this guide, you focused on understanding data.\nIn practice, this is only part of the full workflow.\nThe next stage introduces machine learning, where analysis is used to build predictive systems.\nThese systems are then:\n\ndeployed into real environments\n\nmonitored as new data arrives\n\nimproved over time\n\nThis is how analytical work becomes a real-world system.",
+    "text": "From Analysis to Systems\nIn this guide, you focused on understanding data.\nIn practice, this is only part of the full workflow.\nThe next stage introduces machine learning, where analysis is used to build predictive systems.\nA useful way to think about this progression is:\nML → Deployment → MLOps / DevOps\nThis reflects how analytical work moves from:\n\nbuilding models\n\nto making them usable\n\nto maintaining and improving them over time",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
@@ -1180,7 +1191,18 @@
     "href": "99-complete-free-track.html#where-this-leads",
     "title": "Completing the Foundations Track",
     "section": "Where This Leads",
-    "text": "Where This Leads\nFrom here, you can continue into:\n\nMachine Learning → building predictive models\n\nDeployment → making models usable in real systems\n\nDevOps / MLOps → maintaining and improving systems over time\n\nEach stage builds on what you have already learned.",
+    "text": "Where This Leads\nFrom here, you can continue into:\n\nMachine Learning → building predictive models\n\nDeployment → making models usable in practical systems\n\nMLOps / DevOps → monitoring and improving systems over time\n\nEach stage builds on what you have already learned.",
+    "crumbs": [
+      "Foundations",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
+    ]
+  },
+  {
+    "objectID": "99-complete-free-track.html#beyond-this-track",
+    "href": "99-complete-free-track.html#beyond-this-track",
+    "title": "Completing the Foundations Track",
+    "section": "Beyond This Track",
+    "text": "Beyond This Track\n\nScope of CDI Tracks\nThis guide focuses on building practical skills in data analysis, machine learning, and reproducible workflows.\nSome areas of modern systems engineering go further, including:\n\ncontainer orchestration (e.g., Kubernetes)\n\nlarge-scale distributed systems\n\nenterprise-level DevOps infrastructure\n\nThese topics are important in advanced production environments, but they require additional specialization.\nLearners interested in these areas can explore:\n\nofficial Kubernetes documentation\n\ncloud platform training (e.g., AWS, GCP, Azure)\n\ndedicated DevOps engineering courses and certifications\n\nThe goal of CDI is to provide a clear and practical pathway into system thinking, without requiring complex infrastructure from the start.",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Completing the Foundations Track</span>"
@@ -1191,7 +1213,7 @@
     "href": "99-complete-free-track.html#transition-summary",
     "title": "Completing the Foundations Track",
     "section": "Transition Summary",
-    "text": "Transition Summary\nYou are now prepared to:\n\nmove from descriptive analysis to structured modeling\n\nconnect computation to reasoning\n\nbegin building systems that operate beyond a single dataset",
+    "text": "Transition Summary\nYou are now prepared to:\n\nmove from descriptive analysis to structured modeling\n\nconnect computation to reasoning\n\nbegin working with systems that extend beyond a single dataset",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Completing the Foundations Track</span>"

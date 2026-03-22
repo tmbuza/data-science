@@ -62,13 +62,15 @@ In practice, this is only part of the full workflow.
 
 The next stage introduces machine learning, where analysis is used to build predictive systems.
 
-These systems are then:
+A useful way to think about this progression is:
 
-- deployed into real environments  
-- monitored as new data arrives  
-- improved over time  
+**ML → Deployment → MLOps / DevOps**
 
-This is how analytical work becomes a real-world system.
+This reflects how analytical work moves from:
+
+- building models  
+- to making them usable  
+- to maintaining and improving them over time  
 
 ---
 
@@ -114,10 +116,36 @@ It improves through iteration.
 From here, you can continue into:
 
 - **Machine Learning** → building predictive models  
-- **Deployment** → making models usable in real systems  
-- **DevOps / MLOps** → maintaining and improving systems over time  
+- **Deployment** → making models usable in practical systems  
+- **MLOps / DevOps** → monitoring and improving systems over time  
 
 Each stage builds on what you have already learned.
+
+---
+
+## Beyond This Track
+
+:::cdi-message
+**Scope of CDI Tracks**
+
+This guide focuses on building practical skills in data analysis, machine learning, and reproducible workflows.
+
+Some areas of modern systems engineering go further, including:
+
+- container orchestration (e.g., Kubernetes)  
+- large-scale distributed systems  
+- enterprise-level DevOps infrastructure  
+
+These topics are important in advanced production environments, but they require additional specialization.
+
+Learners interested in these areas can explore:
+
+- official Kubernetes documentation  
+- cloud platform training (e.g., AWS, GCP, Azure)  
+- dedicated DevOps engineering courses and certifications  
+
+The goal of CDI is to provide a clear and practical pathway into system thinking, without requiring complex infrastructure from the start.
+:::
 
 ---
 
@@ -127,7 +155,7 @@ You are now prepared to:
 
 - move from descriptive analysis to structured modeling  
 - connect computation to reasoning  
-- begin building systems that operate beyond a single dataset  
+- begin working with systems that extend beyond a single dataset  
 
 ---
 

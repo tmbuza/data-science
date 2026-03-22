@@ -62,20 +62,20 @@ It moves toward building systems.
 
 ## What Happens After a Model is Built?
 
-Once a model is trained, it can be deployed into a real system.
+Once a model is trained, it can be deployed into a system.
 
 At this stage:
 
-- The model interacts with new data
-- Predictions are made continuously
-- Performance may change over time
+- The model interacts with new data  
+- Predictions are made continuously  
+- Performance may change over time  
 
 This leads to new questions:
 
-- Is the model still accurate?
-- Has the data changed?
-- Are there errors or unexpected behavior?
-- What should be improved next?
+- Is the model still accurate?  
+- Has the data changed?  
+- Are there errors or unexpected behavior?  
+- What should be improved next?  
 
 ---
 
@@ -89,6 +89,9 @@ flowchart LR
     D --> E[Improve]
     E --> A
 ```
+
+Real systems do not stop after deployment.  
+They operate in continuous cycles of monitoring and improvement.
 
 This is often referred to as **MLOps** in machine learning workflows, and more broadly as **DevOps** in software systems.
 
@@ -128,20 +131,34 @@ This is what allows systems to improve continuously without interruption.
 
 ---
 
+## From Models to Systems
+
+A useful way to summarize this progression is:
+
+**ML → Deployment → MLOps / DevOps**
+
+This reflects how analytical work moves from:
+
+- building models  
+- to making them usable  
+- to maintaining and improving them over time  
+
+---
+
 ## Where This Leads Next
 
 In this guide, we focused on building a strong foundation in data analysis.
 
 In extended CDI tracks, we go further into:
 
-- building machine learning models
-- evaluating performance
-- preparing models for deployment
-- managing systems in real-world environments
+- building machine learning models  
+- evaluating performance  
+- preparing models for deployment  
+- working with models in practical, real-world workflows  
 
 The key idea to carry forward is this:
 
-**Analysis helps us understand data.**   
+**Analysis helps us understand data.**  
 **Machine learning helps us act on it.**  
 **Systems help us sustain and improve it over time.**  
 

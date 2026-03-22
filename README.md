@@ -22,6 +22,10 @@ It teaches learners how to:
 
 All lessons are written as `.qmd` files and executed during rendering.
 
+In addition, the guide introduces how analytical work extends beyond exploration:
+
+**Analysis → Machine Learning → Systems**
+
 ---
 
 ## Architecture
@@ -55,8 +59,10 @@ data-science/
 ├── 04-data-wrangling-basics.qmd
 ├── 05-visualization-basics.qmd
 ├── 06-summary-statistics-and-insights.qmd
-├── 06x1-complete-free-track.qmd
-├── 99-appendix.qmd
+├── 07-from-analysis-to-ml.qmd
+├── 99-complete-free-track.qmd
+├── 999-appendix.qmd
+├── 999-references.qmd
 ├── data/
 ├── figures/
 ├── cdi_viz/
@@ -125,15 +131,45 @@ This marks the fully aligned Quarto-first Foundations Track.
 
 ---
 
+## Learning Progression
+
+This track focuses on building strong analytical foundations.
+
+It prepares learners to move toward:
+
+**ML → Deployment → MLOps / DevOps**
+
+Where:
+
+- Machine learning enables prediction  
+- Deployment makes models usable  
+- MLOps / DevOps supports monitoring and continuous improvement  
+
+---
+
+## Scope
+
+CDI focuses on **practical workflows and system thinking**.
+
+It does not aim to cover advanced infrastructure such as:
+
+- Kubernetes  
+- large-scale distributed systems  
+- enterprise DevOps platforms  
+
+These areas require additional specialization and can be explored through dedicated DevOps and cloud training resources.
+
+---
+
 ## Next Steps
 
-The extended track (premium) builds on this foundation and includes:
+The extended CDI tracks (premium) build on this foundation and include:
 
-- Feature engineering  
-- Machine learning workflows  
-- Model evaluation  
-- End-to-end project structure  
-- Deployment patterns  
+- feature engineering  
+- machine learning workflows  
+- model evaluation  
+- deployment preparation  
+- working with models in practical, real-world workflows  
 
 ---
 
