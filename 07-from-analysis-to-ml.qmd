@@ -1,7 +1,7 @@
 # From Analysis to Machine Learning
 
 :::cdi-message
-- **ID:** DSF-007
+- **ID:** DS-L07
 - **Type:** Lesson
 - **Audience:** Public
 - **Theme:** Analysis-to-ML transition
@@ -50,7 +50,6 @@ flowchart LR
     A[Data] --> B[Analysis]
     B --> C[ML Model]
     C --> D[Deployment]
-    D --> E[Monitoring & Improvement]
 ```
 
 This introduces an important idea:
@@ -82,11 +81,50 @@ This leads to new questions:
 
 ## The Continuous Loop
 
-In real-world systems, this becomes a cycle:
+```{mermaid}
+flowchart LR
+    A[Build] --> B[Deploy]
+    B --> C[Operate]
+    C --> D[Monitor]
+    D --> E[Improve]
+    E --> A
+```
 
-Build → Deploy → Operate → Monitor → Improve → Repeat
+This is often referred to as **MLOps** in machine learning workflows, and more broadly as **DevOps** in software systems.
 
-This is often referred to as MLOps when applied to machine learning, and DevOps in broader software systems.
+---
+
+## Automation in Real Systems
+
+```{mermaid}
+flowchart LR
+    A[Build] --> B[CI/CD Pipeline]
+    B --> C[Deploy]
+    C --> D[Operate]
+    D --> E[Monitor]
+    E --> F[Improve]
+    F --> B
+```
+
+In real-world systems, the transition from building to deployment is often automated.
+
+This is done using CI/CD (Continuous Integration and Continuous Deployment).
+
+Instead of manually rebuilding and redeploying, improvements pass through a pipeline that automatically:
+
+- tests code and models  
+- builds updated versions  
+- deploys them reliably  
+
+This allows systems to evolve continuously and with fewer errors.
+
+:::cdi-message
+In many real systems, updates are not deployed manually.
+
+They are tested, built, and released automatically through CI/CD pipelines.
+
+This is what allows systems to improve continuously without interruption.
+:::
 
 ---
 
@@ -96,16 +134,16 @@ In this guide, we focused on building a strong foundation in data analysis.
 
 In extended CDI tracks, we go further into:
 
-- Building machine learning models
-- Evaluating performance
-- Preparing models for deployment
-- Managing systems in real-world environments
+- building machine learning models
+- evaluating performance
+- preparing models for deployment
+- managing systems in real-world environments
 
 The key idea to carry forward is this:
 
-Analysis helps us understand data.  
-Machine learning helps us act on it.  
-Systems help us sustain and improve it.
+**Analysis helps us understand data.**   
+**Machine learning helps us act on it.**  
+**Systems help us sustain and improve it over time.**  
 
 ---
 

@@ -245,6 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#a-simple-workflow-extension" id="toc-a-simple-workflow-extension" class="nav-link" data-scroll-target="#a-simple-workflow-extension">A Simple Workflow Extension</a></li>
   <li><a href="#what-happens-after-a-model-is-built" id="toc-what-happens-after-a-model-is-built" class="nav-link" data-scroll-target="#what-happens-after-a-model-is-built">What Happens After a Model is Built?</a></li>
   <li><a href="#the-continuous-loop" id="toc-the-continuous-loop" class="nav-link" data-scroll-target="#the-continuous-loop">The Continuous Loop</a></li>
+  <li><a href="#automation-in-real-systems" id="toc-automation-in-real-systems" class="nav-link" data-scroll-target="#automation-in-real-systems">Automation in Real Systems</a></li>
   <li><a href="#where-this-leads-next" id="toc-where-this-leads-next" class="nav-link" data-scroll-target="#where-this-leads-next">Where This Leads Next</a></li>
   <li><a href="#key-takeaway" id="toc-key-takeaway" class="nav-link" data-scroll-target="#key-takeaway">Key Takeaway</a></li>
   </ul>
@@ -280,7 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="cdi-message">
 <ul>
-<li><strong>ID:</strong> DSF-007</li>
+<li><strong>ID:</strong> DS-L07</li>
 <li><strong>Type:</strong> Lesson</li>
 <li><strong>Audience:</strong> Public</li>
 <li><strong>Theme:</strong> Analysis-to-ML transition</li>
@@ -320,8 +321,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    A[Data] --&gt; B[Analysis]</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    B --&gt; C[ML Model]</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    C --&gt; D[Deployment]</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    D --&gt; E[Monitoring &amp; Improvement]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    C --&gt; D[Deployment]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -331,7 +331,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     A[Data] --&gt; B[Analysis]
     B --&gt; C[ML Model]
     C --&gt; D[Deployment]
-    D --&gt; E[Monitoring &amp; Improvement]
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -363,9 +362,81 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="the-continuous-loop" class="level2">
 <h2 class="anchored" data-anchor-id="the-continuous-loop">The Continuous Loop</h2>
-<p>In real-world systems, this becomes a cycle:</p>
-<p>Build → Deploy → Operate → Monitor → Improve → Repeat</p>
-<p>This is often referred to as MLOps when applied to machine learning, and DevOps in broader software systems.</p>
+<div class="cell" data-layout-align="default">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    A[Build] --&gt; B[Deploy]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    B --&gt; C[Operate]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    C --&gt; D[Monitor]</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    D --&gt; E[Improve]</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    E --&gt; A</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[Build] --&gt; B[Deploy]
+    B --&gt; C[Operate]
+    C --&gt; D[Monitor]
+    D --&gt; E[Improve]
+    E --&gt; A
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>This is often referred to as <strong>MLOps</strong> in machine learning workflows, and more broadly as <strong>DevOps</strong> in software systems.</p>
+<hr>
+</section>
+<section id="automation-in-real-systems" class="level2">
+<h2 class="anchored" data-anchor-id="automation-in-real-systems">Automation in Real Systems</h2>
+<div class="cell" data-layout-align="default">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    A[Build] --&gt; B[CI/CD Pipeline]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    B --&gt; C[Deploy]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    C --&gt; D[Operate]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    D --&gt; E[Monitor]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    E --&gt; F[Improve]</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    F --&gt; B</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[Build] --&gt; B[CI/CD Pipeline]
+    B --&gt; C[Deploy]
+    C --&gt; D[Operate]
+    D --&gt; E[Monitor]
+    E --&gt; F[Improve]
+    F --&gt; B
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>In real-world systems, the transition from building to deployment is often automated.</p>
+<p>This is done using CI/CD (Continuous Integration and Continuous Deployment).</p>
+<p>Instead of manually rebuilding and redeploying, improvements pass through a pipeline that automatically:</p>
+<ul>
+<li>tests code and models<br>
+</li>
+<li>builds updated versions<br>
+</li>
+<li>deploys them reliably</li>
+</ul>
+<p>This allows systems to evolve continuously and with fewer errors.</p>
+<div class="cdi-message">
+<p>In many real systems, updates are not deployed manually.</p>
+<p>They are tested, built, and released automatically through CI/CD pipelines.</p>
+<p>This is what allows systems to improve continuously without interruption.</p>
+</div>
 <hr>
 </section>
 <section id="where-this-leads-next" class="level2">
@@ -373,15 +444,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In this guide, we focused on building a strong foundation in data analysis.</p>
 <p>In extended CDI tracks, we go further into:</p>
 <ul>
-<li>Building machine learning models</li>
-<li>Evaluating performance</li>
-<li>Preparing models for deployment</li>
-<li>Managing systems in real-world environments</li>
+<li>building machine learning models</li>
+<li>evaluating performance</li>
+<li>preparing models for deployment</li>
+<li>managing systems in real-world environments</li>
 </ul>
 <p>The key idea to carry forward is this:</p>
-<p>Analysis helps us understand data.<br>
-Machine learning helps us act on it.<br>
-Systems help us sustain and improve it.</p>
+<p><strong>Analysis helps us understand data.</strong><br>
+<strong>Machine learning helps us act on it.</strong><br>
+<strong>Systems help us sustain and improve it over time.</strong></p>
 <hr>
 </section>
 <section id="key-takeaway" class="level2">
