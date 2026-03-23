@@ -91,7 +91,7 @@
     "href": "01-setting-up-environment.html",
     "title": "Setting Up Your Environment",
     "section": "",
-    "text": "What you are setting up\nThis guide is Python-first and Quarto-first.\nIn CDI, environment setup is not a technical formality — it is part of the analytical process.\nIf your environment is inconsistent, your results can be: - incorrect\n- non-reproducible\n- or silently misleading\nYou will write and run code inside Quarto chapter files (.qmd). When you render the book, Quarto executes Python chunks and embeds results directly into the final output.\nBy the end of this lesson you will have:",
+    "text": "What you are setting up\nThis guide is Python-first and Quarto-first.\nIn CDI, environment setup is not a technical formality — it is part of the analytical process.\nIf your environment is inconsistent, your results can be:\nYou will write and run code inside Quarto chapter files (.qmd). When you render the book, Quarto executes Python chunks and embeds results directly into the final output.\nBy the end of this lesson you will have:",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Setting Up Your Environment</span>"
@@ -179,7 +179,7 @@
     "href": "01-setting-up-environment.html#cdi-insight",
     "title": "Setting Up Your Environment",
     "section": "CDI Insight",
-    "text": "CDI Insight\nEnvironment setup is the first step in reproducibility.\nBefore analyzing data, you must ensure: - your tools are consistent\n- your dependencies are controlled\n- your workflow is repeatable\nThis is what allows your results to be trusted.",
+    "text": "CDI Insight\nEnvironment setup is the first step in reproducibility.\nBefore analyzing data, you must ensure:\n\nyour tools are consistent\n\nyour dependencies are controlled\n\nyour workflow is repeatable\n\nThis is what allows your results to be trusted.",
     "crumbs": [
       "Foundations",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Setting Up Your Environment</span>"

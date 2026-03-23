@@ -12,6 +12,7 @@ This guide is **Python-first** and **Quarto-first**.
 In CDI, environment setup is not a technical formality — it is part of the analytical process.
 
 If your environment is inconsistent, your results can be:
+
 - incorrect  
 - non-reproducible  
 - or silently misleading  
@@ -183,6 +184,7 @@ This launches a live server that reloads on changes.
 Environment setup is the **first step in reproducibility**.
 
 Before analyzing data, you must ensure:
+
 - your tools are consistent  
 - your dependencies are controlled  
 - your workflow is repeatable  
