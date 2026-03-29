@@ -14,18 +14,18 @@
     "href": "00-preface.html",
     "title": "Preface",
     "section": "",
-    "text": "Why This Guide Exists\nData science is often introduced through tools.\nBut tools alone do not produce understanding.\nWhat matters is how we move from:\nThis guide uses Python as the working environment, but the focus is not Python.\nThe focus is how to move from data to insight in a way that is clear, structured, and defensible.\nData science is introduced here as a process of reasoning, not just a collection of techniques.",
+    "text": "Why This Track Exists\nYou have already learned how to:\nThese are essential foundations.\nBut in practice, analysis alone is not enough.\nWhat matters next is how we move from:\nThis track focuses on that transition.\nIt extends data science from a process of reasoning into a process of building systems that produce reliable results.",
     "crumbs": [
       "Foundations",
       "Preface"
     ]
   },
   {
-    "objectID": "00-preface.html#why-this-guide-exists",
-    "href": "00-preface.html#why-this-guide-exists",
+    "objectID": "00-preface.html#why-this-track-exists",
+    "href": "00-preface.html#why-this-track-exists",
     "title": "Preface",
     "section": "",
-    "text": "Python\n\nR\n\nSQL\n\nlibraries and frameworks\n\n\n\n\nraw data\nto\n\nstructured insight",
+    "text": "explore datasets\n\nclean and prepare data\n\nvisualize patterns\n\nsummarize findings\n\n\n\n\n\nstructured insight\nto\n\nreliable analytical systems",
     "crumbs": [
       "Foundations",
       "Preface"
@@ -36,7 +36,7 @@
     "href": "00-preface.html#what-you-will-learn",
     "title": "Preface",
     "section": "What You Will Learn",
-    "text": "What You Will Learn\nThis track focuses on the foundations:\n\nexploring datasets\n\ncleaning and preparing data\n\nvisualizing patterns\n\nsummarizing findings clearly\n\nThe goal is not to memorize functions.\nThe goal is to build a way of thinking that you can apply to any dataset.",
+    "text": "What You Will Learn\nThis track focuses on extending your analytical workflow into real-world practice:\n\ntransforming data into model-ready representations\n\nbuilding and evaluating machine learning models\n\nstructuring pipelines to ensure reproducibility\n\ninterpreting model behavior carefully\n\npackaging models for reuse\n\nexposing models through simple APIs\n\nunderstanding deployment concepts\n\nrecognizing model failure, drift, and limitations\n\nThe goal is not to introduce more tools.\nThe goal is to understand how analytical components work together as a system.",
     "crumbs": [
       "Foundations",
       "Preface"
@@ -47,7 +47,7 @@
     "href": "00-preface.html#how-this-guide-is-structured",
     "title": "Preface",
     "section": "How This Guide Is Structured",
-    "text": "How This Guide Is Structured\nEach chapter follows a consistent pattern:\n\nExplanation\nWhat concept we are learning and why it matters\nCode\nPractical implementation using Python\nInterpretation\nWhat the results mean\nSummary\nThe key ideas to retain\nExercise\nA short task to reinforce learning\n\nCode blocks are folded by default to keep the guide readable.\nYou can expand them when you want to inspect or run the implementation.\nThis structure is intentional.\nIt ensures that learning moves from code to interpretation, and from interpretation to understanding.",
+    "text": "How This Guide Is Structured\nEach chapter follows a consistent pattern:\n\nExplanation\nWhat concept we are learning and why it matters\nCode\nPractical implementation\nInterpretation\nWhat the results mean\nSummary\nThe key ideas to retain\nExercise\nA task to reinforce understanding\n\nThis structure remains intentional.\nAs the workflow becomes more complex, clarity becomes more important.",
     "crumbs": [
       "Foundations",
       "Preface"
@@ -58,29 +58,18 @@
     "href": "00-preface.html#how-to-approach-this-guide",
     "title": "Preface",
     "section": "How to Approach This Guide",
-    "text": "How to Approach This Guide\nYou do not need prior experience in data science.\nBut you should:\n\nrun the code yourself\n\nobserve outputs carefully\n\ntry to explain results in your own words\n\nDo not rush.\nUnderstanding grows from interaction, not passive reading.",
+    "text": "How to Approach This Guide\nThis track assumes you are already comfortable with:\n\nbasic data exploration\n\ndata cleaning and transformation\n\nvisualization and interpretation\n\nHere, the focus shifts to:\n\nconnecting steps across a workflow\n\nunderstanding how decisions affect outcomes\n\nrecognizing where errors can occur\n\nbuilding systems that can be reused and extended\n\nDo not rush through implementation.\nTake time to understand how each step fits into the larger system.",
     "crumbs": [
       "Foundations",
       "Preface"
     ]
   },
   {
-    "objectID": "00-preface.html#the-cdi-reasoning-workflow",
-    "href": "00-preface.html#the-cdi-reasoning-workflow",
+    "objectID": "00-preface.html#the-cdi-extended-workflow",
+    "href": "00-preface.html#the-cdi-extended-workflow",
     "title": "Preface",
-    "section": "The CDI Reasoning Workflow",
-    "text": "The CDI Reasoning Workflow\nData analysis is not a straight line.\nIt is an iterative process, where each step informs the next.\n\n\nCode\nflowchart TB\n  A[Question or Problem] --&gt; B[Load & Explore Data]\n\n  B --&gt; C[Clean & Prepare]\n  B --&gt; D[Visualize Patterns]\n\n  C --&gt; D\n  D --&gt; E[Summarize & Interpret]\n\n  E --&gt; F[Refine Question / Hypothesis]\n  F --&gt; B\n\n\n\n\n\nflowchart TB\n  A[Question or Problem] --&gt; B[Load & Explore Data]\n\n  B --&gt; C[Clean & Prepare]\n  B --&gt; D[Visualize Patterns]\n\n  C --&gt; D\n  D --&gt; E[Summarize & Interpret]\n\n  E --&gt; F[Refine Question / Hypothesis]\n  F --&gt; B",
-    "crumbs": [
-      "Foundations",
-      "Preface"
-    ]
-  },
-  {
-    "objectID": "00-preface.html#what-comes-next",
-    "href": "00-preface.html#what-comes-next",
-    "title": "Preface",
-    "section": "What Comes Next",
-    "text": "What Comes Next\nIn the next chapter, we will set up the environment required to begin working with data.\nOnce that is ready, we will move directly into exploring real datasets.",
+    "section": "The CDI Extended Workflow",
+    "text": "The CDI Extended Workflow\nIn the foundations track, the focus was:\n\ndata → exploration → insight\n\nIn practice, analytical work extends beyond this.\n\n\nCode\nflowchart TB\n  A[Question or Problem] --&gt; B[Load & Explore Data]\n\n  B --&gt; C[Clean & Prepare]\n  B --&gt; D[Visualize Patterns]\n\n  C --&gt; D\n  D --&gt; E[Summarize & Interpret]\n\n  E --&gt; F[Modeling & Evaluation]\n  F --&gt; G[System & Deployment]\n\n  G --&gt; H[Monitoring & Feedback]\n  H --&gt; B\n\n\n\n\n\nflowchart TB\n  A[Question or Problem] --&gt; B[Load & Explore Data]\n\n  B --&gt; C[Clean & Prepare]\n  B --&gt; D[Visualize Patterns]\n\n  C --&gt; D\n  D --&gt; E[Summarize & Interpret]\n\n  E --&gt; F[Modeling & Evaluation]\n  F --&gt; G[System & Deployment]\n\n  G --&gt; H[Monitoring & Feedback]\n  H --&gt; B\n\n\n\n\n\n\nThis extended workflow reflects how real analytical systems operate.\nEach stage introduces new considerations, including validation, reproducibility, and reliability.",
     "crumbs": [
       "Foundations",
       "Preface"

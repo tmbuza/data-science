@@ -241,12 +241,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#why-this-guide-exists" id="toc-why-this-guide-exists" class="nav-link active" data-scroll-target="#why-this-guide-exists">Why This Guide Exists</a></li>
+  <li><a href="#why-this-track-exists" id="toc-why-this-track-exists" class="nav-link active" data-scroll-target="#why-this-track-exists">Why This Track Exists</a></li>
   <li><a href="#what-you-will-learn" id="toc-what-you-will-learn" class="nav-link" data-scroll-target="#what-you-will-learn">What You Will Learn</a></li>
   <li><a href="#how-this-guide-is-structured" id="toc-how-this-guide-is-structured" class="nav-link" data-scroll-target="#how-this-guide-is-structured">How This Guide Is Structured</a></li>
   <li><a href="#how-to-approach-this-guide" id="toc-how-to-approach-this-guide" class="nav-link" data-scroll-target="#how-to-approach-this-guide">How to Approach This Guide</a></li>
-  <li><a href="#the-cdi-reasoning-workflow" id="toc-the-cdi-reasoning-workflow" class="nav-link" data-scroll-target="#the-cdi-reasoning-workflow">The CDI Reasoning Workflow</a></li>
-  <li><a href="#what-comes-next" id="toc-what-comes-next" class="nav-link" data-scroll-target="#what-comes-next">What Comes Next</a></li>
+  <li><a href="#the-cdi-extended-workflow" id="toc-the-cdi-extended-workflow" class="nav-link" data-scroll-target="#the-cdi-extended-workflow">The CDI Extended Workflow</a></li>
   </ul>
 </nav>
     </div>
@@ -282,48 +281,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><strong>ID:</strong> DS-000</li>
 <li><strong>Type:</strong> Preface</li>
-<li><strong>Audience:</strong> Beginner to Intermediate</li>
-<li><strong>Theme:</strong> Analytical thinking and structured workflows</li>
+<li><strong>Audience:</strong> Intermediate to Advanced</li>
+<li><strong>Theme:</strong> From analytical reasoning to system-level thinking</li>
 </ul>
 </div>
-<section id="why-this-guide-exists" class="level2">
-<h2 class="anchored" data-anchor-id="why-this-guide-exists">Why This Guide Exists</h2>
-<p>Data science is often introduced through tools.</p>
+<section id="why-this-track-exists" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-track-exists">Why This Track Exists</h2>
+<p>You have already learned how to:</p>
 <ul>
-<li>Python<br>
+<li>explore datasets<br>
 </li>
-<li>R<br>
+<li>clean and prepare data<br>
 </li>
-<li>SQL<br>
+<li>visualize patterns<br>
 </li>
-<li>libraries and frameworks</li>
+<li>summarize findings</li>
 </ul>
-<p>But tools alone do not produce understanding.</p>
-<p>What matters is how we move from:</p>
+<p>These are essential foundations.</p>
+<p>But in practice, analysis alone is not enough.</p>
+<p>What matters next is how we move from:</p>
 <ul>
-<li>raw data<br>
+<li>structured insight<br>
 to<br>
 </li>
-<li>structured insight</li>
+<li>reliable analytical systems</li>
 </ul>
-<p>This guide uses <strong>Python</strong> as the working environment, but the focus is not Python.</p>
-<p>The focus is how to move from data to insight in a way that is clear, structured, and defensible.</p>
-<p>Data science is introduced here as a <strong>process of reasoning</strong>, not just a collection of techniques.</p>
+<p>This track focuses on that transition.</p>
+<p>It extends data science from a <strong>process of reasoning</strong> into a <strong>process of building systems that produce reliable results</strong>.</p>
+<hr>
 </section>
 <section id="what-you-will-learn" class="level2">
 <h2 class="anchored" data-anchor-id="what-you-will-learn">What You Will Learn</h2>
-<p>This track focuses on the foundations:</p>
+<p>This track focuses on extending your analytical workflow into real-world practice:</p>
 <ul>
-<li>exploring datasets<br>
+<li>transforming data into model-ready representations<br>
 </li>
-<li>cleaning and preparing data<br>
+<li>building and evaluating machine learning models<br>
 </li>
-<li>visualizing patterns<br>
+<li>structuring pipelines to ensure reproducibility<br>
 </li>
-<li>summarizing findings clearly</li>
+<li>interpreting model behavior carefully<br>
+</li>
+<li>packaging models for reuse<br>
+</li>
+<li>exposing models through simple APIs<br>
+</li>
+<li>understanding deployment concepts<br>
+</li>
+<li>recognizing model failure, drift, and limitations</li>
 </ul>
-<p>The goal is not to memorize functions.</p>
-<p>The goal is to <strong>build a way of thinking</strong> that you can apply to any dataset.</p>
+<p>The goal is not to introduce more tools.</p>
+<p>The goal is to understand how analytical components work together as a system.</p>
 <hr>
 </section>
 <section id="how-this-guide-is-structured" class="level2">
@@ -333,39 +341,49 @@ to<br>
 <li><p><strong>Explanation</strong><br>
 What concept we are learning and why it matters</p></li>
 <li><p><strong>Code</strong><br>
-Practical implementation using Python</p></li>
+Practical implementation</p></li>
 <li><p><strong>Interpretation</strong><br>
 What the results mean</p></li>
 <li><p><strong>Summary</strong><br>
 The key ideas to retain</p></li>
 <li><p><strong>Exercise</strong><br>
-A short task to reinforce learning</p></li>
+A task to reinforce understanding</p></li>
 </ol>
-<p>Code blocks are folded by default to keep the guide readable.</p>
-<p>You can expand them when you want to inspect or run the implementation.</p>
-<p>This structure is intentional.</p>
-<p>It ensures that learning moves from code to interpretation, and from interpretation to understanding.</p>
+<p>This structure remains intentional.</p>
+<p>As the workflow becomes more complex, clarity becomes more important.</p>
 <hr>
 </section>
 <section id="how-to-approach-this-guide" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-approach-this-guide">How to Approach This Guide</h2>
-<p>You do not need prior experience in data science.</p>
-<p>But you should:</p>
+<p>This track assumes you are already comfortable with:</p>
 <ul>
-<li>run the code yourself<br>
+<li>basic data exploration<br>
 </li>
-<li>observe outputs carefully<br>
+<li>data cleaning and transformation<br>
 </li>
-<li>try to explain results in your own words</li>
+<li>visualization and interpretation</li>
 </ul>
-<p>Do not rush.</p>
-<p>Understanding grows from <strong>interaction</strong>, not passive reading.</p>
+<p>Here, the focus shifts to:</p>
+<ul>
+<li>connecting steps across a workflow<br>
+</li>
+<li>understanding how decisions affect outcomes<br>
+</li>
+<li>recognizing where errors can occur<br>
+</li>
+<li>building systems that can be reused and extended</li>
+</ul>
+<p>Do not rush through implementation.</p>
+<p>Take time to understand how each step fits into the larger system.</p>
 <hr>
 </section>
-<section id="the-cdi-reasoning-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="the-cdi-reasoning-workflow">The CDI Reasoning Workflow</h2>
-<p>Data analysis is not a straight line.</p>
-<p>It is an iterative process, where each step informs the next.</p>
+<section id="the-cdi-extended-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-cdi-extended-workflow">The CDI Extended Workflow</h2>
+<p>In the foundations track, the focus was:</p>
+<blockquote class="blockquote">
+<p>data → exploration → insight</p>
+</blockquote>
+<p>In practice, analytical work extends beyond this.</p>
 <div class="cell" data-layout-align="default">
 <details class="code-fold">
 <summary>Code</summary>
@@ -378,8 +396,11 @@ A short task to reinforce learning</p></li>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  C --&gt; D</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  D --&gt; E[Summarize &amp; Interpret]</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  E --&gt; F[Refine Question / Hypothesis]</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  F --&gt; B</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  E --&gt; F[Modeling &amp; Evaluation]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  F --&gt; G[System &amp; Deployment]</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  G --&gt; H[Monitoring &amp; Feedback]</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  H --&gt; B</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -394,20 +415,19 @@ A short task to reinforce learning</p></li>
   C --&gt; D
   D --&gt; E[Summarize &amp; Interpret]
 
-  E --&gt; F[Refine Question / Hypothesis]
-  F --&gt; B
+  E --&gt; F[Modeling &amp; Evaluation]
+  F --&gt; G[System &amp; Deployment]
+
+  G --&gt; H[Monitoring &amp; Feedback]
+  H --&gt; B
 </pre>
 </div>
 <p></p></figure><p></p>
 </div>
 </div>
 </div>
-<hr>
-</section>
-<section id="what-comes-next" class="level2">
-<h2 class="anchored" data-anchor-id="what-comes-next">What Comes Next</h2>
-<p>In the next chapter, we will set up the environment required to begin working with data.</p>
-<p>Once that is ready, we will move directly into exploring real datasets.</p>
+<p>This extended workflow reflects how real analytical systems operate.</p>
+<p>Each stage introduces new considerations, including validation, reproducibility, and reliability.</p>
 
 
 </section>
