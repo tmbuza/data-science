@@ -1,55 +1,78 @@
 # Data Science Foundations
 
-A structured Quarto book teaching the end-to-end Python workflow from raw data to interpretation.
+A reproducible Quarto-based guide for learning the full Python data workflow — from structured data to interpretation.
 
-This guide is part of the **Complex Data Insights (CDI)** ecosystem and represents the **Foundations Track (v1.0.0)**.
-
----
-
-## Overview
-
-This repository contains a fully reproducible, Quarto-first data science guide.
-
-It teaches learners how to:
-
-- Set up a reproducible Python environment  
-- Structure a real data project  
-- Load and clean datasets  
-- Perform data wrangling  
-- Create visualizations  
-- Compute summary statistics  
-- Write careful, defensible interpretations  
-
-All lessons are written as `.qmd` files and executed during rendering.
-
-In addition, the guide introduces how analytical work extends beyond exploration:
-
-**Analysis → Machine Learning → Systems**
+Part of the **Complex Data Insights (CDI)** ecosystem  
+**Foundations Track (v1.0.0)**
 
 ---
 
-## Architecture
+## How to run
 
-This project follows a **Python → Quarto → Render → Static Site** workflow:
+Run the following commands in order, one step at a time:
 
-```
-Python code
-    ↓
-Quarto chapters (.qmd)
-    ↓
+```bash
+git clone https://github.com/tmbuza/data-science.git
+cd data-science
+
+python -m venv .venv
+source .venv/bin/activate
+
+pip install -r requirements.txt
+
 quarto render
-    ↓
-docs/ (GitHub Pages site)
 ```
 
-There are **no notebooks** in this workflow.  
-All execution happens inside Quarto chapters.
+Then open:
+
+```text
+Open docs/index.html in your browser.
+```
 
 ---
 
-## Project Structure
+## What this project is
+
+This repository is a complete, runnable analytical workflow.
+
+The `.qmd` chapter files are the **source of the guide**.  
+Running `quarto render` executes these chapters and produces a full website.
+
+The guide teaches:
+
+- data exploration  
+- data cleaning  
+- data wrangling  
+- visualization  
+- summary statistics  
+- interpretation  
+
+---
+
+## Output
+
+After running:
+
+- A rendered Quarto site is generated in `docs/`
+- The full guide can be viewed locally in your browser
+
+---
+
+## Data
+
+All required data is included:
 
 ```
+data/
+```
+
+No external downloads are required.
+
+---
+
+## Project structure
+
+```text
 data-science/
 ├── index.qmd
 ├── 00-preface.qmd
@@ -64,115 +87,57 @@ data-science/
 ├── 999-appendix.qmd
 ├── 999-references.qmd
 ├── data/
-├── figures/
-├── cdi_viz/
+├── assets/
 ├── scripts/
-│   └── bash/
 ├── docs/
 ├── _quarto.yml
+├── README.md
 └── requirements.txt
 ```
 
 ---
 
-## Setup
+## CDI approach
 
-### 1. Create environment
+This guide focuses on:
 
-```bash
-bash scripts/bash/setup-env.sh
-source .venv/bin/activate
-```
+- reproducible workflows  
+- structured analytical thinking  
+- movement from data → analysis → interpretation  
 
-### 2. Render the book
+It also introduces how analysis extends into:
 
-```bash
-bash scripts/bash/build.sh
-```
-
-### 3. Open the site
-
-macOS:
-```bash
-open docs/index.html
-```
-
-Linux:
-```bash
-xdg-open docs/index.html
-```
-
-Windows:
-```powershell
-start docs/index.html
-```
+**Analysis → Machine Learning → Systems**
 
 ---
 
-## Reproducibility Principles
+## Reproducibility
 
-This guide emphasizes:
+This project is designed to be:
 
-- Explicit environment management (`.venv`)
-- Saved figures in `figures/`
-- Cleaned datasets in `data/`
-- Deterministic builds via `quarto render`
-- Clear separation between source (`.qmd`) and output (`docs/`)
+- environment-controlled (`.venv`)  
+- fully executable via `quarto render`  
+- deterministic in outputs  
+- clearly structured between source (`.qmd`) and output (`docs/`)  
 
 ---
 
 ## Version
 
-Current stable release:
-
 **v1.0.0-free**
 
-This marks the fully aligned Quarto-first Foundations Track.
-
 ---
 
-## Learning Progression
+## Next steps
 
-This track focuses on building strong analytical foundations.
+This guide prepares you for:
 
-It prepares learners to move toward:
-
-**ML → Deployment → MLOps / DevOps**
-
-Where:
-
-- Machine learning enables prediction  
-- Deployment makes models usable  
-- MLOps / DevOps supports monitoring and continuous improvement  
-
----
-
-## Scope
-
-CDI focuses on **practical workflows and system thinking**.
-
-It does not aim to cover advanced infrastructure such as:
-
-- Kubernetes  
-- large-scale distributed systems  
-- enterprise DevOps platforms  
-
-These areas require additional specialization and can be explored through dedicated DevOps and cloud training resources.
-
----
-
-## Next Steps
-
-The extended CDI tracks (premium) build on this foundation and include:
-
-- feature engineering  
 - machine learning workflows  
 - model evaluation  
-- deployment preparation  
-- working with models in practical, real-world workflows  
+- deployment and systems thinking  
 
 ---
 
 ## License
 
-See LICENSE file for details.
+See `LICENSE` for details.

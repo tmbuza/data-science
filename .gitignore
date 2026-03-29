@@ -1,55 +1,53 @@
 # =====================================================
-# Quarto Source-Level Build Artifacts (ignore)
+# Quarto build/cache artifacts
 # =====================================================
 
-_site/
 .quarto/
 _cache/
 _freeze/
+_site/
 
-# Ignore HTML everywhere EXCEPT docs/
+# Ignore rendered HTML outside docs/
 *.html
 !docs/**/*.html
 
-# Ignore figure folders everywhere EXCEPT docs/
+# Ignore Quarto-generated asset folders outside docs/
 *_files/
 !docs/*_files/
 !docs/*_files/**
 
-# Ignore PDFs/DOCX everywhere
+# Ignore generated documents
 *.pdf
 *.docx
 
-# ========================================
+# =====================================================
 # Python
-# ========================================
+# =====================================================
 
 .venv/
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
 *.egg-info/
+
+# =====================================================
+# Jupyter checkpoints
+# =====================================================
+
 .ipynb_checkpoints/
 
-# ========================================
-# Jupyter
-# ========================================
-
-*.ipynb_checkpoints
-
-# ========================================
+# =====================================================
 # OS / Editor
-# ========================================
+# =====================================================
 
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 
-# ========================================
+# =====================================================
 # Logs
-# ========================================
+# =====================================================
 
 *.log
+
 /.quarto/

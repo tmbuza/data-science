@@ -3,45 +3,51 @@
 :::cdi-message
 - **ID:** DS-000
 - **Type:** Preface
-- **Audience:** Beginner to Intermediate
-- **Theme:** Analytical thinking and structured workflows
+- **Audience:** Intermediate to Advanced
+- **Theme:** From analytical reasoning to system-level thinking
 :::
 
-## Why This Guide Exists
+## Why This Track Exists
 
-Data science is often introduced through tools.
+You have already learned how to:
 
-- Python  
-- R  
-- SQL  
-- libraries and frameworks  
+- explore datasets  
+- clean and prepare data  
+- visualize patterns  
+- summarize findings  
 
-But tools alone do not produce understanding.
+These are essential foundations.
 
-What matters is how we move from:
+But in practice, analysis alone is not enough.
 
-- raw data  
-to  
+What matters next is how we move from:
+
 - structured insight  
+to  
+- reliable analytical systems  
 
-This guide uses **Python** as the working environment, but the focus is not Python.
+This track focuses on that transition.
 
-The focus is how to move from data to insight in a way that is clear, structured, and defensible.
+It extends data science from a **process of reasoning** into a **process of building systems that produce reliable results**.
 
-Data science is introduced here as a **process of reasoning**, not just a collection of techniques.
+---
 
 ## What You Will Learn
 
-This track focuses on the foundations:
+This track focuses on extending your analytical workflow into real-world practice:
 
-- exploring datasets  
-- cleaning and preparing data  
-- visualizing patterns  
-- summarizing findings clearly  
+- transforming data into model-ready representations  
+- building and evaluating machine learning models  
+- structuring pipelines to ensure reproducibility  
+- interpreting model behavior carefully  
+- packaging models for reuse  
+- exposing models through simple APIs  
+- understanding deployment concepts  
+- recognizing model failure, drift, and limitations  
 
-The goal is not to memorize functions.
+The goal is not to introduce more tools.
 
-The goal is to **build a way of thinking** that you can apply to any dataset.
+The goal is to understand how analytical components work together as a system.
 
 ---
 
@@ -53,7 +59,7 @@ Each chapter follows a consistent pattern:
    What concept we are learning and why it matters  
 
 2. **Code**  
-   Practical implementation using Python  
+   Practical implementation  
 
 3. **Interpretation**  
    What the results mean  
@@ -62,39 +68,42 @@ Each chapter follows a consistent pattern:
    The key ideas to retain  
 
 5. **Exercise**  
-   A short task to reinforce learning  
+   A task to reinforce understanding  
 
-Code blocks are folded by default to keep the guide readable.
+This structure remains intentional.
 
-You can expand them when you want to inspect or run the implementation.
-
-This structure is intentional.
-
-It ensures that learning moves from code to interpretation, and from interpretation to understanding.
+As the workflow becomes more complex, clarity becomes more important.
 
 ---
 
 ## How to Approach This Guide
 
-You do not need prior experience in data science.
+This track assumes you are already comfortable with:
 
-But you should:
+- basic data exploration  
+- data cleaning and transformation  
+- visualization and interpretation  
 
-- run the code yourself  
-- observe outputs carefully  
-- try to explain results in your own words  
+Here, the focus shifts to:
 
-Do not rush.
+- connecting steps across a workflow  
+- understanding how decisions affect outcomes  
+- recognizing where errors can occur  
+- building systems that can be reused and extended  
 
-Understanding grows from **interaction**, not passive reading.
+Do not rush through implementation.
+
+Take time to understand how each step fits into the larger system.
 
 ---
 
-## The CDI Reasoning Workflow
+## The CDI Extended Workflow
 
-Data analysis is not a straight line.
+In the foundations track, the focus was:
 
-It is an iterative process, where each step informs the next.
+> data → exploration → insight  
+
+In practice, analytical work extends beyond this.
 
 ```{mermaid}
 flowchart TB
@@ -106,14 +115,13 @@ flowchart TB
   C --> D
   D --> E[Summarize & Interpret]
 
-  E --> F[Refine Question / Hypothesis]
-  F --> B
+  E --> F[Modeling & Evaluation]
+  F --> G[System & Deployment]
+
+  G --> H[Monitoring & Feedback]
+  H --> B
 ```
 
----
+This extended workflow reflects how real analytical systems operate.
 
-## What Comes Next
-
-In the next chapter, we will set up the environment required to begin working with data.
-
-Once that is ready, we will move directly into exploring real datasets.
+Each stage introduces new considerations, including validation, reproducibility, and reliability.
